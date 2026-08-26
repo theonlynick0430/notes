@@ -1,0 +1,13 @@
+# =========================
+# macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Finder metadata
+._*
+
+# Spotlight
+.Spotlight-V100
+.Trashes

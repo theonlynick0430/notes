@@ -1,0 +1,3889 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 9 March 2026. Version 4.88.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  B_Continuity-Equation.tex
+Category 'changed_user':
+  B_Continuity-Equation.tex
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -file-line-error -recorder -output-directory="build"  "main_v2.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main_v2.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(./nowfnt-arxiv.cls
+
+LaTeX Warning: You have requested document class `nowfnt-arxiv',
+               but the document class provides `nowfnt'.
+
+Document Class: nowfnt 2021/10/12 v0.95d NOW document class
+(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(./NOWFnT-data.tex)
+
+Class nowfnt Warning: Unclear state. Remove the class option book or ebook or s
+ample on input line 129.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/bk11.clo))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpage.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpage2e.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpagemodern.sty) 
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/trimspaces/trimspaces.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/footmisc/footmisc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/dvipsnam.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdfpages/pppdftex.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/xr.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/emptypage/emptypage.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/lmodern.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmr.fd))
+(./nowfnt-biblatex.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-dm.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-compat.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-natbib.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/standard.bbx))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.cfg)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty)) (/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bkm-pdftex.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
+tered.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+meta.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.geometric.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.geometric.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/subcaption.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/jknapltx/mathrsfs.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/environ/environ.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.misc.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.misc.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.symbols.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.symbols.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.arrows.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.arrows.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.callouts.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.callouts.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarybackgrounds.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshadows.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfadings.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings
+.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/cancel/cancel.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mathtools/mhsetup.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/colortbl/colortbl.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/setspace/setspace.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/float/float.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/locale/en/babel-english.t
+ex) (/usr/local/texlive/2026/texmf-dist/tex/generic/babel-english/english.ldf))
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/mwe/mwe.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/blindtext/blindtext.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/xspace.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/varwidth/varwidth.sty)
+==> First Aid for varwidth.sty applied!
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/makecell/makecell.sty)
+(./annotate_eqs.sty
+
+LaTeX Warning: You have requested package `annotate_eqs',
+               but the package provides `annotate-equations'.
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifluatex.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tikzmark/tikzlibrarytikzmark.code
+.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarybabel.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfit.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/epigraph/epigraph.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/nextpage/nextpage.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/thmbox/thmbox.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.co
+de.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdfcol/pdfcol.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithms/algorithm.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mdframed/mdframed.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/zref/zref-abspage.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/zref/zref-base.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/auxhook/auxhook.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/needspace/needspace.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mdframed/md-frame-1.mdf))
+(./math_commands.tex (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/bm.sty
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty))
+(./theorems.tex
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.9.0'
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/pifont.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/upzd.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/upsy.fd))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pstricks/pstricks.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/pst-xkey.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-fp.tex
+`pst-fp' v0.06, 2020/11/20 (hv))
+`PSTricks' v3.22A  <2025/12/13> (tvz,hv)
+--- We are running latex or xelatex ---
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks.con)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks-color.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks-arrows.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks-dots.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-grid.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-box.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-arc.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-circle_ellips
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-ref_rot.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-put.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-pspicture.tex
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks.con))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-fp.tex
+`pst-fp' v0.06, 2020/11/20 (hv)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pstricks-add/pstricks-add.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-plot/pst-plot.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xkeyval/pst-xkey.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/multido/multido.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/multido/multido.tex
+ v1.42, 2010/05/14 <tvz>))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-plot/pst-plot.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-tools/pst-tools.tex
+`PST-tools' v0.12, 2021/09/23 (hv))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-node/pst-node.tex
+ v1.45, 2024/07/10)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-arrow/pst-arrow.tex
+`pst-arrow' v0.05, 2021/11/16 (dr,hv))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-3d/pst-3d.tex
+`PST-3d' v1.11, 2010/02/14 (tvz))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-math/pst-math.tex
+`pst-math' v0.67 , (CJ,hv)) `pstricks-add' v3.94, 2023/04/17 (dr,hv))
+ v1.94, 2022/11/21 (tvz,hv)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-node/pst-node.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-node/pst-node.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-3d/pst-3d.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-3d/pst-3d.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-math/pst-math.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-calculate/pst-calculate.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/siunitx/siunitx.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/translations/translations.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-math/pst-math.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex))
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/cjk-ko/kotex.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kotex-utf/kotex.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kotex-utf/kotexutf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/plain/kotex-plain/kotexutf-core.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kotex-utf/lucenc.dfu)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/cjk-ko/kolabels-utf.sty)))
+First name missing
+First name missing
+First name missing
+First name missing
+First name missing
+
+Package biblatex Warning: Load 'inputenc' before biblatex.
+
+
+Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 379.
+
+(build/main_v2.aux)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.st
+y (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/lscape.sty)))
+
+Package microtype Warning: Command \pickup@font is not defined as expected.
+(microtype)                Patching it anyway. Some things may break.
+(microtype)                Double-check whether micro-typography is indeed
+(microtype)                applied to the document.
+(microtype)                (Hint: Turn on `verbose' mode).
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/english.lbx)
+(build/main_v2.bbl)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/translations/translations-basic-d
+ictionary-english.trsl)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmss.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/jknapltx/ursfs.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
+(Font)              using `U/stmry/m/n' instead on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' in size <13> not available
+(Font)              size <12> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 379.
+
+[1
+Non-PDF special ignored!
+<special> header=pstricks.pro
+Non-PDF special ignored!
+<special> header=pst-algparser.pro
+Non-PDF special ignored!
+<special> header=pst-tools.pro
+Non-PDF special ignored!
+<special> header=pst-dots.pro
+Non-PDF special ignored!
+<special> header=pst-node.pro
+Non-PDF special ignored!
+<special> header=pst-3d.pro
+Non-PDF special ignored!
+<special> header=pst-math.pro
+Non-PDF special ignored!
+<special> header=pstricks-add.pro
+Non-PDF special ignored!
+<special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (build/main_v2.toc
+[2] [3] (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd) [4])
+[5] (./fnfix.tex) (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd)
+[1{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [2]
+(./Preface.tex [3] [4] [5] [6 <./Images/PartA/diffusion_forward_vs_reverse.pdf>
+] [7{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active [9]
+[10]) (./notations.tex [11]
+Underfull \vbox (badness 10000) has occurred while \output is active [12{/usr/l
+ocal/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texli
+ve/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Overfull \hbox (23.66492pt too wide) in paragraph at lines 86--86
+[]$\U/msb/m/n/10.95 E[]\OT1/lmr/bx/n/10.95 (-20) f\OT1/lmr/m/n/10.95 (-20) (\OT
+1/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) ) \OMS/lmsy/m/n/10.95 j \OT1/l
+mr/bx/n/10.95 (-20) z[]$\T1/lmr/m/n/10.95 (-20) ,  
+
+Overfull \hbox (42.28333pt too wide) in paragraph at lines 86--86
+\U/msb/m/n/10.95 E[][]\OT1/lmr/bx/n/10.95 (-20) f\OT1/lmr/m/n/10.95 (-20) (\OT1
+/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) )[]$  
+
+Underfull \vbox (badness 1603) has occurred while \output is active [13{/usr/lo
+cal/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]) [14] [15]
+(./Prologue-Deep-Generative-Modeling.tex
+Chapter 1.
+[16] [17] [18 <./Images/PartB/dgm-learning.pdf>]
+Overfull \hbox (1.45654pt too wide) in paragraph at lines 232--241
+\T1/lmr/m/n/10.95 (-20) It mea-sures the dis-crep-ancy be-tween the \T1/lmr/m/i
+t/10.95 (-20) score func-tions $\OMS/lmsy/m/n/10.95 r[] [] \OML/lmm/m/it/10.95 
+p\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) 
+)$ \T1/lmr/m/n/10.95 (-20) and $\OMS/lmsy/m/n/10.95 r[] [] \OML/lmm/m/it/10.95 
+q\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) 
+)$\T1/lmr/m/n/10.95 (-20) ,
+[19] [20] [21]
+
+LaTeX Warning: Float too large for page by 23.41594pt on input line 528.
+
+[22]
+Overfull \hbox (35.57693pt too wide) in paragraph at lines 744--745
+[] []\T1/lmss/bx/n/10.95 (-20) Nor-mal-iz-ing Flows.[] \T1/lmr/m/n/10.95 (-20) 
+Clas-sic flow-based mod-els, such as Nor-mal-iz-ing Flows (NFs) ([]Rezende
+[23] [24] [25]) [26] [27] [28] (./Part-B-diagram.tex)
+(./Chapter-1-Varational-Perspective-From-VAE-to-DDPM.tex [29]
+Chapter 2.
+[30] [31]
+Underfull \vbox (badness 6477) has occurred while \output is active [32]
+[33] [34] [35] [36] [37] [38] [39] [40] [41] [42 <./Images/PartB/vdm-forward.pd
+f>] [43 <./Images/PartB/vdm-backward.pdf>] [44 <./Images/PartB/ddpm_conditional
+_trick.pdf>] [45] [46] [47] [48] [49] [50] [51] [52 <./Images/PartB/diffusion-c
+lean.pdf>]) (./Chapter-2-Score-Based-Perspective-From-EBMs-to-NCSN.tex [53]
+Chapter 3.
+[54] [55 <./Images/PartB/ebm-graph.pdf>] [56] [57 <./Images/PartB/score_functio
+n_plot.pdf>] [58 <./Images/PartB/langevin_sampling.png>] [59] [60]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 495.
+
+
+Overfull \vbox (16.57092pt too high) detected at line 495
+
+Overfull \vbox (17.57092pt too high) detected at line 495
+
+Overfull \vbox (18.57092pt too high) detected at line 495
+
+Overfull \vbox (19.57092pt too high) detected at line 495
+
+Overfull \vbox (20.57092pt too high) detected at line 495
+
+Overfull \vbox (21.57092pt too high) detected at line 495
+
+Overfull \vbox (22.57092pt too high) detected at line 495
+
+Overfull \vbox (23.57092pt too high) detected at line 495
+
+Overfull \vbox (24.57092pt too high) detected at line 495
+
+Overfull \vbox (25.57092pt too high) detected at line 495
+
+Overfull \vbox (26.57092pt too high) detected at line 495
+
+Overfull \vbox (27.57092pt too high) detected at line 495
+
+Overfull \vbox (28.57092pt too high) detected at line 495
+
+Overfull \vbox (29.57092pt too high) detected at line 495
+
+Overfull \vbox (30.57092pt too high) detected at line 495
+
+Overfull \vbox (31.57092pt too high) detected at line 495
+
+Overfull \vbox (32.57092pt too high) detected at line 495
+
+Overfull \vbox (33.57092pt too high) detected at line 495
+
+Overfull \vbox (34.57092pt too high) detected at line 495
+
+Overfull \vbox (35.57092pt too high) detected at line 495
+
+Overfull \vbox (36.57092pt too high) detected at line 495
+
+Overfull \vbox (37.57092pt too high) detected at line 495
+
+Overfull \vbox (38.57092pt too high) detected at line 495
+
+Overfull \vbox (39.57092pt too high) detected at line 495
+
+Overfull \vbox (40.57092pt too high) detected at line 495
+
+Overfull \vbox (41.57092pt too high) detected at line 495
+
+Overfull \vbox (42.57092pt too high) detected at line 495
+
+Overfull \vbox (43.57092pt too high) detected at line 495
+
+Overfull \vbox (44.57092pt too high) detected at line 495
+
+Overfull \vbox (45.57092pt too high) detected at line 495
+
+Overfull \vbox (46.57092pt too high) detected at line 495
+
+Overfull \vbox (47.57092pt too high) detected at line 495
+
+Overfull \vbox (48.57092pt too high) detected at line 495
+
+Overfull \vbox (49.57092pt too high) detected at line 495
+
+Overfull \vbox (50.57092pt too high) detected at line 495
+
+Overfull \vbox (51.57092pt too high) detected at line 495
+
+Overfull \vbox (52.57092pt too high) detected at line 495
+
+Overfull \vbox (53.57092pt too high) detected at line 495
+
+Overfull \vbox (54.57092pt too high) detected at line 495
+
+Overfull \vbox (55.57092pt too high) detected at line 495
+
+Overfull \vbox (56.57092pt too high) detected at line 495
+
+Overfull \vbox (57.57092pt too high) detected at line 495
+
+Overfull \vbox (58.57092pt too high) detected at line 495
+
+Overfull \vbox (59.57092pt too high) detected at line 495
+
+Overfull \vbox (60.57092pt too high) detected at line 495
+
+Overfull \vbox (61.57092pt too high) detected at line 495
+
+Overfull \vbox (62.57092pt too high) detected at line 495
+
+Overfull \vbox (63.57092pt too high) detected at line 495
+
+Overfull \vbox (64.57092pt too high) detected at line 495
+
+Overfull \vbox (65.57092pt too high) detected at line 495
+
+Overfull \vbox (66.57092pt too high) detected at line 495
+
+Overfull \vbox (67.57092pt too high) detected at line 495
+
+Overfull \vbox (68.57092pt too high) detected at line 495
+
+Overfull \vbox (69.57092pt too high) detected at line 495
+
+Overfull \vbox (70.57092pt too high) detected at line 495
+
+Overfull \vbox (71.57092pt too high) detected at line 495
+
+Overfull \vbox (72.57092pt too high) detected at line 495
+
+Overfull \vbox (73.57092pt too high) detected at line 495
+
+Overfull \vbox (74.57092pt too high) detected at line 495
+
+Overfull \vbox (75.57092pt too high) detected at line 495
+
+Overfull \vbox (76.57092pt too high) detected at line 495
+
+Overfull \vbox (77.57092pt too high) detected at line 495
+
+Overfull \vbox (78.57092pt too high) detected at line 495
+
+Overfull \vbox (79.57092pt too high) detected at line 495
+
+Overfull \vbox (80.57092pt too high) detected at line 495
+
+Overfull \vbox (81.57092pt too high) detected at line 495
+
+Overfull \vbox (82.57092pt too high) detected at line 495
+
+Overfull \vbox (83.57092pt too high) detected at line 495
+
+Overfull \vbox (84.57092pt too high) detected at line 495
+
+Overfull \vbox (85.57092pt too high) detected at line 495
+
+Overfull \vbox (86.57092pt too high) detected at line 495
+
+Overfull \vbox (87.57092pt too high) detected at line 495
+
+Overfull \vbox (88.57092pt too high) detected at line 495
+
+Overfull \vbox (89.57092pt too high) detected at line 495
+
+Overfull \vbox (90.57092pt too high) detected at line 495
+
+Overfull \vbox (91.57092pt too high) detected at line 495
+
+Overfull \vbox (92.57092pt too high) detected at line 495
+
+Overfull \vbox (93.57092pt too high) detected at line 495
+
+Overfull \vbox (94.57092pt too high) detected at line 495
+
+Overfull \vbox (95.57092pt too high) detected at line 495
+
+Overfull \vbox (96.57092pt too high) detected at line 495
+
+Overfull \vbox (97.57092pt too high) detected at line 495
+
+Overfull \vbox (98.57092pt too high) detected at line 495
+
+Overfull \vbox (99.57092pt too high) detected at line 495
+
+Overfull \vbox (100.57092pt too high) detected at line 495
+
+Overfull \vbox (101.57092pt too high) detected at line 495
+
+Overfull \vbox (102.57092pt too high) detected at line 495
+
+Overfull \vbox (103.57092pt too high) detected at line 495
+
+Overfull \vbox (104.57092pt too high) detected at line 495
+
+Overfull \vbox (105.57092pt too high) detected at line 495
+
+Overfull \vbox (106.57092pt too high) detected at line 495
+
+Overfull \vbox (107.57092pt too high) detected at line 495
+
+Overfull \vbox (108.57092pt too high) detected at line 495
+
+Overfull \vbox (109.57092pt too high) detected at line 495
+
+Overfull \vbox (110.57092pt too high) detected at line 495
+
+Overfull \vbox (111.57092pt too high) detected at line 495
+
+Overfull \vbox (112.57092pt too high) detected at line 495
+
+Overfull \vbox (113.57092pt too high) detected at line 495
+
+Overfull \vbox (114.57092pt too high) detected at line 495
+
+Overfull \vbox (115.57092pt too high) detected at line 495
+
+Overfull \vbox (116.57092pt too high) detected at line 495
+
+Overfull \vbox (117.57092pt too high) detected at line 495
+
+Package mdframed Warning: correct box splittet fails
+ It seems you are using a non splittable contents
+(mdframed)                 on input line 495.
+
+[61 <./Images/PartB/score_function_approximation.pdf>] [62] [63] [64] [65]
+[66] [67] [68 <./Images/PartB/dsm-graph.pdf>]
+Overfull \hbox (24.70169pt too wide) in paragraph at lines 790--790
+\T1/lmr/m/n/10.95 (-20) The proof pro-ceeds by com-put-ing the score of the mar
+ginal $\OML/lmm/m/it/10.95 p\OT1/lmr/m/n/10.95 (-20) ([]) = [] \OML/lmm/m/it/10
+.95 p\OT1/lmr/m/n/10.95 (-20) ([]\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (-20)
+ x\OT1/lmr/m/n/10.95 (-20) )\OML/lmm/m/it/10.95 p[]\OT1/lmr/m/n/10.95 (-20) (\O
+T1/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) ) []  d\OT1/lmr/bx/n/10.95 (-
+20) x$\T1/lmr/m/n/10.95 (-20) .
+[69] [70] [71]
+Overfull \hbox (13.39633pt too wide) in paragraph at lines 915--916
+[] []\T1/lmss/bx/n/10.95 (-20) Link to Tweedie's For-mula and Bayes Op-ti-mal-i
+ty.[] \T1/lmr/m/n/10.95 (-20) Let $\OML/lmm/m/it/10.95 p[]\OT1/lmr/m/n/10.95 (-
+20) ([]) = []\OML/lmm/m/it/10.95 p[] \OMS/lmsy/m/n/10.95 ^^C N\OT1/lmr/m/n/10.9
+5 (-20) (\OT1/lmr/bx/n/10.95 (-20) 0\OML/lmm/m/it/10.95 ; ^^[[]\OT1/lmr/bx/n/10
+.95 (-20) I\OT1/lmr/m/n/10.95 (-20) )[]([])$
+
+Overfull \hbox (12.46419pt too wide) in paragraph at lines 923--927
+\T1/lmr/m/n/10.95 (-20) Hence min-i-miz-ing the ex-pected SURE equals min-i-miz
+-ing the Bayes risk $\U/msb/m/n/10.95 E[][]\OMS/lmsy/m/n/10.95 k\OT1/lmr/bx/n/1
+0.95 (-20) D\OT1/lmr/m/n/10.95 (-20) ([]) \OMS/lmsy/m/n/10.95 ^^@
+[72] [73] [74] [75] [76 <./Images/PartB/score_function_acc.pdf>] [77 <./Images/
+PartB/ncsn-graph.pdf>] [78] [79] [80] [81])
+(./Chapter-3-Diffusion-Models-Today-Score-SDE-Framework.tex [82]
+Chapter 4.
+[83] [84 <./Images/PartB/score_landscape_2d.pdf>] [85] [86 <./Images/PartB/sde-
+forward-noise.pdf>]
+Overfull \hbox (11.15501pt too wide) in paragraph at lines 134--136
+[]\T1/lmr/m/n/10.95 (-20) With this for-mu-la-tion, ear-lier meth-ods based on 
+dis-crete time, such as NCSN ([]Song
+[87 <./Images/PartB/forward_sde_ode_trajectories.pdf>] [88] [89 <./Images/PartB
+/reverse_sde_and_ode_trajectories.pdf>] [90] [91] [92] [93]
+Underfull \vbox (badness 10000) has occurred while \output is active [94]
+
+LaTeX Warning: Text page 95 contains only floats.
+
+[95 <./Images/PartB/score_sde_three_dynamics.pdf>]
+Underfull \vbox (badness 3168) has occurred while \output is active [96]
+[97] [98] [99] [100] [101] [102 <./Images/PartB/denoising_score_matching.pdf>]
+[103]
+Underfull \vbox (badness 1642) has occurred while \output is active [104 <./Ima
+ges/PartB/sde_ode_trajectories.pdf>] [105] [106] [107] [108] [109] [110]
+[111 <./Images/PartB/vdm-sde.pdf>] [112]
+Underfull \vbox (badness 10000) has occurred while \output is active [113]
+[114] [115] [116]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 1256.
+
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.78468pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.78468pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-12.38469pt}.
+
+[117] [118]
+Overfull \hbox (0.69289pt too wide) in paragraph at lines 1374--1375
+[] []\T1/lmss/bx/n/10.95 (-20) Sub-sti-tut-ing into the Re-verse Tran-si-tion.[
+] \T1/lmr/m/n/10.95 (-20) Sub-sti-tut-ing equa-tions Equa-tion ([][]4.1.2[][])
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.78468pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.78468pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-12.38469pt}.
+
+[119]
+Overfull \hbox (1.01869pt too wide) in paragraph at lines 1406--1408
+\T1/lmr/m/n/10.95 (-20) The ad-di-tional term $\OMS/lmsy/m/n/10.95 k\OML/lmm/m/
+it/10.95 g[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (
+-20) )^^A\OML/lmm/m/it/10.95 t\OMS/lmsy/m/n/10.95 r[] [] \OML/lmm/m/it/10.95 p[
+]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x[]\OT1/lmr/m/n/10.95 (-20
+) )\OMS/lmsy/m/n/10.95 k[]$ \T1/lmr/m/n/10.95 (-20) from com-plet-ing the squar
+e is $\OMS/lmsy/m/n/10.95 O\OT1/lmr/m/n/10.95 (-20) ((^^A\OML/lmm/m/it/10.95 t\
+OT1/lmr/m/n/10.95 (-20) )[])$
+[120]) (./Chapter-4-Flow-Based-Perspective-From-NFs-to-Flow-Matching.tex
+[121]
+Chapter 5.
+[122] [123]
+Underfull \vbox (badness 2277) has occurred while \output is active [124 <./Ima
+ges/PartB/flow_density.pdf>] [125] [126]
+Overfull \hbox (9.0443pt too wide) in paragraph at lines 252--253
+[]\T1/lmr/m/n/10.95 (-20) This for-mu-la-tion, in-deed, cor-re-sponds to the Eu
+-ler dis-cretiza-tion of the continuous-
+[127 <./Images/PartB/discrete_vs_continuous_side_by_side_white.pdf>]
+Underfull \vbox (badness 1448) has occurred while \output is active [128]
+[129 <./Images/PartB/cov_2d_layers.pdf>] [130] [131] [132] [133 <./Images/PartB
+/data_vs_prior_cone_with_oval.pdf>] [134 <./Images/PartB/four_panel_simple.pdf>
+] [135] [136] [137] [138]
+Underfull \vbox (badness 1983) has occurred while \output is active [139 <./Ima
+ges/PartB/flow_matching_conditional.pdf>] [140] [141] [142] [143] [144]
+[145] [146] [147 <./Images/PartB/triptych_gray_cones_final.pdf>] [148] [149]
+[150]
+Overfull \hbox (4.95784pt too wide) in paragraph at lines 1170--1171
+[] [] \T1/lmss/bx/n/10.95 (-20) Two-Sided Con-di-tion-ing ($\OT1/lmr/bx/n/10.95
+ (-20) z = (x[]\OML/lmm/b/it/10.95 ; \OT1/lmr/bx/n/10.95 (-20) x[])$\T1/lmss/bx
+/n/10.95 (-20) ).[] \T1/lmr/m/n/10.95 (-20) The same tem-plate with $\OML/lmm/b
+/it/10.95 ^^V[]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x[]\OML/lmm/
+m/it/10.95 ; \OT1/lmr/bx/n/10.95 (-20) x[]\OT1/lmr/m/n/10.95 (-20) ) =
+[151] [152]
+Underfull \hbox (badness 4872) in paragraph at lines 1208--1208
+[]|\T1/lmr/m/n/7 (+20) Convenient when $\OML/lmm/m/it/7 p[]\OT1/lmr/m/n/7 (+20)
+ (\OMS/lmsy/m/n/7 ^^Aj\OT1/lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) )$ \T1/lmr/m/
+n/7 (+20) is Gaus-sian /
+
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1209
+[]|\T1/lmr/m/n/7 (+20) Given $\OT1/lmr/bx/n/7 (+20) 	[]\OT1/lmr/m/n/7 (+20) (\O
+MS/lmsy/m/n/7 ^^Aj\OT1/lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) )$\T1/lmr/m/n/7 (
++20) , both $\OML/lmm/m/it/7 p[]\OT1/lmr/m/n/7 (+20) (\OMS/lmsy/m/n/7 ^^Aj\OT1/
+lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) ) =
+
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1209
+\OT1/lmr/m/n/7 (+20) (\OT1/lmr/bx/n/7 (+20) 	[]\OT1/lmr/m/n/7 (+20) (\OMS/lmsy/
+m/n/7 ^^Aj\OT1/lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) ))[]\OML/lmm/m/it/7 p[]$ 
+\T1/lmr/m/n/7 (+20) and $\OT1/lmr/bx/n/7 (+20) v[]\OT1/lmr/m/n/7 (+20) (\OMS/lm
+sy/m/n/7 ^^Aj\OT1/lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) )$ \T1/lmr/m/n/7 (+20)
+ are de-ter-
+
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1215
+\T1/lmr/m/n/7 (+20) easy bound-ary con-trol; ac-com-mo-dates
+
+Overfull \hbox (4.65683pt too wide) in paragraph at lines 1205--1215
+ [] 
+[153] [154] [155 <./Images/PartB/straightness_counterexample.pdf>] [156]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1406 \State
+              \textbfs{Pre-Train Diffusion.} Fit $\rvv_{\bphi^\times}$ on th...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1411 \State
+              \textbfs{Rectify.} Sample $\rvz_0 \sim p_{\text{src}}$ and int...
+[157] [158] [159] [160 <./Images/PartB/rectified_flow_trained.pdf>] [161])
+(./Chapter-5-They-Are-All-Equivalent.tex [162]
+Chapter 6.
+[163] [164] [165] [166] [167] [168] [169]
+Overfull \hbox (7.82498pt too wide) in paragraph at lines 313--314
+[]\T1/lmr/m/n/10.95 (-20) Prediction types of $[][]$ and their as-so-ci-ated re
+-gres-sion tar-gets $[][]$; 
+[170] (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmtt.fd) [171{/usr/lo
+cal/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}] [172] [173]
+[174] [175]
+Underfull \vbox (badness 10000) has occurred while \output is active [176]
+[177] [178] [179] [180] [181] [182] [183]
+Underfull \vbox (badness 1874) has occurred while \output is active [184]
+[185] [186] [187] [188] [189]) (./Chapter-4-plus-OT-and-Diffusion-Model.tex
+[190]
+Chapter 7.
+
+Overfull \hbox (7.4983pt too wide) in paragraph at lines 13--24
+\T1/lmr/m/n/10.95 (-20) trans-port, and Schrödinger bridges as for-mu-la-tions 
+of the dis-tri-bu-tion^^Uto^^Udistribution
+[191]
+Underfull \vbox (badness 10000) detected at line 59
+[192] [193] [194 <./Images/PartB/ot_2d_coupling_comparison.pdf>] [195] [196]
+[197 <./Images/PartB/ot_illustration.pdf>] [198] [199] [200]
+Underfull \vbox (badness 1253) has occurred while \output is active [201 <./Ima
+ges/PartB/sb_illustration.pdf>] [202]
+Overfull \hbox (3.07677pt too wide) in paragraph at lines 557--559
+\T1/lmr/m/n/10.95 (-20) In the reverse-time stochas-tic con-trol for-mu-la-tion
+ of Equa-tion ([][]7.2.8[][])(same quadratic
+[203] [204] [205] [206] [207 <./Images/PartB/eot_epsilon_interpolation.pdf>]
+[208] [209] [210] [211] [212] [213] [214] [215] [216 <./Images/PartB/pfode_vs_o
+t_2d.pdf>] [217] [218] [219]
+Underfull \vbox (badness 10000) has occurred while \output is active [220]
+[221] [222] [223] [224]) [225] (./Part-C-D-diagram.tex)
+(./Chapter-6-Guidance.tex [226]
+Chapter 8.
+[227] [228 <./Images/PartC/guidance.pdf>] [229] [230] [231] [232] [233]
+[234] [235 <./Images/PartB/classifier_guidance_v2.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.463       \Repeat
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.464         \State
+                     $\rvx \sim p_{\text{data}}(\rvx)$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.465         \State
+                     $t \sim \mathcal{U}[0, T]$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.466         \State
+                     $\bm{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.467         \State
+                     $\rvx_t = \alpha_t \rvx + \sigma_t \bm{\epsilon}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.468         \State
+                     Take gradient step on:
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.470       \Until
+                  {converged}
+Underfull \hbox (badness 4479) in paragraph at lines 481--482
+[][]$\OML/lmm/m/it/10 p[]$\T1/lmr/m/n/10 (+20) : prob. of un-con-di-tional
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.482       \Repeat
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.483         \State
+                     \textcolor{orange}{$(\rvx, \rvc) \sim p_{\text{data}}(\...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.484         \State
+                     \textcolor{orange}{$\rvc \gets \emptyset$ with prob. $p...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.485         \State
+                     $t \sim \mathcal{U}[0, T]$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.486         \State
+                     $\bm{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.487         \State
+                     $\rvx_t = \alpha_t \rvx + \sigma_t \bm{\epsilon}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.488         \State
+                     Take gradient step on:
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.490       \Until
+                  {converged}
+Underfull \vbox (badness 1824) has occurred while \output is active [236]
+[237] [238] [239] [240] [241] [242] [243] [244]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[245] [246]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[247] [248]
+Overfull \hbox (13.97963pt too wide) in paragraph at lines 1063--1065
+\T1/lmr/m/n/10.95 (-20) where $\OML/lmm/m/it/10.95 ^^Y[]\OT1/lmr/m/n/10.95 (-20
+) (\OT1/lmr/bx/n/10.95 (-20) x\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (-20) c\
+OT1/lmr/m/n/10.95 (-20) ) := \OML/lmm/m/it/10.95 p[]\OT1/lmr/m/n/10.95 (-20) (\
+OT1/lmr/bx/n/10.95 (-20) x\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (-20) c\OT1/
+lmr/m/n/10.95 (-20) )$\T1/lmr/m/n/10.95 (-20) , and $\OML/lmm/m/it/10.95 Z\OT1/
+lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) c\OT1/lmr/m/n/10.95 (-20) )$ \T1
+/lmr/m/n/10.95 (-20) is the par-ti-tion func-tion en-sur-ing $[] \OML/lmm/m/it/
+10.95 ^^Y[]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x\OMS/lmsy/m/n/1
+0.95 j\OT1/lmr/bx/n/10.95 (-20) c\OT1/lmr/m/n/10.95 (-20) ) []  d\OT1/lmr/bx/n/
+10.95 (-20) x \OT1/lmr/m/n/10.95 (-20) =
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[249] [250]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[251] [252]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[253] [254]) (./Chapter-7-Sophisticated-Solvers-for-Fast-Sampling.tex [255]
+Chapter 9.
+[256]
+Overfull \hbox (8.45221pt too wide) in paragraph at lines 24--26
+[]\T1/lmr/m/n/10.95 (-20) Concretely, sup-pose we have a pre-trained dif-fu-sio
+n model $\OT1/lmr/bx/n/10.95 (-20) s[]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/1
+0.95 (-20) x\OML/lmm/m/it/10.95 ; t\OT1/lmr/m/n/10.95 (-20) ) \OMS/lmsy/m/n/10.
+95 ^^Y r[] [] \OML/lmm/m/it/10.95 p[]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10
+.95 (-20) x\OT1/lmr/m/n/10.95 (-20) )$
+[257]
+Overfull \hbox (1.7571pt too wide) in paragraph at lines 94--96
+\T1/lmr/m/n/10.95 (-20) vates spe-cial-ized in-te-gra-tors (see dis-cus-sion ne
+ar Equa-tion ([][]9.1.6[][]) be-low) ([]Hochbruck
+[258] [259] [260]
+Overfull \hbox (5.58119pt too wide) in paragraph at lines 236--237
+\T1/lmr/m/n/10.95 (-20) fam-ily, in-clud-ing DPM-Solver ([]Lu \T1/lmr/m/it/10.9
+5 (-20) et al.\T1/lmr/m/n/10.95 (-20) , [][]2022b[][]) (Sec-tion [][]9.4[][]), 
+and DPM-Solver\T1/lmtt/m/n/10.95 ++ \T1/lmr/m/n/10.95 (-20) ([]Lu
+[261] [262] [263] [264]
+Underfull \vbox (badness 10000) has occurred while \output is active [265]
+[266]
+Underfull \vbox (badness 10000) has occurred while \output is active [267 <./Im
+ages/PartB/Euler.pdf>] [268] [269] [270] [271]
+Overfull \hbox (5.26273pt too wide) in paragraph at lines 744--746
+\T1/lmr/m/n/10.95 (-20) This con-struc-tion re-moves any de-pen-dence on the fo
+r-ward one-step ker-nel $\OML/lmm/m/it/10.95 p\OT1/lmr/m/n/10.95 (-20) (\OT1/lm
+r/bx/n/10.95 (-20) x[]\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (-20) x[]\OT1/lm
+r/m/n/10.95 (-20) )$
+[272] [273] [274] [275] [276] [277]
+Underfull \vbox (badness 4001) has occurred while \output is active [278]
+[279 <./Images/PartC/DEIS.pdf>] [280]
+Overfull \hbox (26.71896pt too wide) in paragraph at lines 1486--1490
+\T1/lmr/m/n/10.95 (-20) where $\OML/lmm/m/it/10.95 `[]$ \T1/lmr/m/n/10.95 (-20)
+ is the La-grange ba-sis of de-gree $\OML/lmm/m/it/10.95 i[]\OT1/lmr/m/n/10.95 
+(-20) 1$ \T1/lmr/m/n/10.95 (-20) built on the nodes at time $\OMS/lmsy/m/n/10.9
+5 f\OML/lmm/m/it/10.95 t[]; t[]; [] ; t[]\OMS/lmsy/m/n/10.95 g$\T1/lmr/m/n/10.9
+5 (-20) .
+[281] [282]
+Overfull \hbox (5.46278pt too wide) in paragraph at lines 1576--1577
+\T1/lmr/m/n/10.95 (-20) The DPM-Solver fam-ily, in-clud-ing DPM-Solver ([]Lu \T
+1/lmr/m/it/10.95 (-20) et al.\T1/lmr/m/n/10.95 (-20) , [][]2022b[][]), DPM-Solv
+er\T1/lmtt/m/n/10.95 ++ \T1/lmr/m/n/10.95 (-20) ([]Lu
+[283]
+Underfull \vbox (badness 3302) has occurred while \output is active [284]
+Overfull \hbox (7.00385pt too wide) in paragraph at lines 1659--1660
+[] []\T1/lmss/bx/n/10.95 (-20) In-tu-ition of Why Repa-ram-e-ter-ize Time?[] \T
+1/lmr/m/n/10.95 (-20) For strictly mono-tone $\OML/lmm/m/it/10.95 ^^U\OT1/lmr/m
+/n/10.95 (-20) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (-20) )$\T1/lmr/m/n/10.
+95 (-20) , the first^^Uorder
+[285]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 1741.
+
+[286] [287]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1833         \State
+                      $\tilde\rvx_{t_0}\gets\rvx_T$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1834         \For
+                   {$i\gets 1$ to $M$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1835         \State
+                      $h_i \gets \lambda_{t_i} - \lambda_{t_{i-1}}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1836         \State
+                      $s_{i}^{\text{mid}} \gets t_{\lambda}\left(\tfrac{\lam...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1837         \State
+                     
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1839     \State
+                   $\tilde\rvx_{t_{i}} \gets \tfrac{\alpha_{t_{i}}}{\alpha_{...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1840         \EndFor
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1841         \State
+                      \Return $\tilde\rvx_{t_M}$ [288]
+Underfull \vbox (badness 2418) has occurred while \output is active [289]
+[290] [291] [292 <./Images/PartC/Heun.pdf>] [293] [294] [295]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2192     \State
+                  $\tilde\rvx_{t_0}\gets\rvx_T$;\quad $\lambda_{t_i}\gets \l...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2193     \State
+                  $\hat\rvx_0 \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx_{t_...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2194     \For
+               {$i\gets 1$ \textbf{to} $M$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2195         \State
+                      $h_i \gets \lambda_{t_i}-\lambda_{t_{i-1}}$;\quad $s_i...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2196         \State
+                      $\rvu_i \gets \tfrac{\sigma_{s_i^{\text{mid}}}}{\sigma...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2198         \State
+                      $\rmD_i^{\mathrm{mid}} \gets \hat{\rvx}_{\bphi^\times}...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2199         \State
+                      $\tilde\rvx_{t_i} \gets \tfrac{\sigma_{t_i}}{\sigma_{t...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2201         \State
+                      $\hat\rvx_i \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2202     \EndFor
+                   [296] [297] [298]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2372     \State
+                  $\tilde\rvx_{t_0}\gets\rvx_T$;\quad $\lambda_{t_i}\gets \l...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2373     \State
+                  $\hat\rvx_0 \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx_{t_...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2375     \State
+                  $\tilde\rvx_{t_1} \gets \tfrac{\sigma_{t_1}}{\sigma_{t_0}}...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2377     \State
+                  $\hat\rvx_1 \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx_{t_...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2379     \For
+               {$i\gets 2$ \textbf{to} $M$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2380         \State
+                      $r_i \gets h_i/h_{i-1}$ \Comment step ratio
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2381         \State
+                      $\rmD_i^{\mathrm{sim}} \gets \Big(1+\tfrac12 r_i\Big)\...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2382         \State
+                      $\tilde\rvx_{t_i} \gets \tfrac{\sigma_{t_i}}{\sigma_{t...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2384         \State
+                      $\hat\rvx_i \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2385     \EndFor
+                   [299] [300] [301]
+Overfull \hbox (21.52835pt too wide) in paragraph at lines 2448--2451
+[]\T1/lmr/m/n/10.95 (-20) We high-light two rep-re-sen-ta-tive ex-am-ples in Ta
+-ble [][]9.1[][]: the DDIM and DPM^^USolver^^U2
+[302] [303] [304]
+Overfull \hbox (5.70105pt too wide) in paragraph at lines 3108--3109
+[]\T1/lmr/m/n/10.95 (-20) In this sec-tion, we turn to the \T1/lmr/m/it/10.95 (
+-20) time^^Uparallel \T1/lmr/m/n/10.95 (-20) ap-proach, ex-em-pli-fied by \T1/l
+mr/m/it/10.95 (-20) ParaDiGMS\T1/lmr/m/n/10.95 (-20) ,
+[305] [306]
+Underfull \hbox (badness 1515) in paragraph at lines 3220--3220
+\T1/lmr/m/n/9 (+20) ward, based on the er-ror
+[307 <./Images/PartC/paradigm-1.pdf> <./Images/PartC/paradigm-2.pdf
+
+pdfTeX warning: pdflatex (file ./Images/PartC/paradigm-2.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+> <./Images/PartC/paradigm-3.pdf
+
+pdfTeX warning: pdflatex (file ./Images/PartC/paradigm-3.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>]
+Overfull \hbox (19.12971pt too wide) in paragraph at lines 3261--3264
+[] [] \T1/lmss/bx/n/10.95 (-20) Step 3. Progress Con-trol and Win-dow Ad-vance.
+[] \T1/lmr/m/n/10.95 (-20) Hav-ing formed the left^^Uanchored
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3310     \State
+                  $k \gets 0$, $\ell \gets 0$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3311     \State
+                  Sample $\rvx^{(0)}_0 \sim p_{\mathrm{prior}}$; set $\rvx^{...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3312     \While
+                 {$\ell < M$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3313       \State
+                    $J \gets \min(p,  M-\ell)$   \Comment{current window len...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3314       \State
+                    \textbfs{Step 1: Parallel}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3315       \State
+                    For $i=0,\ldots,J-1$: $g_i \gets \rvv_{\bphi^\times} \bi...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3317       \State
+                    Compute prefix sums $S_j \gets \sum_{i=0}^{j} g_i$ for $...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3319       \State
+                    \textbfs{Step 2: Cumulative Updates}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3320       \State
+                    For $j=0,\ldots,J-1$: $\displaystyle \rvx^{(k+1)}_{\ell+...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3322       \State
+                    \textbfs{Step 3: Progress Control and Window Advance}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3323       \State
+                    For $j=1,\ldots,J-1$: $\mathtt{error}_j \gets \big\|\rvx...
+[308] [309] [310] [311]) [312]
+(./Chapter-8-Post-Training-Methods-for-Fast-Sampling.tex
+Chapter 10.
+[313] [314] [315] [316] [317] [318] [319] [320]
+Overfull \hbox (11.47522pt too wide) in paragraph at lines 397--400
+[] []\T1/lmss/bx/n/10.95 (-20) VSD for 3D Gen-er-a-tion Us-ing Only a 2D pre--t
+rained Dif-fu-sion Model.[] \T1/lmr/m/n/10.95 (-20) VSD ([]Wang
+[321]
+Overfull \hbox (9.2261pt too wide) in paragraph at lines 464--465
+\T1/lmr/m/n/10.95 (-20) In this sec-tion, we fix DDIM in the $\OT1/lmr/bx/n/10.
+95 (-20) x$\T1/lmr/m/n/10.95 (-20) -prediction pa-ram-e-ter-i-za-tion as the ti
+me^^Ustepping
+[322 <./Images/PartD/PD.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active [323]
+[324] [325] [326] [327] [328])
+(./Chapter-9-Learning-Fast-Generator-from-Scratch.tex
+Chapter 11.
+[329] [330] [331] [332 <./Images/PartD/flow-map.pdf>] [333]
+Underfull \vbox (badness 3158) has occurred while \output is active [334]
+[335] [336 <./Images/PartD/semigroup.pdf>] [337] [338] [339]
+Underfull \vbox (badness 3895) has occurred while \output is active [340]
+Overfull \hbox (2.2714pt too wide) in paragraph at lines 611--614
+\T1/lmr/m/n/10.95 (-20) and use the neu-ral net-work pa-ram-e-ter-i-za-tion pro
+-posed therein (cf. Equa-tion ([][]D.6.1[][])): 
+[341]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.667         \If
+                 {one-step}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.668             \State
+                         $\rvx \leftarrow \rvf_{\bm{\theta}^\times}(\hat{\rv...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.669         \Else
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.670             \State
+                         $\rvx \leftarrow \rvf_{\bm{\theta}^\times}(\hat{\rv...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.671             \For
+                      {$m=1$ \textbf{to} $M-1$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.672                 \State
+                             Sample $\bm{\epsilon} \sim \mathcal{N}(\bm{0}, ...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.673                 \State
+                             $\hat{\rvx}_{\tau_m} \leftarrow \alpha_{\tau_m}...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.674                 \State
+                             $\rvx \leftarrow \rvf_{\bm{\theta}^\times}(\hat...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.675             \EndFor
+                         
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.676         \EndIf
+                     [342] [343] [344] [345]
+Overfull \hbox (3.5047pt too wide) in paragraph at lines 881--885
+\T1/lmr/m/n/10.95 (-20) We de-note the re-sult-ing ob-jec-tive as $\OMS/lmsy/m/
+n/10.95 L[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/b/it/10.95 ^^R\OML/lmm/m/it/10.95
+ ; \OML/lmm/b/it/10.95 ^^R[]\OT1/lmr/m/n/10.95 (-20) ; \OML/lmm/b/it/10.95 ^^^[
+]\OT1/lmr/m/n/10.95 (-20) )$\T1/lmr/m/n/10.95 (-20) . Ac-cord-ingly, Propo-si-t
+ion [][]11.3.1[][]
+[346] [347] [348] [349] [350]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1148 \State
+              \textbfs{Init:} $\bm{\theta} \gets \bm{\theta}_{\text{pretrain...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1149 \Repeat
+              
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1150     \State
+                  $\rvx_0 \sim \mathcal{D}$, $\mathbf{z} \sim \mathcal{N}(\b...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1151     \State
+                  $\rvx_s \gets \cos(s) \rvx_0 + \sin(s) \mathbf{z}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1152     \If
+              {consistency training}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1153         \State
+                      $\frac{\diff\rvx_s}{\diff s} \gets \cos(s) \mathbf{z} ...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1154     \Else
+                
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1155         \State
+                      $\frac{\diff\rvx_s}{\diff s} \gets \sigma_{\mathrm{d}}...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1156     \EndIf
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1157     \State
+                  $r \gets \min\left(1, \frac{\text{Iters}}{H}\right)$ \hfil...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1158     \State
+                  $\rvw \gets - \cos^2(s) (\sigma_{\mathrm{d}} \mathbf{F}_{\...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1159     \State
+                  $\rvw \gets \frac{\rvw}{\|\rvw\| + c}$ \hfill \Comment{ Ta...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.13})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1160     \State
+                  $\mathcal{L}_{\text{sCM}}(\bm{\theta}, \boldsymbol{\varphi...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.14})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1162     \State
+                  $(\bm{\theta}, \boldsymbol{\varphi}) \gets (\bm{\theta}, \...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.15})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1163     \State
+                  Iters $\gets$ Iters + 1
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.16})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1164 \Until
+             {convergence} [351] [352] [353] [354] [355] [356] [357 <./Images/P
+artD/ctm-target.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1628     \State
+                  Start from $\mathbf{x}_{\tau_{0}}\sim p_{\mathrm{prior}}=\...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1629         \For
+                   {$n=0$ to $M-1$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1630         \State
+                      $\tilde{\tau}_{n+1}\leftarrow \sqrt{1-\gamma^{2}}\tau_...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1631         \State
+                      Denoise $\mathbf{x}_{\tilde{\tau}_{n+1}}\leftarrow \ma...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1632         \State
+                      Diffuse $\mathbf{x}_{\tau_{n+1}}\leftarrow\mathbf{x}_{...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1633         \EndFor
+                      
+Underfull \vbox (badness 3460) has occurred while \output is active [358]
+[359 <./Images/PartD/ctm_gamma.pdf>] [360] [361] [362] [363] [364] [365]
+[366] [367] [368 <./Images/PartD/lagrangian-1.pdf> <./Images/PartD/lagrangian-2
+.pdf
+
+pdfTeX warning: pdflatex (file ./Images/PartD/lagrangian-2.pdf): PDF inclusion:
+ multiple pdfs with page group included in a single page
+>] [369 <./Images/PartD/eulerian-1.pdf> <./Images/PartD/eulerian-2.pdf
+
+pdfTeX warning: pdflatex (file ./Images/PartD/eulerian-2.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>]
+Overfull \hbox (22.80934pt too wide) detected at line 2146
+\OT1/lmr/bx/n/10.95 	[]\OT1/lmr/m/n/10.95 (\OT1/lmr/bx/n/10.95 x[]\OT1/lmr/m/n/
+10.95 ) = \OT1/lmr/bx/n/10.95 	[]\OT1/lmr/m/n/10.95 (\OT1/lmr/bx/n/10.95 x[]\OT
+1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OT1/lmr/m/n/10.95 ^^A\OML/lmm/m/it/1
+0.95 s []@[]\OT1/lmr/bx/n/10.95 	[][]\OT1/lmr/m/n/10.95 (\OT1/lmr/bx/n/10.95 x[
+]\OT1/lmr/m/n/10.95 )\OT1/lmr/bx/n/10.95 v[]\OT1/lmr/m/n/10.95 (\OT1/lmr/bx/n/1
+0.95 x[]\OML/lmm/m/it/10.95 ; s\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OT
+1/lmr/m/n/10.95 ^^A\OML/lmm/m/it/10.95 s @[]\OT1/lmr/bx/n/10.95 	[]\OT1/lmr/m/n
+/10.95 (\OT1/lmr/bx/n/10.95 x[]\OT1/lmr/m/n/10.95 ) + \OMS/lmsy/m/n/10.95 O[]\O
+T1/lmr/m/n/10.95 (^^A\OML/lmm/m/it/10.95 s\OT1/lmr/m/n/10.95 )[][]\OML/lmm/m/it
+/10.95 :
+[370] [371]) [372] (./Chapter-10-Epilogue-and-Outlook.tex
+Chapter 12.
+[373] [374] [375 <./Images/appendix/vector_field_only.pdf> <./Images/appendix/p
+article_cloud.pdf> <./Images/appendix/vector_field_with_density.pdf>] [376]
+[377] [378] [379] [380] [381 <./Images/PartE/fig_notation_overview.pdf>]
+[382] [383] [384 <./Images/PartE/ctmc_trajectory.pdf>] [385] [386 <./Images/Par
+tE/masked_vs_uniform_diffusion.pdf>] [387] [388] [389]
+Overfull \hbox (3.32158pt too wide) in paragraph at lines 771--779
+[]\T1/lmr/m/n/10.95 (-20) This clean-state parametriza-tion is com-mon in multi
+nomial/D3PM-style discrete-
+[390]
+Overfull \hbox (5.91972pt too wide) in paragraph at lines 835--842
+[] [] \T1/lmss/bx/n/10.95 (-20) The Ra-tio as a Dis-crete Ana-logue of the Scor
+e.[] \T1/lmr/m/n/10.95 (-20) Now in-spect Equa-tion ([][]12.2.7[][]).
+[391] [392] [393]
+Underfull \hbox (badness 1742) in paragraph at lines 970--971
+[]|\T1/lmr/m/n/7 (+20) Transition-matrix prop-a-ga-tion or mas-ter
+
+Overfull \hbox (4.64502pt too wide) in paragraph at lines 951--1003
+ [][] 
+[394] [395] [396]) [397] (./A_Crash-Course-of-DE.tex [398]
+Appendix A.
+[399] [400 <./Images/PartE/discrete_vs_continuous_ode.pdf>] [401] [402]
+[403] [404] [405] [406] [407] [408] [409]
+Overfull \hbox (1.79828pt too wide) in paragraph at lines 368--369
+[] []\T1/lmss/bx/n/10.95 (-20) Stochas-tic Dif-fer-en-tial Equa-tions.[] \T1/lm
+r/m/n/10.95 (-20) For-mally, the limit of the dis-crete up-date Equa-
+[410] [411] [412]) (./B_Continuity-Equation.tex [413]
+Appendix B.
+[414]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 87.
+
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[415] [416]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[417] [418]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[419] [420]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[421] [422]
+Overfull \hbox (7.89894pt too wide) detected at line 443
+[]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[423] [424] [425] [426] [427]
+Overfull \hbox (7.09067pt too wide) in paragraph at lines 699--704
+[]\T1/lmr/m/n/10.95 (-20) Throughout this op-tional sec-tion, $\OML/lmm/m/it/10
+.95 ^^\$ \T1/lmr/m/n/10.95 (-20) de-notes \T1/lmr/m/it/10.95 (-20) train-ing ti
+me\T1/lmr/m/n/10.95 (-20) : an ide-al-ized continuous-
+[428] [429] [430] [431] [432]) (./C_SDE-and-Ito.tex
+Appendix C.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 1.
+
+[433]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[434] [435]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[436] [437]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[438] [439]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[440] [441]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[442] [443]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[444]) (./D_Proofs.tex [445]
+Appendix D.
+[446] [447]
+Overfull \hbox (10.24936pt too wide) detected at line 198
+[]
+
+Overfull \hbox (15.41023pt too wide) detected at line 212
+[]
+[448] [449] [450] [451] [452] [453] [454] [455] [456]
+Overfull \hbox (32.47647pt too wide) detected at line 695
+[]
+[457] [458] [459] [460] [461] [462] [463] [464] [465] [466] [467] [468]
+[469] [470] [471]) [472] [473] [474] [475] [476] [477] [478] [479] [480]
+[481] [482]
+Overfull \hbox (1.82469pt too wide) in paragraph at lines 466--466
+[][]\T1/lmr/m/n/10.95 (-20) Sun, H., L. Yu, B. Dai, D. Schu-ur-mans, and H. Dai
+. (2023). ^^P  Score-based Continuous-
+[483] [484]
+Overfull \hbox (7.02348pt too wide) in paragraph at lines 466--466
+\T1/lmr/m/n/10.95 (-20) free energy-guided con-di-tional dif-fu-sion model^^Q. 
+In: \T1/lmr/m/it/10.95 (-20) Pro-ceed-ings of the IEEE/CVF
+[485] 
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(build/main_v2.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/local/texlive/2026/te
+xmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2026/texmf-dist/
+fonts/type1/public/lm/lmbsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type
+1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/l
+m/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx5.pf
+b></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/loc
+al/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/
+2026/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2026/texmf-
+dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/
+type1/public/lm/lmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pub
+lic/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmm
+i10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></u
+sr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/te
+xlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/
+texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/
+fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
+/public/lm/lmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/l
+m/lmmib5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmib7.p
+fb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/lo
+cal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/
+2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-d
+ist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/ty
+pe1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/l
+m/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/loca
+l/texlive/2026/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/
+2026/texmf-dist/fonts/type1/public/lm/lmro8.pfb></usr/local/texlive/2026/texmf-
+dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts
+/type1/public/lm/lmss12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pub
+lic/lm/lmssbo10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/l
+mssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsso10.p
+fb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/l
+ocal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2026/texm
+f-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/font
+s/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pub
+lic/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk
+10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></u
+sr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/te
+xlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/local/texlive/202
+6/texmf-dist/fonts/type1/public/lm/lmtto10.pfb></usr/local/texlive/2026/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr/local/texlive/2026/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
+026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on build/main_v2.pdf (490 pages, 19029139 bytes).
+Transcript written on build/main_v2.log.
+Latexmk: Getting log file 'build/main_v2.log'
+Latexmk: Examining 'build/main_v2.fls'
+Latexmk: Examining 'build/main_v2.log'
+Latexmk: Found input bbl file 'build/main_v2.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'build/main_v2.pdf'
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Bibliography file(s) from .bcf file:
+  main_v2.bib
+Sources for biber
+  main_v2.bib
+  build/main_v2.bcf
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  build/main_v2.aux
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -file-line-error -recorder -output-directory="build"  "main_v2.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main_v2.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(./nowfnt-arxiv.cls
+
+LaTeX Warning: You have requested document class `nowfnt-arxiv',
+               but the document class provides `nowfnt'.
+
+Document Class: nowfnt 2021/10/12 v0.95d NOW document class
+(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(./NOWFnT-data.tex)
+
+Class nowfnt Warning: Unclear state. Remove the class option book or ebook or s
+ample on input line 129.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/bk11.clo))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpage.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpage2e.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpagemodern.sty) 
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/trimspaces/trimspaces.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/footmisc/footmisc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/dvipsnam.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdfpages/pppdftex.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/xr.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/emptypage/emptypage.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/lmodern.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmr.fd))
+(./nowfnt-biblatex.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-dm.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-compat.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-natbib.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/standard.bbx))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.cfg)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty)) (/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bkm-pdftex.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
+tered.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+meta.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.geometric.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.geometric.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/subcaption.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/jknapltx/mathrsfs.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/environ/environ.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.misc.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.misc.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.symbols.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.symbols.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.arrows.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.arrows.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.callouts.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.callouts.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarybackgrounds.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshadows.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfadings.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings
+.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/cancel/cancel.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mathtools/mhsetup.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/colortbl/colortbl.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/setspace/setspace.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/float/float.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/locale/en/babel-english.t
+ex) (/usr/local/texlive/2026/texmf-dist/tex/generic/babel-english/english.ldf))
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/mwe/mwe.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/blindtext/blindtext.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/xspace.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/adjustbox/adjcalc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/adjustbox/trimclip.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/collectbox/collectbox.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/adjustbox/tc-pdftex.def))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/varwidth/varwidth.sty)
+==> First Aid for varwidth.sty applied!
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/makecell/makecell.sty)
+(./annotate_eqs.sty
+
+LaTeX Warning: You have requested package `annotate_eqs',
+               but the package provides `annotate-equations'.
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifluatex.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tikzmark/tikzlibrarytikzmark.code
+.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarybabel.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfit.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/epigraph/epigraph.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/nextpage/nextpage.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/thmbox/thmbox.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.co
+de.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdfcol/pdfcol.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithms/algorithm.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/cleveref/cleveref.sty)
+==> First Aid for cleveref.sty applied!
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mdframed/mdframed.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/zref/zref-abspage.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/zref/zref-base.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/auxhook/auxhook.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/needspace/needspace.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mdframed/md-frame-1.mdf))
+(./math_commands.tex (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/bm.sty
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty))
+(./theorems.tex
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.9.0'
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/pifont.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/upzd.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/upsy.fd))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pstricks/pstricks.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/pst-xkey.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-fp.tex
+`pst-fp' v0.06, 2020/11/20 (hv))
+`PSTricks' v3.22A  <2025/12/13> (tvz,hv)
+--- We are running latex or xelatex ---
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks.con)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks-color.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks-arrows.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks-dots.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-grid.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-box.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-arc.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-circle_ellips
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-ref_rot.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-put.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-code-pspicture.tex
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pstricks.con))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks/pst-fp.tex
+`pst-fp' v0.06, 2020/11/20 (hv)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pstricks-add/pstricks-add.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-plot/pst-plot.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xkeyval/pst-xkey.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/multido/multido.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/multido/multido.tex
+ v1.42, 2010/05/14 <tvz>))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-plot/pst-plot.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-tools/pst-tools.tex
+`PST-tools' v0.12, 2021/09/23 (hv))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-node/pst-node.tex
+ v1.45, 2024/07/10)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-arrow/pst-arrow.tex
+`pst-arrow' v0.05, 2021/11/16 (dr,hv))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-3d/pst-3d.tex
+`PST-3d' v1.11, 2010/02/14 (tvz))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-math/pst-math.tex
+`pst-math' v0.67 , (CJ,hv)) `pstricks-add' v3.94, 2023/04/17 (dr,hv))
+ v1.94, 2022/11/21 (tvz,hv)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-node/pst-node.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-node/pst-node.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-3d/pst-3d.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-3d/pst-3d.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-math/pst-math.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pst-calculate/pst-calculate.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/siunitx/siunitx.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/translations/translations.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pst-math/pst-math.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex))
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/cjk-ko/kotex.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kotex-utf/kotex.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kotex-utf/kotexutf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/plain/kotex-plain/kotexutf-core.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kotex-utf/lucenc.dfu)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/cjk-ko/kolabels-utf.sty)))
+First name missing
+First name missing
+First name missing
+First name missing
+First name missing
+
+Package biblatex Warning: Load 'inputenc' before biblatex.
+
+
+Package csquotes Warning: Load 'inputenc' before 'csquotes' on input line 379.
+
+(build/main_v2.aux)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.st
+y (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/lscape.sty)))
+
+Package microtype Warning: Command \pickup@font is not defined as expected.
+(microtype)                Patching it anyway. Some things may break.
+(microtype)                Double-check whether micro-typography is indeed
+(microtype)                applied to the document.
+(microtype)                (Hint: Turn on `verbose' mode).
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/english.lbx)
+(build/main_v2.bbl)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/translations/translations-basic-d
+ictionary-english.trsl)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmss.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/jknapltx/ursfs.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
+(Font)              using `U/stmry/m/n' instead on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' in size <13> not available
+(Font)              size <12> substituted on input line 379.
+
+
+LaTeX Font Warning: Font shape `U/stmry/b/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 379.
+
+[1
+Non-PDF special ignored!
+<special> header=pstricks.pro
+Non-PDF special ignored!
+<special> header=pst-algparser.pro
+Non-PDF special ignored!
+<special> header=pst-tools.pro
+Non-PDF special ignored!
+<special> header=pst-dots.pro
+Non-PDF special ignored!
+<special> header=pst-node.pro
+Non-PDF special ignored!
+<special> header=pst-3d.pro
+Non-PDF special ignored!
+<special> header=pst-math.pro
+Non-PDF special ignored!
+<special> header=pstricks-add.pro
+Non-PDF special ignored!
+<special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] (build/main_v2.toc
+[2] [3] (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd) [4])
+[5] (./fnfix.tex) (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd)
+[1{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [2]
+(./Preface.tex [3] [4] [5] [6 <./Images/PartA/diffusion_forward_vs_reverse.pdf>
+] [7{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active [9]
+[10]) (./notations.tex [11]
+Underfull \vbox (badness 10000) has occurred while \output is active [12{/usr/l
+ocal/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texli
+ve/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Overfull \hbox (23.66492pt too wide) in paragraph at lines 86--86
+[]$\U/msb/m/n/10.95 E[]\OT1/lmr/bx/n/10.95 (-20) f\OT1/lmr/m/n/10.95 (-20) (\OT
+1/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) ) \OMS/lmsy/m/n/10.95 j \OT1/l
+mr/bx/n/10.95 (-20) z[]$\T1/lmr/m/n/10.95 (-20) ,  
+
+Overfull \hbox (42.28333pt too wide) in paragraph at lines 86--86
+\U/msb/m/n/10.95 E[][]\OT1/lmr/bx/n/10.95 (-20) f\OT1/lmr/m/n/10.95 (-20) (\OT1
+/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) )[]$  
+
+Underfull \vbox (badness 1603) has occurred while \output is active [13{/usr/lo
+cal/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]) [14] [15]
+(./Prologue-Deep-Generative-Modeling.tex
+Chapter 1.
+[16] [17] [18 <./Images/PartB/dgm-learning.pdf>]
+Overfull \hbox (1.45654pt too wide) in paragraph at lines 232--241
+\T1/lmr/m/n/10.95 (-20) It mea-sures the dis-crep-ancy be-tween the \T1/lmr/m/i
+t/10.95 (-20) score func-tions $\OMS/lmsy/m/n/10.95 r[] [] \OML/lmm/m/it/10.95 
+p\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) 
+)$ \T1/lmr/m/n/10.95 (-20) and $\OMS/lmsy/m/n/10.95 r[] [] \OML/lmm/m/it/10.95 
+q\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) 
+)$\T1/lmr/m/n/10.95 (-20) ,
+[19] [20] [21]
+
+LaTeX Warning: Float too large for page by 23.41594pt on input line 528.
+
+[22]
+Overfull \hbox (35.57693pt too wide) in paragraph at lines 744--745
+[] []\T1/lmss/bx/n/10.95 (-20) Nor-mal-iz-ing Flows.[] \T1/lmr/m/n/10.95 (-20) 
+Clas-sic flow-based mod-els, such as Nor-mal-iz-ing Flows (NFs) ([]Rezende
+[23] [24] [25]) [26] [27] [28] (./Part-B-diagram.tex)
+(./Chapter-1-Varational-Perspective-From-VAE-to-DDPM.tex [29]
+Chapter 2.
+[30] [31]
+Underfull \vbox (badness 6477) has occurred while \output is active [32]
+[33] [34] [35] [36] [37] [38] [39] [40] [41] [42 <./Images/PartB/vdm-forward.pd
+f>] [43 <./Images/PartB/vdm-backward.pdf>] [44 <./Images/PartB/ddpm_conditional
+_trick.pdf>] [45] [46] [47] [48] [49] [50] [51] [52 <./Images/PartB/diffusion-c
+lean.pdf>]) (./Chapter-2-Score-Based-Perspective-From-EBMs-to-NCSN.tex [53]
+Chapter 3.
+[54] [55 <./Images/PartB/ebm-graph.pdf>] [56] [57 <./Images/PartB/score_functio
+n_plot.pdf>] [58 <./Images/PartB/langevin_sampling.png>] [59] [60]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 495.
+
+
+Overfull \vbox (16.57092pt too high) detected at line 495
+
+Overfull \vbox (17.57092pt too high) detected at line 495
+
+Overfull \vbox (18.57092pt too high) detected at line 495
+
+Overfull \vbox (19.57092pt too high) detected at line 495
+
+Overfull \vbox (20.57092pt too high) detected at line 495
+
+Overfull \vbox (21.57092pt too high) detected at line 495
+
+Overfull \vbox (22.57092pt too high) detected at line 495
+
+Overfull \vbox (23.57092pt too high) detected at line 495
+
+Overfull \vbox (24.57092pt too high) detected at line 495
+
+Overfull \vbox (25.57092pt too high) detected at line 495
+
+Overfull \vbox (26.57092pt too high) detected at line 495
+
+Overfull \vbox (27.57092pt too high) detected at line 495
+
+Overfull \vbox (28.57092pt too high) detected at line 495
+
+Overfull \vbox (29.57092pt too high) detected at line 495
+
+Overfull \vbox (30.57092pt too high) detected at line 495
+
+Overfull \vbox (31.57092pt too high) detected at line 495
+
+Overfull \vbox (32.57092pt too high) detected at line 495
+
+Overfull \vbox (33.57092pt too high) detected at line 495
+
+Overfull \vbox (34.57092pt too high) detected at line 495
+
+Overfull \vbox (35.57092pt too high) detected at line 495
+
+Overfull \vbox (36.57092pt too high) detected at line 495
+
+Overfull \vbox (37.57092pt too high) detected at line 495
+
+Overfull \vbox (38.57092pt too high) detected at line 495
+
+Overfull \vbox (39.57092pt too high) detected at line 495
+
+Overfull \vbox (40.57092pt too high) detected at line 495
+
+Overfull \vbox (41.57092pt too high) detected at line 495
+
+Overfull \vbox (42.57092pt too high) detected at line 495
+
+Overfull \vbox (43.57092pt too high) detected at line 495
+
+Overfull \vbox (44.57092pt too high) detected at line 495
+
+Overfull \vbox (45.57092pt too high) detected at line 495
+
+Overfull \vbox (46.57092pt too high) detected at line 495
+
+Overfull \vbox (47.57092pt too high) detected at line 495
+
+Overfull \vbox (48.57092pt too high) detected at line 495
+
+Overfull \vbox (49.57092pt too high) detected at line 495
+
+Overfull \vbox (50.57092pt too high) detected at line 495
+
+Overfull \vbox (51.57092pt too high) detected at line 495
+
+Overfull \vbox (52.57092pt too high) detected at line 495
+
+Overfull \vbox (53.57092pt too high) detected at line 495
+
+Overfull \vbox (54.57092pt too high) detected at line 495
+
+Overfull \vbox (55.57092pt too high) detected at line 495
+
+Overfull \vbox (56.57092pt too high) detected at line 495
+
+Overfull \vbox (57.57092pt too high) detected at line 495
+
+Overfull \vbox (58.57092pt too high) detected at line 495
+
+Overfull \vbox (59.57092pt too high) detected at line 495
+
+Overfull \vbox (60.57092pt too high) detected at line 495
+
+Overfull \vbox (61.57092pt too high) detected at line 495
+
+Overfull \vbox (62.57092pt too high) detected at line 495
+
+Overfull \vbox (63.57092pt too high) detected at line 495
+
+Overfull \vbox (64.57092pt too high) detected at line 495
+
+Overfull \vbox (65.57092pt too high) detected at line 495
+
+Overfull \vbox (66.57092pt too high) detected at line 495
+
+Overfull \vbox (67.57092pt too high) detected at line 495
+
+Overfull \vbox (68.57092pt too high) detected at line 495
+
+Overfull \vbox (69.57092pt too high) detected at line 495
+
+Overfull \vbox (70.57092pt too high) detected at line 495
+
+Overfull \vbox (71.57092pt too high) detected at line 495
+
+Overfull \vbox (72.57092pt too high) detected at line 495
+
+Overfull \vbox (73.57092pt too high) detected at line 495
+
+Overfull \vbox (74.57092pt too high) detected at line 495
+
+Overfull \vbox (75.57092pt too high) detected at line 495
+
+Overfull \vbox (76.57092pt too high) detected at line 495
+
+Overfull \vbox (77.57092pt too high) detected at line 495
+
+Overfull \vbox (78.57092pt too high) detected at line 495
+
+Overfull \vbox (79.57092pt too high) detected at line 495
+
+Overfull \vbox (80.57092pt too high) detected at line 495
+
+Overfull \vbox (81.57092pt too high) detected at line 495
+
+Overfull \vbox (82.57092pt too high) detected at line 495
+
+Overfull \vbox (83.57092pt too high) detected at line 495
+
+Overfull \vbox (84.57092pt too high) detected at line 495
+
+Overfull \vbox (85.57092pt too high) detected at line 495
+
+Overfull \vbox (86.57092pt too high) detected at line 495
+
+Overfull \vbox (87.57092pt too high) detected at line 495
+
+Overfull \vbox (88.57092pt too high) detected at line 495
+
+Overfull \vbox (89.57092pt too high) detected at line 495
+
+Overfull \vbox (90.57092pt too high) detected at line 495
+
+Overfull \vbox (91.57092pt too high) detected at line 495
+
+Overfull \vbox (92.57092pt too high) detected at line 495
+
+Overfull \vbox (93.57092pt too high) detected at line 495
+
+Overfull \vbox (94.57092pt too high) detected at line 495
+
+Overfull \vbox (95.57092pt too high) detected at line 495
+
+Overfull \vbox (96.57092pt too high) detected at line 495
+
+Overfull \vbox (97.57092pt too high) detected at line 495
+
+Overfull \vbox (98.57092pt too high) detected at line 495
+
+Overfull \vbox (99.57092pt too high) detected at line 495
+
+Overfull \vbox (100.57092pt too high) detected at line 495
+
+Overfull \vbox (101.57092pt too high) detected at line 495
+
+Overfull \vbox (102.57092pt too high) detected at line 495
+
+Overfull \vbox (103.57092pt too high) detected at line 495
+
+Overfull \vbox (104.57092pt too high) detected at line 495
+
+Overfull \vbox (105.57092pt too high) detected at line 495
+
+Overfull \vbox (106.57092pt too high) detected at line 495
+
+Overfull \vbox (107.57092pt too high) detected at line 495
+
+Overfull \vbox (108.57092pt too high) detected at line 495
+
+Overfull \vbox (109.57092pt too high) detected at line 495
+
+Overfull \vbox (110.57092pt too high) detected at line 495
+
+Overfull \vbox (111.57092pt too high) detected at line 495
+
+Overfull \vbox (112.57092pt too high) detected at line 495
+
+Overfull \vbox (113.57092pt too high) detected at line 495
+
+Overfull \vbox (114.57092pt too high) detected at line 495
+
+Overfull \vbox (115.57092pt too high) detected at line 495
+
+Overfull \vbox (116.57092pt too high) detected at line 495
+
+Overfull \vbox (117.57092pt too high) detected at line 495
+
+Package mdframed Warning: correct box splittet fails
+ It seems you are using a non splittable contents
+(mdframed)                 on input line 495.
+
+[61 <./Images/PartB/score_function_approximation.pdf>] [62] [63] [64] [65]
+[66] [67] [68 <./Images/PartB/dsm-graph.pdf>]
+Overfull \hbox (24.70169pt too wide) in paragraph at lines 790--790
+\T1/lmr/m/n/10.95 (-20) The proof pro-ceeds by com-put-ing the score of the mar
+ginal $\OML/lmm/m/it/10.95 p\OT1/lmr/m/n/10.95 (-20) ([]) = [] \OML/lmm/m/it/10
+.95 p\OT1/lmr/m/n/10.95 (-20) ([]\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (-20)
+ x\OT1/lmr/m/n/10.95 (-20) )\OML/lmm/m/it/10.95 p[]\OT1/lmr/m/n/10.95 (-20) (\O
+T1/lmr/bx/n/10.95 (-20) x\OT1/lmr/m/n/10.95 (-20) ) []  d\OT1/lmr/bx/n/10.95 (-
+20) x$\T1/lmr/m/n/10.95 (-20) .
+[69] [70] [71]
+Overfull \hbox (13.39633pt too wide) in paragraph at lines 915--916
+[] []\T1/lmss/bx/n/10.95 (-20) Link to Tweedie's For-mula and Bayes Op-ti-mal-i
+ty.[] \T1/lmr/m/n/10.95 (-20) Let $\OML/lmm/m/it/10.95 p[]\OT1/lmr/m/n/10.95 (-
+20) ([]) = []\OML/lmm/m/it/10.95 p[] \OMS/lmsy/m/n/10.95 ^^C N\OT1/lmr/m/n/10.9
+5 (-20) (\OT1/lmr/bx/n/10.95 (-20) 0\OML/lmm/m/it/10.95 ; ^^[[]\OT1/lmr/bx/n/10
+.95 (-20) I\OT1/lmr/m/n/10.95 (-20) )[]([])$
+
+Overfull \hbox (12.46419pt too wide) in paragraph at lines 923--927
+\T1/lmr/m/n/10.95 (-20) Hence min-i-miz-ing the ex-pected SURE equals min-i-miz
+-ing the Bayes risk $\U/msb/m/n/10.95 E[][]\OMS/lmsy/m/n/10.95 k\OT1/lmr/bx/n/1
+0.95 (-20) D\OT1/lmr/m/n/10.95 (-20) ([]) \OMS/lmsy/m/n/10.95 ^^@
+[72] [73] [74] [75] [76 <./Images/PartB/score_function_acc.pdf>] [77 <./Images/
+PartB/ncsn-graph.pdf>] [78] [79] [80] [81])
+(./Chapter-3-Diffusion-Models-Today-Score-SDE-Framework.tex [82]
+Chapter 4.
+[83] [84 <./Images/PartB/score_landscape_2d.pdf>] [85] [86 <./Images/PartB/sde-
+forward-noise.pdf>]
+Overfull \hbox (11.15501pt too wide) in paragraph at lines 134--136
+[]\T1/lmr/m/n/10.95 (-20) With this for-mu-la-tion, ear-lier meth-ods based on 
+dis-crete time, such as NCSN ([]Song
+[87 <./Images/PartB/forward_sde_ode_trajectories.pdf>] [88] [89 <./Images/PartB
+/reverse_sde_and_ode_trajectories.pdf>] [90] [91] [92] [93]
+Underfull \vbox (badness 10000) has occurred while \output is active [94]
+
+LaTeX Warning: Text page 95 contains only floats.
+
+[95 <./Images/PartB/score_sde_three_dynamics.pdf>]
+Underfull \vbox (badness 3168) has occurred while \output is active [96]
+[97] [98] [99] [100] [101] [102 <./Images/PartB/denoising_score_matching.pdf>]
+[103]
+Underfull \vbox (badness 1642) has occurred while \output is active [104 <./Ima
+ges/PartB/sde_ode_trajectories.pdf>] [105] [106] [107] [108] [109] [110]
+[111 <./Images/PartB/vdm-sde.pdf>] [112]
+Underfull \vbox (badness 10000) has occurred while \output is active [113]
+[114] [115] [116]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 1256.
+
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.78468pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.78468pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-12.38469pt}.
+
+[117] [118]
+Overfull \hbox (0.69289pt too wide) in paragraph at lines 1374--1375
+[] []\T1/lmss/bx/n/10.95 (-20) Sub-sti-tut-ing into the Re-verse Tran-si-tion.[
+] \T1/lmr/m/n/10.95 (-20) Sub-sti-tut-ing equa-tions Equa-tion ([][]4.1.2[][])
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.78468pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.78468pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-12.38469pt}.
+
+[119]
+Overfull \hbox (1.01869pt too wide) in paragraph at lines 1406--1408
+\T1/lmr/m/n/10.95 (-20) The ad-di-tional term $\OMS/lmsy/m/n/10.95 k\OML/lmm/m/
+it/10.95 g[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (
+-20) )^^A\OML/lmm/m/it/10.95 t\OMS/lmsy/m/n/10.95 r[] [] \OML/lmm/m/it/10.95 p[
+]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x[]\OT1/lmr/m/n/10.95 (-20
+) )\OMS/lmsy/m/n/10.95 k[]$ \T1/lmr/m/n/10.95 (-20) from com-plet-ing the squar
+e is $\OMS/lmsy/m/n/10.95 O\OT1/lmr/m/n/10.95 (-20) ((^^A\OML/lmm/m/it/10.95 t\
+OT1/lmr/m/n/10.95 (-20) )[])$
+[120]) (./Chapter-4-Flow-Based-Perspective-From-NFs-to-Flow-Matching.tex
+[121]
+Chapter 5.
+[122] [123]
+Underfull \vbox (badness 2277) has occurred while \output is active [124 <./Ima
+ges/PartB/flow_density.pdf>] [125] [126]
+Overfull \hbox (9.0443pt too wide) in paragraph at lines 252--253
+[]\T1/lmr/m/n/10.95 (-20) This for-mu-la-tion, in-deed, cor-re-sponds to the Eu
+-ler dis-cretiza-tion of the continuous-
+[127 <./Images/PartB/discrete_vs_continuous_side_by_side_white.pdf>]
+Underfull \vbox (badness 1448) has occurred while \output is active [128]
+[129 <./Images/PartB/cov_2d_layers.pdf>] [130] [131] [132] [133 <./Images/PartB
+/data_vs_prior_cone_with_oval.pdf>] [134 <./Images/PartB/four_panel_simple.pdf>
+] [135] [136] [137] [138]
+Underfull \vbox (badness 1983) has occurred while \output is active [139 <./Ima
+ges/PartB/flow_matching_conditional.pdf>] [140] [141] [142] [143] [144]
+[145] [146] [147 <./Images/PartB/triptych_gray_cones_final.pdf>] [148] [149]
+[150]
+Overfull \hbox (4.95784pt too wide) in paragraph at lines 1170--1171
+[] [] \T1/lmss/bx/n/10.95 (-20) Two-Sided Con-di-tion-ing ($\OT1/lmr/bx/n/10.95
+ (-20) z = (x[]\OML/lmm/b/it/10.95 ; \OT1/lmr/bx/n/10.95 (-20) x[])$\T1/lmss/bx
+/n/10.95 (-20) ).[] \T1/lmr/m/n/10.95 (-20) The same tem-plate with $\OML/lmm/b
+/it/10.95 ^^V[]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x[]\OML/lmm/
+m/it/10.95 ; \OT1/lmr/bx/n/10.95 (-20) x[]\OT1/lmr/m/n/10.95 (-20) ) =
+[151] [152]
+Underfull \hbox (badness 4872) in paragraph at lines 1208--1208
+[]|\T1/lmr/m/n/7 (+20) Convenient when $\OML/lmm/m/it/7 p[]\OT1/lmr/m/n/7 (+20)
+ (\OMS/lmsy/m/n/7 ^^Aj\OT1/lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) )$ \T1/lmr/m/
+n/7 (+20) is Gaus-sian /
+
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1209
+[]|\T1/lmr/m/n/7 (+20) Given $\OT1/lmr/bx/n/7 (+20) 	[]\OT1/lmr/m/n/7 (+20) (\O
+MS/lmsy/m/n/7 ^^Aj\OT1/lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) )$\T1/lmr/m/n/7 (
++20) , both $\OML/lmm/m/it/7 p[]\OT1/lmr/m/n/7 (+20) (\OMS/lmsy/m/n/7 ^^Aj\OT1/
+lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) ) =
+
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1209
+\OT1/lmr/m/n/7 (+20) (\OT1/lmr/bx/n/7 (+20) 	[]\OT1/lmr/m/n/7 (+20) (\OMS/lmsy/
+m/n/7 ^^Aj\OT1/lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) ))[]\OML/lmm/m/it/7 p[]$ 
+\T1/lmr/m/n/7 (+20) and $\OT1/lmr/bx/n/7 (+20) v[]\OT1/lmr/m/n/7 (+20) (\OMS/lm
+sy/m/n/7 ^^Aj\OT1/lmr/bx/n/7 (+20) z\OT1/lmr/m/n/7 (+20) )$ \T1/lmr/m/n/7 (+20)
+ are de-ter-
+
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1215
+\T1/lmr/m/n/7 (+20) easy bound-ary con-trol; ac-com-mo-dates
+
+Overfull \hbox (4.65683pt too wide) in paragraph at lines 1205--1215
+ [] 
+[153] [154] [155 <./Images/PartB/straightness_counterexample.pdf>] [156]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1406 \State
+              \textbfs{Pre-Train Diffusion.} Fit $\rvv_{\bphi^\times}$ on th...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1411 \State
+              \textbfs{Rectify.} Sample $\rvz_0 \sim p_{\text{src}}$ and int...
+[157] [158] [159] [160 <./Images/PartB/rectified_flow_trained.pdf>] [161])
+(./Chapter-5-They-Are-All-Equivalent.tex [162]
+Chapter 6.
+[163] [164] [165] [166] [167] [168] [169]
+Overfull \hbox (7.82498pt too wide) in paragraph at lines 313--314
+[]\T1/lmr/m/n/10.95 (-20) Prediction types of $[][]$ and their as-so-ci-ated re
+-gres-sion tar-gets $[][]$; 
+[170] (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ot1lmtt.fd) [171{/usr/lo
+cal/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}] [172] [173]
+[174] [175]
+Underfull \vbox (badness 10000) has occurred while \output is active [176]
+[177] [178] [179] [180] [181] [182] [183]
+Underfull \vbox (badness 1874) has occurred while \output is active [184]
+[185] [186] [187] [188] [189]) (./Chapter-4-plus-OT-and-Diffusion-Model.tex
+[190]
+Chapter 7.
+
+Overfull \hbox (7.4983pt too wide) in paragraph at lines 13--24
+\T1/lmr/m/n/10.95 (-20) trans-port, and Schrödinger bridges as for-mu-la-tions 
+of the dis-tri-bu-tion^^Uto^^Udistribution
+[191]
+Underfull \vbox (badness 10000) detected at line 59
+[192] [193] [194 <./Images/PartB/ot_2d_coupling_comparison.pdf>] [195] [196]
+[197 <./Images/PartB/ot_illustration.pdf>] [198] [199] [200]
+Underfull \vbox (badness 1253) has occurred while \output is active [201 <./Ima
+ges/PartB/sb_illustration.pdf>] [202]
+Overfull \hbox (3.07677pt too wide) in paragraph at lines 557--559
+\T1/lmr/m/n/10.95 (-20) In the reverse-time stochas-tic con-trol for-mu-la-tion
+ of Equa-tion ([][]7.2.8[][])(same quadratic
+[203] [204] [205] [206] [207 <./Images/PartB/eot_epsilon_interpolation.pdf>]
+[208] [209] [210] [211] [212] [213] [214] [215] [216 <./Images/PartB/pfode_vs_o
+t_2d.pdf>] [217] [218] [219]
+Underfull \vbox (badness 10000) has occurred while \output is active [220]
+[221] [222] [223] [224]) [225] (./Part-C-D-diagram.tex)
+(./Chapter-6-Guidance.tex [226]
+Chapter 8.
+[227] [228 <./Images/PartC/guidance.pdf>] [229] [230] [231] [232] [233]
+[234] [235 <./Images/PartB/classifier_guidance_v2.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.463       \Repeat
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.464         \State
+                     $\rvx \sim p_{\text{data}}(\rvx)$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.465         \State
+                     $t \sim \mathcal{U}[0, T]$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.466         \State
+                     $\bm{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.467         \State
+                     $\rvx_t = \alpha_t \rvx + \sigma_t \bm{\epsilon}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.468         \State
+                     Take gradient step on:
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.470       \Until
+                  {converged}
+Underfull \hbox (badness 4479) in paragraph at lines 481--482
+[][]$\OML/lmm/m/it/10 p[]$\T1/lmr/m/n/10 (+20) : prob. of un-con-di-tional
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.482       \Repeat
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.483         \State
+                     \textcolor{orange}{$(\rvx, \rvc) \sim p_{\text{data}}(\...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.484         \State
+                     \textcolor{orange}{$\rvc \gets \emptyset$ with prob. $p...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.485         \State
+                     $t \sim \mathcal{U}[0, T]$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.486         \State
+                     $\bm{\epsilon} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.487         \State
+                     $\rvx_t = \alpha_t \rvx + \sigma_t \bm{\epsilon}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.488         \State
+                     Take gradient step on:
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.490       \Until
+                  {converged}
+Underfull \vbox (badness 1824) has occurred while \output is active [236]
+[237] [238] [239] [240] [241] [242] [243] [244]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[245] [246]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[247] [248]
+Overfull \hbox (13.97963pt too wide) in paragraph at lines 1063--1065
+\T1/lmr/m/n/10.95 (-20) where $\OML/lmm/m/it/10.95 ^^Y[]\OT1/lmr/m/n/10.95 (-20
+) (\OT1/lmr/bx/n/10.95 (-20) x\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (-20) c\
+OT1/lmr/m/n/10.95 (-20) ) := \OML/lmm/m/it/10.95 p[]\OT1/lmr/m/n/10.95 (-20) (\
+OT1/lmr/bx/n/10.95 (-20) x\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (-20) c\OT1/
+lmr/m/n/10.95 (-20) )$\T1/lmr/m/n/10.95 (-20) , and $\OML/lmm/m/it/10.95 Z\OT1/
+lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) c\OT1/lmr/m/n/10.95 (-20) )$ \T1
+/lmr/m/n/10.95 (-20) is the par-ti-tion func-tion en-sur-ing $[] \OML/lmm/m/it/
+10.95 ^^Y[]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10.95 (-20) x\OMS/lmsy/m/n/1
+0.95 j\OT1/lmr/bx/n/10.95 (-20) c\OT1/lmr/m/n/10.95 (-20) ) []  d\OT1/lmr/bx/n/
+10.95 (-20) x \OT1/lmr/m/n/10.95 (-20) =
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[249] [250]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[251] [252]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[253] [254]) (./Chapter-7-Sophisticated-Solvers-for-Fast-Sampling.tex [255]
+Chapter 9.
+[256]
+Overfull \hbox (8.45221pt too wide) in paragraph at lines 24--26
+[]\T1/lmr/m/n/10.95 (-20) Concretely, sup-pose we have a pre-trained dif-fu-sio
+n model $\OT1/lmr/bx/n/10.95 (-20) s[]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/1
+0.95 (-20) x\OML/lmm/m/it/10.95 ; t\OT1/lmr/m/n/10.95 (-20) ) \OMS/lmsy/m/n/10.
+95 ^^Y r[] [] \OML/lmm/m/it/10.95 p[]\OT1/lmr/m/n/10.95 (-20) (\OT1/lmr/bx/n/10
+.95 (-20) x\OT1/lmr/m/n/10.95 (-20) )$
+[257]
+Overfull \hbox (1.7571pt too wide) in paragraph at lines 94--96
+\T1/lmr/m/n/10.95 (-20) vates spe-cial-ized in-te-gra-tors (see dis-cus-sion ne
+ar Equa-tion ([][]9.1.6[][]) be-low) ([]Hochbruck
+[258] [259] [260]
+Overfull \hbox (5.58119pt too wide) in paragraph at lines 236--237
+\T1/lmr/m/n/10.95 (-20) fam-ily, in-clud-ing DPM-Solver ([]Lu \T1/lmr/m/it/10.9
+5 (-20) et al.\T1/lmr/m/n/10.95 (-20) , [][]2022b[][]) (Sec-tion [][]9.4[][]), 
+and DPM-Solver\T1/lmtt/m/n/10.95 ++ \T1/lmr/m/n/10.95 (-20) ([]Lu
+[261] [262] [263] [264]
+Underfull \vbox (badness 10000) has occurred while \output is active [265]
+[266]
+Underfull \vbox (badness 10000) has occurred while \output is active [267 <./Im
+ages/PartB/Euler.pdf>] [268] [269] [270] [271]
+Overfull \hbox (5.26273pt too wide) in paragraph at lines 744--746
+\T1/lmr/m/n/10.95 (-20) This con-struc-tion re-moves any de-pen-dence on the fo
+r-ward one-step ker-nel $\OML/lmm/m/it/10.95 p\OT1/lmr/m/n/10.95 (-20) (\OT1/lm
+r/bx/n/10.95 (-20) x[]\OMS/lmsy/m/n/10.95 j\OT1/lmr/bx/n/10.95 (-20) x[]\OT1/lm
+r/m/n/10.95 (-20) )$
+[272] [273] [274] [275] [276] [277]
+Underfull \vbox (badness 4001) has occurred while \output is active [278]
+[279 <./Images/PartC/DEIS.pdf>] [280]
+Overfull \hbox (26.71896pt too wide) in paragraph at lines 1486--1490
+\T1/lmr/m/n/10.95 (-20) where $\OML/lmm/m/it/10.95 `[]$ \T1/lmr/m/n/10.95 (-20)
+ is the La-grange ba-sis of de-gree $\OML/lmm/m/it/10.95 i[]\OT1/lmr/m/n/10.95 
+(-20) 1$ \T1/lmr/m/n/10.95 (-20) built on the nodes at time $\OMS/lmsy/m/n/10.9
+5 f\OML/lmm/m/it/10.95 t[]; t[]; [] ; t[]\OMS/lmsy/m/n/10.95 g$\T1/lmr/m/n/10.9
+5 (-20) .
+[281] [282]
+Overfull \hbox (5.46278pt too wide) in paragraph at lines 1576--1577
+\T1/lmr/m/n/10.95 (-20) The DPM-Solver fam-ily, in-clud-ing DPM-Solver ([]Lu \T
+1/lmr/m/it/10.95 (-20) et al.\T1/lmr/m/n/10.95 (-20) , [][]2022b[][]), DPM-Solv
+er\T1/lmtt/m/n/10.95 ++ \T1/lmr/m/n/10.95 (-20) ([]Lu
+[283]
+Underfull \vbox (badness 3302) has occurred while \output is active [284]
+Overfull \hbox (7.00385pt too wide) in paragraph at lines 1659--1660
+[] []\T1/lmss/bx/n/10.95 (-20) In-tu-ition of Why Repa-ram-e-ter-ize Time?[] \T
+1/lmr/m/n/10.95 (-20) For strictly mono-tone $\OML/lmm/m/it/10.95 ^^U\OT1/lmr/m
+/n/10.95 (-20) (\OML/lmm/m/it/10.95 t\OT1/lmr/m/n/10.95 (-20) )$\T1/lmr/m/n/10.
+95 (-20) , the first^^Uorder
+[285]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 1741.
+
+[286] [287]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1833         \State
+                      $\tilde\rvx_{t_0}\gets\rvx_T$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1834         \For
+                   {$i\gets 1$ to $M$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1835         \State
+                      $h_i \gets \lambda_{t_i} - \lambda_{t_{i-1}}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1836         \State
+                      $s_{i}^{\text{mid}} \gets t_{\lambda}\left(\tfrac{\lam...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1837         \State
+                     
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1839     \State
+                   $\tilde\rvx_{t_{i}} \gets \tfrac{\alpha_{t_{i}}}{\alpha_{...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1840         \EndFor
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1841         \State
+                      \Return $\tilde\rvx_{t_M}$ [288]
+Underfull \vbox (badness 2418) has occurred while \output is active [289]
+[290] [291] [292 <./Images/PartC/Heun.pdf>] [293] [294] [295]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2192     \State
+                  $\tilde\rvx_{t_0}\gets\rvx_T$;\quad $\lambda_{t_i}\gets \l...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2193     \State
+                  $\hat\rvx_0 \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx_{t_...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2194     \For
+               {$i\gets 1$ \textbf{to} $M$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2195         \State
+                      $h_i \gets \lambda_{t_i}-\lambda_{t_{i-1}}$;\quad $s_i...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2196         \State
+                      $\rvu_i \gets \tfrac{\sigma_{s_i^{\text{mid}}}}{\sigma...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2198         \State
+                      $\rmD_i^{\mathrm{mid}} \gets \hat{\rvx}_{\bphi^\times}...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2199         \State
+                      $\tilde\rvx_{t_i} \gets \tfrac{\sigma_{t_i}}{\sigma_{t...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2201         \State
+                      $\hat\rvx_i \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2202     \EndFor
+                   [296] [297] [298]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2372     \State
+                  $\tilde\rvx_{t_0}\gets\rvx_T$;\quad $\lambda_{t_i}\gets \l...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2373     \State
+                  $\hat\rvx_0 \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx_{t_...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2375     \State
+                  $\tilde\rvx_{t_1} \gets \tfrac{\sigma_{t_1}}{\sigma_{t_0}}...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2377     \State
+                  $\hat\rvx_1 \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx_{t_...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2379     \For
+               {$i\gets 2$ \textbf{to} $M$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2380         \State
+                      $r_i \gets h_i/h_{i-1}$ \Comment step ratio
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2381         \State
+                      $\rmD_i^{\mathrm{sim}} \gets \Big(1+\tfrac12 r_i\Big)\...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2382         \State
+                      $\tilde\rvx_{t_i} \gets \tfrac{\sigma_{t_i}}{\sigma_{t...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2384         \State
+                      $\hat\rvx_i \gets \hat{\rvx}_{\bphi^\times}(\tilde\rvx...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2385     \EndFor
+                   [299] [300] [301]
+Overfull \hbox (21.52835pt too wide) in paragraph at lines 2448--2451
+[]\T1/lmr/m/n/10.95 (-20) We high-light two rep-re-sen-ta-tive ex-am-ples in Ta
+-ble [][]9.1[][]: the DDIM and DPM^^USolver^^U2
+[302] [303] [304]
+Overfull \hbox (5.70105pt too wide) in paragraph at lines 3108--3109
+[]\T1/lmr/m/n/10.95 (-20) In this sec-tion, we turn to the \T1/lmr/m/it/10.95 (
+-20) time^^Uparallel \T1/lmr/m/n/10.95 (-20) ap-proach, ex-em-pli-fied by \T1/l
+mr/m/it/10.95 (-20) ParaDiGMS\T1/lmr/m/n/10.95 (-20) ,
+[305] [306]
+Underfull \hbox (badness 1515) in paragraph at lines 3220--3220
+\T1/lmr/m/n/9 (+20) ward, based on the er-ror
+[307 <./Images/PartC/paradigm-1.pdf> <./Images/PartC/paradigm-2.pdf
+
+pdfTeX warning: pdflatex (file ./Images/PartC/paradigm-2.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+> <./Images/PartC/paradigm-3.pdf
+
+pdfTeX warning: pdflatex (file ./Images/PartC/paradigm-3.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>]
+Overfull \hbox (19.12971pt too wide) in paragraph at lines 3261--3264
+[] [] \T1/lmss/bx/n/10.95 (-20) Step 3. Progress Con-trol and Win-dow Ad-vance.
+[] \T1/lmr/m/n/10.95 (-20) Hav-ing formed the left^^Uanchored
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3310     \State
+                  $k \gets 0$, $\ell \gets 0$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3311     \State
+                  Sample $\rvx^{(0)}_0 \sim p_{\mathrm{prior}}$; set $\rvx^{...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3312     \While
+                 {$\ell < M$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3313       \State
+                    $J \gets \min(p,  M-\ell)$   \Comment{current window len...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3314       \State
+                    \textbfs{Step 1: Parallel}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3315       \State
+                    For $i=0,\ldots,J-1$: $g_i \gets \rvv_{\bphi^\times} \bi...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3317       \State
+                    Compute prefix sums $S_j \gets \sum_{i=0}^{j} g_i$ for $...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3319       \State
+                    \textbfs{Step 2: Cumulative Updates}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3320       \State
+                    For $j=0,\ldots,J-1$: $\displaystyle \rvx^{(k+1)}_{\ell+...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3322       \State
+                    \textbfs{Step 3: Progress Control and Window Advance}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3323       \State
+                    For $j=1,\ldots,J-1$: $\mathtt{error}_j \gets \big\|\rvx...
+[308] [309] [310] [311]) [312]
+(./Chapter-8-Post-Training-Methods-for-Fast-Sampling.tex
+Chapter 10.
+[313] [314] [315] [316] [317] [318] [319] [320]
+Overfull \hbox (11.47522pt too wide) in paragraph at lines 397--400
+[] []\T1/lmss/bx/n/10.95 (-20) VSD for 3D Gen-er-a-tion Us-ing Only a 2D pre--t
+rained Dif-fu-sion Model.[] \T1/lmr/m/n/10.95 (-20) VSD ([]Wang
+[321]
+Overfull \hbox (9.2261pt too wide) in paragraph at lines 464--465
+\T1/lmr/m/n/10.95 (-20) In this sec-tion, we fix DDIM in the $\OT1/lmr/bx/n/10.
+95 (-20) x$\T1/lmr/m/n/10.95 (-20) -prediction pa-ram-e-ter-i-za-tion as the ti
+me^^Ustepping
+[322 <./Images/PartD/PD.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active [323]
+[324] [325] [326] [327] [328])
+(./Chapter-9-Learning-Fast-Generator-from-Scratch.tex
+Chapter 11.
+[329] [330] [331] [332 <./Images/PartD/flow-map.pdf>] [333]
+Underfull \vbox (badness 3158) has occurred while \output is active [334]
+[335] [336 <./Images/PartD/semigroup.pdf>] [337] [338] [339]
+Underfull \vbox (badness 3895) has occurred while \output is active [340]
+Overfull \hbox (2.2714pt too wide) in paragraph at lines 611--614
+\T1/lmr/m/n/10.95 (-20) and use the neu-ral net-work pa-ram-e-ter-i-za-tion pro
+-posed therein (cf. Equa-tion ([][]D.6.1[][])): 
+[341]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.667         \If
+                 {one-step}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.668             \State
+                         $\rvx \leftarrow \rvf_{\bm{\theta}^\times}(\hat{\rv...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.669         \Else
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.670             \State
+                         $\rvx \leftarrow \rvf_{\bm{\theta}^\times}(\hat{\rv...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.671             \For
+                      {$m=1$ \textbf{to} $M-1$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.672                 \State
+                             Sample $\bm{\epsilon} \sim \mathcal{N}(\bm{0}, ...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.673                 \State
+                             $\hat{\rvx}_{\tau_m} \leftarrow \alpha_{\tau_m}...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.674                 \State
+                             $\rvx \leftarrow \rvf_{\bm{\theta}^\times}(\hat...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.675             \EndFor
+                         
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.676         \EndIf
+                     [342] [343] [344] [345]
+Overfull \hbox (3.5047pt too wide) in paragraph at lines 881--885
+\T1/lmr/m/n/10.95 (-20) We de-note the re-sult-ing ob-jec-tive as $\OMS/lmsy/m/
+n/10.95 L[]\OT1/lmr/m/n/10.95 (-20) (\OML/lmm/b/it/10.95 ^^R\OML/lmm/m/it/10.95
+ ; \OML/lmm/b/it/10.95 ^^R[]\OT1/lmr/m/n/10.95 (-20) ; \OML/lmm/b/it/10.95 ^^^[
+]\OT1/lmr/m/n/10.95 (-20) )$\T1/lmr/m/n/10.95 (-20) . Ac-cord-ingly, Propo-si-t
+ion [][]11.3.1[][]
+[346] [347] [348] [349] [350]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1148 \State
+              \textbfs{Init:} $\bm{\theta} \gets \bm{\theta}_{\text{pretrain...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1149 \Repeat
+              
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1150     \State
+                  $\rvx_0 \sim \mathcal{D}$, $\mathbf{z} \sim \mathcal{N}(\b...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1151     \State
+                  $\rvx_s \gets \cos(s) \rvx_0 + \sin(s) \mathbf{z}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1152     \If
+              {consistency training}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1153         \State
+                      $\frac{\diff\rvx_s}{\diff s} \gets \cos(s) \mathbf{z} ...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1154     \Else
+                
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1155         \State
+                      $\frac{\diff\rvx_s}{\diff s} \gets \sigma_{\mathrm{d}}...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1156     \EndIf
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1157     \State
+                  $r \gets \min\left(1, \frac{\text{Iters}}{H}\right)$ \hfil...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1158     \State
+                  $\rvw \gets - \cos^2(s) (\sigma_{\mathrm{d}} \mathbf{F}_{\...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1159     \State
+                  $\rvw \gets \frac{\rvw}{\|\rvw\| + c}$ \hfill \Comment{ Ta...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.13})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1160     \State
+                  $\mathcal{L}_{\text{sCM}}(\bm{\theta}, \boldsymbol{\varphi...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.14})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1162     \State
+                  $(\bm{\theta}, \boldsymbol{\varphi}) \gets (\bm{\theta}, \...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.15})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1163     \State
+                  Iters $\gets$ Iters + 1
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.16})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1164 \Until
+             {convergence} [351] [352] [353] [354] [355] [356] [357 <./Images/P
+artD/ctm-target.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1628     \State
+                  Start from $\mathbf{x}_{\tau_{0}}\sim p_{\mathrm{prior}}=\...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1629         \For
+                   {$n=0$ to $M-1$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1630         \State
+                      $\tilde{\tau}_{n+1}\leftarrow \sqrt{1-\gamma^{2}}\tau_...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1631         \State
+                      Denoise $\mathbf{x}_{\tilde{\tau}_{n+1}}\leftarrow \ma...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1632         \State
+                      Diffuse $\mathbf{x}_{\tau_{n+1}}\leftarrow\mathbf{x}_{...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1633         \EndFor
+                      
+Underfull \vbox (badness 3460) has occurred while \output is active [358]
+[359 <./Images/PartD/ctm_gamma.pdf>] [360] [361] [362] [363] [364] [365]
+[366] [367] [368 <./Images/PartD/lagrangian-1.pdf> <./Images/PartD/lagrangian-2
+.pdf
+
+pdfTeX warning: pdflatex (file ./Images/PartD/lagrangian-2.pdf): PDF inclusion:
+ multiple pdfs with page group included in a single page
+>] [369 <./Images/PartD/eulerian-1.pdf> <./Images/PartD/eulerian-2.pdf
+
+pdfTeX warning: pdflatex (file ./Images/PartD/eulerian-2.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>]
+Overfull \hbox (22.80934pt too wide) detected at line 2146
+\OT1/lmr/bx/n/10.95 	[]\OT1/lmr/m/n/10.95 (\OT1/lmr/bx/n/10.95 x[]\OT1/lmr/m/n/
+10.95 ) = \OT1/lmr/bx/n/10.95 	[]\OT1/lmr/m/n/10.95 (\OT1/lmr/bx/n/10.95 x[]\OT
+1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OT1/lmr/m/n/10.95 ^^A\OML/lmm/m/it/1
+0.95 s []@[]\OT1/lmr/bx/n/10.95 	[][]\OT1/lmr/m/n/10.95 (\OT1/lmr/bx/n/10.95 x[
+]\OT1/lmr/m/n/10.95 )\OT1/lmr/bx/n/10.95 v[]\OT1/lmr/m/n/10.95 (\OT1/lmr/bx/n/1
+0.95 x[]\OML/lmm/m/it/10.95 ; s\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^@ \OT
+1/lmr/m/n/10.95 ^^A\OML/lmm/m/it/10.95 s @[]\OT1/lmr/bx/n/10.95 	[]\OT1/lmr/m/n
+/10.95 (\OT1/lmr/bx/n/10.95 x[]\OT1/lmr/m/n/10.95 ) + \OMS/lmsy/m/n/10.95 O[]\O
+T1/lmr/m/n/10.95 (^^A\OML/lmm/m/it/10.95 s\OT1/lmr/m/n/10.95 )[][]\OML/lmm/m/it
+/10.95 :
+[370] [371]) [372] (./Chapter-10-Epilogue-and-Outlook.tex
+Chapter 12.
+[373] [374] [375 <./Images/appendix/vector_field_only.pdf> <./Images/appendix/p
+article_cloud.pdf> <./Images/appendix/vector_field_with_density.pdf>] [376]
+[377] [378] [379] [380] [381 <./Images/PartE/fig_notation_overview.pdf>]
+[382] [383] [384 <./Images/PartE/ctmc_trajectory.pdf>] [385] [386 <./Images/Par
+tE/masked_vs_uniform_diffusion.pdf>] [387] [388] [389]
+Overfull \hbox (3.32158pt too wide) in paragraph at lines 771--779
+[]\T1/lmr/m/n/10.95 (-20) This clean-state parametriza-tion is com-mon in multi
+nomial/D3PM-style discrete-
+[390]
+Overfull \hbox (5.91972pt too wide) in paragraph at lines 835--842
+[] [] \T1/lmss/bx/n/10.95 (-20) The Ra-tio as a Dis-crete Ana-logue of the Scor
+e.[] \T1/lmr/m/n/10.95 (-20) Now in-spect Equa-tion ([][]12.2.7[][]).
+[391] [392] [393]
+Underfull \hbox (badness 1742) in paragraph at lines 970--971
+[]|\T1/lmr/m/n/7 (+20) Transition-matrix prop-a-ga-tion or mas-ter
+
+Overfull \hbox (4.64502pt too wide) in paragraph at lines 951--1003
+ [][] 
+[394] [395] [396]) [397] (./A_Crash-Course-of-DE.tex [398]
+Appendix A.
+[399] [400 <./Images/PartE/discrete_vs_continuous_ode.pdf>] [401] [402]
+[403] [404] [405] [406] [407] [408] [409]
+Overfull \hbox (1.79828pt too wide) in paragraph at lines 368--369
+[] []\T1/lmss/bx/n/10.95 (-20) Stochas-tic Dif-fer-en-tial Equa-tions.[] \T1/lm
+r/m/n/10.95 (-20) For-mally, the limit of the dis-crete up-date Equa-
+[410] [411] [412]) (./B_Continuity-Equation.tex [413]
+Appendix B.
+[414]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 87.
+
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[415] [416]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[417] [418]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[419] [420]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[421] [422]
+Overfull \hbox (7.89894pt too wide) detected at line 443
+[]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[423] [424] [425] [426] [427]
+Overfull \hbox (7.09067pt too wide) in paragraph at lines 699--704
+[]\T1/lmr/m/n/10.95 (-20) Throughout this op-tional sec-tion, $\OML/lmm/m/it/10
+.95 ^^\$ \T1/lmr/m/n/10.95 (-20) de-notes \T1/lmr/m/it/10.95 (-20) train-ing ti
+me\T1/lmr/m/n/10.95 (-20) : an ide-al-ized continuous-
+[428] [429] [430] [431] [432]) (./C_SDE-and-Ito.tex
+Appendix C.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 1.
+
+[433]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[434] [435]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[436] [437]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[438] [439]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[440] [441]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[442] [443]
+
+Package fancyhdr Warning: \headheight is too small (14.4pt): 
+(fancyhdr)                Make it at least 26.32425pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.32425pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-11.92426pt}.
+
+[444]) (./D_Proofs.tex [445]
+Appendix D.
+[446] [447]
+Overfull \hbox (10.24936pt too wide) detected at line 198
+[]
+
+Overfull \hbox (15.41023pt too wide) detected at line 212
+[]
+[448] [449] [450] [451] [452] [453] [454] [455] [456]
+Overfull \hbox (32.47647pt too wide) detected at line 695
+[]
+[457] [458] [459] [460] [461] [462] [463] [464] [465] [466] [467] [468]
+[469] [470] [471]) [472] [473] [474] [475] [476] [477] [478] [479] [480]
+[481] [482]
+Overfull \hbox (1.82469pt too wide) in paragraph at lines 466--466
+[][]\T1/lmr/m/n/10.95 (-20) Sun, H., L. Yu, B. Dai, D. Schu-ur-mans, and H. Dai
+. (2023). ^^P  Score-based Continuous-
+[483] [484]
+Overfull \hbox (7.02348pt too wide) in paragraph at lines 466--466
+\T1/lmr/m/n/10.95 (-20) free energy-guided con-di-tional dif-fu-sion model^^Q. 
+In: \T1/lmr/m/it/10.95 (-20) Pro-ceed-ings of the IEEE/CVF
+[485] 
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(build/main_v2.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information)</usr/local/texlive/2026/te
+xmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2026/texmf-dist/
+fonts/type1/public/lm/lmbsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type
+1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/l
+m/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx5.pf
+b></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/loc
+al/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/
+2026/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2026/texmf-
+dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/
+type1/public/lm/lmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pub
+lic/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmm
+i10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></u
+sr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/te
+xlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/
+texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/
+fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
+/public/lm/lmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/l
+m/lmmib5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmib7.p
+fb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/lo
+cal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/
+2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-d
+ist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/ty
+pe1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/l
+m/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/loca
+l/texlive/2026/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/
+2026/texmf-dist/fonts/type1/public/lm/lmro8.pfb></usr/local/texlive/2026/texmf-
+dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2026/texmf-dist/fonts
+/type1/public/lm/lmss12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pub
+lic/lm/lmssbo10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/l
+mssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsso10.p
+fb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/l
+ocal/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2026/texm
+f-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/font
+s/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pub
+lic/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtk
+10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></u
+sr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/te
+xlive/2026/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/local/texlive/202
+6/texmf-dist/fonts/type1/public/lm/lmtto10.pfb></usr/local/texlive/2026/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr/local/texlive/2026/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
+026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on build/main_v2.pdf (490 pages, 19029139 bytes).
+Transcript written on build/main_v2.log.
+Latexmk: Getting log file 'build/main_v2.log'
+Latexmk: Examining 'build/main_v2.fls'
+Latexmk: Examining 'build/main_v2.log'
+Latexmk: Found input bbl file 'build/main_v2.bbl'
+Latexmk: Log file says output to 'build/main_v2.pdf'
+Latexmk: Using biber to make bibliography file(s).
+Latexmk: Bibliography file(s) from .bcf file:
+  main_v2.bib
+Sources for biber
+  main_v2.bib
+  build/main_v2.bcf
+Latexmk: All targets (build/main_v2.pdf) are up-to-date
+
