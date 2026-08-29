@@ -11,3 +11,34 @@
 # Spotlight
 .Spotlight-V100
 .Trashes
+# =========================
+# LaTeX build output
+# =========================
+# latexmk out-dir
+build/
+
+# Auxiliary files if compiled in-place
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+*.idx
+*.ilg
+*.ind
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+
+# Compiled PDF of the main document (source figures in Images/ are kept)
+/principles_gen_models/arXiv-2510.21890v3/main_v2.pdf
