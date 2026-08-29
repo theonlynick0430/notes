@@ -1,0 +1,756 @@
+\babel@toc {english}{}\relax 
+\thispagestyle {empty}
+\contentsline {chapter}{Acknowledgements}{3}{chapter*.2}%
+\contentsline {paragraph}{Suggested Reading Path.}{5}{paragraph*.4}%
+\contentsline {paragraph}{Parts A \& B: Foundations of Diffusion Models.}{5}{paragraph*.5}%
+\contentsline {subparagraph}{Part A: Introduction to Deep Generative Modeling (DGM).}{6}{subparagraph*.6}%
+\contentsline {subparagraph}{Part B: Core Perspectives on Diffusion Models.}{6}{subparagraph*.7}%
+\contentsline {paragraph}{Part C \& D: Controlling and Accelerating the Diffusion Sampling.}{8}{paragraph*.11}%
+\contentsline {subparagraph}{Part C: Sampling from Diffusion Models.}{8}{subparagraph*.12}%
+\contentsline {subparagraph}{Part D: Learning Fast Generative Models.}{10}{subparagraph*.13}%
+\contentsline {paragraph}{Epilogue: Beyond Diffusion on Continuous State Spaces.}{10}{paragraph*.14}%
+\contentsline {paragraph}{Appendices.}{10}{paragraph*.15}%
+\contentsline {paragraph}{What This Book Covers and What It Does Not.}{11}{paragraph*.16}%
+\contentsline {paragraph}{Notational Conventions.}{13}{paragraph*.18}%
+\contentsline {subparagraph}{I. Random Variables and Their Realizations.}{14}{subparagraph*.19}%
+\contentsline {subparagraph}{II. Conditional Expectations.}{14}{subparagraph*.20}%
+\contentsline {subparagraph}{III. Implicit Time Indices.}{14}{subparagraph*.21}%
+\contentsline {subparagraph}{IV. Gaussian Perturbation and Equality in Distribution.}{14}{subparagraph*.22}%
+\contentsline {part}{A\hspace {1em}Introduction to Deep Generative Modeling}{15}{part.1}%
+\contentsline {chapter}{\numberline {1}Deep Generative Modeling}{16}{chapter.1}%
+\contentsline {section}{\numberline {1.1}What is Deep Generative Modeling?}{17}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Mathematical Setup}{17}{subsection.1.1.1}%
+\contentsline {paragraph}{Goal of DGM.}{17}{paragraph*.23}%
+\contentsline {paragraph}{Training of DGM.}{18}{paragraph*.25}%
+\contentsline {subparagraph}{Forward KL and Maximum Likelihood Estimation (MLE).}{18}{subparagraph*.26}%
+\contentsline {subparagraph}{Fisher Divergence.}{20}{subparagraph*.27}%
+\contentsline {subparagraph}{Beyond KL.}{20}{subparagraph*.28}%
+\contentsline {subsection}{\numberline {1.1.2}Challenges in Modeling Distributions}{21}{subsection.1.1.2}%
+\contentsline {paragraph}{Step 1: Ensuring Non-Negativity.}{22}{paragraph*.29}%
+\contentsline {paragraph}{Step 2: Enforcing Normalization.}{22}{paragraph*.30}%
+\contentsline {section}{\numberline {1.2}Prominent Deep Generative Models}{23}{section.1.2}%
+\contentsline {paragraph}{Energy-Based Models (EBMs).}{23}{paragraph*.32}%
+\contentsline {paragraph}{Autoregressive Models.}{23}{paragraph*.33}%
+\contentsline {paragraph}{Variational Autoencoders (VAEs).}{24}{paragraph*.34}%
+\contentsline {paragraph}{Normalizing Flows.}{25}{paragraph*.35}%
+\contentsline {paragraph}{Generative Adversarial Networks (GANs).}{25}{paragraph*.36}%
+\contentsline {section}{\numberline {1.3}Taxonomy of Modeling}{27}{section.1.3}%
+\contentsline {paragraph}{Connection to Diffusion Models.}{27}{paragraph*.38}%
+\contentsline {section}{\numberline {1.4}Closing Remarks}{28}{section.1.4}%
+\contentsline {part}{B\hspace {1em}Foundations and Perspectives of Diffusion Models}{30}{part.2}%
+\contentsline {paragraph}{Creating Noisy Data.}{32}{paragraph*.40}%
+\contentsline {paragraph}{Training: Learn to Predict the Clean Signal.}{33}{paragraph*.42}%
+\contentsline {paragraph}{Sampling: Start from Fresh Noise.}{34}{paragraph*.43}%
+\contentsline {paragraph}{A Simple Example.}{36}{paragraph*.45}%
+\contentsline {paragraph}{How this Connects to the Next Chapters?}{36}{paragraph*.46}%
+\contentsline {chapter}{\numberline {2}Variational Perspective: From VAEs to DDPMs}{37}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Variational Autoencoder}{39}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Probabilistic Encoder and Decoder}{39}{subsection.2.1.1}%
+\contentsline {paragraph}{Construction of Decoder (Generator).}{39}{paragraph*.48}%
+\contentsline {paragraph}{Construction of Encoder (Inference Network).}{40}{paragraph*.49}%
+\contentsline {subsection}{\numberline {2.1.2}Training via the Evidence Lower Bound (ELBO)}{40}{subsection.2.1.2}%
+\contentsline {paragraph}{Information-Theoretic View: ELBO as a Divergence Bound.}{41}{paragraph*.50}%
+\contentsline {subsection}{\numberline {2.1.3}Gaussian VAE}{42}{subsection.2.1.3}%
+\contentsline {paragraph}{Encoder Part.}{42}{paragraph*.51}%
+\contentsline {paragraph}{Decoder Part.}{43}{paragraph*.52}%
+\contentsline {subsection}{\numberline {2.1.4}Drawbacks of Standard VAE}{43}{subsection.2.1.4}%
+\contentsline {paragraph}{Blurry Generations in VAEs.}{43}{paragraph*.53}%
+\contentsline {subsection}{\numberline {2.1.5}(Optional) From Standard VAE to Hierarchical VAEs}{45}{subsection.2.1.5}%
+\contentsline {paragraph}{HVAE's Modeling.}{45}{paragraph*.55}%
+\contentsline {paragraph}{HVAE's ELBO.}{46}{paragraph*.56}%
+\contentsline {paragraph}{Why Deeper Networks in a Flat VAE are Not Enough.}{46}{paragraph*.57}%
+\contentsline {paragraph}{What Hierarchy Changes?}{47}{paragraph*.58}%
+\contentsline {paragraph}{What Will be Ahead?}{48}{paragraph*.59}%
+\contentsline {section}{\numberline {2.2}Variational Perspective: DDPM}{49}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Forward Process (Fixed Encoder)}{49}{subsection.2.2.1}%
+\contentsline {paragraph}{Fixed Gaussian Transitions.}{50}{paragraph*.62}%
+\contentsline {paragraph}{Perturbation Kernel and Prior Distribution.}{50}{paragraph*.63}%
+\contentsline {subsection}{\numberline {2.2.2}Reverse Denoising Process (Learnable Decoder)}{51}{subsection.2.2.2}%
+\contentsline {paragraph}{Overview: Modeling and Training Objective.}{51}{paragraph*.65}%
+\contentsline {paragraph}{Overcoming Intractability with Conditioning.}{52}{paragraph*.67}%
+\contentsline {subsection}{\numberline {2.2.3}Modeling of Reverse Transition Kernel $p_{\bm {\phi }}(\mathbf {x}_{i-1}|\mathbf {x}_i)$}{54}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Practical Choices of Predictions and Loss}{55}{subsection.2.2.4}%
+\contentsline {paragraph}{${\bm {\epsilon }}$-Prediction.}{55}{paragraph*.68}%
+\contentsline {paragraph}{Simplified Loss with ${\bm {\epsilon }}$-Prediction.}{56}{paragraph*.69}%
+\contentsline {paragraph}{Another Equivalent Parametrization: ${\mathbf {x}}$-Prediction.}{56}{paragraph*.70}%
+\contentsline {subsection}{\numberline {2.2.5}DDPM's ELBO}{57}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Sampling}{58}{subsection.2.2.6}%
+\contentsline {paragraph}{Another Interpretation of DDPM Sampling.}{59}{paragraph*.71}%
+\contentsline {paragraph}{Slow Sampling Speed of DDPM.}{60}{paragraph*.73}%
+\contentsline {section}{\numberline {2.3}Closing Remarks}{62}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Score-Based Perspective: From EBMs to NCSN}{63}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Energy-Based Models}{65}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Modeling Probability Distributions Using Energy Functions}{65}{subsection.3.1.1}%
+\contentsline {paragraph}{Challenges of Maximum Likelihood Training in EBMs.}{66}{paragraph*.75}%
+\contentsline {subsection}{\numberline {3.1.2}Motivation: What Is the Score?}{66}{subsection.3.1.2}%
+\contentsline {paragraph}{Why Model Scores Instead of Densities?}{66}{paragraph*.77}%
+\contentsline {subparagraph}{1. Freedom from Normalization Constants.}{66}{subparagraph*.78}%
+\contentsline {subparagraph}{2. A Complete Representation.}{67}{subparagraph*.79}%
+\contentsline {subsection}{\numberline {3.1.3}Training EBMs via Score Matching}{67}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Langevin Sampling with Score Functions}{68}{subsection.3.1.4}%
+\contentsline {paragraph}{Discrete-Time Langevin Dynamics.}{69}{paragraph*.81}%
+\contentsline {paragraph}{Continuous-Time Langevin Dynamics.}{69}{paragraph*.82}%
+\contentsline {paragraph}{Why Langevin Sampling?}{69}{paragraph*.83}%
+\contentsline {paragraph}{Inherent Challenges of Langevin Sampling.}{70}{paragraph*.84}%
+\contentsline {section}{\numberline {3.2}From Energy-Based to Score-Based Generative Models}{71}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Training with Score Matching}{71}{subsection.3.2.1}%
+\contentsline {paragraph}{Score Matching.}{71}{paragraph*.86}%
+\contentsline {paragraph}{Tractable Score Matching.}{72}{paragraph*.87}%
+\contentsline {paragraph}{Intuition of \Cref {eq:sm-alternative}.}{72}{paragraph*.88}%
+\contentsline {subparagraph}{Effect of the Magnitude Term.}{72}{subparagraph*.89}%
+\contentsline {subparagraph}{Concavity When the Field is (Approximately) a Gradient.}{73}{subparagraph*.90}%
+\contentsline {subsection}{\numberline {3.2.2}Sampling with Langevin Dynamics}{73}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Prologue: Score-Based Generative Models}{74}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Denoising Score Matching}{75}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Motivation}{75}{subsection.3.3.1}%
+\contentsline {paragraph}{Sliced Score Matching and Hutchinson's Estimator.}{75}{paragraph*.91}%
+\contentsline {paragraph}{From Sliced to Denoising Score Matching.}{75}{paragraph*.92}%
+\contentsline {subsection}{\numberline {3.3.2}Training}{76}{subsection.3.3.2}%
+\contentsline {paragraph}{\citet {vincent2011connection}'s Solution by Conditioning.}{76}{paragraph*.93}%
+\contentsline {paragraph}{Special Case: Additive Gaussian Noise.}{77}{paragraph*.95}%
+\contentsline {subsection}{\numberline {3.3.3}Sampling}{78}{subsection.3.3.3}%
+\contentsline {paragraph}{Advantages of Noise Injection.}{79}{paragraph*.96}%
+\contentsline {subsection}{\numberline {3.3.4}Why DSM is Denoising: Tweedie's Formula}{79}{subsection.3.3.4}%
+\contentsline {paragraph}{(Optional) Higher Order Tweedie's Formula.}{80}{paragraph*.97}%
+\contentsline {subparagraph}{Exponential Family Setup with the Log-Normalizer $\lambda (\tilde {{\mathbf {x}}})$.}{80}{subparagraph*.98}%
+\contentsline {subparagraph}{Derivatives of $\lambda $ Produce Posterior Cumulants.}{81}{subparagraph*.99}%
+\contentsline {subsection}{\numberline {3.3.5}(Optional) Why DSM is Denoising: SURE}{81}{subsection.3.3.5}%
+\contentsline {paragraph}{SURE (Stein’s Unbiased Risk Estimator).}{81}{paragraph*.100}%
+\contentsline {paragraph}{Link to Tweedie’s Formula and Bayes Optimality.}{82}{paragraph*.101}%
+\contentsline {paragraph}{Relationship of SURE and Score Matching.}{83}{paragraph*.102}%
+\contentsline {subsection}{\numberline {3.3.6}(Optional) Generalized Score Matching}{83}{subsection.3.3.6}%
+\contentsline {paragraph}{Motivation.}{83}{paragraph*.103}%
+\contentsline {paragraph}{Generalized Fisher Divergence.}{83}{paragraph*.104}%
+\contentsline {paragraph}{Score Parameterization.}{84}{paragraph*.105}%
+\contentsline {paragraph}{Examples of Operators.}{84}{paragraph*.106}%
+\contentsline {paragraph}{Extensions and Use Cases.}{85}{paragraph*.107}%
+\contentsline {section}{\numberline {3.4}Multi-Noise Levels of Denoising Score Matching (NCSN)}{86}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Motivation}{86}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Training}{87}{subsection.3.4.2}%
+\contentsline {subparagraph}{Perturbation Kernel:}{87}{subparagraph*.110}%
+\contentsline {subparagraph}{Marginal Distribution:}{87}{subparagraph*.111}%
+\contentsline {paragraph}{Training Objective of NCSN.}{87}{paragraph*.112}%
+\contentsline {paragraph}{Relationship with DDPM Loss.}{88}{paragraph*.113}%
+\contentsline {subsection}{\numberline {3.4.3}Sampling}{88}{subsection.3.4.3}%
+\contentsline {paragraph}{Slow Sampling Speed of NCSN.}{90}{paragraph*.114}%
+\contentsline {section}{\numberline {3.5}Summary: A Comparative View of NCSN and DDPM}{91}{section.3.5}%
+\contentsline {paragraph}{A Shared Bottleneck.}{91}{paragraph*.116}%
+\contentsline {section}{\numberline {3.6}Closing Remarks}{92}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Diffusion Models Today: Score SDE Framework}{93}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Score SDE: Its Principles}{95}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Motivation: From Discrete to Continuous-Time Processes}{95}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Forward-Time SDEs: From Data to Noise}{98}{subsection.4.1.2}%
+\contentsline {paragraph}{Perturbation Kernels.}{99}{paragraph*.120}%
+\contentsline {paragraph}{Marginal Densities.}{99}{paragraph*.121}%
+\contentsline {subsection}{\numberline {4.1.3}Reverse-Time Stochastic Process for Generation}{100}{subsection.4.1.3}%
+\contentsline {paragraph}{Conceptually, Why Does the Reverse Process Work?}{101}{paragraph*.123}%
+\contentsline {paragraph}{Overview of Reverse-Time SDE Capabilities.}{102}{paragraph*.124}%
+\contentsline {subsection}{\numberline {4.1.4}Deterministic Process (Probability Flow ODE) for Generation}{103}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Matching Marginals in Forward/Reverse-Time SDEs and PF-ODE}{105}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Fokker-Planck Equation to Ensure Alignment of Marginal Densities}{105}{subsection.4.2.1}%
+\contentsline {paragraph}{Multiple Conditional Distributions for a Fixed Marginal.}{108}{paragraph*.126}%
+\contentsline {subsection}{\numberline {4.2.2}A Computable Example: Evolutions of Gaussian Dynamics}{109}{subsection.4.2.2}%
+\contentsline {paragraph}{Exact Computation of the Reverse-Time SDE with a Gaussian.}{109}{paragraph*.127}%
+\contentsline {paragraph}{Exact Computation of PF–ODE with a Gaussian.}{111}{paragraph*.128}%
+\contentsline {section}{\numberline {4.3}Score SDE: Its Training and Sampling}{113}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Training}{113}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Sampling and Inference}{114}{subsection.4.3.2}%
+\contentsline {paragraph}{Empirical Reverse-Time SDE.}{114}{paragraph*.131}%
+\contentsline {paragraph}{Empirical PF-ODE.}{116}{paragraph*.132}%
+\contentsline {subparagraph}{I. Sampling with PF-ODE.}{116}{subparagraph*.133}%
+\contentsline {subparagraph}{II. Inversion with PF-ODE.}{117}{subparagraph*.134}%
+\contentsline {subparagraph}{III. Log-Likelihood Evaluation via PF-ODE.}{117}{subparagraph*.135}%
+\contentsline {section}{\numberline {4.4}Instantiations of SDEs}{118}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}VE SDE}{118}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}VP SDE}{119}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}(Optional) How Is the Perturbation Kernel $ p_t({\mathbf {x}}_t|{\mathbf {x}}_0) $ Derived?}{119}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}A Direct View Through Accumulated Perturbation Kernels}{122}{section.4.5}%
+\contentsline {paragraph}{A General Affine Forward Process $p_t({\mathbf {x}}_t|{\mathbf {x}}_0)$.}{122}{paragraph*.138}%
+\contentsline {subsection}{\numberline {4.5.1}Connection to Score SDE}{123}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Connection to Variational-Based Diffusion Model}{125}{subsection.4.5.2}%
+\contentsline {paragraph}{Deriving Transition Kernels.}{125}{paragraph*.139}%
+\contentsline {paragraph}{Reverse Process Modeling, Training, and Sampling.}{126}{paragraph*.140}%
+\contentsline {subparagraph}{Modeling and Diffusion Loss $\mathcal {L}_{\text {diffusion}}$.}{126}{subparagraph*.141}%
+\contentsline {subparagraph}{Sampling.}{127}{subparagraph*.142}%
+\contentsline {section}{\numberline {4.6}(Optional) Fokker–Planck Equation and Reverse-Time SDEs \\via Marginalization and Bayes’ Rule}{128}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Fokker-Planck Equation from the Marginalization of Transition Kernels}{128}{subsection.4.6.1}%
+\contentsline {paragraph}{Change of Variables.}{128}{paragraph*.143}%
+\contentsline {paragraph}{Taylor Expansion.}{129}{paragraph*.144}%
+\contentsline {subsection}{\numberline {4.6.2}Why Does Reverse-Time SDE Take The Form?}{129}{subsection.4.6.2}%
+\contentsline {paragraph}{Using Bayes' Rule for Inversion.}{129}{paragraph*.145}%
+\contentsline {paragraph}{Taylor Expansion.}{130}{paragraph*.146}%
+\contentsline {paragraph}{Substituting into the Reverse Transition.}{130}{paragraph*.147}%
+\contentsline {paragraph}{Algebraic Manipulation.}{130}{paragraph*.148}%
+\contentsline {paragraph}{Taking $\Delta t \rightarrow 0$ Limit.}{131}{paragraph*.149}%
+\contentsline {section}{\numberline {4.7}Closing Remarks}{132}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Flow-Based Perspective: From NFs to Flow Matching}{133}{chapter.5}%
+\contentsline {paragraph}{Change-of-Variables Formula of Densities.}{133}{paragraph*.150}%
+\contentsline {section}{\numberline {5.1}Flow-Based Models: Normalizing Flows and Neural ODEs}{136}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Normalizing Flows}{136}{subsection.5.1.1}%
+\contentsline {paragraph}{Training Objective.}{137}{paragraph*.153}%
+\contentsline {paragraph}{Constructing Invertible Transformations.}{137}{paragraph*.154}%
+\contentsline {paragraph}{Examples of Invertible Flows.}{137}{paragraph*.156}%
+\contentsline {subparagraph}{Planar Flows:}{138}{subparagraph*.157}%
+\contentsline {subparagraph}{Residual Flows:}{138}{subparagraph*.158}%
+\contentsline {paragraph}{Sampling and Inference.}{138}{paragraph*.159}%
+\contentsline {subsection}{\numberline {5.1.2}Neural ODEs}{139}{subsection.5.1.2}%
+\contentsline {paragraph}{From Discrete-Time NFs to Continuous-Time NFs (Neural ODEs).}{139}{paragraph*.161}%
+\contentsline {paragraph}{Formal Setup of Neural ODEs.}{139}{paragraph*.163}%
+\contentsline {subparagraph}{Goal of NODE.}{140}{subparagraph*.164}%
+\contentsline {paragraph}{Continuous-Time Change-of-Variables Formula.}{141}{paragraph*.165}%
+\contentsline {subparagraph}{Connection to Discrete-Time Formula.}{142}{subparagraph*.166}%
+\contentsline {paragraph}{Training NODEs.}{142}{paragraph*.167}%
+\contentsline {subparagraph}{Exact Log-Likelihood Computation.}{142}{subparagraph*.168}%
+\contentsline {subparagraph}{Gradient-Based Optimization.}{142}{subparagraph*.169}%
+\contentsline {paragraph}{Inference with NODEs.}{143}{paragraph*.170}%
+\contentsline {section}{\numberline {5.2}Flow Matching Framework}{144}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Lesson from Score-Based Methods}{144}{subsection.5.2.1}%
+\contentsline {paragraph}{Step 1: Defining a Conditional Path and Its Marginal Densities.}{144}{paragraph*.171}%
+\contentsline {paragraph}{Step 2: Velocity Field.}{145}{paragraph*.173}%
+\contentsline {paragraph}{Step 3: Learning via the Conditional Strategy.}{146}{paragraph*.174}%
+\contentsline {paragraph}{Underlying Rule: The Fokker–Planck Equation.}{147}{paragraph*.176}%
+\contentsline {subsection}{\numberline {5.2.2}Flow Matching Framework}{148}{subsection.5.2.2}%
+\contentsline {paragraph}{Step 1: Defining a Conditional Path and Its Marginal Densities.}{148}{paragraph*.177}%
+\contentsline {paragraph}{Step 2: Velocity Field.}{149}{paragraph*.178}%
+\contentsline {paragraph}{Step 3: Learning via the Conditional Strategy.}{150}{paragraph*.179}%
+\contentsline {subsection}{\numberline {5.2.3}Comparison of Diffusion Models, General Flow Matching, and NODEs}{153}{subsection.5.2.3}%
+\contentsline {paragraph}{Comparison of Diffusion Models and General Flow Matching.}{153}{paragraph*.181}%
+\contentsline {paragraph}{Connection to NODEs.}{153}{paragraph*.183}%
+\contentsline {subsection}{\numberline {5.2.4}(Optional) Underlying Rules}{153}{subsection.5.2.4}%
+\contentsline {paragraph}{Continuity Equation: Mass Conservation Criterion.}{153}{paragraph*.184}%
+\contentsline {paragraph}{From Conditional to Marginal Paths.}{154}{paragraph*.185}%
+\contentsline {section}{\numberline {5.3}Constructing Probability Paths and Velocities Between Distributions}{157}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}A Key Special Case: Marginal $p_t({\mathbf {x}}_t)$ and Velocity ${\mathbf {v}}_t({\mathbf {x}}_t)$ in the Gaussian-to-Gaussian Bridge}{158}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Conditional Probability-Path-First Construction of ${\mathbf {v}}_t(\cdot |{\mathbf {z}})$ and $p_t(\cdot |{\mathbf {z}})$}{160}{subsection.5.3.2}%
+\contentsline {paragraph}{I. Two-Sided ${\mathbf {z}}= ({\mathbf {x}}_0, {\mathbf {x}}_1)$ — ``Beam-Like'' Path.}{160}{paragraph*.187}%
+\contentsline {subparagraph}{Choice of $\pi ({\mathbf {z}})$.}{160}{subparagraph*.188}%
+\contentsline {subparagraph}{Choice of Conditional Path $p_t(\cdot |{\mathbf {z}})$.}{160}{subparagraph*.189}%
+\contentsline {subparagraph}{Derived Conditional Velocity ${\mathbf {v}}_t(\cdot |{\mathbf {z}})$.}{161}{subparagraph*.190}%
+\contentsline {subparagraph}{CFM Loss.}{161}{subparagraph*.191}%
+\contentsline {paragraph}{II. One-Sided ${\mathbf {z}}= {\mathbf {x}}_0$ or ${\mathbf {x}}_1$ — ``Spotlight-Like'' Path.}{161}{paragraph*.192}%
+\contentsline {subparagraph}{Choice of $\pi ({\mathbf {z}})$.}{161}{subparagraph*.193}%
+\contentsline {subparagraph}{Choice of Conditional Path $p_t(\cdot |{\mathbf {z}})$.}{161}{subparagraph*.194}%
+\contentsline {subparagraph}{Derived Conditional Velocity ${\mathbf {v}}_t(\cdot |{\mathbf {z}})$.}{162}{subparagraph*.195}%
+\contentsline {subparagraph}{One-Sided CFM Objective.}{162}{subparagraph*.196}%
+\contentsline {subparagraph}{Equivalence to Two-Sided Target.}{162}{subparagraph*.197}%
+\contentsline {paragraph}{Gaussian FM = Diffusion Model.}{162}{paragraph*.198}%
+\contentsline {subsection}{\numberline {5.3.3}Conditional Flow-First Construction of ${\mathbf {v}}_t(\cdot |{\mathbf {z}})$ and $p_t(\cdot |{\mathbf {z}})$}{163}{subsection.5.3.3}%
+\contentsline {paragraph}{Motivation.}{163}{paragraph*.200}%
+\contentsline {paragraph}{Conditional Affine Flow (Link to Proposition~\ref {closed-form-vf}).}{164}{paragraph*.201}%
+\contentsline {subparagraph}{Induced Conditional Path $p_t(\cdot |{\mathbf {z}})$.}{164}{subparagraph*.202}%
+\contentsline {subparagraph}{Derived Conditional Velocity ${\mathbf {v}}_t(\cdot |{\mathbf {z}})$.}{164}{subparagraph*.203}%
+\contentsline {subparagraph}{One-Sided Conditioning (${\mathbf {z}}={\mathbf {x}}_1$).}{165}{subparagraph*.204}%
+\contentsline {subparagraph}{Two-Sided Conditioning (${\mathbf {z}}=({\mathbf {x}}_0,{\mathbf {x}}_1)$).}{165}{subparagraph*.205}%
+\contentsline {subparagraph}{Unconditional Gaussian Path as a Special Case.}{165}{subparagraph*.206}%
+\contentsline {subsection}{\numberline {5.3.4}Probability-Path-First vs. Flow-First Construction}{165}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Conditional Straightness Does Not Imply Marginal-Flow Straightness}{167}{subsection.5.3.5}%
+\contentsline {section}{\numberline {5.4}(Optional) Properties of the Canonical Affine Flow}{170}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Rectifying Flows: From Noisy Guesses to Structured Pairings}{170}{subsection.5.4.1}%
+\contentsline {paragraph}{Why Change the Coupling?}{170}{paragraph*.209}%
+\contentsline {paragraph}{Rectify the Flow via Dependent Coupling.}{170}{paragraph*.210}%
+\contentsline {paragraph}{Why It Works: Marginal-Preserving Structure.}{171}{paragraph*.211}%
+\contentsline {paragraph}{Summary.}{171}{paragraph*.212}%
+\contentsline {subsection}{\numberline {5.4.2}\texttt {Reflow}: Iteratively Straightening Flows}{172}{subsection.5.4.2}%
+\contentsline {paragraph}{Why \texttt {Reflow}?}{172}{paragraph*.213}%
+\contentsline {paragraph}{Core Idea: Recursive Straightening via \texttt {Rectify}.}{172}{paragraph*.214}%
+\contentsline {paragraph}{The \texttt {Reflow} Procedure.}{172}{paragraph*.215}%
+\contentsline {subsection}{\numberline {5.4.3}Properties of \texttt {Reflow}}{173}{subsection.5.4.3}%
+\contentsline {paragraph}{I. \texttt {Reflow} Never Increases Transport Cost.}{173}{paragraph*.216}%
+\contentsline {paragraph}{II. \texttt {Reflow} Straightens the Path.}{173}{paragraph*.217}%
+\contentsline {paragraph}{III. Connection to Optimal Transport.}{174}{paragraph*.219}%
+\contentsline {section}{\numberline {5.5}Closing Remarks}{176}{section.5.5}%
+\contentsline {chapter}{\numberline {6}A Unified and Systematic Lens on Diffusion Models}{177}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conditional Tricks: The Secret Sauce of Diffusion Models}{179}{section.6.1}%
+\contentsline {paragraph}{Variational View.}{181}{paragraph*.220}%
+\contentsline {paragraph}{Score-Based View.}{182}{paragraph*.221}%
+\contentsline {paragraph}{Flow-Based View.}{182}{paragraph*.222}%
+\contentsline {paragraph}{Remark on Memorization.}{182}{paragraph*.223}%
+\contentsline {section}{\numberline {6.2}A Roadmap for Elucidating Training Losses in Diffusion Models }{184}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Four Common Parameterizations in Diffusion Models}{184}{subsection.6.2.1}%
+\contentsline {paragraph}{Variational View.}{184}{paragraph*.224}%
+\contentsline {paragraph}{Score-Based View.}{185}{paragraph*.225}%
+\contentsline {paragraph}{Flow-Based View.}{185}{paragraph*.226}%
+\contentsline {subsection}{\numberline {6.2.2}Disentangling the Training Objective of Diffusion Models}{185}{subsection.6.2.2}%
+\contentsline {paragraph}{(A) Noise Schedule $\alpha _t$ and $\sigma _t$.}{186}{paragraph*.227}%
+\contentsline {paragraph}{(B) Parameterization $\mathrm {NN}_{\bm {\phi }}$ and Training Target $A_t {\mathbf {x}}_0 + B_t \bm {\epsilon }$.}{186}{paragraph*.228}%
+\contentsline {subparagraph}{Matched Prediction and Loss.}{186}{subparagraph*.230}%
+\contentsline {subparagraph}{Predicting One Quantity and Evaluating the Loss in Another.}{187}{subparagraph*.231}%
+\contentsline {paragraph}{(C) Time Distribution $p_{\text {time}}(t)$.}{187}{paragraph*.232}%
+\contentsline {paragraph}{(D) Time-Weighting Function $\omega (t)$.}{188}{paragraph*.233}%
+\contentsline {subparagraph}{Monotonic Weighting and the ELBO-with-Augmentation View.}{189}{subparagraph*.234}%
+\contentsline {paragraph}{Conclusion.}{190}{paragraph*.235}%
+\contentsline {section}{\numberline {6.3}Equivalence in Diffusion Models}{191}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Four Prediction Types Are Equivalent}{192}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}PF-ODE in Different Parameterizations}{194}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}All Affine Flows Are Equivalent}{195}{subsection.6.3.3}%
+\contentsline {paragraph}{State-Level Equivalence.}{195}{paragraph*.237}%
+\contentsline {subparagraph}{Equivalence with Trigonometric Flow.}{196}{subparagraph*.238}%
+\contentsline {paragraph}{Training Objectives of Four Parameterizations.}{197}{paragraph*.239}%
+\contentsline {subsection}{\numberline {6.3.4}(Optional) Analysis of Parametrizations and the Canonical Flow}{198}{subsection.6.3.4}%
+\contentsline {paragraph}{Perspective 1: Why $(\alpha _t,\sigma _t)=(1-t,t)$ is a Natural Schedule.}{198}{paragraph*.240}%
+\contentsline {subparagraph}{Unit-Scale Regression Targets.}{199}{subparagraph*.241}%
+\contentsline {subparagraph}{Interplay of the Canonical Schedule and ${\mathbf {v}}$-Prediction.}{199}{subparagraph*.242}%
+\contentsline {subparagraph}{Minimizing the Conditional Energy.}{200}{subparagraph*.243}%
+\contentsline {subparagraph}{Remark on the Energy of the Oracle Velocity.}{200}{subparagraph*.244}%
+\contentsline {paragraph}{Perspective 2: Why Velocity Prediction Can Be Considered Natural for Sampling.}{201}{paragraph*.245}%
+\contentsline {subparagraph}{PF-ODE under ${\mathbf {x}}$-, ${\bm {\epsilon }}$-, and ${\mathbf {s}}$-Predictions.}{201}{subparagraph*.246}%
+\contentsline {subparagraph}{PF-ODE under ${\mathbf {v}}$-Prediction.}{201}{subparagraph*.247}%
+\contentsline {paragraph}{Conclusion.}{202}{paragraph*.248}%
+\contentsline {section}{\numberline {6.4}Beneath It All: The Fokker–Planck Equation}{203}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Connection of Flow-Based Approach and Score SDE}{204}{subsection.6.4.1}%
+\contentsline {section}{\numberline {6.5}Closing Remarks}{207}{section.6.5}%
+\contentsline {chapter}{\numberline {7}(Optional) Diffusion Models and Optimal Transport}{209}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Prologue of Distribution-to-Distribution Translation}{211}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Taxonomy of the Problem Setups}{213}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Optimal Transport (OT)}{213}{subsection.7.2.1}%
+\contentsline {paragraph}{Monge--Kantorovich (Static) Formulation of OT Problem.}{213}{paragraph*.251}%
+\contentsline {subparagraph}{A Special Case: Wasserstein-2 Distance.}{214}{subparagraph*.252}%
+\contentsline {paragraph}{Benamou--Brenier (Dynamic) Formulation of OT.}{215}{paragraph*.253}%
+\contentsline {subsection}{\numberline {7.2.2}Entropy-Regularized Optimal Transport (EOT)}{216}{subsection.7.2.2}%
+\contentsline {paragraph}{Why Regularize OT?}{217}{paragraph*.255}%
+\contentsline {paragraph}{Why Entropy Regularizer Helps?}{218}{paragraph*.256}%
+\contentsline {subsection}{\numberline {7.2.3}Schrödinger Bridge (SB)}{218}{subsection.7.2.3}%
+\contentsline {paragraph}{KL Formulation of SB.}{218}{paragraph*.257}%
+\contentsline {paragraph}{Stochastic Control View of SB.}{219}{paragraph*.258}%
+\contentsline {paragraph}{A Special Brownian Reference.}{221}{paragraph*.260}%
+\contentsline {paragraph}{Why We Need to Specify a Reference Distribution?}{221}{paragraph*.261}%
+\contentsline {paragraph}{Coupled PDE Characterization.}{222}{paragraph*.262}%
+\contentsline {subparagraph}{Forward-Time Schrödinger Bridge SDE.}{222}{subparagraph*.263}%
+\contentsline {subparagraph}{Reverse-Time Schrödinger Bridge SDE.}{222}{subparagraph*.264}%
+\contentsline {subparagraph}{Practical Obstacles to the Coupled PDE Approach.}{223}{subparagraph*.265}%
+\contentsline {subsection}{\numberline {7.2.4}Global Pushforwards and Local Dynamics: An OT Analogy for DGMs}{223}{subsection.7.2.4}%
+\contentsline {section}{\numberline {7.3}Relationship of Variant Optimal Transport Formulations}{224}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}SB and EOT are (Dual) Equivalent}{225}{subsection.7.3.1}%
+\contentsline {paragraph}{Static Schr\"odinger Bridge.}{225}{paragraph*.268}%
+\contentsline {paragraph}{Dynamic Equivalence (Brownian Reference).}{226}{paragraph*.269}%
+\contentsline {paragraph}{SB with General Reference Determines the Endpoint EOT Cost.}{227}{paragraph*.270}%
+\contentsline {subsection}{\numberline {7.3.2}EOT$_\varepsilon $ is Reduced to OT as $\varepsilon \to 0$}{227}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}SB$_\varepsilon $ is Reduced to OT as $\varepsilon \to 0$}{229}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}Is Diffusion Model's SDE Optimal Solution to SB Problem?}{231}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Diffusion models as a Special Case of Schrödinger Bridges}{231}{subsection.7.4.1}%
+\contentsline {paragraph}{Connection to Diffusion Models.}{231}{paragraph*.271}%
+\contentsline {paragraph}{Boundary Conditions and Generality.}{231}{paragraph*.272}%
+\contentsline {subsection}{\numberline {7.4.2}Diffusion Models as Schrödinger Half-Bridges}{232}{subsection.7.4.2}%
+\contentsline {paragraph}{Schrödinger Half-Bridges}{232}{paragraph*.273}%
+\contentsline {paragraph}{Diffusion Models Miss Exact Endpoint Matching.}{232}{paragraph*.274}%
+\contentsline {paragraph}{Diffusion Schrödinger Bridge.}{233}{paragraph*.275}%
+\contentsline {section}{\numberline {7.5}Is Diffusion Model's ODE an Optimal Map to OT Problem?}{235}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}PF-ODE Flow Is Generally Not Optimal Transport}{235}{subsection.7.5.1}%
+\contentsline {paragraph}{Setup.}{235}{paragraph*.277}%
+\contentsline {paragraph}{Objective of \citet {lavenant2022flow}'s Argument.}{236}{paragraph*.278}%
+\contentsline {paragraph}{Some Tools.}{236}{paragraph*.279}%
+\contentsline {paragraph}{Proof Sketch: PF-ODE Is Not an OT Map in General.}{237}{paragraph*.280}%
+\contentsline {subparagraph}{Step 1: Brenier's Theorem.}{237}{subparagraph*.281}%
+\contentsline {subparagraph}{Step 2: Time-Differentiating the Symmetry Condition.}{237}{subparagraph*.282}%
+\contentsline {subparagraph}{Step 3: The Commutation Condition.}{238}{subparagraph*.283}%
+\contentsline {subparagraph}{Step 4: Constructing the Counterexample.}{238}{subparagraph*.284}%
+\contentsline {subsection}{\numberline {7.5.2}Can Canonical Linear Flow and Reflow Leads to an OT Map?}{239}{subsection.7.5.2}%
+\contentsline {paragraph}{Canonical Linear Flow and Optimal Transport.}{239}{paragraph*.285}%
+\contentsline {paragraph}{Reflow and Optimal Transport.}{240}{paragraph*.286}%
+\contentsline {section}{\numberline {7.6}Closing Remarks}{243}{section.7.6}%
+\contentsline {part}{C\hspace {1em}Sampling of Diffusion Models}{244}{part.3}%
+\contentsline {chapter}{\numberline {8}Guidance and Controllable Generation}{246}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Prologue}{248}{section.8.1}%
+\contentsline {paragraph}{Instantiations of the Guidance Direction.}{249}{paragraph*.289}%
+\contentsline {paragraph}{From Control to Better Alignment with Direct Preference Optimization.}{251}{paragraph*.290}%
+\contentsline {section}{\numberline {8.2}Classifier Guidance}{252}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Foundation of Classifier Guidance}{252}{subsection.8.2.1}%
+\contentsline {paragraph}{Practical Approximation in CG.}{253}{paragraph*.291}%
+\contentsline {subsection}{\numberline {8.2.2}Inference with CG}{253}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Advantages and Limitations}{254}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}Classifier-Free Guidance}{255}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Foundation of Classifier-Free Guidance}{255}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Training and Sampling of CFG}{256}{subsection.8.3.2}%
+\contentsline {paragraph}{Joint Training of Unconditional and Conditional Diffusion Models via CFG.}{256}{paragraph*.293}%
+\contentsline {paragraph}{Conditioned Sampling with CFG.}{256}{paragraph*.294}%
+\contentsline {section}{\numberline {8.4}Training-Free Guidance}{258}{section.8.4}%
+\contentsline {paragraph}{Setup and Notations.}{258}{paragraph*.295}%
+\contentsline {subsection}{\numberline {8.4.1}Conceptual Framework for Training-Free Guidance}{258}{subsection.8.4.1}%
+\contentsline {paragraph}{A. Guidance in Data Space.}{259}{paragraph*.296}%
+\contentsline {paragraph}{B. Guidance in Noise Space.}{259}{paragraph*.297}%
+\contentsline {subsection}{\numberline {8.4.2}What Distribution Does Guided Sampling Produce?}{260}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}Examples of Training-Free Approaches to Inverse Problems}{262}{subsection.8.4.3}%
+\contentsline {paragraph}{Background on Inverse Problems.}{262}{paragraph*.298}%
+\contentsline {paragraph}{Pre-Trained Diffusion Models as Inverse Problem Solvers.}{262}{paragraph*.299}%
+\contentsline {subparagraph}{ILVR~\citep {choi2021ilvr}.}{262}{subparagraph*.300}%
+\contentsline {subparagraph}{Diffusion Posterior Sampling (DPS)~\citep {chung2022diffusion}.}{263}{subparagraph*.301}%
+\contentsline {paragraph}{A Related Supervised Iterative-Restoration Viewpoint and Its Connection to the PF-ODE.}{264}{paragraph*.302}%
+\contentsline {section}{\numberline {8.5}From Reinforcement Learning to Direct Preference Optimization for Model Alignment}{267}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}The Motivation: Circumventing the Pitfalls of RLHF}{267}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}RLHF: Bradley-Terry View}{268}{subsection.8.5.2}%
+\contentsline {paragraph}{Short Introduction to RLHF.}{268}{paragraph*.303}%
+\contentsline {paragraph}{Bradley-Terry View and KL Connection.}{268}{paragraph*.304}%
+\contentsline {paragraph}{KL Regularized Policy Optimization (with Fixed Reward).}{269}{paragraph*.305}%
+\contentsline {subsection}{\numberline {8.5.3}DPO Framework}{271}{subsection.8.5.3}%
+\contentsline {paragraph}{The Bridge from RLHF.}{271}{paragraph*.306}%
+\contentsline {paragraph}{Defining an Implicit Reward Motivated by Inverting \Cref {eq:rlhf-closed-form}.}{271}{paragraph*.307}%
+\contentsline {paragraph}{DPO's Training Loss.}{271}{paragraph*.308}%
+\contentsline {subsection}{\numberline {8.5.4}Diffusion-DPO}{272}{subsection.8.5.4}%
+\contentsline {paragraph}{Why Naive DPO Fails for Diffusion Models?}{272}{paragraph*.309}%
+\contentsline {paragraph}{Defining Pathwise Implicit Rewards.}{272}{paragraph*.310}%
+\contentsline {paragraph}{From Pathwise Implicit Rewards to DPO.}{273}{paragraph*.311}%
+\contentsline {paragraph}{Toward a Tractable Surrogate for \Cref {eq:diffusion-dpo}.}{274}{paragraph*.312}%
+\contentsline {subparagraph}{A Tractable Surrogate (Stepwise Form).}{274}{subparagraph*.313}%
+\contentsline {section}{\numberline {8.6}Closing Remarks}{277}{section.8.6}%
+\contentsline {chapter}{\numberline {9}Numerical Solvers for Fast Diffusion Sampling}{278}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Prologue}{280}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Fast Sampling as Numerical Integration}{280}{subsection.9.1.1}%
+\contentsline {paragraph}{Sampling as Solving the Empirical PF-ODE.}{280}{paragraph*.314}%
+\contentsline {paragraph}{Three Independent Choices in Solver Design.}{281}{paragraph*.315}%
+\contentsline {paragraph}{How Can a Solver Use Model Evaluations?}{282}{paragraph*.316}%
+\contentsline {paragraph}{Computational Cost and Practical Performance.}{282}{paragraph*.317}%
+\contentsline {subsection}{\numberline {9.1.2}Design of Diffusion-Specific Solvers}{283}{subsection.9.1.2}%
+\contentsline {paragraph}{I. Parameterizations Beyond the Score.}{283}{paragraph*.318}%
+\contentsline {paragraph}{II. One PF-ODE, Two Numerical Forms.}{284}{paragraph*.319}%
+\contentsline {subparagraph}{Direct Velocity Form.}{284}{subparagraph*.320}%
+\contentsline {subparagraph}{Factored Semilinear Form.}{284}{subparagraph*.321}%
+\contentsline {paragraph}{III. Exponential Integrators for Semilinear PF-ODEs.}{286}{paragraph*.323}%
+\contentsline {paragraph}{Why the Factored Exponential-Integrator Form Can Help.}{286}{paragraph*.324}%
+\contentsline {subsection}{\numberline {9.1.3}Roadmap from Numerical Ideas to Diffusion Samplers}{288}{subsection.9.1.3}%
+\contentsline {section}{\numberline {9.2}DDIM}{290}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}DDIM as a First-Order Diffusion Solver}{290}{subsection.9.2.1}%
+\contentsline {paragraph}{Equivalent Forms and Interpretation.}{291}{paragraph*.325}%
+\contentsline {paragraph}{Why Does the Prediction Held Fixed Matter?}{292}{paragraph*.327}%
+\contentsline {subsection}{\numberline {9.2.2}Relation to Euler-Type Methods}{294}{subsection.9.2.2}%
+\contentsline {paragraph}{DDIM versus Plain Euler.}{295}{paragraph*.328}%
+\contentsline {paragraph}{DDIM versus Exponential Euler.}{296}{paragraph*.329}%
+\contentsline {paragraph}{What Error Does Each Method Still Make?}{297}{paragraph*.330}%
+\contentsline {paragraph}{A Precise Euler Interpretation of DDIM.}{298}{paragraph*.331}%
+\contentsline {subsection}{\numberline {9.2.3}(Optional) The Original Variational Perspective on DDIM}{301}{subsection.9.2.3}%
+\contentsline {paragraph}{Revisiting DDPM's Variational View.}{301}{paragraph*.332}%
+\contentsline {paragraph}{Original DDIM Motivation.}{301}{paragraph*.333}%
+\contentsline {paragraph}{Derivation of Discrete-Time DDIM.}{302}{paragraph*.334}%
+\contentsline {paragraph}{DDIM Sampler (Step $s\to t$).}{303}{paragraph*.335}%
+\contentsline {paragraph}{Connection to Conditional Flow Matching.}{305}{paragraph*.336}%
+\contentsline {section}{\numberline {9.3}DEIS}{307}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Background: Polynomial Extrapolation}{307}{subsection.9.3.1}%
+\contentsline {paragraph}{From Anchors to a Polynomial Extrapolant.}{307}{paragraph*.337}%
+\contentsline {subsection}{\numberline {9.3.2}DEIS: Lagrange Polynomial Approximation of the PF-ODE Integral}{309}{subsection.9.3.2}%
+\contentsline {paragraph}{Case I: $i = n+1,\dots ,M$ (Sufficient History).}{309}{paragraph*.339}%
+\contentsline {paragraph}{Case II: $i=1,\dots ,n$ (Insufficient History).}{311}{paragraph*.340}%
+\contentsline {paragraph}{Summary of AB-DEIS-$n$ Update.}{311}{paragraph*.341}%
+\contentsline {subsection}{\numberline {9.3.3}DDIM = AB-DEIS-0}{312}{subsection.9.3.3}%
+\contentsline {section}{\numberline {9.4}DPM-Solver}{314}{section.9.4}%
+\contentsline {paragraph}{High-Level Idea of DPM-Solver.}{314}{paragraph*.342}%
+\contentsline {subsection}{\numberline {9.4.1}DPM-Solver's Insight: Time Reparameterization via Log-SNR}{314}{subsection.9.4.1}%
+\contentsline {paragraph}{Change-of-Variable to Log-SNR in PF-ODE.}{315}{paragraph*.343}%
+\contentsline {paragraph}{Intuition of Why Reparameterize Time?}{316}{paragraph*.344}%
+\contentsline {subsection}{\numberline {9.4.2}Estimating the Integral with Taylor Expansion}{318}{subsection.9.4.2}%
+\contentsline {subsection}{\numberline {9.4.3}Implementation of DPM-Solver-$n$}{319}{subsection.9.4.3}%
+\contentsline {paragraph}{DPM-Solver-$n$ with $n \geq 2$.}{319}{paragraph*.345}%
+\contentsline {subparagraph}{Precomputing ${\color {orange}C_k}$.}{319}{subparagraph*.346}%
+\contentsline {subparagraph}{Approximating {\color {cyan}$\hat {\bm {\epsilon }}_{\bm {\phi }^\times }^{(k)}(\hat {\mathbf {x}}_\lambda ,\lambda )$} for $k \leq n-1$.}{320}{subparagraph*.347}%
+\contentsline {paragraph}{Implementation Detail: Selection of Sampling Timesteps.}{322}{paragraph*.348}%
+\contentsline {subsection}{\numberline {9.4.4}DDIM $=$ DPM-Solver-1}{322}{subsection.9.4.4}%
+\contentsline {subsection}{\numberline {9.4.5}Relation of DPM-Solver to Runge-Kutta-Type Solvers}{323}{subsection.9.4.5}%
+\contentsline {paragraph}{DPM-Solver-2 versus Plain Midpoint RK2.}{323}{paragraph*.349}%
+\contentsline {paragraph}{DPM-Solver-2 versus Exponential Midpoint RK2.}{325}{paragraph*.350}%
+\contentsline {section}{\numberline {9.5}DPM-Solver\texttt {++}}{327}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}From DPM-Solver to DPM-Solver\texttt {++} for Guided Sampling}{327}{subsection.9.5.1}%
+\contentsline {subsection}{\numberline {9.5.2}DPM-Solver\texttt {++}'s Methodology}{327}{subsection.9.5.2}%
+\contentsline {subsection}{\numberline {9.5.3}DPM-Solver\texttt {++} Single-Step by Taylor Expansion}{328}{subsection.9.5.3}%
+\contentsline {subsection}{\numberline {9.5.4}DPM-Solver\texttt {++} Multistep by Recycling History}{330}{subsection.9.5.4}%
+\contentsline {paragraph}{The Practical DPM-Solver\texttt {++}(2M) Update.}{331}{paragraph*.351}%
+\contentsline {subsection}{\numberline {9.5.5}Relation of DPM-Solver\texttt {++}(2M) to DEIS}{333}{subsection.9.5.5}%
+\contentsline {subsection}{\numberline {9.5.6}Closing Remark}{335}{subsection.9.5.6}%
+\contentsline {section}{\numberline {9.6}(Optional) ParaDiGMs}{337}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}From Time-Stepping to Time-Parallel Solver}{337}{subsection.9.6.1}%
+\contentsline {subsection}{\numberline {9.6.2}Methodology of ParaDiGMS}{337}{subsection.9.6.2}%
+\contentsline {paragraph}{From Trajectories to Picard Iteration as a Fixed-Point Update.}{337}{paragraph*.353}%
+\contentsline {paragraph}{Discrete Picard on a $T$ to $0$ Grid.}{338}{paragraph*.354}%
+\contentsline {paragraph}{Sliding Windows and Parallel Evaluation.}{339}{paragraph*.355}%
+\contentsline {subparagraph}{Step 1. Parallel Drift Evaluation on the Window.}{339}{subparagraph*.357}%
+\contentsline {subparagraph}{Step 2. Left–Anchored Cumulative Updates.}{339}{subparagraph*.358}%
+\contentsline {subparagraph}{Step 3. Progress Control and Window Advance.}{340}{subparagraph*.359}%
+\contentsline {subsection}{\numberline {9.6.3}Relation to Time-Stepping Solvers}{340}{subsection.9.6.3}%
+\contentsline {paragraph}{Selection of Sliding Window Size.}{340}{paragraph*.360}%
+\contentsline {paragraph}{Compatibility with Higher--Order Solvers (e.g., DPM).}{341}{paragraph*.361}%
+\contentsline {section}{\numberline {9.7}Closing Remarks}{343}{section.9.7}%
+\contentsline {part}{D\hspace {1em}Toward Learning Fast Diffusion-Based Generators}{344}{part.4}%
+\contentsline {chapter}{\numberline {10}Distillation-Based Methods for Fast Sampling}{345}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Prologue}{346}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Distribution Level Distillation}{346}{subsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.1.2}Flow Map Level Distillation}{347}{subsection.10.1.2}%
+\contentsline {paragraph}{Trajectory Distillation.}{348}{paragraph*.362}%
+\contentsline {paragraph}{An Early Approach: Direct Knowledge Distillation.}{348}{paragraph*.363}%
+\contentsline {paragraph}{Preface to Progressive Distillation.}{348}{paragraph*.364}%
+\contentsline {paragraph}{A Unified Perspective of Flow Map Learning.}{349}{paragraph*.365}%
+\contentsline {section}{\numberline {10.2}Distribution-Based Distillation}{350}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Formulation of VSD as a Representative Approach}{350}{subsection.10.2.1}%
+\contentsline {paragraph}{Forward Process.}{350}{paragraph*.366}%
+\contentsline {paragraph}{Training Objective and Gradient.}{350}{paragraph*.367}%
+\contentsline {subsection}{\numberline {10.2.2}Training Pipeline of VSD}{351}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}Beyond KL: General Divergences and Why KL Is Special}{352}{subsection.10.2.3}%
+\contentsline {section}{\numberline {10.3}Progressive Distillation}{354}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Distillation Operation in PD}{354}{subsection.10.3.1}%
+\contentsline {paragraph}{Practical Discrete Time Grids and Loss.}{356}{paragraph*.369}%
+\contentsline {subsection}{\numberline {10.3.2}Entire Training Pipeline of PD and Its Sampling}{357}{subsection.10.3.2}%
+\contentsline {paragraph}{Sampling.}{357}{paragraph*.370}%
+\contentsline {subsection}{\numberline {10.3.3}Additional Discussion: Local Semigroup Matching and the Possibility of Generalized Solvers}{357}{subsection.10.3.3}%
+\contentsline {paragraph}{Progressive Distillation as Local Semigroup Matching.}{357}{paragraph*.371}%
+\contentsline {paragraph}{Can we Use Other Solvers?}{358}{paragraph*.372}%
+\contentsline {subsection}{\numberline {10.3.4}PD with Guidance}{359}{subsection.10.3.4}%
+\contentsline {paragraph}{Stage-One Distillation: Distilling Guidance.}{359}{paragraph*.373}%
+\contentsline {paragraph}{Stage-Two Distillation: PD.}{359}{paragraph*.374}%
+\contentsline {section}{\numberline {10.4}Closing Remarks}{360}{section.10.4}%
+\contentsline {chapter}{\numberline {11}Learning Fast Generators from Scratch}{361}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Prologue}{363}{section.11.1}%
+\contentsline {paragraph}{Motivation of Flow Map Models.}{363}{paragraph*.376}%
+\contentsline {paragraph}{Special Flow Map: Consistency Functions.}{365}{paragraph*.379}%
+\contentsline {paragraph}{General Flow Map.}{365}{paragraph*.380}%
+\contentsline {subparagraph}{Consistency Trajectory Models.}{365}{subparagraph*.381}%
+\contentsline {subparagraph}{Mean Flow.}{366}{subparagraph*.382}%
+\contentsline {subparagraph}{Relationship Between CTM and MF.}{367}{subparagraph*.383}%
+\contentsline {paragraph}{What Happens Next?}{367}{paragraph*.384}%
+\contentsline {section}{\numberline {11.2}Special Flow Map: Consistency Model in Discrete Time}{368}{section.11.2}%
+\contentsline {paragraph}{An Important Principle of Flow Maps: The Semigroup Property.}{368}{paragraph*.385}%
+\contentsline {paragraph}{Goal of Consistency Models.}{370}{paragraph*.387}%
+\contentsline {subsection}{\numberline {11.2.1}Discrete-Time Approximations for Learning a Consistency Function}{370}{subsection.11.2.1}%
+\contentsline {paragraph}{With Pre-trained Diffusion Model (Consistency Distillation).}{371}{paragraph*.389}%
+\contentsline {paragraph}{Without Pre-Trained Diffusion Model (Consistency Training).}{371}{paragraph*.390}%
+\contentsline {paragraph}{Practical Considerations.}{373}{paragraph*.391}%
+\contentsline {subsection}{\numberline {11.2.2}Sampling with Consistency Model}{374}{subsection.11.2.2}%
+\contentsline {paragraph}{One-Step Generation.}{374}{paragraph*.392}%
+\contentsline {paragraph}{Multi-Step Generation.}{374}{paragraph*.393}%
+\contentsline {section}{\numberline {11.3}Special Flow Map: Consistency Model in Continuous Time}{375}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Continuous-Time Consistency Model}{375}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}Training Continuous-Time Consistency Model}{377}{subsection.11.3.2}%
+\contentsline {paragraph}{Continuous-Time Consistency Distillation.}{377}{paragraph*.394}%
+\contentsline {paragraph}{Continuous-Time Consistency Training (from Scratch).}{377}{paragraph*.395}%
+\contentsline {subsection}{\numberline {11.3.3}(Optional) Practical Considerations of Continuous-Time CT}{378}{subsection.11.3.3}%
+\contentsline {paragraph}{Diffusion Process.}{378}{paragraph*.397}%
+\contentsline {paragraph}{Parametrizations.}{379}{paragraph*.398}%
+\contentsline {subparagraph}{Techniques for Stabilizing Tangent Training.}{379}{subparagraph*.399}%
+\contentsline {paragraph}{Time-Weighting Function.}{381}{paragraph*.400}%
+\contentsline {paragraph}{Time Sampling Distribution.}{381}{paragraph*.401}%
+\contentsline {paragraph}{Summary of Training Objective.}{382}{paragraph*.402}%
+\contentsline {section}{\numberline {11.4}General Flow Map: Consistency Trajectory Model}{383}{section.11.4}%
+\contentsline {paragraph}{Setup of CTM in Practice.}{383}{paragraph*.403}%
+\contentsline {subsection}{\numberline {11.4.1}CTM Parametrization for Flexible Transition Learning}{383}{subsection.11.4.1}%
+\contentsline {paragraph}{Advantages of CTM's Parametrizations.}{384}{paragraph*.404}%
+\contentsline {subsection}{\numberline {11.4.2}Consistency Loss in CTM}{385}{subsection.11.4.2}%
+\contentsline {paragraph}{Training via Distillation.}{386}{paragraph*.405}%
+\contentsline {paragraph}{Training from Scratch.}{387}{paragraph*.406}%
+\contentsline {subsection}{\numberline {11.4.3}Auxiliary Losses in CTM}{388}{subsection.11.4.3}%
+\contentsline {paragraph}{Natural Integration of Diffusion Loss.}{389}{paragraph*.408}%
+\contentsline {paragraph}{(Optional) GAN Loss.}{389}{paragraph*.409}%
+\contentsline {paragraph}{Overall CTM Objective.}{389}{paragraph*.410}%
+\contentsline {subsection}{\numberline {11.4.4}Flexible Sampling with CTM}{390}{subsection.11.4.4}%
+\contentsline {paragraph}{Methodology of $\gamma $-Sampling.}{390}{paragraph*.411}%
+\contentsline {paragraph}{Analysis of $\gamma $-Sampling.}{391}{paragraph*.413}%
+\contentsline {paragraph}{CTM Supports Diffusion Inference.}{392}{paragraph*.414}%
+\contentsline {section}{\numberline {11.5}General Flow Map: Mean Flow}{393}{section.11.5}%
+\contentsline {subsection}{\numberline {11.5.1}Modeling and Training of Mean Flow}{393}{subsection.11.5.1}%
+\contentsline {paragraph}{Distillation.}{394}{paragraph*.415}%
+\contentsline {paragraph}{Training from scratch.}{394}{paragraph*.416}%
+\contentsline {subsection}{\numberline {11.5.2}Sampling of Mean Flow}{394}{subsection.11.5.2}%
+\contentsline {subsection}{\numberline {11.5.3}Relationship between CTM and MF}{395}{subsection.11.5.3}%
+\contentsline {paragraph}{Relationship of Parameterizations.}{395}{paragraph*.417}%
+\contentsline {paragraph}{Relationship of Training Loss.}{395}{paragraph*.418}%
+\contentsline {paragraph}{Auxiliary Loss in Practice.}{396}{paragraph*.419}%
+\contentsline {paragraph}{Both CTM and MF Parameterizations Enable Flexible Inference.}{396}{paragraph*.420}%
+\contentsline {paragraph}{Conclusion.}{397}{paragraph*.421}%
+\contentsline {section}{\numberline {11.6}Closing Remarks}{398}{section.11.6}%
+\contentsline {paragraph}{Semigroup View: Split the Trip.}{398}{paragraph*.422}%
+\contentsline {paragraph}{Lagrangian View: Move the Ending Point.}{398}{paragraph*.424}%
+\contentsline {paragraph}{Eulerian View: Move the Starting Point.}{399}{paragraph*.425}%
+\contentsline {paragraph}{Mathematical Equivalence of the Three Perspectives.}{400}{paragraph*.427}%
+\contentsline {subparagraph}{Ending-Time Limit: the Lagrangian Identity.}{401}{subparagraph*.428}%
+\contentsline {subparagraph}{Starting-Time Limit: the Eulerian Identity.}{401}{subparagraph*.429}%
+\contentsline {subparagraph}{Recovering the Flow Map from Either Differential Identity.}{402}{subparagraph*.430}%
+\contentsline {paragraph}{Closing.}{402}{paragraph*.431}%
+\contentsline {part}{Epilogue and Outlook}{404}{part*.432}%
+\contentsline {chapter}{\numberline {12}A Unifying Principle and the Road Ahead}{404}{chapter.12}%
+\contentsline {section}{\numberline {12.1}The Density-Transport Backbone}{406}{section.12.1}%
+\contentsline {paragraph}{A Common Three-Step Structure.}{406}{paragraph*.433}%
+\contentsline {paragraph}{The Change-of-Variable Hierarchy.}{406}{paragraph*.434}%
+\contentsline {section}{\numberline {12.2}Beyond Continuous States: Probability Evolution on Discrete Spaces}{410}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Discrete-Time Transitions}{411}{subsection.12.2.1}%
+\contentsline {paragraph}{How the Distribution Evolves.}{414}{paragraph*.437}%
+\contentsline {paragraph}{Inverting a Single Step.}{415}{paragraph*.438}%
+\contentsline {subsection}{\numberline {12.2.2}Continuous-Time Limit: The Master Equation}{415}{subsection.12.2.2}%
+\contentsline {paragraph}{Infinitesimal Transitions.}{416}{paragraph*.440}%
+\contentsline {paragraph}{Master Equation.}{417}{paragraph*.441}%
+\contentsline {paragraph}{Comparison with the Continuity Equation.}{417}{paragraph*.442}%
+\contentsline {paragraph}{Forward Corruption.}{418}{paragraph*.444}%
+\contentsline {subparagraph}{Masked Diffusion (Absorbing).}{419}{subparagraph*.445}%
+\contentsline {subparagraph}{Uniform Diffusion.}{419}{subparagraph*.446}%
+\contentsline {subsection}{\numberline {12.2.3}Three Perspectives on Reverse Modeling}{420}{subsection.12.2.3}%
+\contentsline {paragraph}{Variational Perspective: Learn Reverse Transition Kernels.}{420}{paragraph*.447}%
+\contentsline {paragraph}{Score/Ratio Perspective: Learn Local Probability Comparisons.}{422}{paragraph*.448}%
+\contentsline {subparagraph}{Deriving the Reverse Jump Rate.}{422}{subparagraph*.449}%
+\contentsline {subparagraph}{The Ratio as a Discrete Analogue of the Score.}{423}{subparagraph*.450}%
+\contentsline {subparagraph}{What the Network Learns.}{424}{subparagraph*.451}%
+\contentsline {paragraph}{Flow Perspective: Learn a Discrete Transport Field.}{424}{paragraph*.452}%
+\contentsline {subsection}{\numberline {12.2.4}What Is Similar and What Is Genuinely Different?}{426}{subsection.12.2.4}%
+\contentsline {paragraph}{No Literal Inverse Map.}{426}{paragraph*.454}%
+\contentsline {paragraph}{Geometry and Sample Paths.}{426}{paragraph*.455}%
+\contentsline {paragraph}{Forward Corruption Structure and Reverse Parametrization.}{427}{paragraph*.456}%
+\contentsline {paragraph}{Sampling Mechanism.}{427}{paragraph*.457}%
+\contentsline {paragraph}{Why Stop Here?}{427}{paragraph*.458}%
+\contentsline {section}{\numberline {12.3}Closing Remarks of the Book}{429}{section.12.3}%
+\contentsline {part}{Appendices}{430}{section*.459}%
+\contentsline {chapter}{\numberline {A}Crash Course on Differential Equations}{431}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Foundation of Ordinary Differential Equations}{433}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Intuition of Ordinary Differential Equation}{433}{subsection.A.1.1}%
+\contentsline {paragraph}{High-Level Intuition for Solving ODEs.}{433}{paragraph*.460}%
+\contentsline {subsection}{\numberline {A.1.2}Existence and Uniqueness of Ordinary Differential Equations}{434}{subsection.A.1.2}%
+\contentsline {paragraph}{Local (in Time) Existence and Uniqueness Theorem.}{434}{paragraph*.462}%
+\contentsline {paragraph}{Global (in Time) Existence and Uniqueness Theorem.}{435}{paragraph*.463}%
+\contentsline {paragraph}{Uniqueness Implies Non-Intersection of Solutions}{436}{paragraph*.464}%
+\contentsline {subsection}{\numberline {A.1.3}Exponential Integration Factor}{437}{subsection.A.1.3}%
+\contentsline {paragraph}{An Illustrative Example.}{437}{paragraph*.465}%
+\contentsline {paragraph}{Semilinear ODEs and Exponential Integration Factors.}{437}{paragraph*.466}%
+\contentsline {subparagraph}{Step 1: Isolate the Non-Linear Term via an Integration Factor.}{438}{subparagraph*.467}%
+\contentsline {subparagraph}{Step 2: Integrate Over Time.}{438}{subparagraph*.468}%
+\contentsline {subparagraph}{Step 3: Solve for ${\mathbf {x}}(t)$.}{438}{subparagraph*.469}%
+\contentsline {subsection}{\numberline {A.1.4}Numerical Solvers of Ordinary Differential Equations}{439}{subsection.A.1.4}%
+\contentsline {paragraph}{From a Continuous Trajectory to Numerical Updates.}{439}{paragraph*.470}%
+\contentsline {paragraph}{A Structural View of Numerical Solvers.}{440}{paragraph*.471}%
+\contentsline {paragraph}{Solving ODEs in Forward and Reverse Time.}{441}{paragraph*.472}%
+\contentsline {subsection}{\numberline {A.1.5}Representative Numerical Solvers}{441}{subsection.A.1.5}%
+\contentsline {paragraph}{Euler's Method.}{441}{paragraph*.473}%
+\contentsline {paragraph}{Runge--Kutta Methods.}{442}{paragraph*.474}%
+\contentsline {subparagraph}{Explicit Midpoint Method.}{442}{subparagraph*.475}%
+\contentsline {subparagraph}{Heun's Method (Improved Euler).}{442}{subparagraph*.476}%
+\contentsline {paragraph}{Adams--Bashforth Method.}{443}{paragraph*.477}%
+\contentsline {paragraph}{Picard Iteration.}{443}{paragraph*.478}%
+\contentsline {section}{\numberline {A.2}Foundation of Stochastic Differential Equations}{444}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}From ODEs to SDEs: An Intuitive Introduction}{444}{subsection.A.2.1}%
+\contentsline {paragraph}{Discretization Perspective.}{444}{paragraph*.479}%
+\contentsline {paragraph}{Introducing Randomness: From ODE to SDE.}{444}{paragraph*.480}%
+\contentsline {paragraph}{Stochastic Differential Equations.}{445}{paragraph*.481}%
+\contentsline {subsection}{\numberline {A.2.2}Further Explanation of \Cref {eq:sde}}{445}{subsection.A.2.2}%
+\contentsline {paragraph}{Intuition for It\^o Integration.}{446}{paragraph*.482}%
+\contentsline {paragraph}{Use of Differential Notation.}{446}{paragraph*.483}%
+\contentsline {paragraph}{Comparison with ODEs.}{446}{paragraph*.484}%
+\contentsline {subsection}{\numberline {A.2.3}A Numerical Solver for SDE.}{447}{subsection.A.2.3}%
+\contentsline {chapter}{\numberline {B}Density Evolution: From Change of Variable to Fokker–Planck}{448}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Change-of-Variable Formula: \\From Deterministic Maps to Stochastic Flows}{450}{section.B.1}%
+\contentsline {subsection}{\numberline {B.1.1}Change-of-Variable Formula for Deterministic Maps}{450}{subsection.B.1.1}%
+\contentsline {paragraph}{Single Update.}{450}{paragraph*.486}%
+\contentsline {paragraph}{Underlying Pattern (a Density) and How it Moves.}{450}{paragraph*.487}%
+\contentsline {paragraph}{Intuition in 1D.}{451}{paragraph*.488}%
+\contentsline {paragraph}{Why is \Cref {eq:change-of-variable-density} the Change-of-Variables Formula?}{451}{paragraph*.489}%
+\contentsline {subparagraph}{Single-Variable Case.}{451}{subparagraph*.490}%
+\contentsline {subparagraph}{Multivariate Case.}{452}{subparagraph*.491}%
+\contentsline {paragraph}{Composing Multiple Bijections.}{452}{paragraph*.492}%
+\contentsline {subsection}{\numberline {B.1.2}Continuous-Time Limit: Continuity Equation}{454}{subsection.B.1.2}%
+\contentsline {paragraph}{Continuity Equation: How the Density Moves in Time.}{454}{paragraph*.493}%
+\contentsline {paragraph}{Derivation of Continuity Equation via Change-of-Variables Formula.}{455}{paragraph*.494}%
+\contentsline {subparagraph}{Discretization and Change-of-Variable Formula.}{455}{subparagraph*.495}%
+\contentsline {subparagraph}{Using Taylor Expansion.}{455}{subparagraph*.496}%
+\contentsline {paragraph}{Lagrangian and Eulerian Views of Deterministic Transport.}{456}{paragraph*.497}%
+\contentsline {subparagraph}{From Velocity to Flow and Density.}{456}{subparagraph*.498}%
+\contentsline {subparagraph}{From Density Path to Velocity: Non-Uniqueness.}{457}{subparagraph*.499}%
+\contentsline {paragraph}{(Optional) Conditioning.}{457}{paragraph*.500}%
+\contentsline {subsection}{\numberline {B.1.3}Stochastic Processes: Fokker-Planck Equation}{458}{subsection.B.1.3}%
+\contentsline {section}{\numberline {B.2}Intuition of the Continuity Equation}{459}{section.B.2}%
+\contentsline {subsection}{\numberline {B.2.1}Derivation of the Continuity Equation from Conservation Laws}{459}{subsection.B.2.1}%
+\contentsline {paragraph}{Step 1: Rate of Change within a Control Volume.}{459}{paragraph*.501}%
+\contentsline {paragraph}{Step 2: Net Flux Through the Boundary.}{459}{paragraph*.502}%
+\contentsline {paragraph}{Step 3: Conservation Principle.}{459}{paragraph*.503}%
+\contentsline {paragraph}{Step 4: Divergence Theorem.}{459}{paragraph*.504}%
+\contentsline {paragraph}{Two Perspectives on the Divergence Theorem.}{460}{paragraph*.505}%
+\contentsline {subparagraph}{(1) Intuition.}{460}{subparagraph*.506}%
+\contentsline {subparagraph}{(2) ``Rigorous'' Proof.}{460}{subparagraph*.507}%
+\contentsline {paragraph}{Particle-Level Intuition.}{461}{paragraph*.508}%
+\contentsline {section}{\numberline {B.3}(Optional) Wasserstein Gradient Flows as Distribution-Level Training}{462}{section.B.3}%
+\contentsline {paragraph}{Moving Model Distributions by Moving Particles.}{462}{paragraph*.509}%
+\contentsline {paragraph}{Choosing the Velocity: Gradient Descent in Distribution Space.}{463}{paragraph*.510}%
+\contentsline {paragraph}{Realizing the Distributional Velocity with a Neural Network.}{464}{paragraph*.511}%
+\contentsline {paragraph}{Forward-KL Training: Data-Side Likelihood Learning.}{464}{paragraph*.512}%
+\contentsline {paragraph}{Reverse-KL Training: Model-Side Score-Mismatch Dynamics.}{465}{paragraph*.513}%
+\contentsline {paragraph}{Closing Remarks.}{466}{paragraph*.514}%
+\contentsline {chapter}{\numberline {C}Behind the Scenes of Diffusion Models:\\ It\^o’s Calculus and Girsanov's Theorem}{468}{appendix.C}%
+\contentsline {section}{\numberline {C.1}It\^o's Formula: The Chain Rule for Random Processes}{470}{section.C.1}%
+\contentsline {subsection}{\numberline {C.1.1}Motivation: Why Do We Need a Special Chain Rule?}{470}{subsection.C.1.1}%
+\contentsline {paragraph}{Why the Ordinary Chain Rule Fails?}{470}{paragraph*.515}%
+\contentsline {subsection}{\numberline {C.1.2}Deriving 1D It\^o's Formula from Taylor Expansion}{471}{subsection.C.1.2}%
+\contentsline {paragraph}{Deterministic Chain Rule via Taylor Expansion.}{471}{paragraph*.516}%
+\contentsline {paragraph}{It\^o's Formula via Stochastic Taylor Expansion.}{471}{paragraph*.517}%
+\contentsline {subparagraph}{Negligible Cross Terms.}{472}{subparagraph*.518}%
+\contentsline {subparagraph}{Second-Order Term $(\mathop {}\!\mathrm {d}x_t)^2$.}{472}{subparagraph*.519}%
+\contentsline {subsection}{\numberline {C.1.3}It\^o's Formula: The Chain Rule for SDEs}{473}{subsection.C.1.3}%
+\contentsline {paragraph}{$1$D It\^o's Formula.}{473}{paragraph*.520}%
+\contentsline {paragraph}{Multidimensional It\^o's Formula with Scalar Output.}{473}{paragraph*.521}%
+\contentsline {subsection}{\numberline {C.1.4}It\^o's Formula's Application: Derivation of Fokker-Planck Equation}{475}{subsection.C.1.4}%
+\contentsline {paragraph}{Step 1: Apply It\^o's Formula.}{475}{paragraph*.522}%
+\contentsline {paragraph}{Step 2: Take Expectation.}{475}{paragraph*.523}%
+\contentsline {paragraph}{Step 3: Express Expectation via Density.}{475}{paragraph*.524}%
+\contentsline {paragraph}{Step 4: Integrate by Parts.}{475}{paragraph*.525}%
+\contentsline {paragraph}{Step 5: Substitute and Rearrange.}{476}{paragraph*.526}%
+\contentsline {subsection}{\numberline {C.1.5}It\^o's Formula Application: Closed-Form Solution of a Linear SDE}{476}{subsection.C.1.5}%
+\contentsline {paragraph}{Closed-Form Solution of a Linear ODE.}{476}{paragraph*.527}%
+\contentsline {paragraph}{Closed-Form Solution of a Linear SDE.}{477}{paragraph*.528}%
+\contentsline {subparagraph}{Step 1: Define an Integration Factor.}{477}{subparagraph*.529}%
+\contentsline {subparagraph}{Step 2: Apply It\^o's Formula.}{477}{subparagraph*.530}%
+\contentsline {subparagraph}{Step 3: Solve for ${\mathbf {x}}_t$.}{477}{subparagraph*.531}%
+\contentsline {paragraph}{Analysis of the Closed-Form Solution.}{477}{paragraph*.532}%
+\contentsline {subparagraph}{Mean.}{478}{subparagraph*.533}%
+\contentsline {subparagraph}{Covariance.}{478}{subparagraph*.534}%
+\contentsline {paragraph}{Derivation of Mean and Variance ODEs in \Cref {eq:mean-var-evolution}.}{478}{paragraph*.535}%
+\contentsline {subparagraph}{Mean Evolution.}{478}{subparagraph*.536}%
+\contentsline {subparagraph}{Covariance Evolution.}{479}{subparagraph*.537}%
+\contentsline {section}{\numberline {C.2}Change-of-Variable For Measures: Girsanov's Theorem in Diffusion Models}{480}{section.C.2}%
+\contentsline {paragraph}{The Core Idea.}{480}{paragraph*.538}%
+\contentsline {paragraph}{The Setup.}{480}{paragraph*.539}%
+\contentsline {paragraph}{Girsanov's Likelihood Ratio.}{480}{paragraph*.540}%
+\contentsline {subsection}{\numberline {C.2.1}Girsanov’s Theorem as a Bridge Between Likelihood Training and Score Matching}{481}{subsection.C.2.1}%
+\contentsline {paragraph}{Two Notions in Diffusion Models.}{481}{paragraph*.541}%
+\contentsline {paragraph}{Girsanov Connects Score Error to Path-Law Mismatch.}{482}{paragraph*.542}%
+\contentsline {paragraph}{Connection to Data Likelihood.}{483}{paragraph*.543}%
+\contentsline {chapter}{\numberline {D}Supplementary Materials and Proofs}{484}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Variational Perspective}{484}{section.D.1}%
+\contentsline {subsection}{\numberline {D.1.1}Theorem~\ref {thm:equiv-marginal-kl}: Equivalence Between Marginal and Conditional KL Minimization}{484}{subsection.D.1.1}%
+\contentsline {paragraph}{\textit {Proof.}}{484}{paragraph*.544}%
+\contentsline {subsection}{\numberline {D.1.2}Theorem~\ref {thm:ddpm-elbo}: ELBO of Diffusion Model}{485}{subsection.D.1.2}%
+\contentsline {paragraph}{\textit {Proof.}}{485}{paragraph*.545}%
+\contentsline {section}{\numberline {D.2}Score-Based Perspective}{487}{section.D.2}%
+\contentsline {subsection}{\numberline {D.2.1}Proposition~\ref {sm-trace}: Tractable Score Matching via Integration by Parts}{487}{subsection.D.2.1}%
+\contentsline {paragraph}{\textit {Proof.}}{487}{paragraph*.546}%
+\contentsline {subsection}{\numberline {D.2.2}Theorem~\ref {thm:sm-dsm}: Equivalence Between SM and DSM Minimization}{488}{subsection.D.2.2}%
+\contentsline {paragraph}{\textit {Proof.}}{488}{paragraph*.547}%
+\contentsline {subsection}{\numberline {D.2.3}Lemma~\ref {tweedie}: Tweedie's Formula}{489}{subsection.D.2.3}%
+\contentsline {paragraph}{Tweedie’s Identity with Time-Dependent Parameters.}{489}{paragraph*.548}%
+\contentsline {paragraph}{\textit {Proof.}}{489}{paragraph*.549}%
+\contentsline {paragraph}{Marginal Density and Its Score.}{490}{paragraph*.550}%
+\contentsline {paragraph}{Gradient of the Conditional and Rearrangement.}{490}{paragraph*.551}%
+\contentsline {subsection}{\numberline {D.2.4}Stein’s Identity and Surrogate SURE Objective}{490}{subsection.D.2.4}%
+\contentsline {paragraph}{Stein's Identity.}{490}{paragraph*.552}%
+\contentsline {subparagraph}{1D, Standard Normal Case.}{491}{subparagraph*.553}%
+\contentsline {subparagraph}{Multivariate, Standard Normal Case.}{491}{subparagraph*.554}%
+\contentsline {subparagraph}{Identity Needed for SURE.}{491}{subparagraph*.555}%
+\contentsline {paragraph}{Deriving SURE from the Conditional MSE.}{491}{paragraph*.556}%
+\contentsline {subsection}{\numberline {D.2.5}Theorem~\ref {thm:fpe}: Marginal Alignment via Fokker–Planck}{492}{subsection.D.2.5}%
+\contentsline {paragraph}{\textit {Proof.}}{492}{paragraph*.557}%
+\contentsline {paragraph}{Part 1: Fokker-Planck Equation for the Forward SDE.}{492}{paragraph*.558}%
+\contentsline {paragraph}{Part 2: PF-ODE Marginal Densities.}{493}{paragraph*.559}%
+\contentsline {paragraph}{Part 3: Reverse-Time SDE Marginal Densities.}{494}{paragraph*.560}%
+\contentsline {subsection}{\numberline {D.2.6}Proposition~\ref {dsm-minimizer}: Minimizer of SM and DSM}{495}{subsection.D.2.6}%
+\contentsline {paragraph}{\textit {Proof.}}{495}{paragraph*.561}%
+\contentsline {subsection}{\numberline {D.2.7}Closed-Form Score Function of a Gaussian}{496}{subsection.D.2.7}%
+\contentsline {section}{\numberline {D.3}Flow-Based Perspective}{498}{section.D.3}%
+\contentsline {subsection}{\numberline {D.3.1}Lemma~\ref {instant-change-of-var}: Instantaneous Change of Variables}{498}{subsection.D.3.1}%
+\contentsline {paragraph}{\textit {Proof.}}{498}{paragraph*.562}%
+\contentsline {subsection}{\numberline {D.3.2}Theorem~\ref {thm:continuity-mass}: Mass Conservation Criterion}{498}{subsection.D.3.2}%
+\contentsline {paragraph}{Some Prerequisites: Flow Map and Flow-Induced Density.}{498}{paragraph*.563}%
+\contentsline {paragraph}{\textit {Informal Proof:}}{499}{paragraph*.564}%
+\contentsline {section}{\numberline {D.4}Theoretical Supplement: A Unified and Systematic View on Diffusion Models}{501}{section.D.4}%
+\contentsline {subsection}{\numberline {D.4.1}Proposition~\ref {equi-para}: Equivalence of Parametrizations}{501}{subsection.D.4.1}%
+\contentsline {paragraph}{\textit {Proof:}}{501}{paragraph*.565}%
+\contentsline {section}{\numberline {D.5}Theoretical Supplement: Learning Fast Diffusion-Based Generators}{502}{section.D.5}%
+\contentsline {subsection}{\numberline {D.5.1}Knowledge Distillation Loss as an Instance of the General Framework \Cref {eq:general-cm-loss}}{502}{subsection.D.5.1}%
+\contentsline {paragraph}{Transport Interpretation.}{502}{paragraph*.566}%
+\contentsline {subsection}{\numberline {D.5.2}Theorem~\ref {thm:ct-cm}: CM Equals CT up to $\mathcal {O}(\Delta s^2)$}{503}{subsection.D.5.2}%
+\contentsline {paragraph}{\textit {Proof:}}{503}{paragraph*.567}%
+\contentsline {subsection}{\numberline {D.5.3}Proposition~\ref {continuous-time-ct}: Continuous-Time Limit of the CT Gradient}{504}{subsection.D.5.3}%
+\contentsline {paragraph}{\textit {Proof:}}{504}{paragraph*.568}%
+\contentsline {section}{\numberline {D.6}(Optional) Elucidating Diffusion Model (EDM)}{506}{section.D.6}%
+\contentsline {subsection}{\numberline {D.6.1}Criteria for Neural Network ${\mathbf {x}}_{\bm {\phi }}$ Design}{506}{subsection.D.6.1}%
+\contentsline {paragraph}{Unit Variance of Input.}{507}{paragraph*.569}%
+\contentsline {paragraph}{Unit Variance of Training Target.}{507}{paragraph*.570}%
+\contentsline {paragraph}{Minimize the Error Amplification from ${\mathbf {F}}_{\bm {\phi }}$ to ${\mathbf {x}}_{\bm {\phi }}$.}{507}{paragraph*.571}%
+\contentsline {paragraph}{Selection of $c_{\mathrm {noise}}(t)$.}{508}{paragraph*.572}%
+\contentsline {subsection}{\numberline {D.6.2}A Common EDM Special Case: $\alpha _t = 1$, $\sigma _t = t$}{508}{subsection.D.6.2}%
+\contentsline {chapter}{References}{510}{appendix*.573}%
