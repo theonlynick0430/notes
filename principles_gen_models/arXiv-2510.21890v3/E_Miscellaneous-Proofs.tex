@@ -1,0 +1,157 @@
+\chapter{\texorpdfstring{\nk{Miscellaneous Proofs}}{Miscellaneous Proofs}}\label{app:misc-proofs}
+
+\begin{nknote}
+This appendix collects short, self-contained proofs of standard facts that are used throughout the book but would interrupt the flow of the main derivations.
+\end{nknote}
+
+\section{\texorpdfstring{\nk{Two Perspectives on the Divergence Theorem}}{Two Perspectives on the Divergence Theorem}}\label{app-sec:divergence-thm}
+
+\begin{nknote}
+The divergence theorem underlies the multivariate integration by parts of \Cref{app-sec:multi-ibp}. Here are two ways to see why it holds. Let $\mathbf{F} = (P, Q, R)$ be a smooth vector field on $\mathbb{R}^3$ and $\mathbf{n}$ the outward unit normal.
+
+\paragraph{(1) Intuition.}
+Consider a tiny box $V = [a,b]\times[c,d]\times[e,f]$ and the net flux perpendicular to the $x$-axis. On the right face ($x=b$) the outward normal is $+\hat{\mathbf{x}}$, so the flux through it is $\int_e^f\!\int_c^d P(b,y,z)\,\diff y\,\diff z$. On the left face ($x=a$) the outward normal is $-\hat{\mathbf{x}}$, so the flux through it is $\int_e^f\!\int_c^d -P(a,y,z)\,\diff y\,\diff z$. Hence the net flux perpendicular to the $x$-axis is
+\[
+\int_e^f\!\!\int_c^d \big[P(b,y,z) - P(a,y,z)\big]\,\diff y\,\diff z
+\overset{\text{FTC}}{=}
+\int_e^f\!\!\int_c^d\!\!\int_a^b \frac{\partial P}{\partial x}\,\diff x\,\diff y\,\diff z
+= \int_V \frac{\partial P}{\partial x}\,\diff V .
+\]
+By symmetry, the $y$- and $z$-faces contribute $\int_V \partial Q/\partial y\,\diff V$ and $\int_V \partial R/\partial z\,\diff V$. Summing the three,
+\[
+\int_{\partial V} \mathbf{F}\cdot\mathbf{n}\,\diff S \;=\; \int_V \nabla\cdot\mathbf{F}\,\diff V. \qquad\checkmark
+\]
+
+\paragraph{(2) ``Rigorous'' Proof.}
+We want to show
+\[
+\int_{\partial V} \mathbf{F}\cdot\mathbf{n}\,\diff S
+\;=\;
+\int_V \Big(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\Big)\diff V .
+\]
+Assume $V$ is a \emph{type-1 region}, i.e., it is sandwiched between two graphs over a planar domain $D$:
+\[
+V = \big\{(x,y,z) :\ (x,y)\in D,\ g(x,y) \le z \le h(x,y)\big\}.
+\]
+\begin{center}
+\begin{tikzpicture}[color=notesblue, scale=1.1, font=\small]
+  % cross-section of a type-1 region: bottom graph g, top graph h, vertical side walls
+  \draw[thick] (0,0.3) .. controls (1,-0.1) and (2,0.2) .. (3,0.0) node[right] {$z = g(x,y)$};
+  \draw[thick] (0,1.7) .. controls (1,2.3) and (2,1.9) .. (3,2.1) node[right] {$z = h(x,y)$};
+  \draw[dashed] (0,0.3) -- (0,1.7);
+  \draw[dashed] (3,0.0) -- (3,2.1) node[midway, right=2pt] {side wall ($n_z = 0$)};
+  \draw[-Latex] (-0.6,-0.6) -- (3.6,-0.6) node[right] {$(x,y)\in D$};
+  \draw[-Latex] (1.5,1.7) ++(0,0.35) -- ++(0,0.5) node[right] {$\mathbf{n}$};
+  \draw[-Latex] (1.5,0.05) ++(0,-0.05) -- ++(0,-0.45);
+\end{tikzpicture}
+\end{center}
+Consider only the $R$-term:
+\begin{align*}
+\int_V \frac{\partial R}{\partial z}\,\diff V
+&= \int_D \Big[\int_{g(x,y)}^{h(x,y)} \frac{\partial R}{\partial z}\,\diff z\Big]\diff x\,\diff y \\
+&= \int_D \big[R(x,y,h(x,y)) - R(x,y,g(x,y))\big]\,\diff x\,\diff y
+ = \int_{\partial V} R\, n_z\,\diff S ,
+\end{align*}
+where the last equality holds because on the top surface $n_z\,\diff S = +\diff x\,\diff y$, on the bottom surface $n_z\,\diff S = -\diff x\,\diff y$, and the vertical side walls contribute nothing since $n_z = 0$ there. By symmetry, assuming $V$ is also a type-2 and a type-3 region (so that the same argument applies to $P$ and $Q$), we conclude
+\[
+\int_V \nabla\cdot\mathbf{F}\,\diff V \;=\; \int_{\partial V} \mathbf{F}\cdot\mathbf{n}\,\diff S. \qquad\blacksquare
+\]
+\end{nknote}
+
+\section{\texorpdfstring{\nk{Multivariate Integration by Parts}}{Multivariate Integration by Parts}}\label{app-sec:multi-ibp}
+
+\begin{nknote}
+Multivariate integration by parts is a direct consequence of the divergence theorem.
+
+\paragraph{Lemma (Multivariate Integration by Parts).}
+Let $\phi \colon \mathbb{R}^D \to \mathbb{R}$ be a smooth scalar field and $\rvv \colon \mathbb{R}^D \to \mathbb{R}^D$ a smooth vector field such that the product $\phi\,\rvv$ vanishes sufficiently fast at infinity (faster than $1/R^{D-1}$, so that the flux through the sphere of radius $R$ vanishes as $R \to \infty$). Then
+\[
+\int_{\mathbb{R}^D} \nabla_{\rvx}\phi^\top \rvv \,\diff\rvx
+= -\int_{\mathbb{R}^D} \phi\, \nabla_{\rvx}\cdot\rvv \,\diff\rvx .
+\]
+
+\paragraph{Proof.}
+For $\rmG := \phi\,\rvv$, the product rule gives
+\[
+\nabla_{\rvx}\cdot\rmG = \nabla_{\rvx}\phi^\top \rvv + \phi\,\nabla_{\rvx}\cdot\rvv .
+\]
+Integrating both sides over the ball $B_R := \{\rvx \in \mathbb{R}^D : \|\rvx\| \le R\}$ and applying the divergence theorem to the left-hand side,
+\[
+\int_{B_R} \nabla_{\rvx}\phi^\top \rvv\,\diff\rvx
++ \int_{B_R} \phi\,\nabla_{\rvx}\cdot\rvv\,\diff\rvx
+= \int_{B_R} \nabla_{\rvx}\cdot\rmG\,\diff\rvx
+= \int_{\partial B_R} \rmG\cdot\mathbf{n}\,\diff S ,
+\]
+where $\mathbf{n}$ is the outward unit normal. Since $\rmG = \phi\,\rvv$ vanishes sufficiently fast at infinity, the surface integral tends to zero:
+\[
+\int_{\mathbb{R}^D} \nabla_{\rvx}\cdot\rmG\,\diff\rvx
+= \lim_{R\to\infty} \int_{\partial B_R} \rmG\cdot\mathbf{n}\,\diff S
+= 0 .
+\]
+Rearranging yields the claim. \hfill$\blacksquare$
+
+A useful special case: taking $\rvv := \nabla_{\rvx}\psi$ for a smooth $\psi \colon \mathbb{R}^D \to \mathbb{R}$ (with $\phi\,\nabla_{\rvx}\psi$ vanishing at infinity) gives Green's identity
+\[
+\int \nabla_{\rvx}\phi^\top \nabla_{\rvx}\psi \,\diff\rvx
+= -\int \phi\, \Delta\psi \,\diff\rvx .
+\]
+\end{nknote}
+
+\section{\texorpdfstring{\nk{Jensen's Inequality}}{Jensen's Inequality}}\label{app-sec:jensen}
+
+\begin{nknote}
+\paragraph{Intuition.}
+A function $f$ is convex when the chord connecting any two points on its graph lies \emph{above} the graph. This single geometric fact is Jensen's inequality in miniature. Take $f(x) = x^2$ and two points $a < b$. At the midpoint $\frac{a+b}{2}$, the graph sits at height $f\big(\frac{a+b}{2}\big)$, while the chord sits at the average height $\frac{f(a)+f(b)}{2}$. Since the chord lies above the graph,
+\[
+f\Big(\frac{a+b}{2}\Big) \le \frac{f(a)+f(b)}{2},
+\]
+i.e., \emph{the function of the average is at most the average of the function}. Jensen's inequality is exactly this statement, generalized from the two-point average to arbitrary convex combinations and expectations.
+\begin{center}
+\begin{tikzpicture}[color=notesblue, scale=1.1, font=\small]
+  % axes
+  \draw[-Latex] (-3,0) -- (3.9,0) node[right] {$x$};
+  \draw[-Latex] (0,-0.4) -- (0,3.2) node[above] {$y$};
+  % convex curve y = x^2/4
+  \draw[thick] plot[domain=-2.7:3.3, smooth] (\x, {\x*\x/4}) node[right] {$y = f(x)$};
+  % chord endpoints a=-1, b=3
+  \coordinate (A) at (-1, 0.25);
+  \coordinate (B) at (3, 2.25);
+  \draw[thick] (A) -- (B);
+  \fill (A) circle (1.6pt) node[left=3pt] {$(a, f(a))$};
+  \fill (B) circle (1.6pt) node[above left] {$(b, f(b))$};
+  % midpoint comparison at x = (a+b)/2 = 1
+  \coordinate (P) at (1, 0.25);    % on the graph
+  \coordinate (Q) at (1, 1.25);    % on the chord
+  \draw[dashed] (1, 0) -- (Q);
+  \fill (P) circle (1.6pt) node[right=4pt] {$f\big(\tfrac{a+b}{2}\big)$};
+  \fill (Q) circle (1.6pt) node[above left] {$\tfrac{f(a)+f(b)}{2}$};
+  \node[below] at (1, -0.02) {$\tfrac{a+b}{2}$};
+  % ticks for a and b
+  \draw[dashed] (-1, 0) node[below] {$a$} -- (A);
+  \draw[dashed] (3, 0) node[below] {$b$} -- (B);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{Lemma (Jensen's Inequality).}
+Let $f \colon \mathbb{R} \to \mathbb{R}$ be convex and let $X$ be a random variable with finite expectation. Then
+\[
+f\big(\mathbb{E}[X]\big) \le \mathbb{E}\big[f(X)\big].
+\]
+
+\paragraph{Proof.}
+Assume $f$ is differentiable, and set $\mu := \mathbb{E}[X]$. The key fact is that a convex function lies above every tangent line; in particular, above its tangent at $\mu$:
+\[
+f(x) \ge f(\mu) + f'(\mu)\,(x - \mu) \qquad \text{for all } x \in \mathbb{R} .
+\]
+In particular, at $x = X$,
+\[
+f(X) \ge f(\mu) + f'(\mu)\,(X - \mu) .
+\]
+Taking expectations, and using that $f(\mu)$ and $f'(\mu)$ are constants and $\mathbb{E}[X] = \mu$,
+\[
+\mathbb{E}[f(X)] \ge f(\mu) + f'(\mu)\,\big(\mathbb{E}[X] - \mu\big) = f\big(\mathbb{E}[X]\big) . \qquad\blacksquare
+\]
+(If $f$ is not differentiable, the same argument runs verbatim with the tangent replaced by a supporting line at $\mu$, which every convex function admits.)
+
+For a \emph{concave} $f$ the inequality reverses: $f(\mathbb{E}[X]) \ge \mathbb{E}[f(X)]$.
+\end{nknote}

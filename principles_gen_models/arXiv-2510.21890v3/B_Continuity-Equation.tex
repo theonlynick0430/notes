@@ -602,7 +602,7 @@ The quantity exits $V$ through $\partial V$ with outward normal vector $\mathbf{
 \]
 
 \paragraph{Step 4: Divergence Theorem.}  
-\nkh{Applying the divergence theorem} to convert the surface integral to a volume integral:
+\nkh{Applying the divergence theorem} \nk{(see \Cref{app-sec:divergence-thm})} to convert the surface integral to a volume integral:
 \[
 \int_{\partial V} p \mathbf{v} \cdot \mathbf{n} \diff S = \int_V \nabla \cdot (p \mathbf{v}) \diff V.
 \]
@@ -623,59 +623,6 @@ Using $\mathbf{j}=p\mathbf{v}$, this is the same as
 \frac{\partial p}{\partial t}+\nabla\cdot\mathbf{j}=0.
 \]
 
-
-\begin{nknote}
-\paragraph{Two Perspectives on the Divergence Theorem.}
-The divergence theorem in Step~4 is the one nontrivial ingredient above. Here are two ways to see why it holds. Let $\mathbf{F} = (P, Q, R)$ be a smooth vector field on $\mathbb{R}^3$ and $\mathbf{n}$ the outward unit normal.
-
-\subparagraph{(1) Intuition.}
-Consider a tiny box $V = [a,b]\times[c,d]\times[e,f]$ and the net flux perpendicular to the $x$-axis. On the right face ($x=b$) the outward normal is $+\hat{\mathbf{x}}$, so the flux through it is $\int_e^f\!\int_c^d P(b,y,z)\,\diff y\,\diff z$. On the left face ($x=a$) the outward normal is $-\hat{\mathbf{x}}$, so the flux through it is $\int_e^f\!\int_c^d -P(a,y,z)\,\diff y\,\diff z$. Hence the net flux perpendicular to the $x$-axis is
-\[
-\int_e^f\!\!\int_c^d \big[P(b,y,z) - P(a,y,z)\big]\,\diff y\,\diff z
-\overset{\text{FTC}}{=}
-\int_e^f\!\!\int_c^d\!\!\int_a^b \frac{\partial P}{\partial x}\,\diff x\,\diff y\,\diff z
-= \int_V \frac{\partial P}{\partial x}\,\diff V .
-\]
-By symmetry, the $y$- and $z$-faces contribute $\int_V \partial Q/\partial y\,\diff V$ and $\int_V \partial R/\partial z\,\diff V$. Summing the three,
-\[
-\int_{\partial V} \mathbf{F}\cdot\mathbf{n}\,\diff S \;=\; \int_V \nabla\cdot\mathbf{F}\,\diff V. \qquad\checkmark
-\]
-
-\subparagraph{(2) ``Rigorous'' Proof.}
-We want to show
-\[
-\int_{\partial V} \mathbf{F}\cdot\mathbf{n}\,\diff S
-\;=\;
-\int_V \Big(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\Big)\diff V .
-\]
-Assume $V$ is a \emph{type-1 region}, i.e., it is sandwiched between two graphs over a planar domain $D$:
-\[
-V = \big\{(x,y,z) :\ (x,y)\in D,\ g(x,y) \le z \le h(x,y)\big\}.
-\]
-\begin{center}
-\begin{tikzpicture}[color=notesblue, scale=1.1, font=\small]
-  % cross-section of a type-1 region: bottom graph g, top graph h, vertical side walls
-  \draw[thick] (0,0.3) .. controls (1,-0.1) and (2,0.2) .. (3,0.0) node[right] {$z = g(x,y)$};
-  \draw[thick] (0,1.7) .. controls (1,2.3) and (2,1.9) .. (3,2.1) node[right] {$z = h(x,y)$};
-  \draw[dashed] (0,0.3) -- (0,1.7);
-  \draw[dashed] (3,0.0) -- (3,2.1) node[midway, right=2pt] {side wall ($n_z = 0$)};
-  \draw[-Latex] (-0.6,-0.6) -- (3.6,-0.6) node[right] {$(x,y)\in D$};
-  \draw[-Latex] (1.5,1.7) ++(0,0.35) -- ++(0,0.5) node[right] {$\mathbf{n}$};
-  \draw[-Latex] (1.5,0.05) ++(0,-0.05) -- ++(0,-0.45);
-\end{tikzpicture}
-\end{center}
-Consider only the $R$-term:
-\begin{align*}
-\int_V \frac{\partial R}{\partial z}\,\diff V
-&= \int_D \Big[\int_{g(x,y)}^{h(x,y)} \frac{\partial R}{\partial z}\,\diff z\Big]\diff x\,\diff y \\
-&= \int_D \big[R(x,y,h(x,y)) - R(x,y,g(x,y))\big]\,\diff x\,\diff y
- = \int_{\partial V} R\, n_z\,\diff S ,
-\end{align*}
-where the last equality holds because on the top surface $n_z\,\diff S = +\diff x\,\diff y$, on the bottom surface $n_z\,\diff S = -\diff x\,\diff y$, and the vertical side walls contribute nothing since $n_z = 0$ there. By symmetry, assuming $V$ is also a type-2 and a type-3 region (so that the same argument applies to $P$ and $Q$), we conclude
-\[
-\int_V \nabla\cdot\mathbf{F}\,\diff V \;=\; \int_{\partial V} \mathbf{F}\cdot\mathbf{n}\,\diff S. \qquad\blacksquare
-\]
-\end{nknote}
 
 \paragraph{Particle-Level Intuition.}
 Expanding the divergence term gives

@@ -345,19 +345,11 @@ This expectation can be written as:
 \]
 \paragraph{Step 4: Integrate by Parts.}
 \begingroup\color{notesblue}% blue block without \par, to keep the run-in heading in place
-The divergence theorem is the multivariable integration by parts. For $\rmG := \phi\,\rvf p_t$, the product rule $\nabla_{\rvx}\cdot\rmG = \nabla_{\rvx}\phi^\top \rvf p_t + \phi\,\nabla_{\rvx}\cdot(\rvf p_t)$ gives
-\begin{align*}
-&\int \nabla_{\rvx}\phi^\top \rvf p_t\,\diff\rvx + \int \phi\,\nabla_{\rvx}\cdot(\rvf p_t)\,\diff\rvx \\
-&\qquad= \int_{\mathbb{R}^D} \nabla_{\rvx}\cdot\rmG\,\diff\rvx
-= \lim_{R\to\infty} \int_{\|\rvx\|=R} \rmG\cdot\mathbf{n}\,\diff S
-= 0
-\qquad (p_t \to 0 \text{ as } \|\rvx\|\to\infty),
-\end{align*}
-i.e.,
+By multivariate integration by parts (see \Cref{app-sec:multi-ibp}) with $\rvv = \rvf p_t$, using $p_t \to 0$ as $\|\rvx\|\to\infty$,
 \[
 \int \nabla_{\rvx} \phi^\top \rvf p_t \,\diff \rvx = -\int \phi\, \nabla_{\rvx} \cdot (\rvf p_t) \,\diff \rvx .
 \]
-The same identity with $\rmG = p_t\nabla_{\rvx}\phi$ and then $\rmG = \phi\nabla_{\rvx}p_t$ (using $p_t,\nabla_{\rvx}p_t \to 0$) gives
+Applying it twice more, with $\rvv = \nabla_{\rvx}\phi$ against $p_t$ and then $\rvv = \nabla_{\rvx}p_t$ against $\phi$ (using $p_t, \nabla_{\rvx}p_t \to 0$),
 \[
 \int \Tr[\nabla_{\rvx}^2 \phi]\, p_t \,\diff \rvx
 = \int \Delta\phi\, p_t \,\diff \rvx
