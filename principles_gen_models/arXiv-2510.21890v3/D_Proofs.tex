@@ -75,7 +75,7 @@ Substituting this back into the expectation gives two terms:
     \right]
     \right].
 \end{align*}
-Since the second logarithmic term does not depend on $\rvx_0$, by the law of total probability
+Since the \nkh{second logarithmic term does not depend on $\rvx_0$}, by the \nkh{law of total probability} \nk{($\int p(\rvx_0|\rvx_i)\, p(\rvx_{i-1}|\rvx_i, \rvx_0) \,\diff\rvx_0 = p(\rvx_{i-1}|\rvx_i)$)}
 \begin{align*}
     \mathbb{E}_{p(\rvx_0|\rvx_i)} \left[
     \mathbb{E}_{p(\rvx_{i-1}|\rvx_i, \rvx_0)} \left[
@@ -103,6 +103,7 @@ Putting it all together, we obtain the decomposition:
     \mathcal{D}_{\text{KL}} \big(p(\rvx_{i-1}|\rvx_i, \rvx_0)  \|  p(\rvx_{i-1}|\rvx_i)\big)
     \right]
     \right]
+    \quad \nk{\text{(does not depend on $\phi$)}}
     \\
     &+
     \mathbb{E}_{p(\rvx_i)} \left[
@@ -136,20 +137,20 @@ The first identity follows from the fact that the KL divergence $\mathcal{D}_{\m
 \]
 
 \textbfs{Step 1: Apply Jensen's Inequality.}
-The marginal log-likelihood is
+The \nkh{marginal log-likelihood} is
 \[
 \log p_{\bm{\phi}}(\rvx_0)
 =
 \log \int p_{\bm{\phi}}(\rvx_0,\rvx_{1:L})\,\diff \rvx_{1:L},
 \]
-where the joint generative distribution is
+where the \nkh{joint generative distribution} is
 \[
 p_{\bm{\phi}}(\rvx_0,\rvx_{1:L})
 =
 p_{\text{prior}}(\rvx_L)\prod_{i=1}^L p_{\bm{\phi}}(\rvx_{i-1}| \rvx_i).
 \]
 
-We introduce the forward noising distribution
+We introduce the forward noising distribution \nk{(the only difference from the HVAE is that the encoder is fixed, and it is factored slightly differently for better tractability)}
 \[
 p(\rvx_{1:L}| \rvx_0)
 =
@@ -164,7 +165,7 @@ p(\rvx_{1:L}| \rvx_0)
 \frac{p_{\bm{\phi}}(\rvx_0,\rvx_{1:L})}{p(\rvx_{1:L}| \rvx_0)}
 \,\diff \rvx_{1:L}.
 \]
-Applying Jensen's inequality yields
+Applying \nkh{Jensen's inequality} \nk{(see \Cref{app-sec:jensen})} yields
 \[
 \log p_{\bm{\phi}}(\rvx_0)
 \ge
@@ -250,7 +251,7 @@ p_{\bm{\phi}}(\rvx_{i-1}| \rvx_i)
 \right]
 }_{\mathcal{L}_{\text{diffusion}}(\rvx_0;\bm{\phi})}.
 \end{align*}
-This proves the claimed decomposition.
+This proves the claimed decomposition. \nk{Since the encoder is fixed, only $\mathcal{L}_{\text{recon.}}$ and $\mathcal{L}_{\text{diffusion}}$ depend on $\bm{\phi}$.}
 \hfill$\blacksquare$
 
 
@@ -263,7 +264,7 @@ This proves the claimed decomposition.
 \paragraph{\textit{Proof.}}
 
  \textbfs{Expanding $\mathcal{L}_{\text{SM}}(\bm{\phi})$. }
-        Let us expand the squared difference inside the expectation:
+        Let us \nkh{expand} the \nkh{squared difference} inside the expectation:
         \begin{align*}
         \mathcal{L}_{\text{SM}}(\bm{\phi}) &= \frac{1}{2}\mathbb{E}_{\rvx \sim p_{\text{data}}(\rvx)} \left[ \norm{\rvs_{\bm{\phi}}(\rvx)}_2^2 - 2 \langle \rvs_{\bm{\phi}}(\rvx), \rvs(\rvx) \rangle + \norm{\rvs(\rvx)}_2^2 \right] \\
         &= \frac{1}{2}\mathbb{E}_{\rvx \sim p_{\text{data}}(\rvx)} \left[ \norm{\rvs_{\bm{\phi}}(\rvx)}_2^2 \right] - \mathbb{E}_{\rvx \sim p_{\text{data}}(\rvx)} \left[ \langle \rvs_{\bm{\phi}}(\rvx), \rvs(\rvx) \rangle \right] \\
@@ -288,31 +289,26 @@ This proves the claimed decomposition.
         \[
         \rvs_{\bm{\phi}} = \left( s_{\bm{\phi}}^{(1)}, s_{\bm{\phi}}^{(2)}, \dots, s_{\bm{\phi}}^{(D)} \right).
         \]
-        \proofparagraph{Integration by Parts.}
-        We use the following integration-by-parts formula~\citep{evans10}, which is derived from standard calculus:
-        \begin{lemma*}
-            Let $u, v$ be differentiable real-valued functions on a ball $\mathbb{B}(\bm{0}, R) \subset \mathbb{R}^D$ of radius $R>0$. Then for $i = 1, \ldots, D$, the formula holds:
+        \proofparagraph{\nkh{Integration by Parts.}}
+        We apply the multivariate integration by parts of \Cref{app-sec:multi-ibp} to the scalar field $p_{\text{data}}$ and the vector field $\rvs_{\bm{\phi}}$, assuming that
         \[
-        \int_{\mathbb{B}(\bm{0}, R)} u   \partial_{x_i} v   \diff \rvx = -\int_{\mathbb{B}(\bm{0}, R)} v   \partial_{x_i} u   \diff \rvx + \int_{\partial \mathbb{B}(\bm{0}, R)} u v \nu_i   \diff S,
+        |s_{\bm{\phi}}^{(i)}(\rvx)\, p_{\text{data}}(\rvx)| \to 0 \quad \text{sufficiently fast as } \|\rvx\| \to \infty .
         \]
-        where $\nu = (\nu_1, \ldots, \nu_D)$ is the outward unit normal to the boundary $\partial \mathbb{B}(\bm{0}, R)$---a sphere with radius $R>0$, and $\diff S$ is the surface measure on $\partial \mathbb{B}(\bm{0}, R)$.
-        \end{lemma*}
-        We apply this formula to $u(\rvx) := s_{\bm{\phi}}^{(i)}(\rvx)$ and $v(\rvx) = p_{\text{data}}(\rvx)$ for all $i = 1, \dots, D$, assuming that
-        \[
-        |u(\rvx) v(\rvx)| \to 0 \quad \text{as } R \to \infty.
-        \]
-        Summing the results over all $i = 1, \dots, D$, we get:
+        Since $\nabla_{\rvx}\cdot\rvs_{\bm{\phi}} = \sum_{i=1}^D \partial_{x_i} s_{\bm{\phi}}^{(i)}$, we get:
         \begin{align*}
             \mathbb{E}_{\rvx \sim p_{\text{data}}(\rvx)} \left[ \langle \rvs_{\bm{\phi}}(\rvx), \rvs(\rvx) \rangle \right] 
              &= - \sum_{i=1}^{D} \int  \partial_{x_i}s_{\bm{\phi}}^{(i)}(\rvx) p_{\text{data}}(\rvx) \diff \rvx \\
              &= - \mathbb{E}_{\rvx \sim p_{\text{data}}(\rvx)} \left[\Tr\left(\nabla_{\rvx}\rvs_{\bm{\phi}}(\rvx)\right) \right].
         \end{align*}
+        \begin{nknote}
+        Integration by parts works here precisely because we are dealing with the score: it moves the partial derivative off the unknown $p_{\text{data}}$ and onto the known $s_{\bm{\phi}}^{(i)}$.
+        \end{nknote}
         Combining all results, we have:
         \begin{align*}
         \mathcal{L}_{\text{SM}}(\bm{\phi}) &= \underbrace{\mathbb{E}_{\rvx \sim p_{\text{data}}(\rvx)} \left[\Tr\left(\nabla_{\rvx}\rvs_{\bm{\phi}}(\rvx)\right) + \frac{1}{2}  \norm{\rvs_{\bm{\phi}}(\rvx)}_2^2 \right]}_{\widetilde{\mathcal{L}}_{\text{SM}}(\bm{\phi})} \\
         &\quad + \underbrace{\frac{1}{2}\mathbb{E}_{\rvx \sim p_{\text{data}}(\rvx)} \left[ \norm{\rvs(\rvx)}_2^2 \right]}_{=:C},
         \end{align*}
-        where $C$ depends only on the distribution $p_{\text{data}}$, which concludes the proof.
+        where \nkh{$C$ depends only} on the distribution \nkh{$p_{\text{data}}$}, which concludes the proof.
 \hfill$\blacksquare$
 
 \subsection{Theorem~\ref{thm:sm-dsm}: Equivalence Between SM and DSM Minimization}\label{app-sec:sm-dsm}
@@ -370,11 +366,11 @@ Thus, it is also zero. For the third term, note that:
 \[
 C:=\frac{1}{2}\Bigg(\mathbb{E}_{\tilde{\rvx} \sim p_\sigma(\tilde{\rvx})}  \norm{\nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx})}_2^2  -  \mathbb{E}_{ p_{\text{data}}(\rvx)p_{\sigma}(\tilde{\rvx} | \rvx)} \norm{\nabla_{\tilde{\rvx}} \log p_{\sigma}(\tilde{\rvx} | \rvx)}_2^2   \Bigg)
 \]
-depends only on $p_{\text{data}}(\rvx)$ and $p_{\sigma}(\tilde{\rvx}|\rvx)$, and hence it is constant with respect to $\bm{\phi}$.
+depends only on $p_{\text{data}}(\rvx)$ and $p_{\sigma}(\tilde{\rvx}|\rvx)$, and hence it is \nkh{constant with respect to $\bm{\phi}$}.
 \hfill$\blacksquare$
 
 \subsection{Lemma~\ref{tweedie}: Tweedie's Formula}\label{app-sec:tweedie}
-We first state a more general form of Tweedie’s formula, which considers time-dependent Gaussian perturbations, and we provide its proof below.
+We first state a more general form of Tweedie’s formula, which \nkh{considers time-dependent Gaussian perturbations}, and we provide its proof below.
 
 
 \paragraph{Tweedie’s Identity with Time-Dependent Parameters.}
@@ -403,7 +399,7 @@ We now compute the score function:
 We therefore need to compute the gradient of the conditional density.
 
 \paragraph{Gradient of the Conditional and Rearrangement.}
-The gradient of the conditional Gaussian density is:
+The gradient of the conditional Gaussian density \nk{(note: different from the score, since there is no $\log$)} is:
 \begin{align*}
 \nabla_{\rvx_t} p_t(\rvx_t|\rvx_0) 
 = -p_t(\rvx_t|\rvx_0) \cdot \sigma_t^{-2} (\rvx_t - \alpha_t \rvx_0).
@@ -430,13 +426,13 @@ This completes the derivation.
 
 \subsection{Stein’s Identity and Surrogate SURE Objective}\label{app-sec:stein-identity}
 
-\paragraph{Stein's Identity.} Stein’s identity is the integration-by-parts technique that turns expectations under an unknown density  into expectations of observable functions and their derivatives, which cancels the partition function and enables unbiased, tractable objectives and tests without ever evaluating the unknown density or the partition function. We begin with the simplest one-dimensional case and then extend it to the form needed to prove the surrogate loss for SURE.
+\paragraph{Stein's Identity.} Stein’s identity is the \nkh{integration-by-parts} technique that turns expectations under an unknown density  into expectations of observable functions and their derivatives, which cancels the partition function and enables unbiased, tractable objectives and tests without ever evaluating the unknown density or the partition function. We begin with the simplest one-dimensional case and then extend it to the form needed to prove the surrogate loss for SURE.
 \subparagraph{1D, Standard Normal Case.}
 If $z \sim \mathcal{N}(0,1)$ and $f$ has suitable decay, then Stein's identity states:
 \[
 \E[f'(z)]  =  \E[z f(z)] .
 \]
-Denote $\phi(z) := \tfrac{1}{\sqrt{2\pi}}  e^{-z^2/2}$, the one-dimensional standard normal density.
+Denote \nkh{$\phi(z) := \tfrac{1}{\sqrt{2\pi}}  e^{-z^2/2}$}, the one-dimensional \nkh{standard normal density}.
 The proof follows by integration by parts, using $\phi'(z) = -z\phi(z)$, together with the vanishing boundary term. 
 To see this precisely, we compute
 \[
@@ -449,7 +445,7 @@ By integration by parts, with $u=\phi(z)$ and $\diff v=f'(z)  \diff z$, we obtai
 = \Big[ f(z)  \phi(z) \Big]_{-\infty}^{\infty}
 - \int f(z)  \phi'(z)  \diff z.
 \]
-Since $\phi'(z) = -z\phi(z)$ and $f(z)\phi(z)\to 0$ as $|z|\to\infty$ (decay condition), the boundary term vanishes and we have
+Since $\phi'(z) = -z\phi(z)$ and \nkh{$f(z)\phi(z)\to 0$ as $|z|\to\infty$ (decay condition)}, the \nkh{boundary term vanishes} and we have
 \[
 \E[f'(z)]  =  \int f(z)  z  \phi(z)  \diff z  =  \E[z f(z)].
 \]
@@ -468,12 +464,23 @@ Equivalently, for $\mathbf{u}:\R^D \to \R^D$,
 
 
 \subparagraph{Identity Needed for SURE.}
+\begin{lemma*}
 With $\tilde{\rvx}=\rvx+\sigma\rvz$, where $\rvz \sim \mathcal{N}(\mathbf{0},\rmI_D)$, and any vector function $\mathbf{a}$ of suitable regularity,
 \begin{align}\label{eq:stein-for-sure}
     \E\big[(\tilde{\rvx}-\rvx)^\top \mathbf{a}(\tilde{\rvx})  \big|  \rvx\big]
  =  \sigma^2 \E\big[ \nabla_{\tilde{\rvx}} \cdot\mathbf{a}(\tilde{\rvx})  \big|  \rvx\big]. 
 \end{align}
-This is obtained by applying \Cref{eq:stein-multi} and using the chain rule.
+\end{lemma*}
+\begingroup\color{notesblue}%
+\noindent\textit{Proof.} With $\tilde{\rvx} = \rvx + \sigma\rvz$,
+\begin{align*}
+\E\big[(\tilde{\rvx}-\rvx)^\top \mathbf{a}(\tilde{\rvx})\,\big|\,\rvx\big]
+&= \sigma\,\E\big[\rvz^\top \mathbf{a}(\rvx+\sigma\rvz)\,\big|\,\rvx\big]
+\overset{\text{Stein}}{=} \sigma\,\E\big[\nabla_{\rvz}\cdot \mathbf{a}(\rvx+\sigma\rvz)\,\big|\,\rvx\big] \\
+&= \sigma^2\,\E\big[\nabla_{\tilde{\rvx}}\cdot \mathbf{a}(\tilde{\rvx})\,\big|\,\rvx\big],
+\end{align*}
+where the middle step is \Cref{eq:stein-multi} and the last step uses $\nabla_{\rvz} = \sigma\nabla_{\tilde{\rvx}}$ (chain rule). \hfill$\blacksquare$
+\endgroup
 
 \paragraph{Deriving SURE from the Conditional MSE.}
 Let $\rmD:\R^D \to \R^D$ be a denoiser and define
@@ -484,14 +491,15 @@ Expand around $\tilde{\rvx}$:
 \[
 \begin{aligned}
 &~R(\rmD;\rvx) \\
+{\color{notesblue}=}&~{\color{notesblue}\E \left[\|\rmD(\tilde{\rvx})-\tilde{\rvx}+\tilde{\rvx}-\rvx\|^2  \big|  \rvx\right]} \\
 =&~\E \left[\|\rmD(\tilde{\rvx})-\tilde{\rvx}\|^2  \big|  \rvx\right]
 +2 \E \left[(\rmD(\tilde{\rvx})-\tilde{\rvx})^\top(\tilde{\rvx}-\rvx)  \big|  \rvx\right]
 +\E \left[\|\tilde{\rvx}-\rvx\|^2  \big|  \rvx\right] \\
 =&~\E \left[\|\rmD(\tilde{\rvx})-\tilde{\rvx}\|^2  \big|  \rvx\right]
 +2\Big(\underbrace{\E[(\tilde{\rvx}-\rvx)^\top \rmD(\tilde{\rvx})|\rvx]}_{\substack{\sigma^2 \E[ \nabla_{\tilde{\rvx}} \cdot\rmD(\tilde{\rvx})|\rvx] \\  \text{ by \Cref{eq:stein-for-sure}}
 }}
--\underbrace{\E[(\tilde{\rvx}-\rvx)^\top \tilde{\rvx}|\rvx]}_{ \sigma^2 D}\Big)
-\\&\qquad\qquad\qquad+\underbrace{\E[\|\tilde{\rvx}-\rvx\|^2|\rvx]}_{ \sigma^2 D} \\
+-\underbrace{\E[(\tilde{\rvx}-\rvx)^\top \tilde{\rvx}|\rvx]}_{\substack{\nk{\sigma\,\E[\rvz]^\top\rvx \,+\, \sigma^2\E[\rvz^\top\rvz]} \\ \nk{=~} \sigma^2 D}}\Big)
+\\&\qquad\qquad\qquad+\underbrace{\E[\|\tilde{\rvx}-\rvx\|^2|\rvx]}_{\substack{\nk{\sigma^2\E[\|\rvz\|^2]} \\ \nk{=~} \sigma^2 D}} \\
 =&~\E \left[\|\rmD(\tilde{\rvx})-\tilde{\rvx}\|^2
 +2\sigma^2  \nabla_{\tilde{\rvx}} \cdot\rmD(\tilde{\rvx})
 -D\sigma^2 | \rvx\right].
@@ -505,7 +513,7 @@ Therefore the \emph{observable} surrogate
 -D\sigma^2 
 \]
 satisfies $\E \left[\mathrm{SURE}(\rmD;\tilde{\rvx}) \big| \rvx\right]=R(\rmD;\rvx)$.
-Minimizing SURE (in expectation or empirically) is thus equivalent to minimizing the true conditional MSE while using only noisy observations.
+Minimizing SURE (in expectation or empirically) is thus equivalent to minimizing the true conditional MSE while \nkh{using only noisy observations}.
 
 
 
@@ -550,7 +558,7 @@ Therefore:
 \[
 \partial_t p_t(\rvx) = -\nabla_{\rvx} \cdot \bigl[ \rvv(\rvx, t) p_t(\rvx) \bigr],
 \]
-verifying the Fokker-Planck equation in both forms.
+\nkh{verifying the Fokker-Planck equation} in both forms.
 
 \paragraph{Part 2: PF-ODE Marginal Densities.}
 
@@ -563,7 +571,8 @@ Consider the PF-ODE:
 \[
 \frac{\diff}{\diff t} \bm{\Psi}_t(\mathbf{x}_0) = \rvv(\bm{\Psi}_t(\mathbf{x}_0), t), \quad \bm{\Psi}_0(\mathbf{x}_0) = \mathbf{x}_0.
 \]
-Since $\tilde\rvx(t) = \bm{\Psi}_t(\tilde\rvx(0))$, the density $\tilde p_t(\rvx)$ of $\tilde\rvx(t)$ satisfies the continuity equation:
+\nk{($\bm{\Psi}_t(\mathbf{x}_0)$ is just $\tilde\rvx(t)$ for the given initial condition $\mathbf{x}_0$.)}
+Since \nkh{$\tilde\rvx(t) = \bm{\Psi}_t(\tilde\rvx(0))$}, the density $\tilde p_t(\rvx)$ of $\tilde\rvx(t)$ satisfies the \nkh{continuity equation}:
 \[
 \partial_t \tilde p_t(\rvx) = -\nabla_{\rvx} \cdot \bigl[ \rvv(\rvx, t) \tilde p_t(\rvx) \bigr].
 \]
@@ -571,7 +580,7 @@ Since $\tilde\rvx(0) \sim p_0$, we have $\tilde p_0(\rvx) = p_0(\rvx)$. From Par
 \[
 \partial_t p_t(\rvx) = -\nabla_{\rvx} \cdot \bigl[ \rvv(\rvx, t) p_t(\rvx) \bigr].
 \]
-Both $\tilde p_t$ and $p_t$ satisfy the same continuity equation with the same initial condition $p_0$. Assuming sufficient smoothness (e.g., $\rvv \in C^1$), the solution is unique in some appropriate function space, so $\tilde p_t = p_t$. Thus, $\tilde\rvx(t) \sim p_t$ for all $t \in [0, T]$.
+\nkh{Both $\tilde p_t$ and $p_t$ satisfy the same continuity equation with the same initial condition $p_0$}. \nkh{Assuming sufficient smoothness (e.g., $\rvv \in C^1$), the solution is unique} in some appropriate function space, \nkh{so $\tilde p_t = p_t$}. Thus, $\tilde\rvx(t) \sim p_t$ for all $t \in [0, T]$.
 
 \vspace{0.3cm}
 \textbfs{Backward Direction: $\tilde\rvx(T) \sim p_T$. } Now, let $\tilde\rvx(t)$ follow the PF-ODE backward from $t = T$ to $t = 0$, with $\tilde\rvx(T) \sim p_T$. The ODE is:
@@ -601,9 +610,10 @@ We verify the marginal distributions using the forward-running reverse clock
 \[
 s:=T-t.
 \]
+\nk{(a change of variables so that both SDEs are integrated forward, from $0$ to $T$)}
 Define
 \[
-\rvy(s):=\bar\rvx(T-s),
+\nkhm{\rvy(s):=\bar\rvx(T-s)},
 \qquad s\in[0,T].
 \]
 Since the reverse process starts from $\bar\rvx(T)\sim p_T$, we have
@@ -623,10 +633,10 @@ g^2(T-s)\nabla_{\rvx}\log p_{T-s}(\rvy(s))
 +
 g(T-s)\diff\rvw^{\mathrm{rev}}(s),
 \]
-where $\rvw^{\mathrm{rev}}$ is a standard Wiener process under the
-forward-running clock $s$.
+where \nkh{$\rvw^{\mathrm{rev}}$ is a standard Wiener process under the
+forward-running clock $s$}.
 
-Let $q_s$ denote the density of $\rvy(s)$. Its Fokker--Planck equation is
+Let $q_s$ denote the density of $\rvy(s)$. \nkh{Its Fokker--Planck equation is}
 \begin{align*}
 \partial_s q_s(\rvx)
 &=
@@ -645,9 +655,9 @@ q_s(\rvx)
 \tfrac12 g^2(T-s)\Delta_{\rvx}q_s(\rvx).
 \end{align*}
 
-We now check that
+\nkh{We now check that}
 \[
-q_s(\rvx)=p_{T-s}(\rvx)
+\nkhm{q_s(\rvx)=p_{T-s}(\rvx)}
 \]
 satisfies this equation. Using
 \[
@@ -700,13 +710,13 @@ Since $t=T-s$, the chain rule gives
 -
 \tfrac12g^2(T-s)\Delta_{\rvx}p_{T-s}(\rvx).
 \end{align*}
-This is exactly the Fokker--Planck equation of the reversed process.
+\nkh{This is exactly the Fokker--Planck equation of the reversed process}.
 
-Finally, $q_0=p_T$, which matches the initial distribution
-$\rvy(0)\sim p_T$. Under the regularity assumptions ensuring uniqueness of the
-Fokker--Planck solution,
+Finally, \nkh{$q_0=p_T$, which matches the initial distribution}
+$\rvy(0)\sim p_T$. Under the regularity assumptions ensuring \nkh{uniqueness of the
+Fokker--Planck solution},
 \[
-q_s=p_{T-s},
+\nkhm{q_s=p_{T-s}},
 \qquad s\in[0,T].
 \]
 Returning to the original diffusion clock $t=T-s$, we obtain

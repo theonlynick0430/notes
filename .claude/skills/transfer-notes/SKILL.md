@@ -15,7 +15,7 @@ Be concise in every report: tables and one-liners, no narration.
 - Two phases: **report first, edit only after go-ahead.**
 - Port highlights too, not just handwritten notes. Don't highlight Nikhil's own notes.
 - Lightly fix slips in his notes (variable names, swapped labels) and mention each fix in one line.
-- Done: Appendix B, Appendix C. Pattern for the rest is identical.
+- Done: Appendix B, Appendix C, D.1/D.2.1 (earlier session), D.2.3, D.2.4, D.2.5. Pattern for the rest is identical. Deterministic-analog / divergence-theorem notes now live in Appendix E — skip them when they appear in the margins.
 
 ## Macros (defined in `math_commands.tex`)
 | Macro | Use | Pitfall |
