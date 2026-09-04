@@ -15,7 +15,9 @@ Be concise in every report: tables and one-liners, no narration.
 - Two phases: **report first, edit only after go-ahead.**
 - Port highlights too, not just handwritten notes. Don't highlight Nikhil's own notes.
 - Lightly fix slips in his notes (variable names, swapped labels) and mention each fix in one line.
-- Done: Appendix B, Appendix C, D.1/D.2.1 (earlier session), D.2.3, D.2.4, D.2.5. Pattern for the rest is identical. Deterministic-analog / divergence-theorem notes now live in Appendix E — skip them when they appear in the margins.
+- **Default style: expand equalities in place.** When a note justifies a step in an existing derivation, insert the intermediate equalities directly into the original display (blue lines/members inside the authors' align), NOT as a separate "Why?"/note block afterwards. Standalone blocks only for self-contained lemmas/proofs the text doesn't already contain. Keep every step from his handwritten chain — don't compress.
+- Done: Ch.2 (Variational: VAEs→DDPMs), Appendix B, Appendix C, D.1/D.2.1 (earlier session), D.2.3, D.2.4, D.2.5. Pattern for the rest is identical.
+- Pitfall: curly quotes/apostrophes (’) inside `\nkh{...}` break soul under inputenc — use ASCII ' inside highlights. Deterministic-analog / divergence-theorem notes now live in Appendix E — skip them when they appear in the margins.
 
 ## Macros (defined in `math_commands.tex`)
 | Macro | Use | Pitfall |

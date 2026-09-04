@@ -21,15 +21,15 @@ Readers already familiar with VAEs and ELBO training may skim \Cref{sec:vae} and
 \section{Variational Autoencoder}\label{sec:vae}
 How can a neural network learn to generate realistic data?  
 A natural starting point is the \emph{autoencoder}, which consists of two networks:  
-a deterministic \emph{encoder} that compresses an input to a low-dimensional latent code, and a deterministic \emph{decoder} that reconstructs the input from this code.  
+a \nkh{deterministic \emph{encoder}} that compresses an input to a low-dimensional latent code, and a deterministic \nkh{\emph{decoder}} that reconstructs the input from this code.  
 Training minimizes the reconstruction error between the original input and its reconstruction.  
-While this setup enables accurate reconstruction, the latent space is unstructured: randomly sampling latent codes usually produces meaningless outputs, limiting the model’s use for generation.
+While this setup enables accurate reconstruction, the \nkh{latent space is unstructured}: \nkh{randomly sampling latent codes} usually \nkh{produces meaningless outputs}, limiting the model’s use for generation.
 
 
 
 % How can a neural network learn to generate realistic data? A natural starting point is the autoencoder, a framework \se{introduce networks (encoder, decoder) first, then discuss how they are trained} trained to reconstruct inputs through a low dimensional latent representation. A deterministic encoder compresses the input into a latent code, which a deterministic decoder then uses to reconstruct the original data. While this setup enables faithful reconstruction, it lacks a structured latent space. As a result, decoding randomly sampled latent codes typically yields meaningless outputs, making the model ineffective for generation.
 
-The \emph{Variational Autoencoder (VAE)} \citep{kingma2013auto}  solves this by imposing a probabilistic structure on the latent space. This transforms the model from a simple reconstruction tool into a true generative model, capable of producing novel and realistic data.
+The \emph{Variational Autoencoder \nkh{(VAE)}} \citep{kingma2013auto}  solves this by \nkh{imposing} a \nkh{probabilistic structure on the latent space}. This transforms the model from a simple reconstruction tool into a true generative model, capable of producing novel and realistic data.
 
 
 
@@ -123,14 +123,14 @@ from which decoding the exact pixel arrangement becomes much easier.
 New samples are drawn by first sampling $\rvz \sim p_{\text{prior}}$ and then 
 decoding via $\rvx \sim p_{\bm{\phi}}(\rvx|\rvz)$.
 
-The VAE thereby defines a latent-variable generative model through the marginal likelihood:
+The VAE thereby defines a latent-variable generative model through the \nkh{marginal likelihood}:
 \[
 p_{\bm{\phi}}(\rvx) = \int p_{\bm{\phi}}(\rvx|\rvz) p(\rvz) \diff \rvz.
 \]
-Ideally, the decoder parameters $\bm{\phi}$ are learned by maximizing this marginal 
-likelihood, as in maximum likelihood estimation (see \Cref{eq:MLE}). 
+Ideally, the \nkh{decoder parameters $\bm{\phi}$ are learned by maximizing this marginal
+likelihood}, as in maximum likelihood estimation (see \Cref{eq:MLE}). 
 However, because the integral over $\rvz$ is intractable for expressive, non-linear 
-decoders, direct MLE is computationally infeasible, motivating the variational 
+decoders, direct \nkh{MLE is computationally infeasible}, motivating the variational 
 approach used in VAEs.
 
 % \se{i think you need to use some text to clearly explain the difference between observed and latent vars at the beginning}
@@ -162,8 +162,8 @@ The difficulty is that the denominator involves the marginal likelihood $p_{\bm{
 which requires integrating over all latent variables and is intractable for nonlinear decoders.  
 Thus, exact inference of $\rvz$ from $\rvx$ is computationally prohibitive.
 
-The ``variational'' step in VAEs addresses this by replacing the intractable posterior with a tractable approximation.  
-We introduce an \emph{encoder} (or inference network) $q_{\bm{\theta}}(\rvz|\rvx)$, parameterized by a neural network,  
+The ``variational'' step in VAEs addresses this by \nkh{replacing the intractable posterior with a tractable approximation}.  
+We introduce an \emph{encoder} (or inference network) \nkh{$q_{\bm{\theta}}(\rvz|\rvx)$}, \nkh{parameterized by a neural network},  
 whose role is to serve as a learnable proxy:
 \[
 q_{\bm{\theta}}(\rvz|\rvx) \;\approx\; p_{\bm{\phi}}(\rvz|\rvx).
@@ -176,7 +176,7 @@ providing a feasible and trainable pathway from $\rvx$ back to $\rvz$ that enabl
 
 \subsection{Training via the Evidence Lower Bound (ELBO)}
 
-We now define a computable training objective. While we cannot directly optimize $\log p_{\bm{\phi}}(\mathbf{x})$, we can maximize a lower bound on it—the \emph{Evidence Lower Bound (ELBO)}:
+We now define a computable training objective. While we cannot directly optimize \nkh{$\log p_{\bm{\phi}}(\mathbf{x})$}, we can \nkh{maximize} a \nkh{lower bound on it}—the \nkh{\emph{Evidence Lower Bound (ELBO)}}:
 
 \thmp{Evidence Lower Bound (ELBO)}{elbo}{
 For any data point $\mathbf{x}$, the log-likelihood satisfies:
@@ -188,18 +188,18 @@ where the ELBO is given by:
     \mathcal{L}_{\text{ELBO}} = \underbrace{\mathbb{E}_{\mathbf{z} \sim q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})} \left[ \log p_{\bm{\phi}}(\mathbf{x}|\mathbf{z}) \right]}_{\text{Reconstruction Term}} - \underbrace{\mathcal{D}_{\mathrm{KL}}\left( q_{\bm{\theta}}(\mathbf{z}|\mathbf{x}) \| p(\mathbf{z}) \right)}_{\text{Latent Regularization}}.
 \end{align}
 }{
-The ELBO arises from Jensen’s inequality:
+The ELBO \nkh{arises from Jensen's inequality} \nk{(see \Cref{app-sec:jensen})}:
 \begin{align*}
 \log p_{\bm{\phi}}(\mathbf{x}) &= \log \int p_{\bm{\phi}}(\mathbf{x}, \mathbf{z})   \mathrm{d}\mathbf{z} = \log \int q_{\bm{\theta}}(\mathbf{z}|\mathbf{x}) \frac{p_{\bm{\phi}}(\mathbf{x}, \mathbf{z})}{q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})}   \mathrm{d}\mathbf{z} \\
 &= \log \mathbb{E}_{\mathbf{z} \sim q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})} \left[ \frac{p_{\bm{\phi}}(\mathbf{x}, \mathbf{z})}{q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})} \right] \geq \mathbb{E}_{\mathbf{z} \sim q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})} \left[ \log \frac{p_{\bm{\phi}}(\mathbf{x}, \mathbf{z})}{q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})} \right].
 \end{align*}
 }
-The ELBO objective naturally decomposes into two parts:
+The ELBO objective naturally decomposes into \nkh{two parts}:
 \begin{itemize}
     % \item \textbfs{Reconstruction:} Encourages accurate reconstruction of $\mathbf{x}$ from $\mathbf{z}$. This objective arises naturally from a KL-based variational inequality. However, on its own, it merely memorizes the training data, motivating a second KL term to regularize the latent space for generative modeling.
     % \se{refer back to the  earlier autoencoder discussion}
-    \item \textbfs{Reconstruction:} Encourages accurate recovery of $\mathbf{x}$ from its latent code $\mathbf{z}$. With Gaussian encoder and decoder assumptions, this term reduces exactly to the familiar reconstruction loss of an autoencoder (cf.\ \Cref{subsec:optimization-vae}). However, as in autoencoders, optimizing this term alone risks memorizing the training data, motivating an additional regularization.
-    \item \textbfs{Latent KL:} Encourages the encoder distribution $q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})$ to stay close to a simple Gaussian prior $p_{\mathrm{prior}}(\mathbf{z})$. This regularization shapes the latent space into a smooth and continuous structure, enabling meaningful generation by ensuring that samples drawn from the prior can be reliably decoded.
+    \item \textbfs{\nkh{Reconstruction:}} Encourages accurate recovery of $\mathbf{x}$ from its latent code $\mathbf{z}$. With Gaussian encoder and decoder assumptions, this term reduces exactly to the familiar reconstruction loss of an autoencoder (cf.\ \Cref{subsec:optimization-vae}). However, as in autoencoders, optimizing this term alone risks memorizing the training data, motivating an additional regularization.
+    \item \textbfs{\nkh{Latent KL:}} Encourages the encoder distribution \nkh{$q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})$} to \nkh{stay close to} a simple Gaussian prior \nkh{$p_{\mathrm{prior}}(\mathbf{z})$}. This regularization shapes the latent space into a smooth and continuous structure, enabling meaningful generation by ensuring that samples drawn from the prior can be reliably decoded.
 \end{itemize}
 This trade-off ensures both faithful reconstructions and coherent sampling.
 
@@ -244,19 +244,19 @@ This trade-off ensures both faithful reconstructions and coherent sampling.
 
 
 The ELBO objective has a natural information-theoretic interpretation. 
-Recall that maximum likelihood training amounts to minimizing the KL divergence
+Recall that \nkh{maximum likelihood training amounts to} minimizing the KL divergence
 \[
 \mathcal{D}_{\mathrm{KL}}(p_{\text{data}}(\rvx) \| p_{\bm{\phi}}(\rvx)),
 \]
 which measures how well the model distribution approximates the data distribution. 
-Since this term is intractable in general, the variational framework introduces a joint comparison.
+Since this term is intractable in general, the \nkh{variational framework introduces a joint comparison}.
 
-Specifically, consider two joint distributions:
+Specifically, consider \nkh{two joint distributions}:
 \begin{itemize}
     \item The \textbfs{generative joint}, $p_{\bm{\phi}}(\rvx, \rvz) = p(\rvz) p_{\bm{\phi}}(\rvx|\rvz)$, which describes how the model generates data;
     \item The \textbfs{inference joint}, $q_{\bm{\theta}}(\rvx, \rvz) = p_{\text{data}}(\rvx) q_{\bm{\theta}}(\rvz|\rvx)$, which couples real data with its inferred latent.
 \end{itemize}
-Comparing these distributions yields the inequality
+\nkh{Comparing these distributions} yields the inequality
 \begin{align}\label{eq:joint-bound}
     \mathcal{D}_{\mathrm{KL}}(p_{\text{data}}(\rvx) \| p_{\bm{\phi}}(\rvx)) 
     \leq \mathcal{D}_{\mathrm{KL}}(q_{\bm{\theta}}(\rvx,\rvz) \| p_{\bm{\phi}}(\rvx,\rvz)),
@@ -270,15 +270,33 @@ Formally, one can expand the joint KL as
     \\=& \mathbb{E}_{q_{\bm{\theta}}(\mathbf{x}, \mathbf{z})} \left[ \log \frac{p_{\text{data}}(\mathbf{x}) q_{\bm{\theta}}(\mathbf{z}|\mathbf{x})}{p_{\bm{\phi}}(\mathbf{x}) p_{\bm{\phi}}(\mathbf{z}|\mathbf{x})} \right] \\=&\mathbb{E}_{p_{\text{data}}(\mathbf{x})} \left[ \log \frac{p_{\text{data}}(\mathbf{x})}{p_{\bm{\phi}}(\mathbf{x})} + \mathcal{D}_{\mathrm{KL}}\left( q_{\bm{\theta}}(\mathbf{z}|\mathbf{x}) \| p_{\bm{\phi}}(\mathbf{z}|\mathbf{x}) \right) \right] \\
     \\=&  \underbrace{\mathcal{D}_{\mathrm{KL}}(p_{\text{data}} \| p_{\bm{\phi}})}_{\text{True Modeling Error}} + \underbrace{\mathbb{E}_{p_{\text{data}}(\mathbf{x})} \big[ \mathcal{D}_{\mathrm{KL}}( q_{\bm{\theta}}(\mathbf{z}|\mathbf{x}) \| p_{\bm{\phi}}(\mathbf{z}|\mathbf{x}) ) \big]}_{\text{Inference Error}},
 \end{align*}
-where the first term is the true modeling error and the second is the inference error, i.e., the gap between the approximate and true posteriors. The latter is always non-negative, which explains \Cref{eq:joint-bound}.
+where the first term is the true modeling error and the second is \nkh{the inference error, i.e., the gap between the approximate and true posteriors}. The latter is always non-negative, which explains \Cref{eq:joint-bound}.
 
-Finally, note that
+Finally, note that \nk{since $p_{\bm{\phi}}(\rvx)$ does not depend on $\rvz$,}
+\begingroup\color{notesblue}%
+\begin{align*}
+\log p_{\bm{\phi}}(\rvx)
+&= \log \Big[ p_{\bm{\phi}}(\rvx) \int q_{\bm{\theta}}(\rvz|\rvx)\,\diff\rvz \Big]
+= \log \int q_{\bm{\theta}}(\rvz|\rvx)\, p_{\bm{\phi}}(\rvx)\,\diff\rvz \\
+&= \int q_{\bm{\theta}}(\rvz|\rvx) \log p_{\bm{\phi}}(\rvx)\,\diff\rvz
+= \E_{q_{\bm{\theta}}(\rvz|\rvx)}\big[\log p_{\bm{\phi}}(\rvx)\big]
+= \E_{q_{\bm{\theta}}(\rvz|\rvx)}\bigg[\log \frac{p_{\bm{\phi}}(\rvx,\rvz)}{p_{\bm{\phi}}(\rvz|\rvx)}\bigg] \\
+&= \E_{q_{\bm{\theta}}(\rvz|\rvx)}\bigg[\log \bigg(\frac{p_{\bm{\phi}}(\rvx,\rvz)}{q_{\bm{\theta}}(\rvz|\rvx)} \cdot \frac{q_{\bm{\theta}}(\rvz|\rvx)}{p_{\bm{\phi}}(\rvz|\rvx)}\bigg)\bigg] \\
+&= \E_{q_{\bm{\theta}}(\rvz|\rvx)}\bigg[\log \frac{p_{\bm{\phi}}(\rvx,\rvz)}{q_{\bm{\theta}}(\rvz|\rvx)}\bigg]
++ \E_{q_{\bm{\theta}}(\rvz|\rvx)}\bigg[\log \frac{q_{\bm{\theta}}(\rvz|\rvx)}{p_{\bm{\phi}}(\rvz|\rvx)}\bigg] \\
+&= \mathcal{L}_{\text{ELBO}}(\bm{\theta},\bm{\phi};\rvx) + \mathcal{D}_{\mathrm{KL}}\big(q_{\bm{\theta}}(\rvz|\rvx)\,\|\,p_{\bm{\phi}}(\rvz|\rvx)\big),
+\end{align*}
+\endgroup
+i.e.,
 \[
 \log p_{\bm{\phi}}(\rvx) - \mathcal{L}_{\text{ELBO}}(\bm{\theta},\bm{\phi};\rvx) 
 = \mathcal{D}_{\mathrm{KL}} \left(q_{\bm{\theta}}(\rvz|\rvx)\|p_{\bm{\phi}}(\rvz|\rvx)\right).
 \]
-Thus the inference error is exactly the gap between the log-likelihood and the ELBO. 
-Maximizing the ELBO therefore corresponds to directly reducing inference error, ensuring that training minimizes a meaningful part of the overall bound.
+Thus the \nkh{inference error is exactly the gap between the log-likelihood and the ELBO}. 
+\nkh{Maximizing the ELBO} therefore \nkh{corresponds to} directly \nkh{reducing inference error}, ensuring that \nkh{training minimizes} a \nkh{meaningful part} of the overall bound.
+\begin{nknote}
+\noindent\textit{Corollary.} Optimizing the ELBO w.r.t.\ the encoder parameters $\bm{\theta}$ corresponds to minimizing the inference error (the gap to the log-likelihood, which itself does not depend on $\bm{\theta}$); optimizing w.r.t.\ the decoder parameters $\bm{\phi}$ corresponds to minimizing the inference error while maximizing the true log-likelihood.
+\end{nknote}
 
 
 
@@ -347,10 +365,10 @@ where $C$ is a constant independent of $\bm{\theta}$ and $\bm{\phi}$. The ELBO o
 \min_{\bm{\theta}, \bm{\phi}}  \mathbb{E}_{q_{\bm{\theta}}(\mathbf{z} | \mathbf{x})} \left[ \frac{1}{2\sigma^2} \|\mathbf{x} - \bm{\mu}_{\bm{\phi}}(\mathbf{z})\|^2 \right]
 + \mathcal{D}_{\mathrm{KL}}\big(q_{\bm{\theta}}(\mathbf{z} | \mathbf{x}) \| p_{\mathrm{prior}}(\mathbf{z})\big),
 \]
-where the KL term admits a closed-form solution due to the Gaussian assumption. Training the VAE therefore reduces to minimizing a regularized reconstruction loss.
+where the \nkh{KL term} admits a \nkh{closed-form solution} due to the Gaussian assumption. Training the VAE therefore reduces to minimizing a regularized reconstruction loss.
 
 \subsection{Drawbacks of Standard VAE}\label{sec:drawback_standard_VAE}
-Despite the theoretical appeal of the VAE framework, it suffers from a critical drawback: it often produces blurry outputs\footnote{The limitation we study here is specific to the common VAE setup introduced
+Despite the theoretical appeal of the VAE framework, it suffers from a critical \nkh{drawback}: it often produces \nkh{blurry outputs}\footnote{The limitation we study here is specific to the common VAE setup introduced
 above: a simple Gaussian decoder trained through a squared reconstruction
 error. In this setting, the population-optimal decoder returns a conditional
 mean. If several visually different inputs correspond to overlapping latent
@@ -363,9 +381,12 @@ To understand this phenomenon, consider a fixed Gaussian encoder $ q_{\text{enc}
 p_{\text{dec}}(\mathbf{x}|\mathbf{z}) = \mathcal{N}(\mathbf{x}; \bm{\mu}(\rvz), \sigma^2 \rmI),
 \]
 where $ \bm{\mu}(\rvz) $ denotes the decoder network. With an arbitrary encoder, optimizing the ELBO reduces (up to an additive constant) to minimizing the expected reconstruction error:
-\[
-\argmin_{\bm{\mu}} \mathbb{E}_{p_{\text{data}}(\mathbf{x})q_{\text{enc}}(\mathbf{z}|\mathbf{x})} \left[ \| \mathbf{x} - \bm{\mu}(\rvz) \|^2 \right].
-\]
+\begin{align*}
+&\argmin_{\bm{\mu}} \mathbb{E}_{p_{\text{data}}(\mathbf{x})q_{\text{enc}}(\mathbf{z}|\mathbf{x})} \left[ \| \mathbf{x} - \bm{\mu}(\rvz) \|^2 \right] \\
+&\qquad\nk{= \argmin_{\bm{\mu}}\, \mathbb{E}_{q_{\text{enc}}(\rvz)} \mathbb{E}_{q_{\text{enc}}(\rvx|\rvz)} \left[ \|\rvx - \bm{\mu}(\rvz)\|^2 \right]} \\
+&\qquad\nk{= \mathbb{E}_{q_{\text{enc}}(\rvz)} \Big[ \argmin_{\bm{\mu}(\rvz)}\, \mathbb{E}_{q_{\text{enc}}(\rvx|\rvz)} \left[ \|\rvx - \bm{\mu}(\rvz)\|^2 \right] \Big]}.
+\end{align*}
+
 This is a standard least squares problem in $ \bm{\mu}(\rvz) $, and its solution is given in closed form by the conditional mean:
 \[
 \bm{\mu}^*(\mathbf{z}) = \mathbb{E}_{q_{\text{enc}}(\mathbf{x}|\mathbf{z})}[\mathbf{x}],
@@ -382,16 +403,18 @@ q_{\text{enc}}(\mathbf{z})
 \]
 
 An equivalent form of the optimal generator via Bayes' rule is:
-\[
+\begin{align*}
 \bm{\mu}^*(\mathbf{z})
-=
+&{\color{notesblue}{}= \mathbb{E}_{q_{\text{enc}}(\rvx|\rvz)}[\rvx]
+= \int \rvx\, \frac{q_{\text{enc}}(\rvz|\rvx)\, p_{\text{data}}(\rvx)}{q_{\text{enc}}(\rvz)}\, \diff\rvx} \\
+&=
 \frac{\mathbb{E}_{p_{\text{data}}(\mathbf{x})}\!\left[q_{\text{enc}}(\mathbf{z}|\mathbf{x}) \cdot \mathbf{x}\right]}
 {q_{\text{enc}}(\mathbf{z})}
 =
 \frac{\mathbb{E}_{p_{\text{data}}(\mathbf{x})}\!\left[q_{\text{enc}}(\mathbf{z}|\mathbf{x}) \cdot \mathbf{x}\right]}
 {\mathbb{E}_{p_{\text{data}}(\mathbf{x})}\!\left[q_{\text{enc}}(\mathbf{z}|\mathbf{x})\right]}.
-\]
-Now suppose that two distinct inputs $ \mathbf{x} \neq \mathbf{x}' $ are mapped to overlapping regions in latent space, i.e., the supports of $ q_{\text{enc}}(\cdot|\mathbf{x}) $ and $ q_{\text{enc}}(\cdot|\mathbf{x}') $ intersect. Then $\bm{\mu}^*(\mathbf{z})$ averages over multiple, potentially unrelated inputs, which leads to blurry, non-distinct outputs. This averaging effect over conflicting modes is a fundamental reason for the characteristic blurriness in VAE-generated samples.
+\end{align*}
+Now \nkh{suppose} that two \nkh{distinct inputs} $ \mathbf{x} \neq \mathbf{x}' $ are \nkh{mapped to overlapping} regions in \nkh{latent space}, i.e., the supports of \nkh{$ q_{\text{enc}}(\cdot|\mathbf{x}) $ and $ q_{\text{enc}}(\cdot|\mathbf{x}') $ intersect}. Then \nkh{$\bm{\mu}^*(\mathbf{z})$ averages} over \nkh{multiple}, potentially unrelated inputs, which leads to blurry, non-distinct outputs. This averaging effect over \nkh{conflicting modes} is a fundamental reason for the characteristic blurriness in VAE-generated samples.
 
 
 
@@ -447,7 +470,7 @@ To model complex data, Hierarchical Variational Autoencoders (HVAEs)
 
 \end{tikzpicture}
 
-    \caption{\textbfs{Computation graph of the HVAE.} It has a hierarchical structure with stacked, trainable encoders and decoders across multiple latent layers. \figcredit{Created by the authors.}
+    \caption{\textbfs{Computation graph of the HVAE.} It has a hierarchical structure with stacked, trainable encoders and decoders across multiple latent layers. \nk{(Note the Markov conditioning structure.)} \figcredit{Created by the authors.}
 }
     \label{fig:hvae-graph}
 \end{figure}
@@ -456,7 +479,7 @@ To model complex data, Hierarchical Variational Autoencoders (HVAEs)
 \paragraph{HVAE's Modeling.}
 Unlike standard VAEs that use a single latent code $\mathbf{z}$, hierarchical VAEs (HVAEs) introduce multiple layers of latent variables arranged in a top-down hierarchy.  
 Each latent layer conditions the one below it, forming a chain of conditional priors that captures structure at progressively finer levels of abstraction.  
-This leads to the following top-down factorization of the joint distribution:
+This leads to the following top-down factorization of the \nkh{joint distribution}:
 
 % :
 % \[
@@ -466,13 +489,13 @@ This leads to the following top-down factorization of the joint distribution:
 \[
 p_{\bm{\phi}}(\mathbf{x}, \mathbf{z}_{1:L}) = p_{\bm{\phi}}(\mathbf{x} | \mathbf{z}_1) \prod_{i=2}^{L} p_{\bm{\phi}}(\mathbf{z}_{i-1}|\mathbf{z}_i)   p(\mathbf{z}_L).
 \]
-This structure defines the marginal data distribution,
+This structure defines the \nkh{marginal data distribution},
 \[
 p_{\text{HVAE}}(\mathbf{x}) := \int p_{\bm{\phi}}(\mathbf{x}, \mathbf{z}_{1:L}) \diff \mathbf{z}_{1:L}.
 \]
  Generation proceeds progressively: starting from the top latent variable $ \mathbf{z}_L $, each latent is decoded sequentially down to $ \mathbf{z}_1 $, followed by generating the final observation $ \mathbf{x} $.
 
-For encoding part, HVAEs utilize a structured, learnable variational encoder $ q_{\bm{\theta}}(\mathbf{z}_{1:L}|\mathbf{x}) $ that mirrors the generative hierarchy. A common choice is a bottom-up Markov factorization:
+For encoding part, HVAEs utilize a structured, learnable \nkh{variational encoder $ q_{\bm{\theta}}(\mathbf{z}_{1:L}|\mathbf{x}) $} that mirrors the generative hierarchy. A common choice is a bottom-up Markov factorization:
 \[
 q_{\bm{\theta}}(\mathbf{z}_{1:L} | \mathbf{x}) = q_{\bm{\theta}}(\mathbf{z}_1 | \mathbf{x}) \prod_{i=2}^{L} q_{\bm{\theta}}(\mathbf{z}_i | \mathbf{z}_{i-1}).
 \]
@@ -513,10 +536,10 @@ The leap from shallow to deep networks revolutionized machine learning, and a si
 
 
 
-\paragraph{Why Deeper Networks in a Flat VAE are Not Enough.} There are two fundamental limitations of a standard flat VAE that are not resolved by simply making the encoder and decoder deeper.
+\paragraph{Why Deeper Networks in a Flat VAE are Not Enough.} There are two fundamental \nkh{limitations} of a standard flat VAE that are not resolved by simply making the encoder and decoder \nkh{deeper}.
 
 
-The first limitation is the variational family. In a standard VAE,
+The \nkh{first} limitation is the \nkh{variational family} \nk{(unimodal)}. In a standard VAE,
 \[
 q_\btheta(\rvz| \rvx)=\mathcal N \big(\rvz;\,\bm{\mu}_{\btheta}(\rvx), \operatorname{diag}(\sigma_\theta^2(\rvx))\big),
 \]
@@ -527,22 +550,28 @@ one unimodal ellipsoid. When $p_\bphi(\rvz| \rvx)$ is multi-peaked, this family 
 weakens inference. Addressing this requires a richer posterior class, not merely deeper networks.
 
 
-Second, if the decoder is too expressive, the model may suffer from posterior collapse. To see why, let us recall that the objective of the VAE is
+\nkh{Second, if the decoder is too expressive}, the model may suffer from \nkh{posterior collapse}. To see why, let us recall that the objective of the VAE is
 \begin{align*}
 &\mathbb{E}_{p_{\text{data}}(\mathbf{x})}[\mathcal L_{\mathrm{ELBO}}(\rvx)]\\
 &\quad\quad=\E_{p_{\text{data}}(\mathbf{x})q_\btheta(\rvz|\rvx)}[\log p_\bphi(\rvx|\rvz)]
 -\mathbb{E}_{p_{\text{data}}(\mathbf{x})}\big[\mathcal{D}_\mathrm{KL} \big(q_\btheta(\rvz|\rvx) \| p(\rvz)\big)\big]\\
+&\quad\quad{\color{notesblue}=\E_{p_{\text{data}}(\mathbf{x})q_\btheta(\rvz|\rvx)}[\log p_\bphi(\rvx|\rvz)]
+- \int q(\rvx,\rvz)\log\frac{q_\btheta(\rvz|\rvx)}{p(\rvz)}\,\diff\rvx\,\diff\rvz} \\
+&\quad\quad{\color{notesblue}=\E_{p_{\text{data}}(\mathbf{x})q_\btheta(\rvz|\rvx)}[\log p_\bphi(\rvx|\rvz)]
+- \int q(\rvx,\rvz)\log\frac{q_\btheta(\rvz|\rvx)}{q_{\bm{\theta}}(\rvz)}\,\diff\rvx\,\diff\rvz} \\
+&\quad\quad\phantom{=\E_{p_{\text{data}}(\mathbf{x})q_\btheta(\rvz|\rvx)}[\log p_\bphi(\rvx|\rvz)]}
+{\color{notesblue}\;- \int q(\rvx,\rvz)\log\frac{q_{\bm{\theta}}(\rvz)}{p(\rvz)}\,\diff\rvx\,\diff\rvz} \\
 &\quad\quad=\E_{p_{\text{data}}(\mathbf{x})q_\btheta(\rvz|\rvx)}[\log p_\bphi(\rvx|\rvz)]-\mathcal I_q(\rvx;\rvz) - \mathcal{D}_\mathrm{KL}(q_{\bm{\theta}}(\rvz) \| p(\rvz)),
 \end{align*}
-where $\mathcal I_q(\rvx;\rvz)$ is the mutual information defined by
+where $\mathcal I_q(\rvx;\rvz)$ is the \nkh{mutual information} defined by
 \[
 \mathcal I_q(\rvx;\rvz)
 =\E_{q(\rvx,\rvz)} \Big[\log \tfrac{q_\btheta(\rvz|\rvx)}{q(\rvz)}\Big]
 =\E_{p_{\mathrm{data}}(\rvx)} \big[\mathcal{D}_\mathrm{KL}(q_\btheta(\rvz|\rvx) \| q(\rvz))\big],
 \]
-and the aggregated posterior is $q_{\bm{\theta}}(\rvz)= \int p_{\mathrm{data}}(\rvx) q_\btheta(\rvz|\rvx) \diff\rvx$.
+and the \nkh{aggregated posterior} is $q_{\bm{\theta}}(\rvz)= \int p_{\mathrm{data}}(\rvx) q_\btheta(\rvz|\rvx) \diff\rvx$.
 
-If the decoder class can model the data well without using $\rvz$ (i.e., it contains some $p_\bphi(\rvx|\rvz)=r(\rvx)$ close to $p_{\mathrm{data}}$), then a maximizer of the ELBO sets $q_\btheta(\rvz|\rvx)=p(\rvz)$, so $\mathcal I_q(\rvx;\rvz)=0$ and $q_\btheta(\rvz)=p(\rvz)$. This ``ignore $\rvz$'' solution does not disappear by making the networks deeper: (1) the learned code becomes independent of $\rvx$ (so it carries no data-dependent structure useful for downstream tasks), and (2) conditioning or moving in $\rvz$ has no effect on generated samples, so controllable generation fails.
+If the \nkh{decoder class can model} the \nkh{data} well \nkh{without using $\rvz$} (i.e., it contains some $p_\bphi(\rvx|\rvz)=r(\rvx)$ close to $p_{\mathrm{data}}$), then a maximizer of the \nkh{ELBO} \nkh{sets $q_\btheta(\rvz|\rvx)=p(\rvz)$}, so $\mathcal I_q(\rvx;\rvz)=0$ and $q_\btheta(\rvz)=p(\rvz)$. This ``ignore $\rvz$'' solution \nkh{does not disappear by making the networks deeper}: (1) the learned code becomes independent of $\rvx$ (so it carries no data-dependent structure useful for downstream tasks), and (2) conditioning or moving in $\rvz$ has no effect on generated samples, so controllable generation fails.
 
 
 \paragraph{What Hierarchy Changes?}
@@ -566,20 +595,20 @@ with ELBO
 \Big[\mathcal{D}_{\mathrm{KL}}(q_\btheta(\rvz_L|\rvz_{L-1}) \| p(\rvz_L))\Big].
 \end{align*}
 Here, we denote $\E_q := \E_{p_{\mathrm{data}}(\rvx) q_{\btheta}(\rvz_{1:L}|\rvx)}$.
-Each latent level interacts only with its neighboring levels in the
+\nkh{Each latent level interacts only with its neighboring levels} in the
 hierarchy: the encoder passes information upward through
 $q_\btheta(\rvz_i|\rvz_{i-1})$, while the decoder passes information
-downward through $p_\bphi(\rvz_{i-1}|\rvz_i)$. Accordingly, the ELBO
+downward through $p_\bphi(\rvz_{i-1}|\rvz_i)$. Accordingly, \nkh{the ELBO
 decomposes into a reconstruction term, adjacent-layer matching terms,
-and a top-level KL regularizer to the prior. These properties stem from
+and a top-level KL regularizer} to the prior. These properties stem from
 the hierarchical latent graph, not from simply deepening networks in a
 flat VAE.
 
 \paragraph{What Will be Ahead?}
-While HVAEs extend the VAE framework with multiple latent layers for expressiveness, their training poses unique challenges. Because the encoder and decoder must be optimized jointly, learning becomes unstable: lower layers and the decoder can already reconstruct $\rvx$, leaving higher-level latents with little effective signal. Moreover, gradient information reaching deeper variables is often indirect and weak, making it difficult for them to contribute meaningfully. An additional difficulty lies in balancing model capacity, since overly expressive conditionals  can dominate the reconstruction task and suppress the utility of higher latents. 
+While \nkh{HVAE}s extend the VAE framework with multiple latent layers for expressiveness, their \nkh{training} poses unique \nkh{challenges}. Because the \nkh{encoder} and \nkh{decoder} must be \nkh{optimized jointly}, learning becomes \nkh{unstable}: \nkh{lower layers} and the \nkh{decoder can already reconstruct $\rvx$, leaving higher-level latents with little effective signal}. Moreover, \nkh{gradient} information reaching deeper variables is often indirect and \nkh{weak}, making it difficult for them to contribute meaningfully. An additional difficulty lies in balancing model capacity, since overly expressive conditionals  can dominate the reconstruction task and suppress the utility of higher latents. 
 
 
-Interestingly, the core idea of a deep, layered hierarchy finds a more powerful incarnation in variational diffusion models, a topic we explore in \Cref{sec:ddpm}. Diffusion models inherit the progressive structure of HVAEs but elegantly sidestep their central weakness. By fixing the encoding process and focusing solely on learning the generative reversal, they unlock newfound stability and modeling flexibility, leading to a significant leap in the quality of generated outputs.
+Interestingly, the core idea of a deep, layered hierarchy finds a more powerful incarnation in variational diffusion models, a topic we explore in \Cref{sec:ddpm}. \nkh{Diffusion models} inherit the progressive structure of HVAEs but elegantly sidestep their central weakness. By \nkh{fixing} the \nkh{encoding process} and \nkh{focusing solely on learning the generative reversal}, they \nkh{unlock} newfound \nkh{stability} and modeling flexibility, leading to a significant leap in the quality of generated outputs.
 
 For notational simplicity, we deviate from the common VAE convention that uses $q$ for the encoder and $p$ for the generator. To avoid ambiguity, we denote distributions as 
 $p$ and will always specify their roles through appropriate subscripts or superscripts, clarifying them in context.
@@ -641,8 +670,8 @@ Denoising Diffusion Probabilistic Models (DDPMs) \citep{sohl2015deep,ho2020denoi
 
 At their core, DDPMs involve two distinct stochastic processes:
 \begin{itemize}
-    \item \textbfs{The Forward Pass (Fixed Encoder):} This process gradually corrupts data by injecting Gaussian noise over multiple steps via a transition kernel $p(\mathbf{x}_{i}|\mathbf{x}_{i-1})$. The data evolves into an isotropic Gaussian distribution, effectively becoming pure noise. This means the encoder is fixed and not learned.
-    \item \textbfs{The Reverse Denoising Process (Learnable Decoder):} Here, a neural network learns to reverse the noise corruption through a parameterized distribution $p_{\bm{\phi}}(\mathbf{x}_{i-1}|\mathbf{x}_{i})$. Starting from pure noise, this process iteratively denoises to generate realistic samples. Crucially, each individual denoising step is a more manageable task than generating a complete sample from scratch, as VAEs often attempt to do.
+    \item \textbfs{The Forward Pass (Fixed Encoder):} This process gradually corrupts data by injecting Gaussian noise over multiple steps via a transition kernel \nkh{$p(\mathbf{x}_{i}|\mathbf{x}_{i-1})$}. The data evolves into an isotropic Gaussian distribution, effectively becoming pure noise. This means the encoder is \nkh{fixed} and not learned.
+    \item \textbfs{The Reverse Denoising Process (Learnable Decoder):} Here, a neural network \nkh{learns} to \nkh{reverse} the noise corruption through a parameterized distribution \nkh{$p_{\bm{\phi}}(\mathbf{x}_{i-1}|\mathbf{x}_{i})$}. Starting from pure noise, this process iteratively denoises to generate realistic samples. Crucially, each individual denoising step is a more manageable task than generating a complete sample from scratch, as VAEs often attempt to do.
 \end{itemize}
 By fixing the encoder and concentrating learning on the gradual generative trajectory, DDPMs achieve remarkable stability and expressive power. 
 
@@ -724,12 +753,13 @@ Each step in the forward process is governed by a fixed Gaussian transition kern
 \[
 p(\rvx_i|\rvx_{i-1}) := \mathcal{N}(\rvx_i; \sqrt{1 - \beta_i^2}   \rvx_{i-1}, \beta_i^2 \rmI).
 \]
-Here, the process begins with $\rvx_{0} $, representing a sample drawn from the real data distribution $p_{\text{data}}$. The sequence $\{\beta_i\}_{i=1}^L$ denotes a pre-determined, monotonically increasing noise schedule, where each 
-$\beta_i \in (0, 1)$ controls the variance of the Gaussian noise injected at step $i$.  For convenience, we define $\alpha_i := \sqrt{1 - \beta_i^2}$. This mathematical definition is precisely equivalent to the following intuitive iterative update:
+Here, the process begins with \nkh{$\rvx_{0} $}, representing a sample \nkh{drawn from} the real data distribution \nkh{$p_{\text{data}}$}. The sequence $\{\beta_i\}_{i=1}^L$ denotes a pre-determined, \nkh{monotonically increasing} noise schedule, where each 
+$\beta_i \in (0, 1)$ \nkh{controls the variance} of the Gaussian noise injected at step $i$.  For convenience, we \nkh{define $\alpha_i := \sqrt{1 - \beta_i^2}$}. \nk{Geometrically, $\alpha_i$ traces the quarter circle $y = \sqrt{1-x^2}$: as $\beta_i$ grows toward $1$, $\alpha_i$ shrinks to $0$.} This mathematical definition is precisely equivalent to the following intuitive iterative update:
 \[
 \rvx_i = \alpha_i \rvx_{i-1} + \beta_i \bm{\epsilon}_i,  
 \]
 where $\bm{\epsilon}_i \sim \mathcal{N}(\bm{0}, \rmI)$ are independently and identically distributed. This means at each step $i$, we scale down the previous state $\rvx_{i-1}$ by $\alpha_i$ and add a controlled amount of Gaussian noise scaled by $\beta_i$.
+\nk{Why are the two forms equivalent? Conditioned on $\rvx_{i-1}$: $\E[\rvx_i|\rvx_{i-1}] = \alpha_i\rvx_{i-1} + \beta_i\,\E[\bm{\epsilon}_i] = \alpha_i\rvx_{i-1}$ and $\mathrm{Var}[\rvx_i|\rvx_{i-1}] = \beta_i^2\,\mathrm{Var}[\bm{\epsilon}_i] = \beta_i^2\rmI$, matching the kernel.}
 
 \paragraph{Perturbation Kernel and Prior Distribution.}
 By recursively applying the transition kernels, we obtain a closed-form expression for the distribution of noisy samples at step $i$ given the original data $\rvx_0$:
@@ -740,7 +770,20 @@ where
 \[
 \bar{\alpha}_i := \prod_{k=1}^i \sqrt{1-\beta_k^2} = \prod_{k=1}^i \alpha_k.
 \]
-This means we can sample $\rvx_i$ directly from $\rvx$ as
+\begin{nknote}
+\noindent\textit{Proof by induction.} The base case ($i=1$) is the transition kernel itself. For the inductive step, assume $p_i(\rvx_i|\rvx_0) = \mathcal{N}(\rvx_i; \bar{\alpha}_i\rvx_0, (1-\bar{\alpha}_i^2)\rmI)$. By the Markov chain, reparameterizing $p(\rvx_{i+1}|\rvx_i)$ and $p_i(\rvx_i|\rvx_0)$,
+\begin{align*}
+\rvx_{i+1}
+&= \alpha_{i+1}\big(\bar{\alpha}_i\rvx_0 + \sqrt{1-\bar{\alpha}_i^2}\,\bm{\epsilon}_i\big) + \beta_{i+1}\bm{\epsilon}_{i+1}
+&&(\bm{\epsilon}_i \perp \bm{\epsilon}_{i+1}) \\
+&= \bar{\alpha}_{i+1}\rvx_0 + \sqrt{\alpha_{i+1}^2(1-\bar{\alpha}_i^2) + \beta_{i+1}^2}\;\bm{\epsilon}
+&&\text{(sum of independent Gaussians)} \\
+&= \bar{\alpha}_{i+1}\rvx_0 + \sqrt{1-\bar{\alpha}_{i+1}^2}\;\bm{\epsilon}
+&&(\alpha_{i+1}^2 - \bar{\alpha}_{i+1}^2 + \beta_{i+1}^2 = 1 - \bar{\alpha}_{i+1}^2),
+\end{align*}
+i.e., $p_{i+1}(\rvx_{i+1}|\rvx_0) = \mathcal{N}(\rvx_{i+1}; \bar{\alpha}_{i+1}\rvx_0, (1-\bar{\alpha}_{i+1}^2)\rmI)$. \hfill$\blacksquare$
+\end{nknote}
+This means we can \nkh{sample $\rvx_i$ directly from $\rvx$ as}
 \begin{align}\label{eq:ddpm-forward}
     \rvx_i = \bar{\alpha}_i \rvx_0 + \sqrt{1-\bar{\alpha}_i^2}   \bm{\epsilon}, \quad \bm{\epsilon} \sim \mathcal{N}(\bm{0}, \rmI).
 \end{align}
@@ -748,7 +791,7 @@ Let the noise schedule $ \{\beta_i\}_{i=1}^L $ be an increasing sequence, then t
 \[
 p_L(\mathbf{x}_L | \rvx_0) \longrightarrow \mathcal{N}(\mathbf{0}, \mathbf{I}) \quad \text{as } L \to \infty,
 \]
-which motivates the choice of the prior distribution as
+which motivates the choice of the \nkh{prior distribution} as
 \[
 p_{\text{prior}} := \mathcal{N}(\mathbf{0}, \mathbf{I})
 \]
@@ -791,7 +834,7 @@ Rather than diving immediately into the mathematically intricate derivation of t
 
 
 \paragraph{Overview: Modeling and Training Objective.} 
-To enable the generative process, our goal is to approximate the unknown true reverse transition kernel, $p(\mathbf{x}_{i-1}|\mathbf{x}_i)$. We achieve this by introducing a learnable parametric model, $p_{\bm{\phi}}(\mathbf{x}_{i-1}|\mathbf{x}_i)$, and training it to minimize the expected KL divergence:
+To enable the generative process, our \nkh{goal} is to \nkh{approximate} the unknown true \nkh{reverse transition kernel, $p(\mathbf{x}_{i-1}|\mathbf{x}_i)$}. We achieve this by introducing a \nkh{learnable} parametric model, \nkh{$p_{\bm{\phi}}(\mathbf{x}_{i-1}|\mathbf{x}_i)$}, and training it to \nkh{minimize} the expected \nkh{KL divergence}:
 \begin{align}\label{eq:marginal-kl-matching}
     \mathbb{E}_{p_i(\mathbf{x}_i)} \left[
     \mathcal{D}_{\mathrm{KL}}\big(p(\mathbf{x}_{i-1}|\mathbf{x}_i) \| p_{\bm{\phi}}(\mathbf{x}_{i-1}|\mathbf{x}_i)\big)
@@ -806,7 +849,7 @@ The marginals $p_i(\rvx_i)$ and $p_{i-1}(\rvx_{i-1})$ are expectations over the 
 \[
 p_i(\rvx_i) = \int p_i(\rvx_i | \rvx_0) p_{\mathrm{data}}(\rvx_0) \mathrm{d}\rvx_0,
 \]
-and analogously for $p_{i-1}(\rvx_{i-1})$. Since $p_{\mathrm{data}}$ is unknown, these integrals have no closed-form evaluation; at best they can be approximated from samples, so the exact densities are not available in practice.
+and analogously for $p_{i-1}(\rvx_{i-1})$. Since $p_{\mathrm{data}}$ is unknown, these integrals have \nkh{no closed-form evaluation}; at best they can be approximated from samples, so the exact densities are not available in practice.
 
 \begin{figure}[th!]
     \centering
@@ -834,11 +877,11 @@ the marginal mixture.    \figcredit{Created by the authors with AI-assisted codi
 
 
 \paragraph{Overcoming Intractability with Conditioning.}
-A central insight in DDPMs resolves this intractability: we condition the reverse transition on a clean data sample $\mathbf{x}_0$. This subtle yet powerful step transforms the intractable kernel into one that is mathematically tractable:
+A central insight in DDPMs \nkh{resolves} this \nkh{intractability}: we \nkh{condition} the reverse transition \nkh{on} a clean data sample \nkh{$\mathbf{x}_0$}. This subtle yet powerful step transforms the intractable kernel into one that is \nkh{mathematically tractable}:
 \[
 p(\mathbf{x}_{i-1}|\mathbf{x}_i, \mathbf{x}_0) = p(\mathbf{x}_i|\mathbf{x}_{i-1}) \frac{p(\mathbf{x}_{i-1}|\mathbf{x}_0)}{p_i(\mathbf{x}_i|\mathbf{x}_0)}.
 \]
-This tractability arises from two key properties of the forward process: its Markov property, meaning $p(\mathbf{x}_i|\mathbf{x}_{i-1}, \mathbf{x}_0) = p(\mathbf{x}_i|\mathbf{x}_{i-1})$, and the Gaussian nature of all involved distributions. As a result, $p(\mathbf{x}_{i-1}|\mathbf{x}_i, \mathbf{x}_0)$ itself is Gaussian and admits a closed-form expression (which we will see in \Cref{eq:ddpm-reverse-mean}). We visualize it in \Cref{fig:conditional-trick}. Crucially, this elegant conditioning strategy allows us to derive a tractable objective that is functionally equivalent to the seemingly intractable marginal KL divergence in \Cref{eq:marginal-kl-matching}.
+This tractability \nkh{arises from} two key properties of the forward process: its \nkh{Markov property}, meaning \nkh{$p(\mathbf{x}_i|\mathbf{x}_{i-1}, \mathbf{x}_0) = p(\mathbf{x}_i|\mathbf{x}_{i-1})$}, and the Gaussian nature of all involved distributions. As a result, \nkh{$p(\mathbf{x}_{i-1}|\mathbf{x}_i, \mathbf{x}_0)$ itself is Gaussian} and \nkh{admits} a \nkh{closed-form expression} (which we will see in \Cref{eq:ddpm-reverse-mean}). We visualize it in \Cref{fig:conditional-trick}. Crucially, this elegant conditioning strategy allows us to derive a tractable objective that is functionally equivalent to the seemingly intractable marginal KL divergence in \Cref{eq:marginal-kl-matching}.
 
 \thmp{Equivalence Between Marginal and Conditional KL Minimization}{equiv-marginal-kl}{
 The following equality holds:
@@ -884,7 +927,7 @@ Later in Lemma~\ref{reverse-kernel}, we present a more general formula that exte
 \begin{align}\label{eq:def-reverse}
     p_{\bm{\phi}}(\mathbf{x}_{i-1}|\mathbf{x}_i) := \mathcal{N}\big(\mathbf{x}_{i-1}; \bm{\mu}_{\bm{\phi}}(\mathbf{x}_i, i), \sigma^2(i) \mathbf{I}\big),
 \end{align}
-where $\bm{\mu}_{\bm{\phi}}(\cdot, i) \colon \mathbb{R}^D \to \mathbb{R}^D$ is a learnable mean function, and $\sigma^2(i) > 0$ is fixed as defined in \Cref{eq:ddpm-reverse-mean}.
+where $\bm{\mu}_{\bm{\phi}}(\cdot, i) \colon \mathbb{R}^D \to \mathbb{R}^D$ is a learnable mean function, and \nkh{$\sigma^2(i) > 0$ is fixed} as defined in \Cref{eq:ddpm-reverse-mean}.
 
 We denote the KL divergence, averaged over time steps $i$ and conditioned on data $\rvx_0 \sim p_{\text{data}}$, to match all layers of distributions as:
 \begin{align}\label{eq:ddpm-diffusion}
@@ -894,7 +937,7 @@ Thanks to the Gaussian forms of both distributions and the parameterization defi
 \begin{align}\label{eq:ddpm-diffusion-simp}
     \mathcal{L}_{\text{diffusion}}(\rvx_0;\bm{\phi}) = \sum_{i=2}^L \frac{1}{2\sigma^2(i)}  \mathbb{E}_{p_i(\rvx_i|\rvx_0)}\left\| \bm{\mu}_{\bm{\phi}}(\rvx_i, i) - \bm{\mu}(\rvx_i, \rvx_0, i) \right\|_2^2 + C,
 \end{align}
-where $C$ is a constant independent of $\bm{\phi}$. Averaging over the data distribution and omitting the constant $C$ (which does not affect the optimization), the final DDPM training objective is
+where $C$ is a constant independent of $\bm{\phi}$. Averaging over the data distribution and omitting the constant $C$ (which does not affect the optimization), the final \nkh{DDPM training objective is}
 \begin{align}
 \begin{aligned}
     \label{eq:ddpm-mean-loss}
@@ -922,7 +965,7 @@ efficient.
 \subsection{Practical Choices of Predictions and Loss}\label{subsec:ddpm-prediction}
 
 \paragraph{$\beps$-Prediction.}
-In typical DDPM implementations, training is not conducted directly using the original loss based on the \emph{mean prediction} parameterization from \Cref{eq:ddpm-mean-loss}. Instead, an equivalent reparameterization, known as the \emph{$\beps$-prediction} (noise prediction) formulation, is commonly adopted.  
+In typical DDPM implementations, training is not conducted directly using the original loss based on the \emph{mean prediction} parameterization from \Cref{eq:ddpm-mean-loss}. Instead, an \nkh{equivalent} reparameterization, known as the \nkh{\emph{$\beps$-prediction} (noise prediction)} formulation, is commonly adopted.  
 
 Recall that in the DDPM forward process, a noisy sample $\rvx_i \sim p(\rvx_i |\rvx_0)$ at noise level $i$ is generated by
 \begin{equation}\label{eq:ddpm-perturbation}
@@ -932,12 +975,13 @@ Using this expression, the reverse mean $\bm{\mu}(\rvx_i, \rvx_0, i)$ from \Cref
 \[
 \bm{\mu}(\rvx_i, \rvx_0, i) = \frac{1}{\alpha_i} \left( \rvx_i - \frac{1 - \alpha_i^2}{\sqrt{1 - \bar{\alpha}_i^2}} \boldsymbol{\epsilon} \right).
 \]
+\nk{(To see this, solve \Cref{eq:ddpm-perturbation} for $\rvx_0$, substitute into \Cref{eq:ddpm-reverse-mean}, and simplify.)}
 
 This motivates a parameterization of the model mean $\bm{\mu}_{\bm{\phi}}$ using a neural network $\boldsymbol{\epsilon}_{\bm{\phi}}(\rvx_i, i)$ that directly predicts the noise:
 \[
 \bm{\mu}_{\bm{\phi}}(\rvx_i, i) = \frac{1}{\alpha_i} \left( \rvx_i - \frac{1 - \alpha_i^2}{\sqrt{1 - \bar{\alpha}_i^2}} \underbrace{\boldsymbol{\epsilon}_{\bm{\phi}}(\rvx_i, i)}_{\beps\text{-prediction}} \right).
 \]
-Substituting this into the original loss leads to a squared $\ell_2$ error between predicted and true noise:
+Substituting this into the original loss leads to a squared $\ell_2$ \nkh{error between predicted and true noise}:
 \[
 \left\| \bm{\mu}_{\bm{\phi}}(\rvx_i, i) - \bm{\mu}(\rvx_i, \rvx_0, i) \right\|_2^2 \propto \left\| \boldsymbol{\epsilon}_{\bm{\phi}}(\rvx_i, i) - \boldsymbol{\epsilon} \right\|_2^2,
 \]
@@ -950,7 +994,6 @@ In practice, this expression is further simplified by omitting the weighting ter
 \end{equation}
 where $\rvx_i = \bar{\alpha}_i \rvx_0 + \sqrt{1 - \bar{\alpha}_i^2} \boldsymbol{\epsilon}$ with $\rvx_0 \sim p_{\text{data}}$. Since the target noise has unit variance at every timestep $t$, the $\ell_2$ loss in \Cref{eq:ddpm-simple-loss} maintains a consistent scale across all $t$. This prevents vanishing or exploding targets and eliminates the need for explicit loss weighting.
 
-
 Importantly, both $\mathcal{L}_{\text{DDPM}}$ and $\mathcal{L}_{\text{simple}}$ share the same optimal solution $\boldsymbol{\epsilon}^*$, this is because \Cref{eq:ddpm-simple-loss} essentially reduces to a least-squares problem (as shown similarly in Proposition~\ref{dsm-minimizer} or Proposition~\ref{equi-para})\footnote{We remark that removing the ELBO-derived weights in $\mathcal{L}_{\text{DDPM}}$ changes the training objective,
 but not its population-optimal prediction: $\beps^*(\rvx_i,i)
 =
@@ -961,10 +1004,11 @@ can still affect optimization and performance.}:
 \[
 \boldsymbol{\epsilon}^*(\rvx_i, i) = \mathbb{E}\left[ \boldsymbol{\epsilon}|\rvx_i \right], \quad \rvx_i \sim p_i.
 \]
+\nk{Crucially, this is only possible because the network is conditioned on the noise level $i$. The weights in $\mathcal{L}_{\text{DDPM}}$ rescale the loss at each level $i$, but since $\boldsymbol{\epsilon}_{\bm{\phi}}(\rvx_i, i)$ is free to make a separate prediction for every $i$, the minimizer at each level is the same conditional expectation $\E[\beps|\rvx_i]$ no matter how that level is weighted.}
 Intuitively, the $\beps$-prediction network $\boldsymbol{\epsilon}_{\bm{\phi}}(\rvx_i, i)$ estimates the noise added by the forward process to produce $\rvx_i$. At optimality, this estimate coincides with the conditional expectation of the true noise, even though $\rvx_i$ does not uniquely determine the original clean sample.
 
 \paragraph{Another Equivalent Parametrization: $\rvx$-Prediction.} 
-\Cref{eq:ddpm-reverse-mean} motivates an alternative yet equivalent parameterization, known as \emph{$\rvx$-prediction} (clean prediction), in which a neural network $\rvx_{\bm{\phi}}(\rvx_i, i)$ is trained to predict a clean (denoised) sample from a given noisy input $\rvx_i \sim p_i(\rvx_i)$ at noise level $i$. Replacing the ground-truth clean sample $\rvx_0$ in the reverse mean expression with $\rvx_{\bm{\phi}}(\rvx_i, i)$ leads to the following model:
+\Cref{eq:ddpm-reverse-mean} motivates an alternative yet equivalent parameterization, known as \nkh{\emph{$\rvx$-prediction}} (clean prediction), in which a neural network \nkh{$\rvx_{\bm{\phi}}(\rvx_i, i)$} is \nkh{trained to predict} a \nkh{clean (denoised) sample} from a given noisy input $\rvx_i \sim p_i(\rvx_i)$ at noise level $i$. Replacing the ground-truth clean sample $\rvx_0$ in the reverse mean expression with $\rvx_{\bm{\phi}}(\rvx_i, i)$ leads to the following model:
 \begin{align*}
 \bm{\mu}_{\bm{\phi}}(\rvx_i, i) = \frac{\bar{\alpha}_{i-1} \beta_i^2}{1 - \bar{\alpha}_i^2} \rvx_{\bm{\phi}}(\rvx_i, i) + \frac{(1 - \bar{\alpha}_{i-1}^2)\alpha_i}{1 - \bar{\alpha}_i^2} \rvx_i.
 \end{align*}
@@ -982,7 +1026,7 @@ for some weighting function $\omega_i$. Since this is a least-squares problem, t
 \end{align}
 that is, the model should predict the expected clean data given a noisy observation $\rvx_i$ at timestep $i$.
 
-The $\rvx$-prediction and $\beps$-prediction parameterizations are mathematically equivalent and connected via the forward process:
+The \nkh{$\rvx$-prediction} and \nkh{$\beps$-prediction} parameterizations are mathematically equivalent and \nkh{connected via the forward process}:
 \begin{equation}\label{eq:ddpm-clean-noise}
     \rvx_i = \bar{\alpha}_i \rvx_{\bm{\phi}}(\rvx_i, i) + \sqrt{1 - \bar{\alpha}_i^2}   \boldsymbol{\epsilon}_{\bm{\phi}}(\rvx_i, i).
 \end{equation}
@@ -1017,8 +1061,8 @@ Here, each component of losses are defined as:
 }
 The ELBO $\mathcal{L}_{\text{ELBO}}$ consists of three terms:
 \begin{itemize}
-    \item $\mathcal{L}_{\text{prior}}$ can be made negligible by choosing the noise schedule $\{\beta_i\}$ such that $p(\cdot|\rvx_0) \approx p_{\text{prior}}(\cdot)$.
-    \item For $\mathcal{L}_{\text{recon.}}$, this can be approximated and optimized using a Monte Carlo estimate; see \citep{ho2020denoising, kingma2021variational} for practical implementations. 
+    \item \nkh{$\mathcal{L}_{\text{prior}}$} can be made \nkh{negligible} \nkh{by choosing} the \nkh{noise schedule} $\{\beta_i\}$ such that $p(\cdot|\rvx_0) \approx p_{\text{prior}}(\cdot)$.
+    \item For \nkh{$\mathcal{L}_{\text{recon.}}$}, this can be \nkh{approximated} and optimized \nkh{using a Monte Carlo estimate}; see \citep{ho2020denoising, kingma2021variational} for practical implementations. 
     \item $\mathcal{L}_{\text{diffusion}}$ (cf. \Cref{eq:ddpm-diffusion}) matches the reverse conditionals $p_{\bm{\phi}}(\mathbf{x}_{i-1}|\mathbf{x}_i)$ to $p(\mathbf{x}_{i-1}|\mathbf{x}_i)$ at all steps $i$.
 \end{itemize}
 
@@ -1049,7 +1093,7 @@ them into supervised denoising objectives that can be sampled efficiently.}
 After training the $\beps$-prediction model, $\bm{\epsilon}_{\bm{\phi}^\times}(\rvx_i, i)$\footnote{We use the symbol ``$\times$'' to indicate that the model has been trained and is now frozen.}, sampling is performed sequentially as illustrated in \Cref{fig:ddpm-sampling-formal-rev}, using the parametrized transition $p_{\bm{\phi}^\times}(\rvx_{i-1} | \rvx_i)$ instead.
 
 
-More specifically, starting from a random seed $\rvx_L \sim p_{\text{prior}} = \mathcal{N}(\bm{0},\rmI)$, we recursively sample from $p_{\bm{\phi}^\times}(\rvx_{i-1} | \rvx_i)$ following the update rule below for $i = L, L-1, \dots, 1$:
+More specifically, starting from a random seed $\rvx_L \sim p_{\text{prior}} = \mathcal{N}(\bm{0},\rmI)$, we recursively sample from $p_{\bm{\phi}^\times}(\rvx_{i-1} | \rvx_i)$ following the \nkh{update rule} below for $i = L, L-1, \dots, 1$:
 \begin{align}\label{eq:ddpm-sampling}
     \rvx_{i-1} \leftarrow \underbrace{\frac{1}{\alpha_i}\left( \rvx_i  - \frac{1-\alpha_i^2}{\sqrt{1-\bar{\alpha}_i^2}} \bm{\epsilon}_{\bm{\phi}^\times}(\rvx_i, i)\right)}_{\bm{\mu}_{\bm{\phi}^\times}(\rvx_i, i)} +\sigma(i) \bm{\epsilon}_i,\quad \bm{\epsilon}_i\sim  \mathcal{N}(\bm{0},\rmI).
 \end{align}
@@ -1159,16 +1203,16 @@ The structure is identical: signal coefficient $\bar{\alpha}_{i-1}$
 and noise standard deviation $\sqrt{1-\bar{\alpha}_{i-1}^2}$,
 except that the unknown $\rvx_0$ is replaced by the network
 prediction $\rvx_{\bm{\phi}^\times}(\rvx_i,i)$.
-In other words, each DDPM step \emph{predicts the clean data and
-then re-noises it to exactly noise level $i{-}1$}.
-One can therefore view DDPM sampling as iterating two operations:
+In other words, each DDPM step \nkh{\emph{predicts the clean data and
+then re-noises it to exactly noise level $i{-}1$}}.
+One can therefore \nkh{view DDPM sampling as iterating two operations}:
 \begin{enumerate}
     \item \textbfs{Denoise.}
-          Estimate the clean data
-          $\rvx_{\bm{\phi}^\times}(\rvx_i, i)$
+          \nkh{Estimate the clean data
+          $\rvx_{\bm{\phi}^\times}(\rvx_i, i)$}
           from the current noisy input $\rvx_i$.
     \item \textbfs{Re-noise.}
-          Add back noise at the reduced level $i{-}1$
+          \nkh{Add back noise at the reduced level $i{-}1$}
           via \Cref{eq:ddpm-renoise},
           producing a sample $\rvx_{i-1}$ whose
           noise level matches the forward process at step $i{-}1$.
@@ -1203,7 +1247,7 @@ and the sample becomes more realistic as the noise is removed.
 
 Theorem~\ref{thm:equiv-marginal-kl} shows that an expressive $ p_{\bm{\phi}}(\mathbf{x}_{i-1} | \mathbf{x}_i) $ can theoretically match the true reverse distribution $ p(\mathbf{x}_{i-1} | \mathbf{x}_i) $. However, in practice, $ p_{\bm{\phi}}(\mathbf{x}_{i-1} | \mathbf{x}_i) $ is typically modeled as a Gaussian to approximate $ p(\mathbf{x}_{i-1} | \mathbf{x}_i) $, limiting its expressiveness.
 
-For small forward noise scales $\beta_i$, the true reverse distribution is approximately Gaussian, enabling accurate approximation. Conversely, large $\beta_i$ induce multimodality or strong non-Gaussianity that a single Gaussian cannot capture. To maintain accuracy, DDPM employs many small $\beta_i$ steps, forming a sequential chain where each step depends on the previous and requires a neural network evaluation $\boldsymbol{\epsilon}_{\bm{\phi}^\times}(\mathbf{x}_i, i)$. This results in $\mathcal{O}(L)$ sequential passes, preventing parallelization and slowing generation.
+For small forward noise scales $\beta_i$, the true reverse distribution is approximately Gaussian, enabling accurate approximation. Conversely, large $\beta_i$ induce multimodality or strong non-Gaussianity that a single Gaussian cannot capture. To maintain accuracy, DDPM employs many small $\beta_i$ steps, forming a sequential chain where each step depends on the previous and requires a neural network evaluation $\boldsymbol{\epsilon}_{\bm{\phi}^\times}(\mathbf{x}_i, i)$. This results in \nkh{$\mathcal{O}(L)$ sequential passes}, preventing parallelization and \nkh{slowing generation}.
 
 
 
