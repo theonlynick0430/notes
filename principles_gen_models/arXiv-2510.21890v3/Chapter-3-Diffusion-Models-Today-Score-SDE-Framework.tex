@@ -222,7 +222,7 @@ DDPM instead injects noise incrementally with a variance schedule $\{\beta_i\}_{
 \qquad \bm{\epsilon}_i \sim \mathcal{N}(\bm{0}, \rmI).
 \]
 
-We view them together on a discrete time grid, where the sequential update from $\rvx_t$ to $\rvx_{t+\Delta t}$ takes the form\footnote{For convenience, we use $\rvx(t)$ and $\rvx_t$ interchangeably (and similarly for other time-dependent variables) to denote samples at time $t$.}:
+We view them together on a discrete time grid, where the sequential update from $\rvx_t$ to $\rvx_{t+\Delta t}$ \nkh{takes the form}\footnote{For convenience, we use $\rvx(t)$ and $\rvx_t$ interchangeably (and similarly for other time-dependent variables) to denote samples at time $t$.}:
 \begin{align*}
     \text{\textbfs{NCSN:}} \,\,
     & \rvx_{t+\Delta t} = \rvx_t + \sqrt{\sigma_{t+\Delta t}^2 - \sigma_t^2} \bm{\epsilon}_t 
@@ -231,7 +231,7 @@ We view them together on a discrete time grid, where the sequential update from 
     & \rvx_{t+\Delta t} = \sqrt{1 - \beta(t)\Delta t} \rvx_t + \sqrt{\beta(t)\Delta t} \bm{\epsilon}_t 
     &&\approx \rvx_t - \frac{1}{2} \beta(t) \rvx_t  \Delta t + \sqrt{\beta(t)\Delta t}  \bm{\epsilon}_t,
 \end{align*}
-where $\bm{\epsilon}_t \sim \mathcal{N}(\bm{0}, \rmI)$. Interestingly, both noise injection processes follow a common structural pattern:
+where $\bm{\epsilon}_t \sim \mathcal{N}(\bm{0}, \rmI)$. \nk{The DDPM approximation uses the Taylor expansion of $h(x) = \sqrt{1-x}$ about $0$: $h(x) = h(0) + h'(0)x + \cdots \approx 1 - \tfrac{1}{2}x$, with $x = \beta(t)\Delta t$.} Interestingly, both noise injection processes follow a \nkh{common structural pattern}:
 \begin{align}\label{eq:euler-discrete-sde}
     \rvx_{t+\Delta t} \approx \rvx_t + \rvf(\rvx_t, t) \Delta t + g(t) \sqrt{\Delta t}\, \bm{\epsilon}_t,
 \end{align}
@@ -257,12 +257,12 @@ This formulation corresponds to the following Gaussian transition:
 \end{align}
 where, by a slight abuse of notation, we treat $\rvx_t$ as a fixed sample and $\rvx_{t+\Delta t}$ as a random variable.
 
-As $\Delta t \to 0$ (which can be conceptually understood as preparing \emph{infinitely many} layers of noises), the discrete-time process converges to a continuous time SDE evolving forward in time\footnote{The forward kernel in \Cref{eq:transition-forward-f-g} converges, as $\Delta t\to0$, to the solution of the corresponding Itô SDE. A fully rigorous proof relies on advanced results which we defer to the literature.}:
+\nkh{As $\Delta t \to 0$} (which can be conceptually understood as preparing \nkh{\emph{infinitely many}} \nkh{layers of noises}), the discrete-time process \nkh{converges to} a \nkh{continuous time SDE} evolving forward in time\footnote{The forward kernel in \Cref{eq:transition-forward-f-g} converges, as $\Delta t\to0$, to the solution of the corresponding Itô SDE. A fully rigorous proof relies on advanced results which we defer to the literature.}:
 \begin{align*}
     \diff \rvx(t) = \rvf(\rvx(t), t) \diff t + g(t) \diff \rvw(t),
 \end{align*}
-where $\rvw(t)$ is a standard Wiener process (or Brownian motion).
-\rmkb{While a full formal definition is not necessary here, a \emph{Wiener process} is a continuous-time stochastic process $ \rvw(t) $ that starts at zero, has independent increments, and satisfies that for any $ s < t $, the increment $ \rvw(t) - \rvw(s) $ is normally distributed with mean zero and variance $ t - s $. It represents the accumulation of independent Gaussian fluctuations over time, and although it is almost surely continuous, it is nowhere differentiable.
+where \nkh{$\rvw(t)$} is a \nkh{standard Wiener process (or Brownian motion)}.
+\rmkb{While a full formal definition is not necessary here, a \nkh{\emph{Wiener process}} is a continuous-time stochastic process $ \rvw(t) $ that \nkh{starts at zero}, has \nkh{independent increments}, and satisfies that \nkh{for any $ s < t $}, the increment \nkh{$ \rvw(t) - \rvw(s) $ is} \nkh{normally distributed with mean zero} and \nkh{variance $ t - s $}. It represents the accumulation of independent Gaussian fluctuations over time, and although it is almost surely continuous, it is nowhere differentiable.
 
 Over an infinitesimal time interval $[t, t + \diff t]$, the increment of a Wiener process is defined as
 \[
@@ -270,7 +270,7 @@ Over an infinitesimal time interval $[t, t + \diff t]$, the increment of a Wiene
 \]
 which is modeled as a Gaussian random variable with zero mean and variance $\diff t$:
 \[
-\diff \rvw(t) \sim \mathcal{N}(\bm{0}, \diff t \rmI).
+\nkhm{\diff \rvw(t) \sim \mathcal{N}(\bm{0}, \diff t \rmI)}.
 \]}
 
 A brief introduction to the foundations of SDEs is provided in \Cref{app:sde-intro}, with a more advanced discussion in \Cref{app:Ito}. However, we can conceptually understand the connection between the discrete and continuous formulations as follows:
@@ -279,6 +279,7 @@ A brief introduction to the foundations of SDEs is provided in \Cref{app:sde-int
     \item $\Delta t \approx \diff t$,
     \item $\sqrt{\Delta t} \bm{\epsilon}_t \sim \mathcal{N}(\bm{0}, \Delta t \rmI) \approx \diff \rvw(t)$.
 \end{itemize}
+\nk{Brownian motion is the continuous analogy to a discrete Gaussian walk: if $p(\rvx_t|\rvx_{t-1}) = \mathcal{N}(\rvx_t; \rvx_{t-1}, \rmI)$, then $p(\rvx_{t+n}|\rvx_t) = \mathcal{N}(\rvx_{t+n}; \rvx_t, n\rmI)$.}
 Once the drift $\rvf(\rvx,t)$ and diffusion $g(t)$ are specified, the forward time SDE automatically induces a reverse time SDE that transports the terminal noise distribution back to the data distribution. The reverse dynamics involve only a single unknown term, surprisingly the \emph{score function at each continuous-time level}. This identifies score matching as the training objective; once the score is learned, sampling amounts to numerically integrating the reverse time SDE with the learned score.
 
 
@@ -303,7 +304,7 @@ With this formulation, earlier methods based on discrete time, such as NCSN~\cit
     \diff\rvx(t) = \mathbf{f}(\rvx(t), t) \diff t + g(t) \diff\rvw(t), \quad \rvx(0) \sim p_{\mathrm{data}}.
 \end{equation}
 \end{mdframed}
-Here, $\mathbf{f}(\cdot, t)\colon\mathbb{R}^D\to\mathbb{R}^D$ is the drift, $g(t) \in \mathbb{R}$ is the scalar diffusion coefficient, and $\rvw(t)$ denotes a standard Wiener process. We refer to this as the \emph{forward SDE}, which describes how clean data is gradually perturbed into noise over time.
+Here, \nkh{$\mathbf{f}(\cdot, t)\colon\mathbb{R}^D\to\mathbb{R}^D$} is the \nkh{drift}, \nkh{$g(t) \in \mathbb{R}$} is the \nkh{scalar diffusion coefficient}, and $\rvw(t)$ denotes a standard Wiener process. We refer to this as the \nkh{\emph{forward SDE}}, which describes how \nkh{clean data} is gradually \nkh{perturbed into noise} over time.
 
 Once the drift $\mathbf{f}$ and diffusion coefficient $g$ are specified, the forward process is fully determined, describing how the data variable is progressively corrupted through the injection of Gaussian noise. In particular, two families of time-dependent densities are induced:
 \paragraph{Perturbation Kernels.} 
@@ -319,7 +320,7 @@ where $f(t)$ is a scalar function of $t$, typically taken to be non-positive.
 Under this structure, the conditional process remains Gaussian given
 $\rvx_0$, and the perturbation kernel admits a closed-form solution obtained
 by solving the associated mean--variance ODEs~\citep{sarkka2019applied}
-(see also \Cref{subsec:scoresde-perturbation-kernel}). {In particular,
+\nkh{see also} \Cref{subsec:scoresde-perturbation-kernel}\nkh{)}. {In particular,
 \[
 p_t(\rvx_t |\rvx_0) = \mathcal{N} \big(\rvx_t; \rvm(t), P(t)\mathbf I_D\big),
 \]
@@ -385,7 +386,7 @@ the complex target distribution.
 \end{figure}
 Intuitively, data generation from noise can be achieved by ``reversing'' the forward process: starting from a random point sampled from the prior distribution and evolving it backward in time to obtain a generated sample. For deterministic systems (that is, ODEs), this idea works naturally. Since no randomness is involved, reversing time simply means tracing the trajectory of a point in the opposite direction along the same path as in the forward process\footnote{Technically, this corresponds to solving the ODE with a time-flipping substitution $t \leftrightarrow T - t$.}. In contrast, SDEs incorporate stochasticity at every time step, meaning that a single point can evolve along many plausible random trajectories. As a result, reversing such processes is more subtle\footnote{Naively flipping time does not yield the correct reverse process.}. 
 
-While individual stochastic trajectories are not reversible, the remarkable insight is that the distribution over these trajectories can be reversed. This is formalized by a foundational result from \citet{anderson1982reverse}, which shows that the time-reversed process $\{ \bar{\rvx}(t) \}_{t \in [0, T]}$\footnote{We use the ``bar'' notation to distinguish the reverse process $\{ \bar{\rvx}(t) \}_{t \in [0, T]}$ from the forward process $\{ \rvx(t) \}_{t \in [0, T]}$, defined by the forward-time SDE.} of the forward process in \Cref{eq:sde_forward} is itself governed by a well-defined SDE. This reverse-time process evolves from $T$ to $0$, and its dynamics are given by:
+While individual stochastic trajectories are not reversible, the remarkable insight is that the distribution over these trajectories can be reversed. This is formalized by a foundational result from \citet{anderson1982reverse}, which shows that the time-reversed process $\{ \bar{\rvx}(t) \}_{t \in [0, T]}$\footnote{We use the ``bar'' notation to distinguish the reverse process $\{ \bar{\rvx}(t) \}_{t \in [0, T]}$ from the forward process $\{ \rvx(t) \}_{t \in [0, T]}$, defined by the forward-time SDE.} of the forward process in \Cref{eq:sde_forward} is itself governed by a well-defined SDE. This \nkh{reverse-time process} evolves from $T$ to $0$, and its \nkh{dynamics} are \nkh{given by}:
 \begin{mdframed}
 \begin{align}\label{eq:sde_backward}
 \begin{aligned}[t]
@@ -408,12 +409,12 @@ $s:=T-t$; unless stated otherwise, we keep the original clock $t$.
 To build intuition for \Cref{eq:sde_backward}, we present a concrete example in \Cref{subsec:example-gaussian} with a Gaussian data distribution and linear–Gaussian dynamics. This setting is analytically tractable: one can derive the time-reversal formula directly using basic calculus and linear algebra, without invoking the full general theory of \citet{anderson1982reverse}.
 % \se{the gaussian linear dynamics system case could be instructive, you can work out the time reversal formula from basic math/linear algebra}
 
-Note that the presence of stochasticity ($g\neq 0$) introduces an additional correction term, $ -g^2(t) \nabla_{\rvx} \log p_t(\bar{\rvx}(t))$, which accounts for the effect of diffusion and ensures that the reversed dynamics correctly reproduce the evolution of marginal distributions induced by the forward SDE (see \Cref{subsec:fpe-sde-ode}).
+Note that the \nkh{presence of stochasticity} ($g\neq 0$) \nkh{introduces} an additional \nkh{correction term}, $ -g^2(t) \nabla_{\rvx} \log p_t(\bar{\rvx}(t))$, which accounts for the effect of diffusion and ensures that the reversed dynamics correctly reproduce the evolution of marginal distributions induced by the forward SDE (see \Cref{subsec:fpe-sde-ode}).
 
 \paragraph{Conceptually, Why Does the Reverse Process Work?} \Cref{subsec:reverse-sde-reason} presents an intuitive derivation of the reverse-time SDE by connecting it to the DDPM variational framework (optional but insightful). Here, we provide complementary intuition for how the reverse-time dynamics recover structured data from noise. 
 
 
-At first glance, the presence of Brownian noise in the reverse time process may seem paradoxical. If the forward diffusion spreads data into increasingly noisy configurations, it is unclear how reversing this process, particularly one that introduces additional randomness through $\bar{\rvw}(t)$, can produce clean, structured samples concentrated near the data manifold. The key point is that the reverse time SDE does not inject arbitrary randomness. The diffusion term $g(t)\diff\bar{\rvw}(t)$ is always coupled with the score–driven drift $- g^2(t)\nabla_{\rvx}\log p_t(\bar{\rvx}(t))$. Together, these terms balance one another: the score guides trajectories toward regions of higher density, while the noise introduces controlled stochasticity that allows exploration without overwhelming the dynamics.
+At first glance, the presence of Brownian noise in the reverse time process may seem paradoxical. If the forward diffusion spreads data into increasingly noisy configurations, it is unclear how reversing this process, particularly one that introduces additional randomness through $\bar{\rvw}(t)$, can produce clean, structured samples concentrated near the data manifold. The key point is that the reverse time SDE does not inject arbitrary randomness. The diffusion term $g(t)\diff\bar{\rvw}(t)$ is always coupled with the score–driven drift $- g^2(t)\nabla_{\rvx}\log p_t(\bar{\rvx}(t))$. Together, these terms balance one another: the \nkh{score guides trajectories toward} regions of \nkh{higher density}, while the \nkh{noise introduces controlled stochasticity} that \nkh{allows exploration} without overwhelming the dynamics.
 % \se{refer to langevin?} 
 
 To see this more clearly, return to the Langevin intuition in \Cref{eq:continuous-langevin}. When $f(t)\equiv 0$, \Cref{eq:sde_backward} reads
@@ -465,18 +466,18 @@ Generation corresponds to solving the reverse-time SDE reversely from $t = T$, s
     Is it necessary to sample using the SDE in \Cref{eq:sde_backward}?
 \end{question}
 
-Inspired by \citet{maoutsa2020interacting}, \citet{song2020score} also introduced a deterministic process, an ODE, that evolves samples with the same marginal distributions as the forward SDE. This process $\{\tilde\rvx(t)\}_{t\in[0,T]}$\footnote{We use a tilde to distinguish processes associated with the forward and reverse-time SDEs. Going forward, we omit this notational distinction for simplicity.}, called the \emph{Probability Flow ODE (PF-ODE)}, is given by:
+Inspired by \citet{maoutsa2020interacting}, \citet{song2020score} also introduced a deterministic process, an \nkh{ODE, that evolves samples with} the \nkh{same marginal distributions as} the \nkh{forward SDE}. This process $\{\tilde\rvx(t)\}_{t\in[0,T]}$\footnote{We use a tilde to distinguish processes associated with the forward and reverse-time SDEs. Going forward, we omit this notational distinction for simplicity.}, \nkh{called} the \nkh{\emph{Probability Flow ODE (PF-ODE)}}, is given by:
 \begin{mdframed}
     \begin{equation}\label{eq:prob_ode_gt}
     \frac{\diff}{\diff t}\tilde\rvx(t) = \mathbf{f}(\tilde\rvx(t), t) - \frac{1}{2} g^2(t) \nabla_{\rvx} \log p_t(\tilde\rvx(t)).
     \end{equation}
 \end{mdframed}
 
-Analogous to the SDE case, one can replace the true score with a learned approximation and integrate the reverse-time ODE from $t = T$ to $t = 0$ to generate samples. Concretely, the generated sample (solution of PF-ODE at time $t=0$) takes the form
+Analogous to the SDE case, one can replace the true score with a learned approximation and \nkh{integrate} the reverse-time ODE \nkh{from $t = T$ to $t = 0$} to generate samples. Concretely, the generated sample (solution of PF-ODE at time $t=0$) takes the form
 \[
 \tilde\rvx(T) + \int_{T}^{0} \Big[ \mathbf{f}(\tilde\rvx(\tau), \tau) - \frac{1}{2} g^2(\tau)  \nabla_{\rvx} \log p_\tau(\tilde\rvx(\tau)) \Big]   \diff \tau,
 \]
-where the initial condition $\tilde\rvx(T) \sim p_{\mathrm{prior}}$. Since this integral is intractable in closed form, practical generation relies on numerical solvers (e.g., Euler method, see \Cref{eq:euler-maruyama}).
+where the initial condition $\tilde\rvx(T) \sim p_{\mathrm{prior}}$. Since this integral is \nkh{intractable in closed form}, practical \nkh{generation relies on numerical solvers} (e.g., Euler method, see \Cref{eq:euler-maruyama}).
 
 Compared to the reverse-time SDE, the PF-ODE offers two key advantages:
 \begin{itemize}
@@ -485,7 +486,7 @@ Compared to the reverse-time SDE, the PF-ODE offers two key advantages:
 \end{itemize}
 
 
-We emphasize that the PF-ODE is not obtained by simply removing the diffusion term in \Cref{eq:sde_backward}; notably, the factor of $\frac{1}{2}$ in its drift term has a principled origin. At a high level, \Cref{eq:prob_ode_gt} arises by choosing the drift of an ODE such that its evolution preserves the same marginal densities as the forward SDE in \Cref{eq:sde_forward}. The underlying principle (i.e., Fokker-Planck Equation~\citep{oksendal2003stochastic}) ensuring this alignment of marginals will be detailed in the next section.
+We emphasize that the PF-ODE is \nkh{not obtained by simply removing} the \nkh{diffusion term} in \Cref{eq:sde_backward}; notably, the factor of $\frac{1}{2}$ in its drift term has a principled origin. At a high level, \Cref{eq:prob_ode_gt} arises by choosing the drift of an ODE such that its evolution preserves the same marginal densities as the forward SDE in \Cref{eq:sde_forward}. The underlying principle (i.e., Fokker-Planck Equation~\citep{oksendal2003stochastic}) ensuring this alignment of marginals will be detailed in the next section.
 
 
 \clearpage
@@ -527,8 +528,11 @@ In this section, we present the \emph{Fokker-Planck equation} as the central pri
 %     \label{fig:fpe-density}
 % \end{center}
 \subsection{Fokker-Planck Equation to Ensure Alignment of Marginal Densities}
-A central concept in diffusion models is that \emph{different processes can lead to the same sequence of marginal distributions} (as we will illustrate later in this subsection).
- The objective is to construct a process that transforms $p_{\mathrm{prior}}$ into $p_{\mathrm{data}}$ by aligning the marginals across time, and in particular at $t=0$. The exact form of the process is secondary, provided it is tractable and admits efficient sampling. This naturally leads to a fundamental question:
+A central concept in diffusion models is that \nkh{\emph{different processes can lead to the same sequence of marginal distributions}} (as we will illustrate later in this subsection).
+ The objective is to construct a process that transforms $p_{\mathrm{prior}}$ into $p_{\mathrm{data}}$ by aligning the marginals across time, and in particular at $t=0$.
+\begin{nknote}
+\noindent For example, take Process 1: sample $\rvz \sim \mathcal{N}(\bm{0},\rmI)$ once and set $\rvx_0 = \rvz, \ldots, \rvx_t = \rvz$; and Process 2: $\rvx_0 \sim \mathcal{N}(\bm{0},\rmI), \ldots, \rvx_t \sim \mathcal{N}(\bm{0},\rmI)$ all independent. Processes 1 and 2 differ (Process 1 is constant over time), but they have the same marginal distribution at every point in time: $\rvx_t \sim \mathcal{N}(\bm{0},\rmI)$.
+\end{nknote} The exact form of the process is secondary, provided it is tractable and admits efficient sampling. This naturally leads to a fundamental question:
 
 
 \begin{question}
@@ -537,7 +541,7 @@ How can we ensure that different processes yield identical marginal distribution
 
 
 
-Returning to our setup, once the forward SDE is specified, it defines the evolution of marginal densities from $p_{\mathrm{data}}$ to $p_{\mathrm{prior}}$. The reverse-time SDE and PF-ODE are then constructed so that their trajectories yield marginal distributions that exactly match those of the forward process. The key to this correspondence lies in the Fokker–Planck equation, which governs how marginal densities evolve under diffusion processes. An illustration is provided in \Cref{fig:score-sde-three-dynamics}. The following theorem~\citep{anderson1982reverse,song2020score} establishes the foundation for this connection:
+Returning to our setup, \nkh{once} the \nkh{forward SDE is specified}, it defines the evolution of marginal densities from $p_{\mathrm{data}}$ to $p_{\mathrm{prior}}$. The \nkh{reverse-time SDE} and \nkh{PF-ODE} are then \nkh{constructed so} that their \nkh{trajectories yield marginal distributions} that exactly \nkh{match} those of the \nkh{forward process}. The key to this correspondence lies in the Fokker–Planck equation, which governs how marginal densities evolve under diffusion processes. An illustration is provided in \Cref{fig:score-sde-three-dynamics}. The following theorem~\citep{anderson1982reverse,song2020score} establishes the foundation for this connection:
 \thmp{Marginal Alignment via the Fokker--Planck Equation}{fpe}{
 Consider the forward SDE
 \[
@@ -670,13 +674,13 @@ For any $t\in[0,T]$, the \emph{pushforward density} is defined as
 \[
 p_t^{\mathrm{fwd}}(\rvx_t) := \int \delta\bigl(\rvx_t - \bPsi_{0 \to t}(\rvx_0)\bigr)\, p_{\mathrm{data}}(\rvx_0) \,\diff \rvx_0,
 \]
-denoted $\bm{\Psi}_{0\to t} \sharp p_{\mathrm{data}}$, representing the distribution at time $t$ under $\bm{\Psi}_{0\to t}$. Theorem~\ref{thm:fpe} ensures $p_t^{\mathrm{fwd}} = p_t$, where $p_t$ is the marginal density of the forward SDE, equating the deterministic PF-ODE and stochastic kernel:
+denoted $\bm{\Psi}_{0\to t} \sharp p_{\mathrm{data}}$, representing the distribution at time $t$ under $\bm{\Psi}_{0\to t}$. Theorem~\ref{thm:fpe} \nkh{ensures $p_t^{\mathrm{fwd}} = p_t$}, where $p_t$ is the marginal density of the forward SDE, \nkh{equating} the \nkh{deterministic PF-ODE and stochastic kernel}:
 \[
 p_t(\rvx_t) = \int p_t(\rvx_t |\rvx_0)\, p_{\mathrm{data}}(\rvx_0)\,\diff \rvx_0
 = \int \delta\bigl(\rvx_t - \bm{\Psi}_{0\to t}(\rvx_0)\bigr)\, p_{\mathrm{data}}(\rvx_0)\,\diff \rvx_0.
 \]
 
-This implies infinitely many conditionals $Q_t(\rvx_t |\rvx_0)$ yield the same $p_t(\rvx_t)$, for instance:
+This implies infinitely \nkh{many conditionals $Q_t(\rvx_t |\rvx_0)$ yield} the \nkh{same $p_t(\rvx_t)$}, for instance:
 \begin{itemize}
   \item \textbfs{Stochastic (Simulation-Free):} $Q_t(\rvx_t |\rvx_0) = p_t(\rvx_t |\rvx_0)$,
   \item \textbfs{Deterministic (Requires ODE Solving):} $Q_t(\rvx_t |\rvx_0) = \delta\bigl(\rvx_t - \bm{\Psi}_{0\to t}(\rvx_0)\bigr)$,
@@ -687,6 +691,7 @@ This nonuniqueness of $Q_t(\rvx_t |\rvx_0)$ arises from the fact that the margin
 \msg{Observation}{Matching Prescribed Marginal Densities}{
 Multiple processes can give rise to the same sequence of marginal densities; what truly matters is satisfying the Fokker–Planck equation. This fundamental insight affords us remarkable flexibility in designing generative processes that transition from $ p_{\mathrm{prior}} $ to $ p_{\mathrm{data}} $, or vice versa.
 }
+\nk{While marginal densities do not fully characterize the path distribution, our objective in generative modeling only requires modeling the marginals at $t = 0$ and $t = T$.}
 The Fokker–Planck equation lies at the heart of diffusion models and is rooted in the fundamental \emph{change-of-variable formula} for probability densities (see \Cref{app:continuity} for a systematic treatment). Far from being a minor technical detail, this principle recurs throughout our development, most notably in \Cref{sec:flow-matching-framework}.
 % , and reveals deep structural connections among seemingly different formulations.
 % \se{either cut or provide more detail here on this connection}
@@ -928,7 +933,7 @@ across all $t\in[0,T]$, by minimizing a score-matching objective as in \Cref{eq:
 \begin{equation*}
 \mathcal{L}_{\text{SM}}(\bm{\phi}; \omega(\cdot)) := \frac{1}{2} \mathbb{E}_{t\sim p_{\text{time}}}  \mathbb{E}_{\rvx_t \sim p_t}\left[\omega(t) \left\|\mathbf{s}_{\bm{\phi}}(\rvx_t, t) - \nabla_{\rvx} \log p_t(\rvx_t)\right\|_2^2\right],
 \end{equation*}
-where $p_{\text{time}}$ is some time distribution (e.g., uniform on $[0,T]$), $\omega(\cdot)$ is a time-weighting function.
+where \nkh{$p_{\text{time}}$} is some time distribution \nkh{(e.g., uniform} on $[0,T]$), $\omega(\cdot)$ is a \nkh{time-weighting function}.
 
 \begin{figure}[th!]
     \centering
@@ -956,7 +961,7 @@ over all possible samples from the data distribution.
 \end{figure}
 
 
-To avoid relying on the intractable oracle score $\nabla_{\rvx} \log p_t(\rvx)$, the DSM loss in \Cref{eq:dsm-loss} is employed. Conditioned on a data point $\rvx_0$, this approach allows the use of the analytically tractable score $\nabla_{\rvx_t} \log p_t(\rvx_t|\rvx_0)$ via \Cref{eq:score-gaussian-formula}, with concrete examples given in \Cref{sec:instances}. Specifically, we exploit the following loss function:
+To avoid relying on the intractable oracle score $\nabla_{\rvx} \log p_t(\rvx)$, the \nkh{DSM loss} in \Cref{eq:dsm-loss} \nkh{is employed}. Conditioned on a data point $\rvx_0$, this approach allows the use of the analytically tractable score $\nabla_{\rvx_t} \log p_t(\rvx_t|\rvx_0)$ via \Cref{eq:score-gaussian-formula}, with concrete examples given in \Cref{sec:instances}. Specifically, we exploit the following loss function:
 \begin{mdframed}
     \begin{equation}\label{eq:conti-dsm_loss-real}
 \begin{aligned}
@@ -968,7 +973,7 @@ To avoid relying on the intractable oracle score $\nabla_{\rvx} \log p_t(\rvx)$,
 where $\rvx_0 \sim p_{\mathrm{data}}$. \Cref{eq:conti-dsm_loss-real} can be interpreted as the continuous-time counterpart of \Cref{eq:nscn}, with the summation in the discrete case replaced by integration. 
 
 
-Similar to the result in Theorem~\ref{thm:sm-dsm}, the minimizer of \Cref{eq:conti-dsm_loss-real} is uniquely determined as follows:
+\nkh{Similar to} the result in Theorem~\ref{thm:sm-dsm}, the minimizer of \Cref{eq:conti-dsm_loss-real} is uniquely determined as follows:
 
 \proppp{Minimizer of DSM}{dsm-minimizer}{
 The minimizer $\mathbf{s}^*$ satisfies
@@ -1011,6 +1016,7 @@ To generate a sample, we first draw an initial value $\rvx_T$ from the prior dis
 \rvx_{t - \Delta t} \leftarrow \rvx_t - \left[ \mathbf{f}(\rvx_t, t) - g^2(t)  \mathbf{s}_{\bm{\phi}^\times}(\rvx_t, t) \right] \Delta t + g(t) \sqrt{\Delta t} \cdot \boldsymbol{\epsilon},
 \end{equation}
 where $\boldsymbol{\epsilon} \sim \mathcal{N}(\bm{0}, \mathbf{I})$ and $\Delta t > 0$ is the step size.
+\nk{Instead of integrating $g(t)\,\diff\bar{\rvw}(t)$ backwards, one can let $s = T - t$; then $\diff\bar{\rvw}(t) = \diff\bar{\rvw}(T-s) = \diff\rvw(s)$, as in \Cref{app-sec:scoresde-fpe-proof}.}
 
 Iterating this update rule yields a final sample $\rvx^{\mathrm{SDE}}_{\bm{\phi}^\times}(0)$. If the score model is accurate, the distribution of these generated samples, denoted $p_{\bm{\phi}^\times}^{\mathrm{SDE}}(\cdot; 0)$, provides a close approximation to the true data distribution\footnote{Theoretically, estimation accuracy depends on the discrepancy between $p_T$ and $p_{\mathrm{prior}}$ (typically negligible), model training error, and numerical discretization error~\citep{de2022convergence,wang2024evaluating}. We do not pursue formal bounds here.}:
 \[
@@ -1054,7 +1060,7 @@ This equivalence provides a clear explanation for the slow sampling speeds of di
 
 
 
-\subparagraph{II. Inversion with PF-ODE.} As discussed, unlike in the case of SDEs, we can solve the same \Cref{eq:prob_ode_sub} both forward (from $0$ to $T$) and reverse (from $T$ to $0$) in time. When solving it forward, the ODE flow maps data to its (noisy) latent representations across all $t \in [0,T]$, which plays a role of an encoder. This concept enables powerful applications for controllable generation, such as image translation and editing and beyond~\citep{mokady2023null,su2022dual}.
+\subparagraph{II. Inversion with PF-ODE.} As discussed, unlike in the case of SDEs, we \nkh{can solve the same} \Cref{eq:prob_ode_sub} \nkh{both forward} (from $0$ to $T$) \nkh{and reverse} \nkh{(from $T$ to $0$)} in time. \nkh{When solving it forward}, the \nkh{ODE flow maps data to} its \nkh{(noisy) latent} representations across all $t \in [0,T]$, which plays a role of an encoder. This concept enables powerful applications for controllable generation, such as image translation and editing and beyond~\citep{mokady2023null,su2022dual}.
 
 \subparagraph{III. Log-Likelihood Evaluation via PF-ODE.}
 The PF-ODE also allows us to evaluate the likelihood of a data sample.
@@ -1153,7 +1159,7 @@ continuous change-of-variables formula for likelihood evaluation.
 
 \section{Instantiations of SDEs}\label{sec:instances}
 
-\citet{song2020score} categorize the drift term $\rvf(\rvx, t)$ and the diffusion term $g(t)$ in the forward SDE into three types based on the behavior of the variance during evolution. Here, we focus on two commonly used types: the \emph{\underline{V}ariance \underline{E}xplosion} (VE) SDE and \emph{\underline{V}ariance \underline{P}reserving} (VP) SDE. While it is possible to design custom noise schedulers, their design can substantially influence empirical performance. 
+\citet{song2020score} categorize the drift term $\rvf(\rvx, t)$ and the diffusion term $g(t)$ in the forward SDE into three \nkh{types based on} the \nkh{behavior of} the \nkh{variance} during evolution. Here, we focus on two commonly used types: the \emph{\underline{V}ariance \underline{E}xplosion} \nkh{(VE)} SDE and \emph{\underline{V}ariance \underline{P}reserving} (VP) SDE. While it is possible to design custom noise schedulers, their design can substantially influence empirical performance. 
 Table~\ref{tb:sde_instances} summarizes these two SDE instantiations.
 \begin{table}[th]
   \caption{Summary of the forward SDEs}
@@ -1210,7 +1216,7 @@ A typical instance of a VE SDE is NCSN with the following design:
 \[
 \sigma(t):=\sigma_{\textup{min}}\left(\frac{\sigma_{\textup{max}}}{\sigma_{\textup{min}}} \right)^t,\quad \text{for } t\in(0,1],
 \]
-where $\sigma_{\textup{min}}$ and $\sigma_{\textup{max}}$ are pre-specified constants. Namely, the sequence of variances is designed as a geometric sequence. With this, NCSN is viewed as a discretized version of VE SDE, as discussed in \Cref{subsec:scoresde-motivation}.
+where $\sigma_{\textup{min}}$ and $\sigma_{\textup{max}}$ are pre-specified constants. Namely, the sequence of variances is designed as a geometric sequence. With this, \nkh{NCSN is} viewed as a \nkh{discretized version of VE SDE}, as discussed in \Cref{subsec:scoresde-motivation}.
 
 % \paragraph{(Optional) Brief Introduction to EDM~\citep{karras2022elucidating}.}
 % \citet{karras2022elucidating} study a special class of VE-type SDEs with carefully designed neural network parametrizations, time schedules, noise schedulers, weighting functions, and ODE samplers. They focus on the following PF-ODE, where time $t$ is reparametrized as variance $\sigma(t)$:
@@ -1269,7 +1275,7 @@ A classic example of a VP SDE is the DDPM, where the noise schedule $\beta(t)$ i
 \[
 \beta(t) := \beta_{\textup{min}} + t(\beta_{\textup{max}} - \beta_{\textup{min}}), \quad \text{for all } t \in [0,1].
 \]
-Here, $\beta_{\textup{min}}$ and $\beta_{\textup{max}}$ are pre-defined constants. With this, DDPM can be interpreted as a discretization of the VP SDE, as discussed in \Cref{subsec:scoresde-motivation}.
+Here, $\beta_{\textup{min}}$ and $\beta_{\textup{max}}$ are pre-defined constants. With this, \nkh{DDPM} can be interpreted as a \nkh{discretization of} the \nkh{VP SDE}, as discussed in \Cref{subsec:scoresde-motivation}.
 
 
 
@@ -1322,7 +1328,7 @@ Here $\mathcal{E}(s  \to  t)$ denotes the exponential integrating factor
 which captures the accumulated effect of the drift from time $s$ to $t$. Consequently, the transition kernel $p_t(\rvx_t | \rvx_0)$ also admits a closed-form expression. 
 
 We defer the justification that the conditional covariance of $p_t(\rvx_t |\rvx_0)$ is isotropic, that is 
-$\operatorname{Cov}[\rvx_t | \rvx_0] = P(t) \mathbf I_D$ under a $D$-dimensional Wiener process with independent coordinates and diffusion $g(t)\mathbf I_D$, as well as the derivation of \Cref{eq:mean-var-evolution}, to \Cref{subsec:rigorous-proof-linear-sde}, which relies on Itô calculus.
+$\operatorname{Cov}[\rvx_t | \rvx_0] = P(t) \mathbf I_D$ under a $D$-dimensional Wiener process with independent coordinates and diffusion $g(t)\mathbf I_D$, as well as the \nkh{derivation} of \Cref{eq:mean-var-evolution}, to \Cref{subsec:rigorous-proof-linear-sde}, which relies on Itô calculus.
 
 
 \exm{VE SDE's Transition Kernel}{In the special case of VE SDE: $\rvf \equiv 0$ and $g(t) = \sqrt{\frac{\diff \sigma^2(t)}{\diff t}}$, the mean and covariance of the solution to the SDE evolve as follows.
@@ -1369,6 +1375,15 @@ Applying the integrating factor $e^{B(t)}$ with $B(t) = \int_0^t \beta(s) \diff 
 \frac{\diff}{\diff t} \left[P(t)e^{B(t)}\right] = \beta(t) e^{B(t)}.
 \]
 Integrating both sides gives
+\begingroup\color{notesblue}%
+\begin{align*}
+P(t)e^{B(t)} - P(0)e^{B(0)}
+= \int_0^t \beta(s)\, e^{B(s)}\, \diff s
+= \int_0^t \frac{\diff}{\diff s} e^{B(s)}\, \diff s
+= e^{B(t)} - 1,
+\end{align*}
+since $\frac{\diff}{\diff t} e^{B(t)} = e^{B(t)} \frac{\diff}{\diff t}B(t) = \beta(t)e^{B(t)}$; with $P(0) = 0$ and $B(0) = 0$,
+\endgroup
 \[
 P(t) = 1 - e^{-B(t)}.
 \]
@@ -1388,6 +1403,7 @@ p_t(\rvx_t|\rvx_0)
 \quad
 B(t) = \int_0^t \beta(s) \diff s.
 \]
+\nk{Also, note that the squared mean coefficient plus the variance is $e^{-B(t)} + \big(1 - e^{-B(t)}\big) = 1$, just like DDPM.}
 }
 
 \clearpage
@@ -1397,17 +1413,17 @@ B(t) = \int_0^t \beta(s) \diff s.
 \section{\texorpdfstring{A Direct View Through Accumulated Perturbation Kernels}{A Direct View Through Accumulated Perturbation Kernels}}
 \label{sec:variational-perspective}
 
-DDPM and Score SDE are commonly introduced by specifying how noise is added
+\nkh{DDPM and Score SDE} are commonly \nkh{introduced} by specifying how noise is added
 locally in time: through discrete forward transitions
 $p(\rvx_t|\rvx_{t-\Delta t})$ in DDPM, or through a continuous-time SDE in
-Score SDE. For training, however, a particularly useful object is the
-\emph{accumulated perturbation kernel}
+Score SDE. For training, however, a \nkh{particularly useful object} is the
+\nkh{\emph{accumulated perturbation kernel}}
 \[
 p_t(\rvx_t|\rvx_0),
 \]
 which describes the distribution at time $t$ directly conditioned on the
-original data sample. This is precisely the form that appears naturally in
-the DDPM and continuous-time denoising objectives
+original data sample. \nkh{This is precisely the form that appears naturally in
+the DDPM and continuous-time denoising objectives}
 \Cref{eq:ddpm-mean-loss,eq:conti-dsm_loss-real}.
 
 This suggests a complementary viewpoint: rather than beginning with the local
@@ -1478,10 +1494,10 @@ This simple form includes several familiar probability paths:
 \end{itemize}
 
 \subsection{Connection to Score SDE}
-For Score SDE, it is often more intuitive to specify the accumulated
+For Score SDE, it is often more intuitive to \nkh{specify the accumulated
 perturbation kernel $p_t(\rvx_t|\rvx_0)$ first and then recover the
-corresponding SDE coefficients, rather than starting from the drift and
-diffusion terms and solving ODEs for the moments
+corresponding SDE coefficients}, rather than starting from the drift and
+diffusion terms and \nkh{solving ODEs for} the \nkh{moments}
 (see \Cref{subsec:scoresde-perturbation-kernel}).
 
 For an admissible affine schedule, the corresponding forward SDE takes the
@@ -1548,10 +1564,22 @@ $\rmP'(t)=2f(t)\rmP(t)+g^2(t)\rmI$
 with $\rvm(t)=\alpha_t\rvx_0$ and
 $\rmP(t)=\sigma_t^2\rmI$.
 }
+\begin{nknote}
+\noindent\textit{Proof.} For the mean, $\rvm'(t) = f(t)\rvm(t) = \big(\tfrac{\diff}{\diff t}\log\alpha_t\big)\rvm(t)$, so
+\[
+\rvm(t) = \exp\Big(\int_0^t \tfrac{\diff}{\diff s}\log\alpha_s \,\diff s\Big)\rvx_0 = \exp(\log\alpha_t)\,\rvx_0 = \alpha_t\rvx_0,
+\]
+using $\alpha_0 = 1$. For the covariance, $\rmP'(t) = 2f(t)\rmP(t) + g^2(t)\rmI = 2\big(\tfrac{\diff}{\diff t}\log\alpha_t\big)\rmP(t) - 2\sigma_t^2\big(\tfrac{\diff}{\diff t}\lambda_t\big)\rmI$, and the integrating factor $\alpha_t^{-2}$ gives
+\[
+\rmP(t) = -2\alpha_t^2 \int_0^t \alpha_s^{-2}\sigma_s^2\, \frac{\diff \lambda_s}{\diff s}\,\diff s\;\rmI
+= -2\alpha_t^2\Big(\!-\frac{\sigma_t^2}{2\alpha_t^2}\Big)\rmI = \sigma_t^2\,\rmI,
+\]
+since $\frac{\diff}{\diff s}\big(\!-\frac{\sigma_s^2}{2\alpha_s^2}\big) = \alpha_s^{-2}\sigma_s^2\,\frac{\diff\lambda_s}{\diff s}$, which can be verified by expanding both sides, and $\sigma_0 = 0$. \hfill$\blacksquare$
+\end{nknote}
 
 \rmkb{To make the terminal conditional distribution independent of $\rvx_0$ and
 equal to a prescribed Gaussian prior, we need
-$\alpha_T=0$ and $\sigma_T^2$ equal to the prior variance. Since
+\nkh{$\alpha_T=0$ and $\sigma_T^2$ equal to the prior variance}. Since
 \[
 \alpha_t
 =
@@ -1561,8 +1589,8 @@ achieving $\alpha_T=0$ at a finite terminal time requires
 \[
 \int_0^T f(u)\diff u=-\infty.
 \]
-Thus, the contraction induced by the drift must become singular near the
-terminal time; in particular, $f$ cannot remain bounded on $[0,T]$.
+Thus, \nkh{the contraction induced by the drift must become singular near the
+terminal time}; in particular, $f$ cannot remain bounded on $[0,T]$.
 
 The diffusion coefficient is related to the prescribed variance through
 \[
@@ -1602,7 +1630,7 @@ corresponding linear SDE through $f(t)$ and $g(t)$.
 
 
 \subsection{Connection to Variational-Based Diffusion Model}\label{subsec:connection-vdm}
-We revisit a core identity from DDPM, derived via Bayes’ rule:
+We revisit a \nkh{core identity} from DDPM, derived \nkh{via Bayes' rule}:
 \begin{align}\label{eq:ddpm-reverse-condition-kernel}
     p(\rvx_{t-\Delta t}|\rvx_t, \rvx) = p(\rvx_t|\rvx_{t-\Delta t}) \cdot \frac{p_{t-\Delta t}(\rvx_{t-\Delta t}|\rvx)}{p_t(\rvx_t|\rvx)},
 \end{align}
@@ -1611,7 +1639,7 @@ for any $\rvx$ (usually $\rvx\sim p_{\mathrm{data}}$). This reverse conditional 
 Although DDPM typically defines the incremental kernel $p(\rvx_t|\rvx_{t-\Delta t})$ first, the accumulated transition $p_t(\rvx_t|\rvx_0)$ often provides a more interpretable and practical formulation, especially for the prior and loss design.
 
 \paragraph{Deriving Transition Kernels.}
-We now extend this to the continuous-time setting. Let $0 \leq t < s \leq T$ be two (continuous) time points. Given the perturbation kernel $p_t(\rvx_t|\rvx_0)$, we can compute the reverse conditional $p(\rvx_t|\rvx_s, \rvx)$ for any $\rvx$ by applying \Cref{eq:ddpm-reverse-condition-kernel}\footnote{This identity extends naturally to continuous time by treating $s$ as a general earlier time.}, using the forward kernel $p(\rvx_s|\rvx_t)$ as an intermediate. The following lemma summarizes this derivation, extending Lemma~\ref{ddpm-reverse-kernel} without assuming $\alpha_t^2 + \sigma_t^2 = 1$.
+We now extend this to the continuous-time setting. \nkh{Let $0 \leq t < s \leq T$} be two (continuous) time points. Given the perturbation kernel $p_t(\rvx_t|\rvx_0)$, we \nkh{can compute} the \nkh{reverse conditional $p(\rvx_t|\rvx_s, \rvx)$} for any $\rvx$ by applying \Cref{eq:ddpm-reverse-condition-kernel}\footnote{This identity extends naturally to continuous time by treating $s$ as a general earlier time.}, using the forward kernel $p(\rvx_s|\rvx_t)$ as an intermediate. The following lemma summarizes this derivation, extending Lemma~\ref{ddpm-reverse-kernel} \nkh{without assuming $\alpha_t^2 + \sigma_t^2 = 1$}.
 
 \lemp{Reverse Conditional Transition Kernels}{reverse-kernel}{
 Let $0 \leq t < s \leq T$. The reverse \emph{conditional} transition kernel is:
@@ -1630,12 +1658,26 @@ Here, $\alpha_{s|t}$ and $\sigma_{s|t}$ are defined as:
     \alpha_{s|t} := \frac{\alpha_s}{\alpha_t}, \qquad \sigma^2_{s|t} := \sigma_s^2 - \alpha_{s|t}^2 \sigma_t^2.
 \end{equation*}
 }{
-We first compute the forward transition kernel:
+We first \nkh{compute} the \nkh{forward transition kernel}:
 \begin{equation}\label{eq:zt_given_zs}
     p(\rvx_s|\rvx_t) = \mathcal{N}\left(\rvx_s; \alpha_{s|t} \rvx_t, \sigma^2_{s|t} \bfI\right).
 \end{equation}
-The reverse kernel then follows from Bayes’ rule, and since all involved distributions are Gaussian, the result can be derived by direct computation. For further details, see Appendix A of \citep{kingma2021variational}.
+The \nkh{reverse kernel} then \nkh{follows from Bayes' rule}, and since \nkh{all involved distributions are Gaussian}, the result can be \nkh{derived by direct computation}. For further details, see Appendix A of \citep{kingma2021variational}.
 }
+\begin{nknote}
+\noindent\textit{Proof of \Cref{eq:zt_given_zs}.} Assume the forward process is Gaussian and Markovian, so $p(\rvx_s|\rvx_t) = \mathcal{N}(\rvx_s; \alpha\rvx_t, \sigma^2\rmI)$ for some $\alpha, \sigma$. Then, since $\rvx_t = \alpha_t\rvx_0 + \sigma_t\beps_1$,
+\begin{align*}
+\rvx_s = \alpha\rvx_t + \sigma\beps_2
+= \alpha\alpha_t\rvx_0 + \alpha\sigma_t\beps_1 + \sigma\beps_2
+= \alpha\alpha_t\rvx_0 + \sqrt{\alpha^2\sigma_t^2 + \sigma^2}\,\beps.
+\end{align*}
+Matching with $p(\rvx_s|\rvx_0) = \mathcal{N}(\rvx_s; \alpha_s\rvx_0, \sigma_s^2\rmI)$, i.e., $\rvx_s = \alpha_s\rvx_0 + \sigma_s\beps$, gives
+\[
+\alpha = \frac{\alpha_s}{\alpha_t} = \alpha_{s|t},
+\qquad
+\sigma^2 = \sigma_s^2 - \alpha_{s|t}^2\sigma_t^2 = \sigma_{s|t}^2. \hspace{2em}\blacksquare
+\]
+\end{nknote}
 
 
 Although $p(\rvx_{t + \Delta t}|\rvx_t)$ and $p_t(\rvx_t|\rvx_0)$ are theoretically equivalent, $p_t(\rvx_t|\rvx_0)$ often takes a more central role. The step-wise transition in \Cref{eq:zt_given_zs} mainly serves to obtain a closed-form reverse kernel. Recent works~\citep{kingma2021variational} thus favor directly specifying $p_t(\rvx_t|\rvx_0)$ for its clarity and interpretability.
@@ -1764,14 +1806,14 @@ Apply this with $\phi=p_t$, $\phi=\rvf \cdot \nabla_\rvu p_t$, and $\phi=(\nabla
 \]
 Divide by $\Delta t$ and let $\Delta t\to0$ to obtain the Fokker–Planck equation.
 
-In \Cref{subsec:rigorous-proof-fpe}, we present the It\^o--based derivation to complement the discrete--time view above.
+In \Cref{subsec:rigorous-proof-fpe}, we present the \nkh{It\^o--based derivation} to complement the discrete--time view above.
 
 
 
 
 \subsection{Why Does Reverse-Time SDE Take The Form?}\label{subsec:reverse-sde-reason}
 
-The rigorous derivation of the reverse-time SDE is technical and requires delving into the properties of the Fokker-Planck equation. However, the form of the reverse-time SDE can be understood intuitively through Bayes' theorem. Here, we present a heuristic derivation to provide insight into why \Cref{eq:sde_backward} takes its form, with the appearance of score functions\footnote{This derivation is inspired by the approach in \href{https://alexxthiery.github.io/notes/reverse_and_tweedie/reverse_and_tweedie.html}{this post}.}. 
+The rigorous derivation of the reverse-time SDE is technical and requires delving into the properties of the Fokker-Planck equation. However, the form of the \nkh{reverse-time SDE} can be \nkh{understood intuitively through Bayes' theorem}. Here, we present a heuristic derivation to provide insight into why \Cref{eq:sde_backward} takes its form, with the appearance of score functions\footnote{This derivation is inspired by the approach in \href{https://alexxthiery.github.io/notes/reverse_and_tweedie/reverse_and_tweedie.html}{this post}.}. 
 
 
 \paragraph{Using Bayes' Rule for Inversion.} 
@@ -1793,7 +1835,7 @@ p(\rvx_{t+\Delta t} | \rvx_t) = \mathcal{N}\left(\rvx_{t+\Delta t}; \rvx_t + \rv
 \end{equation*}
 
 \paragraph{Taylor Expansion.} 
-To handle the exponential term, we apply a first-order Taylor expansion. The key insight is to expand around the point $(\rvx_t, t)$ in both space and time:
+To handle the exponential term, we apply a \nkh{first-order Taylor expansion}. The key insight is to expand \nkh{around} the point $(\rvx_t, t)$ in both \nkh{space and time}:
 \begin{align*}
     \log p_{t+\Delta t}(\rvx_{t+\Delta t}) &= \log p_t(\rvx_t) + \nabla_{\rvx} \log p_t(\rvx_t) \cdot (\rvx_{t+\Delta t} - \rvx_t) \nonumber \\
     &\quad + \frac{\partial \log p_t(\rvx_t)}{\partial t} \Delta t + \mathcal{O}(\|\rvh\|_2^2) 
@@ -1818,7 +1860,7 @@ Substituting equations \Cref{eq:transition-forward-f-g} and \Cref{eq:log-differe
     &\qquad \cdot \exp\left(-\nabla_{\rvx} \log p_t(\rvx_t) \cdot (\rvx_{t+\Delta t} - \rvx_t) - \frac{\partial \log p_t(\rvx_t)}{\partial t} \Delta t +\mathcal{O}(\Delta t)\right). 
 \end{align*}
 \paragraph{Algebraic Manipulation.}
-The key step is to complete the square in the exponent. We have:
+The key step is to \nkh{complete the square} in the exponent. We have:
 \begin{align*}
     &-\frac{\|\rvx_{t+\Delta t} - \rvx_t - \rvf(\rvx_t, t) \Delta t\|_2^2}{2 g^2(t) \Delta t} - \nabla_{\rvx} \log p_t(\rvx_t) \cdot (\rvx_{t+\Delta t} - \rvx_t) \nonumber \\
     = &-\frac{\left[\|\rvx_{t+\Delta t} - \rvx_t - \rvf(\rvx_t, t) \Delta t\|_2^2 + 2 g^2(t) \Delta t \nabla_{\rvx} \log p_t(\rvx_t) \cdot (\rvx_{t+\Delta t} - \rvx_t)\right]}{2 g^2(t) \Delta t} 
@@ -1844,7 +1886,7 @@ Therefore,
     =~&\mathcal{N}\left(\rvx_t; \rvx_{t+\Delta t} - [\rvf(\rvx_t, t) - g^2(t) \nabla_{\rvx} \log p_t(\rvx_t)] \Delta t, g^2(t) \Delta t \mathbf{I}\right) \nonumber \\
     \quad &\cdot (1 + \mathcal{O}(\Delta t)).
 \end{align*}
-The additional term $\|g^2(t) \Delta t \nabla_{\rvx} \log p_t(\rvx_t)\|_2^2$ from completing the square is $\mathcal{O}((\Delta t)^2)$ and can be absorbed into the error term. Similarly, the time derivative term $\frac{\partial \log p_t(\rvx_t)}{\partial t} \Delta t$ is $\mathcal{O}(\Delta t)$ and will vanish in the continuous limit.
+The \nkh{additional term} $\|g^2(t) \Delta t \nabla_{\rvx} \log p_t(\rvx_t)\|_2^2$ \nkh{from completing the square is} \nkh{$\mathcal{O}((\Delta t)^2)$} and can be absorbed into the error term. Similarly, the time derivative term \nkh{$\frac{\partial \log p_t(\rvx_t)}{\partial t} \Delta t$ is $\mathcal{O}(\Delta t)$} and will vanish in the continuous limit. \nk{It is harmless since it appears only as the multiplicative factor $\exp(\mathcal{O}(\Delta t)) = 1 + \mathcal{O}(\Delta t)$.}
 
 \paragraph{Taking $\Delta t \rightarrow 0$ Limit.}
 As $\Delta t \approx 0$, under smoothness assumptions, the following approximations hold:
@@ -1864,7 +1906,7 @@ This implies that $p(\rvx_t | \rvx_{t+\Delta t})$ is roughly a normal distributi
     \text{\textbfs{Mean:}} &  \quad\rvx_{t+\Delta t} - \big[\rvf(\rvx_{t+\Delta t}, t+\Delta t) - g^2(t+\Delta t) \rvs (\rvx_{t+\Delta t}, t+\Delta t)\big] \Delta t, \\
     \text{\textbfs{Covariance:}} & \quad g^2(t+\Delta t) \Delta t \mathbf{I}.
 \end{align*}
-Taking the limit as $\Delta t \rightarrow 0$, we ``derive'' the reverse-time continuous SDE given in \Cref{eq:sde_backward}.
+Taking the \nkh{limit as $\Delta t \rightarrow 0$}, we ``derive'' the reverse-time continuous SDE given in \Cref{eq:sde_backward}.
 
 
 

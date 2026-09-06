@@ -524,19 +524,14 @@ From the SDE, we compute:
 Substituting into the \nkh{product rule and taking expectation}:
 \begin{align*}
     \frac{\diff \rmP(t)}{\diff t}
-    &= \mathbb{E}[f(t) \tilde{\rvx}_t \tilde{\rvx}_t^\top + \tilde{\rvx}_t \tilde{\rvx}_t^\top f(t) + g^2(t) \rmI_D] \\
+    &{\color{notesblue}= \frac{1}{\diff t}\,\mathbb{E}\big[\diff\big(\tilde{\rvx}_t\tilde{\rvx}_t^\top\big) \,\big|\, \rvx_0\big]} \\
+    &{\color{notesblue}= \frac{1}{\diff t}\,\mathbb{E}\big[f(t)\,\tilde{\rvx}_t\tilde{\rvx}_t^\top\,\diff t + g(t)\,\diff\rvw_t\,\tilde{\rvx}_t^\top
+ + f(t)\,\tilde{\rvx}_t\tilde{\rvx}_t^\top\,\diff t} \\
+    &\qquad\quad{\color{notesblue}+ g(t)\,\tilde{\rvx}_t\,\diff\rvw_t^\top + g^2(t)\,\rmI_D\,\diff t + \mathcal{O}(\diff t^{3/2}) \,\big|\, \rvx_0\big]} \\
+    &= \mathbb{E}[f(t) \tilde{\rvx}_t \tilde{\rvx}_t^\top + \tilde{\rvx}_t \tilde{\rvx}_t^\top f(t) + g^2(t) \rmI_D {\color{notesblue}\,|\, \rvx_0}] \\
     &= 2 f(t) \rmP(t) + g^2(t) \rmI_D.
 \end{align*}
-\begin{nknote}
-\noindent\textit{In more detail,} substituting $\diff\tilde{\rvx}_t = f(t)\tilde{\rvx}_t\,\diff t + g(t)\,\diff\rvw_t$ into the product rule,
-\begin{align*}
-\diff\big(\tilde{\rvx}_t\tilde{\rvx}_t^\top\big)
-&= f(t)\,\tilde{\rvx}_t\tilde{\rvx}_t^\top\,\diff t + g(t)\,\diff\rvw_t\,\tilde{\rvx}_t^\top
- + f(t)\,\tilde{\rvx}_t\tilde{\rvx}_t^\top\,\diff t + g(t)\,\tilde{\rvx}_t\,\diff\rvw_t^\top \\
-&\quad + g^2(t)\,\rmI_D\,\diff t + \mathcal{O}(\diff t^{3/2}).
-\end{align*}
-Taking $\mathbb{E}[\,\cdot\,|\rvx_0]$, the two $\diff\rvw_t$ terms vanish because the increment $\diff\rvw_t$ is independent of $\tilde{\rvx}_t$ and has zero mean, leaving $\diff\rmP(t) = \big(2f(t)\rmP(t) + g^2(t)\rmI_D\big)\diff t$.
-\end{nknote}
+\nk{The two $\diff\rvw_t$ terms vanish because the increment $\diff\rvw_t$ is independent of $\tilde{\rvx}_t$ and of $\rvx_0$, and has zero mean.}
 Thus, we recover the moment evolution equations in \Cref{eq:mean-var-evolution}.
 
 

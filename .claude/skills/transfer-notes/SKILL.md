@@ -23,7 +23,8 @@ Be concise in every report: tables and one-liners, no narration.
 4. **Minimize words in derivations.** Prefer chains of math; add prose only where a step is genuinely confusing. A trailing half-sentence naming the facts used beats interleaved narration.
 5. **Never abridge his derivations.** Every step from the handwritten chain goes in, in his order (only slips corrected, each mentioned in one line of the report).
 
-- Done: Ch.2 (Variational: VAEs→DDPMs), Ch.3 (Score-Based: EBMs→NCSN), Appendix B, Appendix C, D.1/D.2.1 (earlier session), D.2.3, D.2.4, D.2.5. Pattern for the rest is identical.
+- Done: Ch.2 (Variational: VAEs→DDPMs), Ch.3 (Score-Based: EBMs→NCSN), Ch.4 (Score SDE), Appendix B, Appendix C, D.1/D.2.1 (earlier session), D.2.3, D.2.4, D.2.5. Pattern for the rest is identical.
+- Pitfall: `\ref`/`\Cref` and `\underline` inside `\nkh{...}` break soul — keep refs and underlined text outside the highlight.
 - Pitfall: curly quotes/apostrophes (’) inside `\nkh{...}` break soul under inputenc — use ASCII ' inside highlights. Deterministic-analog / divergence-theorem notes now live in Appendix E — skip them when they appear in the margins.
 
 ## Macros (defined in `math_commands.tex`)
