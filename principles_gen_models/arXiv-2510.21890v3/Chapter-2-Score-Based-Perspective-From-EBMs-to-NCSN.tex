@@ -43,7 +43,7 @@ where $Z_\bphi$ is called the \emph{partition function} ensuring normalization:
 
 
 
-In this view, points with lower energy correspond to higher probability, much like a ball rolling down into a valley. The partition function $Z_{\bphi}$ ensures that all probabilities add up to one, and as a result only the \emph{relative} values of energy matter. For instance, adding a constant to all energies multiplies both numerator and denominator by the same factor, leaving the distribution unchanged. 
+In this view, points with lower energy correspond to higher probability, much like a ball rolling down into a valley. The \nkh{partition function $Z_{\bphi}$ ensures} that all \nkh{probabilities add up to one}, and \nkh{as a result only the \emph{relative} values} of energy \nkh{matter}. For instance, adding a constant to all energies multiplies both numerator and denominator by the same factor, leaving the distribution unchanged. 
 
 Moreover, because the partition function $Z_{\bphi}$ enforces that probabilities sum to one, it follows mathematically that decreasing the energy within a region increases its probability, while the probability of its complement decreases accordingly. Thus, EBMs obey a strict global trade-off: making one valley deeper inevitably makes others shallower, and probability mass is redistributed across the entire space rather than assigned independently to each region.
 
@@ -60,7 +60,7 @@ In principle, EBMs can be trained by maximum likelihood, which naturally balance
 with $Z_\bphi = \int \exp(-E_\bphi(\rvx))\diff\rvx$. 
 The first term lowers the energy of real data, while the second enforces normalization via the partition function.
 
-However, in high dimensions computing $\log Z_{\bphi}$ and its gradient is intractable, as it requires expectations under the model distribution. 
+However, in high dimensions \nkh{computing $\log Z_{\bphi}$} and its \nkh{gradient} is \nkh{intractable}, as it requires expectations under the model distribution. 
 This motivates alternative objectives that either approximate the term, such as contrastive divergence \citep{hinton2002training}, or avoid it altogether through \emph{score matching}. 
 
 In what follows, we first introduce the notion of the score function in \Cref{subsec:motivation-score} and present score matching as a tractable training objective that bypasses the partition function in \Cref{subsec:training-ebm}, and then discuss Langevin dynamics as a practical sampling method with score functions in \Cref{subsec:sampling-ebm}. 
@@ -237,11 +237,11 @@ In what follows, we first introduce the notion of the score function in \Cref{su
 
 \subsection{Motivation: What Is the Score?}\label{subsec:motivation-score}
 
-For a density $p(\rvx)$ on $\mathbb{R}^D$, the \emph{score function} is the gradient of the log-density:
+For a density $p(\rvx)$ on $\mathbb{R}^D$, the \nkh{\emph{score function}} is the gradient of the log-density:
 \[
 \rvs(\rvx) := \nabla_{\rvx} \log p(\rvx), \qquad \rvs \colon \mathbb{R}^D \to \mathbb{R}^D.
 \]
-Intuitively, the score forms a vector field that points toward regions of higher probability, providing a local guide to where the data is most likely to occur (see \Cref{fig:score-function}).
+Intuitively, the score forms a vector field that \nkh{points toward regions of higher probability}, providing a local guide to where the data is most likely to occur (see \Cref{fig:score-function}).
 
 \begin{figure}[th]
     \centering
@@ -264,16 +264,17 @@ Modeling the score offers both theoretical and practical benefits:
     While computing $Z$ is intractable, the score depends only on $\tilde{p}$:
 \begin{align}\label{eq:score-compute}
 \nabla_{\rvx}\log p(\rvx) = \nabla_{\rvx}\log \tilde{p}(\rvx) - \underbrace{\nabla_{\rvx}\log Z}_{=0} = \nabla_{\rvx}\log \tilde{p}(\rvx), \end{align} 
-since $Z$ is constant in $\rvx$. This bypasses the partition function entirely.
+since $Z$ is constant in $\rvx$. This \nkh{bypasses} the \nkh{partition function} entirely.
 
 \subparagraph{2. A Complete Representation.}  
 The score function fully characterizes the underlying distribution.  
-Since it is the gradient of the log-density, the density can be recovered (up to a constant) via
+Since it is the gradient of the log-density, the \nkh{density can be recovered} (up to a constant) via
 \[
 \log p(\rvx) 
 = \log p(\rvx_0) + \int_0^1 \rvs(\rvx_0 + t(\rvx - \rvx_0))^\top (\rvx - \rvx_0)  \diff t,
 \]
 where $\rvx_0$ is a reference point and $\log p(\rvx_0)$ is fixed by normalization.  
+\nk{Recall the path-integral definition $\int_{\bm{\gamma}} \rvf \cdot \diff\bm{\gamma} = \int_{t_0}^{t_1} \rvf(\bm{\gamma}(t))^\top \bm{\gamma}'(t)\,\diff t$; here $\bm{\gamma}(t) = \rvx_0 + t(\rvx - \rvx_0)$, so $\bm{\gamma}'(t) = \rvx - \rvx_0$.}
 Thus, modeling the score is as expressive as modeling $p(\rvx)$ itself, while often more tractable for generative modeling.
 
 
@@ -310,7 +311,7 @@ We will revisit approaches to addressing this limitation later in the chapter.
 
 
 \subsection{Langevin Sampling with Score Functions}\label{subsec:sampling-ebm}
-Sampling from EBMs, defined by the energy function $E_{\bm{\phi}}(\mathbf{x})$, can be performed using \emph{Langevin dynamics}. We first present the discrete-time Langevin update and then its continuous-time limit as a stochastic differential equation (SDE). Finally, we discuss the physical intuition behind how Langevin dynamics enables efficient exploration of complex energy landscapes.
+\nkh{Sampling} from EBMs, defined by the energy function $E_{\bm{\phi}}(\mathbf{x})$, can be performed \nkh{using \emph{Langevin dynamics}}. We first present the discrete-time Langevin update and then its continuous-time limit as a stochastic differential equation (SDE). Finally, we discuss the physical intuition behind how Langevin dynamics enables efficient exploration of complex energy landscapes.
 
 
 \begin{figure}
@@ -327,7 +328,7 @@ The discrete-time Langevin update is
 \begin{align}\label{eq:discrete-langevin}
     \mathbf{x}_{n+1} = \mathbf{x}_n - \eta \nabla_{\mathbf{x}} E_{\bm{\phi}}(\mathbf{x}_n) +  \sqrt{2 \eta} \bm{\epsilon}_n, \quad n=0,1,2,\ldots,
 \end{align}
-where $\mathbf{x}_0$ is initialized from some distribution (often Gaussian), $\eta > 0$ is the step size, and $\bm{\epsilon}_n \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$ is Gaussian noise. The noise enables exploration beyond local minima by adding stochasticity. 
+where $\mathbf{x}_0$ is initialized from some distribution (often Gaussian), $\eta > 0$ is the step size, and $\bm{\epsilon}_n \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$ is Gaussian noise. The \nkh{noise enables exploration beyond local minima} by adding stochasticity. 
 
 Since the score function can be computed as 
 \[
@@ -341,7 +342,7 @@ the update can equivalently be written as
 where the score function guides the samples toward high-density regions. This formulation is central to diffusion models, as will be detailed later.
 
 \paragraph{Continuous-Time Langevin Dynamics.}
-As the step size $\eta$ approaches zero, the discrete Langevin updates naturally converge to a continuous-time process described by the \emph{Langevin Stochastic Differential Equation (SDE)}\footnote{
+As the step size \nkh{$\eta$ approaches zero}, the \nkh{discrete} Langevin updates naturally \nkh{converge to} a continuous-time process described by the \emph{Langevin Stochastic Differential Equation \nkh{(SDE)}}\footnote{
 With the factor $\sqrt{2}$, the Langevin dynamics leave $p_{\bm\phi}$ unchanged in time. Namely, $p_{\bm\phi}$ is stationary: if $\rvx(0)\sim p_{\bm\phi}$ then $\rvx(t)\sim p_{\bm\phi}$ for all $t\ge 0$. Equivalently, $p_{\bm\phi}$ is the stationary solution of the Fokker–Planck equation (see \Cref{app:continuity}):
 \[
 \partial_t \rho = -\nabla \cdot(\rho  \nabla\log p_{\bm\phi}) + \tfrac{\sigma^2}{2}\Delta \rho.
@@ -360,7 +361,7 @@ which explains the $\sqrt{\eta}$ factor.; this is the source of the square-root 
 % \se{will people be confused by the square root on the step size?}
 
 
-Under standard regularity assumptions (e.g., $p_{\bm{\phi}}\propto e^{-E_{\bm{\phi}}}$ with a confining, sufficiently smooth $E_{\bm{\phi}}$), the distribution of $\mathbf{x}(t)$ converges (exponentially fast) to $p_{\bm{\phi}}$ as $t\to\infty$; thus we can sample by simulating (solving) the SDE \Cref{eq:continuous-langevin}. 
+Under standard regularity assumptions (e.g., $p_{\bm{\phi}}\propto e^{-E_{\bm{\phi}}}$ with a confining, sufficiently smooth $E_{\bm{\phi}}$), the distribution of \nkh{$\mathbf{x}(t)$ converges} (exponentially fast) \nkh{to $p_{\bm{\phi}}$ as $t\to\infty$}; thus we can sample by simulating (solving) the SDE \Cref{eq:continuous-langevin}. 
 
 
 
@@ -369,9 +370,9 @@ A natural way to understand Langevin sampling is through the lens of physics, wh
 \[
 \diff \mathbf{x}(t) = -\nabla_{\mathbf{x}} E_{\bm{\phi}}\big(\mathbf{x}(t)\big)  \diff t,
 \]
-which deterministically drives the particle downhill toward a local minimum of the energy function. However, such deterministic dynamics can become trapped in local minima, preventing exploration of the full data distribution.
+which deterministically drives the particle downhill toward a local minimum of the energy function. However, such \nkh{deterministic dynamics can become trapped in local minima}, preventing exploration of the full data distribution.
 
-To overcome this limitation, Langevin dynamics introduces stochastic perturbations, resulting in the SDE
+To overcome this limitation, \nkh{Langevin dynamics introduces stochastic perturbations}, resulting in the SDE
 \[
 \diff \mathbf{x}(t) = -\nabla_{\mathbf{x}} E_{\bm{\phi}}\big(\mathbf{x}(t)\big)  \diff t + \underbrace{\sqrt{2 } \diff \rvw(t)}_{\text{injected noise}},
 \]
@@ -388,7 +389,7 @@ From this perspective, EBMs can be viewed as learning a force field that pushes 
 \paragraph{Inherent Challenges of Langevin Sampling.}
 Langevin dynamics, a widely used MCMC-based sampler, faces serious limitations in high-dimensional spaces. Its efficiency is highly sensitive to the choice of step size $\eta$, noise scale, and the number of iterations required to approximate the target distribution accurately. 
 
-At the heart of this inefficiency lies the issue of poor ``mixing time'': In complex data distributions with many isolated modes, Langevin sampling often requires an extremely long time to transition between regions of high probability. This problem becomes significantly worse as dimensionality increases, leading to prohibitively slow convergence.
+At the heart of this \nkh{inefficiency} lies the issue of poor ``mixing time'': In complex data distributions with many isolated modes, Langevin sampling often requires an extremely \nkh{long time to transition between regions of high probability}. This problem becomes significantly worse as dimensionality increases, leading to prohibitively slow convergence.
 
 One can think of sampling as exploring a vast and rugged landscape with many distant valleys, each corresponding to a different data mode. Langevin dynamics, relying on local stochastic updates, struggles to traverse between these valleys efficiently. As a result, it often fails to capture the full diversity of the distribution.
 
@@ -487,11 +488,11 @@ This shift, from modeling energies to modeling scores, forms the foundation of s
 \subsection{Training with Score Matching}\label{subsec:training-sm}
 \paragraph{Score Matching.}
 To approximate the score function $\rvs(\rvx) = \nabla_{\rvx} \log p_{\mathrm{data}}(\rvx)$ from samples of $p_{\mathrm{data}}$,  
-we approximate it directly as a vector field parameterized by a neural network $\rvs_{\bm{\phi}}(\rvx)$ (see \Cref{fig:sm-illustration}):
+we \nkh{approximate} it directly as a vector field parameterized \nkh{by} a \nkh{neural network $\rvs_{\bm{\phi}}(\rvx)$} (see \Cref{fig:sm-illustration}):
 \[
 \rvs_{\bm{\phi}}(\rvx) \approx \rvs(\rvx).
 \]
-\emph{Score matching} fits this vector field by minimizing the mean squared error (MSE) between the true and estimated scores:
+\nkh{\emph{Score matching}} fits this vector field by \nkh{minimizing} the mean squared error \nkh{(MSE)} between the \nkh{true and estimated scores}:
 \begin{mdframed}
 \begin{align}\label{eq:sm}
     \mathcal{L}_{\mathrm{SM}}(\bm{\phi}) 
@@ -502,7 +503,7 @@ we approximate it directly as a vector field parameterized by a neural network $
 
 \paragraph{Tractable Score Matching.}
 At first glance, this objective seems infeasible because the true score $\rvs(\rvx)$, which serves as the regression target, is unknown.  
-Fortunately, \citet{hyvarinen2005estimation} showed that integration by parts yields an equivalent objective that depends only on the model $\rvs_{\bm{\phi}}$ and the data samples, without requiring access to the true score.  
+Fortunately, \citet{hyvarinen2005estimation} showed that \nkh{integration by parts yields} an \nkh{equivalent objective} that depends only on the model $\rvs_{\bm{\phi}}$ and the data samples, \nkh{without} requiring \nkh{access to the true score}.  
 We state this key result in the following proposition: 
 \proppp{Hyvärinen’s Tractable Form of SM}{sm-trace}
         {
@@ -540,8 +541,8 @@ We explain the geometric intuition in more detail below.
 Since the expectation in $\widetilde{\mathcal{L}}_{\mathrm{SM}}(\bm\phi)$ is taken under
 $p_{\mathrm{data}}$, regions where $p_{\mathrm{data}}(\rvx)$ is large (high data density)
 contribute more strongly to the loss. The magnitude term
-$\tfrac12\|\rvs_{\bm\phi}(\rvx)\|^2$ therefore places a stronger penalty on large
-score values in these regions. By itself, however, this term does not imply that
+$\tfrac12\|\rvs_{\bm\phi}(\rvx)\|^2$ therefore \nkh{places a stronger penalty on large
+score values in these regions}. By itself, however, this term does not imply that
 $\rvs_{\bm\phi}(\rvx)=\mathbf{0}$ at every high-density point; at the population
 optimum,
 \[
@@ -550,14 +551,23 @@ optimum,
 which vanishes only at stationary points of the log-density.
 
 \subparagraph{Concavity When the Field is (Approximately) a Gradient.}
-Because the divergence term $\Tr(\nabla_{\rvx} \rvs_{\bm\phi}(\rvx))$ enters the loss with a positive sign, minimizing the objective favors
-negative divergence in regions emphasized by the data distribution.
-Negative divergence indicates net local contraction, although by itself it does
+Because the divergence term $\Tr(\nabla_{\rvx} \rvs_{\bm\phi}(\rvx))$ enters the loss with a positive sign, minimizing the objective \nkh{favors
+negative divergence in regions emphasized by the data distribution}.
+\nkh{Negative divergence indicates net local contraction}, although by itself it does
 not guarantee that a stationary point is a sink.
 To make this precise, assume
 $\rvs_{\bm\phi}=\nabla_{\rvx}u$ for a scalar function $u:\R^D\to\R$, as is natural when matching a
 log density. Then $\nabla_{\rvx}\rvs_{\bm\phi}=\nabla_{\rvx}^2 u$ (the Hessian) and
 $\nabla \cdot \rvs_{\bm\phi}(\rvx)=\Tr(\nabla_{\rvx}^2 u(\rvx))$ (the divergence).
+\begin{nknote}
+\noindent Recall that for a vector field $\mathbf{F} = (F_1,\ldots,F_D)$,
+\[
+\mathrm{Div}\,\mathbf{F} := \nabla\cdot\mathbf{F}
+= \begin{pmatrix} \partial/\partial x_1 \\ \vdots \\ \partial/\partial x_D \end{pmatrix} \cdot \begin{pmatrix} F_1(\rvx) \\ \vdots \\ F_D(\rvx) \end{pmatrix}
+= \Tr\big(\nabla_{\rvx}\mathbf{F}\big).
+\]
+Intuition: if, as you take a step, $\mathbf{F}$ increases in that same direction, then the point is likely a source.
+\end{nknote}
 
 At a stationary point $\rvx_\star$, where $\rvs_{\bm\phi}(\rvx_\star)=\nabla_{\rvx}u(\rvx_\star)=\mathbf{0}$,
 a second order Taylor expansion gives
@@ -617,10 +627,10 @@ is more tractable, it still requires computing the trace of the Jacobian, $\math
 
 To address this, sliced score matching~\citep{song2020sliced} replaces the trace term with a stochastic estimate based on random projections. We briefly outline the idea below.
 % \se{perhaps mention huthcinson's trick since they are equivalent}
-\paragraph{Sliced Score Matching and Hutchinson's Estimator.} Sliced score matching  replaces the trace in score matching by averaging directional derivatives along random ``slices''. Let $\rvu\in\R^D$ be an \emph{isotropic} random vector (e.g., Rademacher or standard Gaussian) with
-$\E[\rvu]=0$ and $\E[\rvu\rvu^\top]=\mathbf I$. By Hutchinson’s identity 
+\paragraph{Sliced Score Matching and Hutchinson's Estimator.} Sliced score matching  replaces the trace in score matching by \nkh{averaging directional derivatives along random ``slices''}. Let $\rvu\in\R^D$ be an \emph{isotropic} random vector (e.g., Rademacher or standard Gaussian) with
+$\E[\rvu]=0$ and $\E[\rvu\rvu^\top]=\mathbf I$. By \nkh{Hutchinson's identity} 
 \[
-\Tr(\rmA)=\E_{\rvu}[\rvu^\top \rmA \rvu],\quad\text{and}\quad\E_{\rvu}[(\rvu^\top\rvs_{\bphi}(\rvx))^2]=\|\rvs_{\bphi}(\rvx)\|_2^2,
+\nkhm{\Tr(\rmA)=\E_{\rvu}[\rvu^\top \rmA \rvu]},\quad\text{and}\quad\E_{\rvu}[(\rvu^\top\rvs_{\bphi}(\rvx))^2]=\|\rvs_{\bphi}(\rvx)\|_2^2,
 \]
  we obtain the exact form
 \[
@@ -629,16 +639,16 @@ $\E[\rvu]=0$ and $\E[\rvu\rvu^\top]=\mathbf I$. By Hutchinson’s identity
 \]
 This objective can be evaluated efficiently with automatic differentiation, using Jacobian- and vector-Jacobian-product operations (JVP/VJP) instead of explicitly computing large Jacobian or Hessian matrices.
 Averaging over $K$ random probes yields an unbiased estimator with variance $\mathcal{O}(1/K)$, 
-and the directional term $\rvu^\top(\nabla_{\rvx}\rvs_{\bphi})\rvu$ can be computed 
-efficiently using JVP/VJP routines without explicit Jacobians.  Intuitively, this means we only check the model’s behavior along random directions: 
+and the directional term \nkh{$\rvu^\top(\nabla_{\rvx}\rvs_{\bphi})\rvu$ can be computed
+efficiently} using JVP/VJP routines without explicit Jacobians. \nk{This works since $\rvu^\top(\nabla_{\rvx}\rvs_{\bphi})\rvu = \rvu^\top \nabla_{\rvx}(\rvs_{\bphi}^\top\rvu)$, the gradient of a scalar.}  Intuitively, this means we only check the model’s behavior along random directions: 
 the projected score is nudged to align with regions of higher data density, 
 so data points become stationary in expectation. 
 
-\paragraph{From Sliced to Denoising Score Matching.} Sliced score matching sidesteps Jacobians but still relies on the raw data distribution. 
+\paragraph{From Sliced to Denoising Score Matching.} \nkh{Sliced score matching} sidesteps Jacobians but still relies on the raw data distribution. 
 This makes it fragile: for image data lying on low-dimensional manifolds, 
 the score $\nabla_{\rvx}\log p_{\mathrm{data}}(\rvx)$ may be undefined or unstable, 
-and the method only constrains the vector field at observed points, 
-providing weak control in their neighborhoods. 
+and the method \nkh{only constrains} the \nkh{vector field at observed points}, 
+providing \nkh{weak control in} their \nkh{neighborhoods}. 
 It further suffers from probe-induced variance and repeated JVP/VJP costs. 
 
 A more robust alternative, which we focus on here, is \emph{Denoising Score Matching} (DSM)~\citep{vincent2011connection}, 
@@ -654,7 +664,7 @@ Let us revisit the SM loss in \Cref{eq:sm}:
 where the issue arises from the intractable term $\nabla_{\rvx} \log p_{\text{data}}(\rvx)$.
 
 \paragraph{\citet{vincent2011connection}'s Solution by Conditioning.}
-To overcome the intractability of $\nabla_{\rvx} \log p_{\text{data}}(\rvx)$, \citet{vincent2011connection} proposed injecting noise into the data $\rvx \sim p_{\text{data}}$ via a known conditional distribution $p_{\sigma}(\tilde{\rvx}|\rvx)$ with scale $\sigma$. The neural network $\rvs_{\bm{\phi}}(\tilde{\rvx}, \sigma)$ is trained to approximate the score of the marginal perturbed distribution
+To overcome the intractability of $\nabla_{\rvx} \log p_{\text{data}}(\rvx)$, \citet{vincent2011connection} proposed \nkh{injecting noise} into the data $\rvx \sim p_{\text{data}}$ \nkh{via} a known conditional distribution \nkh{$p_{\sigma}(\tilde{\rvx}|\rvx)$} with scale $\sigma$. The neural network $\rvs_{\bm{\phi}}(\tilde{\rvx}, \sigma)$ is trained to \nkh{approximate} the \nkh{score of the marginal perturbed distribution}
 \[
 p_\sigma(\tilde{\rvx}) = \int p_{\sigma}(\tilde{\rvx}|\rvx) p_{\text{data}}(\rvx) \diff \rvx
 \]
@@ -663,7 +673,7 @@ by minimizing the loss
 \mathcal{L}_{\text{SM}}(\bm{\phi}; \sigma) := \frac{1}{2} \mathbb{E}_{\tilde{\rvx} \sim p_\sigma} \left[ \norm{\rvs_{\bm{\phi}}(\tilde{\rvx}, \sigma) - \nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx})}_2^2 \right].
 \end{align}
 
-Even though $\nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx})$ is generally intractable, \citet{vincent2011connection} showed that \emph{conditioning} on $\rvx \sim p_{\text{data}}$ yields an equivalent, tractable objective—the \emph{Denoising Score Matching} (DSM) loss:
+Even though \nkh{$\nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx})$} is \nkh{generally intractable}, \citet{vincent2011connection} showed that \nkh{\emph{conditioning} on $\rvx \sim p_{\text{data}}$} \nkh{yields} an \nkh{equivalent, tractable objective}—the \emph{Denoising Score Matching} (DSM) loss:
 \begin{mdframed}
 \begin{align}\label{eq:dsm-loss}
 \mathcal{L}_{\text{DSM}}(\bm{\phi}; \sigma) := \frac{1}{2} \mathbb{E}_{\rvx \sim p_{\text{data}}, \tilde{\rvx} \sim p_{\sigma}(\cdot|\rvx)} \left[ \norm{\rvs_{\bm{\phi}}(\tilde{\rvx}, \sigma) - \nabla_{\tilde{\rvx}} \log p_{\sigma}(\tilde{\rvx}|\rvx)}_2^2 \right].
@@ -674,7 +684,7 @@ The optimal minimizer $\rvs^*$ of \Cref{eq:dsm-loss} satisfies
 \[
 \rvs^*(\tilde{\rvx}, \sigma) = \nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx}),
 \]
-which is also optimal for \Cref{eq:sm-noise-loss}.
+which is also \nkh{optimal for} \Cref{eq:sm-noise-loss}.
 
 For example, when $p_{\sigma}(\tilde{\rvx}|\rvx)$ is Gaussian noise with variance $\sigma^2$,
 \[
@@ -682,11 +692,11 @@ p_{\sigma}(\tilde{\rvx}|\rvx) = \mathcal{N}(\tilde{\rvx}; \rvx, \sigma^2 \mathbf
 \]
 the gradient $\nabla_{\tilde{\rvx}} \log p_{\sigma}(\tilde{\rvx}|\rvx)$ has a closed form (see \Cref{eq:gaussian-dsm}), making the regression target explicit and computationally tractable.
 
-Moreover, as $\sigma \approx 0$, $p_\sigma(\tilde{\rvx}) \approx p_{\text{data}}(\rvx)$ and
+Moreover, \nkh{as $\sigma \approx 0$}, $p_\sigma(\tilde{\rvx}) \approx p_{\text{data}}(\rvx)$ and
 \[
 \rvs^*(\tilde{\rvx}, \sigma) = \nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx}) \approx \nabla_{\rvx} \log p_{\text{data}}(\rvx),
 \]
-indicating the learned score approximates the original data score, enabling its use in generation.
+indicating the \nkh{learned score approximates} the \nkh{original} data \nkh{score}, enabling its use in generation.
 
 We formalize this discussion on the gradient equivalence between $\mathcal{L}_{\text{SM}}$ and $\mathcal{L}_{\text{DSM}}$ in the following theorem:
 \thmp{Equivalence of $\mathcal{L}_{\text{SM}}$ and $\mathcal{L}_{\text{DSM}}$}{sm-dsm}{
@@ -702,8 +712,8 @@ where $C$ is a constant independent of the parameter $\bm{\phi}$. Furthermore, t
  The derivation of the minimizer follows the same argument as in Proposition~\ref{dsm-minimizer}. We defer the detailed derivation to \Cref{app-sec:sm-dsm}.
 }
 
-This theorem, like Theorem~\ref{thm:equiv-marginal-kl} in DDPM, illustrates a key shared principle:
-\msg{Insight}{Conditioning Technique}{The conditioning technique also appears in the variational view of diffusion models in DDPM (see Theorem~\ref{thm:equiv-marginal-kl}), where conditioning on a data point $\rvx$ turns an intractable loss into a tractable one for Monte Carlo estimation. A similar idea arises in the flow-based perspective (e.g., Flow Matching~\citep{lipman2022flow}), as we will see in \Cref{sec:flow-matching-framework}.}
+This theorem, like Theorem~\ref{thm:equiv-marginal-kl} in DDPM, illustrates a \nkh{key} shared \nkh{principle}:
+\msg{Insight}{Conditioning Technique}{The conditioning technique also appears in the variational view of diffusion models in DDPM (see Theorem~\ref{thm:equiv-marginal-kl}), where \nkh{conditioning on} a data point \nkh{$\rvx$} turns an \nkh{intractable loss into} a \nkh{tractable one for Monte Carlo estimation}. A similar idea arises in the flow-based perspective (e.g., Flow Matching~\citep{lipman2022flow}), as we will see in \Cref{sec:flow-matching-framework}.}
 
 
 \begin{figure}
@@ -727,7 +737,7 @@ In this setting, the conditional score is analytically given by
 \[
 \nabla_{\tilde{\rvx}} \log p_{\sigma}(\tilde{\rvx}|\rvx) = \frac{\rvx - \tilde{\rvx}}{\sigma^2}.
 \]
-Hence, the DSM loss simplifies to:
+Hence, the \nkh{DSM} loss \nkh{simplifies to}:
 \begin{mdframed}
 \begin{align}\label{eq:gaussian-dsm}
 \begin{aligned}
@@ -747,11 +757,11 @@ p_\sigma
 p_{\mathrm{data}} * \mathcal{N}(\bm{0},\sigma^2\rmI),
 \]
 rather than the score of $p_{\mathrm{data}}$ itself.
-When $\sigma$ is small, the corruption is mild, so $p_\sigma$ still closely
-preserves the local structure of the data distribution. Its score therefore
+\nkh{When $\sigma$ is small, the corruption is mild, so $p_\sigma$ still closely
+preserves the local structure} of the data distribution. Its score therefore
 provides a useful direction for moving noisy samples back toward likely data
-regions. As $\sigma$ becomes larger, the Gaussian smoothing progressively removes fine
-details and merges nearby modes. The corresponding score then captures mainly
+regions. \nkh{As $\sigma$ becomes larger, the Gaussian smoothing progressively removes fine
+details and merges nearby modes}. The corresponding score then captures mainly
 coarser, more global structure. This behavior is useful rather than undesirable:
 the multi-noise construction in \Cref{sec:SMLD} deliberately combines many noise
 levels, using large noise for coarse exploration and small noise for fine
@@ -770,7 +780,7 @@ we expand on the discussion in \Cref{subsec:why-dsm-denoising-tweedie,subsec:why
 
 \subsection{Sampling} Once we have a trained score model $\rvs_{\bm{\phi}^\times}(\tilde{\rvx}, \sigma)$ at noise level $\sigma$, we generate samples using Langevin dynamics by replacing the true score with the learned model. The update rule is:
 \begin{align}\label{eq:score-langevin-emp-dsm}
-   \tilde{\rvx}_{n+1} = \tilde{\rvx}_n + \eta \underbrace{\rvs_{\bm{\phi}^\times}(\tilde{\rvx}_n, \sigma)}_{\approx \nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx}_n)} + \sqrt{2\eta}    \bm{\epsilon}_n, \quad \bm{\epsilon}_n \sim \mathcal{N}(\mathbf{0}, \rmI),
+   \tilde{\rvx}_{n+1} = \tilde{\rvx}_n + \eta \underbrace{\nkhm{\rvs_{\bm{\phi}^\times}(\tilde{\rvx}_n, \sigma)}}_{\approx \nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx}_n)} + \sqrt{2\eta}    \bm{\epsilon}_n, \quad \bm{\epsilon}_n \sim \mathcal{N}(\mathbf{0}, \rmI),
 \end{align}
 for $n = 0, 1, 2, \dots$, starting from an initial value $\tilde{\rvx}_0$. If $\sigma$ is sufficiently small, then after enough iterations, $\tilde{\rvx}_n$ approximates samples from $p_{\text{data}}$.
 
@@ -778,18 +788,18 @@ for $n = 0, 1, 2, \dots$, starting from an initial value $\tilde{\rvx}_0$. If $\
 \paragraph{Advantages of Noise Injection.}
 We additionally remark that, compared to vanilla score matching in \Cref{eq:sm}, injecting Gaussian noise to form $p_\sigma$ (e.g., \Cref{eq:gaussian-dsm}) provides two key advantages~\citep{song2019generative}:
 \begin{itemize}
-  \item \textbfs{Well-Defined Gradients.} The noise perturbs data away from its lower-dimensional manifold, resulting in a distribution $p_\sigma$ with full support in $\mathbb{R}^D$. Consequently, the score function $\nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx})$ is well-defined everywhere.
-  \item \textbfs{Improved Coverage.} The noise smooths out sparse regions between modes, enhancing training signal quality and facilitating Langevin dynamics to traverse low-density regions more effectively.
+  \item \textbfs{Well-Defined Gradients.} The noise \nkh{perturbs data away from} its \nkh{lower-dimensional manifold}, resulting in a distribution $p_\sigma$ with full support in $\mathbb{R}^D$. Consequently, the score function $\nabla_{\tilde{\rvx}} \log p_\sigma(\tilde{\rvx})$ is well-defined everywhere.
+  \item \textbfs{Improved Coverage.} The noise \nkh{smooths out sparse regions between modes}, enhancing training signal quality and facilitating Langevin dynamics to traverse low-density regions more effectively.
 \end{itemize}
 
 
 \subsection{Why DSM is Denoising: Tweedie's Formula}\label{subsec:why-dsm-denoising-tweedie}
 
-We begin with \emph{Tweedie's formula}~\citep{efron2011tweedie}, which provides a principled basis for denoising from noisy observations alone.
-Concretely, it states that: given a single Gaussian–corrupted observation $\tilde{\rvx}\sim\mathcal N(\,\cdot\,;\alpha\rvx,\sigma^2\mathrm{I})$  from an unknown $\rvx \sim p_{\mathrm{data}}$, a denoised estimate (the
-average over all plausible clean signals given $\tilde{\rvx}$) is obtained by nudging
-$\tilde{\rvx}$ a step of size $\sigma^2$ in the direction of the score
-$\nabla_{\tilde{\rvx}}\log p_\sigma(\tilde{\rvx})$ of its noisy marginal defined as:
+We begin with \nkh{\emph{Tweedie's formula}}~\citep{efron2011tweedie}, which provides a principled basis for denoising from noisy observations alone.
+Concretely, it states that: \nkh{given} a single Gaussian–\nkh{corrupted observation} $\tilde{\rvx}\sim\mathcal N(\,\cdot\,;\alpha\rvx,\sigma^2\mathrm{I})$  \nkh{from} an unknown \nkh{$\rvx \sim p_{\mathrm{data}}$}, a \nkh{denoised estimate} (the
+average over all plausible clean signals given $\tilde{\rvx}$) is \nkh{obtained by nudging}
+$\tilde{\rvx}$ a step of size $\sigma^2$ \nkh{in} the \nkh{direction of} the score
+$\nabla_{\tilde{\rvx}}\log p_\sigma(\tilde{\rvx})$ of its \nkh{noisy marginal} defined as:
 \[
 p_\sigma(\tilde{\rvx}):= \int \mathcal{N}(\tilde{\rvx};\alpha \rvx,\sigma^2\mathrm{I})p_{\mathrm{data}}(\rvx)\diff\rvx.
 \]
@@ -823,16 +833,37 @@ DSM training and denoising tightly related: if $\rvs_\bphi(\tilde{\rvx})\approx
 \frac{1}{\alpha}\left(\tilde{\rvx}+\sigma^2 \rvs_\bphi(\tilde{\rvx})\right)
 \]
 is the denoiser.
+\begin{nknote}
+\noindent\textit{Proof.} In DDPM, $\rvx_i = \bar{\alpha}_i\rvx_0 + \sqrt{1-\bar{\alpha}_i^2}\,\beps$, so taking $\E[\,\cdot\,|\rvx_i]$ of both sides,
+\[
+\rvx_i = \E\big[\bar{\alpha}_i\rvx_0 + \sqrt{1-\bar{\alpha}_i^2}\,\beps \,\big|\, \rvx_i\big]
+\;\Longleftrightarrow\;
+\bar{\alpha}_i\,\E[\rvx_0|\rvx_i] = \rvx_i - \sqrt{1-\bar{\alpha}_i^2}\,\E[\beps|\rvx_i].
+\]
+Subtracting Tweedie's formula, $\bar{\alpha}_i\,\E[\rvx_0|\rvx_i] = \rvx_i + (1-\bar{\alpha}_i^2)\,\nabla_{\rvx_i}\log p_i(\rvx_i)$, from both sides,
+\[
+\E[\beps|\rvx_i] = -\sqrt{1-\bar{\alpha}_i^2}\;\nabla_{\rvx_i}\log p_i(\rvx_i). \hspace{2em}\blacksquare
+\]
+\end{nknote}
 
-\paragraph{(Optional) Higher Order Tweedie's Formula.} The classical Tweedie's formula expresses the posterior mean $\E[\rvx_0|\tilde{\rvx}]$ through the gradient $\nabla_{\tilde{\rvx}}\log p(\tilde{\rvx})$.
-Higher order extensions~\citep{meng2021estimating} express the posterior covariance and higher cumulants through higher derivatives of $\log p(\tilde{\rvx})$.
+\paragraph{(Optional) Higher Order Tweedie's Formula.} The classical Tweedie's formula \nkh{expresses} the \nkh{posterior mean $\E[\rvx_0|\tilde{\rvx}]$} \nkh{through} the gradient $\nabla_{\tilde{\rvx}}\log p(\tilde{\rvx})$.
+Higher order extensions~\citep{meng2021estimating} \nkh{express} the \nkh{posterior covariance} and higher cumulants \nkh{through higher derivatives of $\log p(\tilde{\rvx})$}.
 
 \subparagraph{Exponential Family Setup with the Log-Normalizer $\lambda(\tilde{\rvx})$.}
-Assume the conditional law of $\tilde{\rvx}$ given a latent natural parameter $\boldsymbol\eta\in\R^D$ belongs to a natural exponential family written as
+Assume the conditional law of $\tilde{\rvx}$ given a latent \nkh{natural parameter} $\boldsymbol\eta\in\R^D$ belongs to a natural \nkh{exponential family} written as
 \[
 q_\sigma(\tilde{\rvx}|\boldsymbol\eta)
 =\exp\!\big(\boldsymbol\eta^\top \tilde{\rvx}-\psi(\boldsymbol\eta)\big)\,q_0(\tilde{\rvx}).
 \]
+\begin{nknote}
+\noindent Here $\psi(\boldsymbol\eta) := \log Z(\boldsymbol\eta)$ with $Z(\boldsymbol\eta) := \int \exp(\boldsymbol\eta^\top\tilde{\rvx})\,q_0(\tilde{\rvx})\,\diff\tilde{\rvx}$, the partition and log-partition functions. Indeed,
+\[
+\int q_\sigma(\tilde{\rvx}|\boldsymbol\eta)\,\diff\tilde{\rvx}
+= \int \exp\big(\boldsymbol\eta^\top\tilde{\rvx} - \psi(\boldsymbol\eta)\big)\,q_0(\tilde{\rvx})\,\diff\tilde{\rvx}
+= \frac{\int \exp(\boldsymbol\eta^\top\tilde{\rvx})\,q_0(\tilde{\rvx})\,\diff\tilde{\rvx}}{Z(\boldsymbol\eta)}
+= 1.
+\]
+\end{nknote}
 Here $q_0(\tilde{\rvx})$ is the \emph{base measure}, namely the part that does not depend on $\boldsymbol\eta$; for additive Gaussian noise with variance $\sigma^2\rmI$ it equals $(2\pi\sigma^2)^{-D/2}\exp(-\|\tilde{\rvx}\|^2/2\sigma^2)$.
 Let $p(\boldsymbol\eta)$ be the pre-defined distribution of the latent natural parameter, which can be viewed as the reparameterized clean-data distribution (for Gaussian location, $\boldsymbol\eta=\rvx/\sigma^2$).
 The observed noisy marginal is
@@ -849,7 +880,16 @@ p(\boldsymbol\eta|\tilde{\rvx})
 \ \propto\
 \exp\!\big(\boldsymbol\eta^\top \tilde{\rvx}-\psi(\boldsymbol\eta)-\lambda(\tilde{\rvx})\big)\,p(\boldsymbol\eta),
 \]
-which shows that, as a function of $\tilde{\rvx}$, the posterior has exponential-family form with natural parameter $\tilde{\rvx}$, sufficient statistic $\boldsymbol\eta$, and log-partition  $\lambda(\tilde{\rvx})$.
+which shows that, as a function of $\tilde{\rvx}$, the \nkh{posterior} has \nkh{exponential-family} form with \nkh{natural parameter $\tilde{\rvx}$}, \nkh{sufficient statistic $\boldsymbol\eta$}, and \nkh{log-partition  $\lambda(\tilde{\rvx})$}.
+\begin{nknote}
+\noindent\textit{Proof.} The posterior is $p(\boldsymbol\eta|\tilde{\rvx}) \propto q_\sigma(\tilde{\rvx}|\boldsymbol\eta)\,p(\boldsymbol\eta) = \exp\big(\boldsymbol\eta^\top\tilde{\rvx} - \psi(\boldsymbol\eta)\big)\,q_0(\tilde{\rvx})\,p(\boldsymbol\eta)$, whose normalizer over $\boldsymbol\eta$ is
+\[
+\int \exp\big(\boldsymbol\eta^\top\tilde{\rvx} - \psi(\boldsymbol\eta)\big)\,p(\boldsymbol\eta)\,\diff\boldsymbol\eta
+= \frac{1}{q_0(\tilde{\rvx})}\int q_\sigma(\tilde{\rvx}|\boldsymbol\eta)\,p(\boldsymbol\eta)\,\diff\boldsymbol\eta
+= \frac{p_\sigma(\tilde{\rvx})}{q_0(\tilde{\rvx})},
+\]
+so its logarithm is $\log p_\sigma(\tilde{\rvx}) - \log q_0(\tilde{\rvx}) = \lambda(\tilde{\rvx})$: the log-partition of the latent posterior is exactly $\lambda(\tilde{\rvx})$. \hfill$\blacksquare$
+\end{nknote}
 
 \subparagraph{Derivatives of $\lambda$ Produce Posterior Cumulants.}
 Two simple rules are at play.
@@ -859,7 +899,7 @@ First, normalization: for every $\tilde{\rvx}$,
 =1.
 \]
 Differentiating this identity with respect to $\tilde{\rvx}$ brings down powers of $\boldsymbol\eta$ from the exponential and derivatives of $\lambda(\tilde{\rvx})$; setting the result to zero yields equalities between derivatives of $\lambda$ and posterior moments of $\boldsymbol\eta$.
-Second, a standard property of exponential families: the log-partition is the cumulant generating function of the sufficient statistic.
+Second, a standard property of exponential families: the log-partition is the \nkh{cumulant generating function} of the \nkh{sufficient statistic}.
 Therefore
 \[
 \nabla_{\tilde{\rvx}}\lambda(\tilde{\rvx})=\E[\boldsymbol\eta|\tilde{\rvx}],\quad
@@ -870,7 +910,7 @@ where $\kappa_k$ are the \emph{conditional cumulants} of order $k$ of the random
 
 
 These are the higher order Tweedie's formulas.
-Specializing to the Gaussian location model with $\boldsymbol\eta=\rvx/\sigma^2$ yields the familiar forms in terms of derivatives of $\log p_\sigma(\tilde{\rvx})$:
+Specializing to the Gaussian location model with \nkh{$\boldsymbol\eta=\rvx/\sigma^2$ yields} the \nkh{familiar forms} in terms of derivatives of $\log p_\sigma(\tilde{\rvx})$:
 \[
 \E[\rvx|\tilde{\rvx}]
 =\tilde{\rvx}+\sigma^2\nabla_{\tilde{\rvx}}\log p_\sigma(\tilde{\rvx}),
@@ -889,7 +929,8 @@ Several studies have explored training neural networks to estimate higher order 
 \paragraph{SURE (Stein’s Unbiased Risk Estimator).}
 At a high level, Stein’s Unbiased Risk Estimator (SURE) is a technique that allows one to 
 estimate the mean squared error (MSE) of a denoiser $\rmD$ \emph{without knowing the clean signal}. 
-In other words, SURE provides a way to select or train denoisers when only noisy data are available.
+In other words, SURE provides a way to select or \nkh{train denoisers when only noisy data are available}.
+\nk{Main takeaway: integration by parts lets you estimate, under expectation, an MSE involving an unknown variable with an observable surrogate objective.}
 
 For clarity, consider the additive Gaussian noise setting:
 \[
@@ -904,20 +945,20 @@ The natural quality measure is the conditional MSE
 R(\rmD;\rvx) := \E_{\tilde{\rvx}|\rvx}\left[\|\rmD(\tilde{\rvx})-\rvx\|_2^2 \,\big|\, \rvx\right].
 \]
 This quantity depends on the unknown ground truth $\rvx$, and therefore cannot be computed directly. 
-Stein’s identity (see \Cref{app-sec:stein-identity}), however, yields the following \emph{observable} surrogate:
+Stein’s identity (see \Cref{app-sec:stein-identity}), however, yields the following \nkh{\emph{observable} surrogate}:
 \begin{align}\label{eq:sure-obj}
     \mathrm{SURE}(\rmD;\tilde{\rvx})
 = \|\rmD(\tilde{\rvx})-\tilde{\rvx}\|_2^2
 + 2\sigma^2\,\nabla_{\tilde{\rvx}}\cdot \rmD(\tilde{\rvx})
 - D\sigma^2,
 \end{align}
-where $\nabla_{\tilde{\rvx}}\cdot \rmD(\tilde{\rvx})$ denotes the divergence of $\rmD$. 
+where $\nabla_{\tilde{\rvx}}\cdot \rmD(\tilde{\rvx})$ denotes the \nkh{divergence of $\rmD$}. 
 We emphasize that $\mathrm{SURE}(\rmD;\tilde{\rvx})$ requires only the noisy observation $\tilde\rvx$, not the clean $\rvx$.
 
-Intuitively, $\mathrm{SURE}$ consists of two parts that complement each other. 
+Intuitively, $\mathrm{SURE}$ consists of \nkh{two parts} that complement each other. 
 The term $\|\rmD(\tilde{\rvx})-\tilde{\rvx}\|^2$ measures how far the denoiser’s output is from the noisy input; 
-by itself this underestimates the true error since $\tilde{\rvx}$ is already corrupted. 
-The divergence term acts as a correction: it captures how sensitive the denoiser is to small perturbations in its input, 
+by itself this \nkh{underestimates} the \nkh{true error} since $\tilde{\rvx}$ is already corrupted. 
+The \nkh{divergence term} acts as a \nkh{correction}: it captures how sensitive the denoiser is to small perturbations in its input, 
 effectively accounting for the variance introduced by the noise.
 
 
@@ -928,8 +969,7 @@ Importantly, for any fixed but unknown $\rvx$,
 \]
 where the expectation is over the Gaussian noise $\beps\sim\mathcal{N}(\bm{0},\rmI)$. Thus, minimizing SURE (in expectation or empirically) is equivalent to minimizing the true MSE, 
 while relying only on noisy data. 
-In practice, averaging $\mathrm{SURE}$ over both $\rvx\sim p_{\mathrm{data}}$ and the corruption noise $\beps$ 
-yields an unbiased estimate of the global MSE risk.
+In practice, \nkh{averaging $\mathrm{SURE}$ over} both \nkh{$\rvx\sim p_{\mathrm{data}}$} and the corruption noise \nkh{$\beps$ yields} an \nkh{unbiased estimate of} the \nkh{global MSE risk}.
 
 \paragraph{Link to Tweedie’s Formula and Bayes Optimality.}
 Let $p_\sigma(\tilde{\rvx}) = \big(p_{\mathrm{data}} * \mathcal{N}(\mathbf{0}, \sigma^2 \rmI)\big)(\tilde{\rvx})$ denote the noisy marginal considered in this section.
@@ -943,13 +983,13 @@ SURE is an unbiased estimator of the mean squared error with respect to the nois
 \]
 Hence minimizing the expected SURE equals minimizing the Bayes risk
 $\mathbb{E}_{(\rvx, \tilde{\rvx})}\big[\|\rmD(\tilde{\rvx})-\rvx\|^2\big]
-=\mathbb{E}_{\tilde{\rvx}}\!\big[\mathbb{E}_{\rvx| \tilde{\rvx}}\!\big[\|\rmD(\tilde{\rvx})-\rvx\|^2\big]\big]$ by the law of total expectation (tower property). This decomposition yields a pointwise optimization: for almost every $\tilde{\rvx}$,
+=\mathbb{E}_{\tilde{\rvx}}\!\big[\mathbb{E}_{\rvx| \tilde{\rvx}}\!\big[\|\rmD(\tilde{\rvx})-\rvx\|^2\big]\big]$ by the law of total expectation \nkh{(tower property)}. This decomposition yields a pointwise optimization: for almost every $\tilde{\rvx}$,
 \[
 \rmD^*(\tilde{\rvx})
 =\arg\min_{\mathbf z}\ \mathbb{E}_{\rvx| \tilde{\rvx}}\!\big[\|\mathbf z-\rvx\|^2\big]
 =\mathbb{E}[\rvx| \tilde{\rvx}].
 \]
-Therefore the SURE-optimal denoiser coincides with the Bayes estimator in \Cref{subsec:why-dsm-denoising-tweedie}, and by Tweedie’s identity:
+Therefore the \nkh{SURE-optimal denoiser coincides with} the \nkh{Bayes estimator} in \Cref{subsec:why-dsm-denoising-tweedie}, and by Tweedie’s identity:
 \begin{align}\label{eq:sure-tweedie-denoiser}
     \rmD^*(\tilde{\rvx})=\mathbb{E}[\rvx| \tilde{\rvx}]=\tilde{\rvx}+\sigma^2\nabla_{\tilde{\rvx}}\log p_\sigma(\tilde{\rvx}).
 \end{align}
@@ -987,12 +1027,12 @@ Classical score matching, denoising score matching, and higher order variants al
 \[
 \frac{\mathcal L p(\rvx)}{p(\rvx)},\quad\text{for some density } p
 \]
-with a linear operator $\mathcal L$ acting on the density. 
-In the classical case $\mathcal L=\nabla_{\rvx}$, this gives 
+with a \nkh{linear operator $\mathcal L$} acting on the density. 
+In the \nkh{classical case $\mathcal L=\nabla_{\rvx}$}, this gives 
 \[
 \nabla_{\rvx}\log p(\rvx) = \frac{\nabla_{\rvx} p(\rvx)}{p(\rvx)}
 \]
-The $\frac{\mathcal L p}{p}$ structure allows integration by parts to remove normalizing constants, yielding a tractable objective that depends only on samples from $p$ and the learned field $\rvs_\bphi$.
+The \nkh{$\frac{\mathcal L p}{p}$ structure allows integration by parts to remove normalizing constants}, yielding a tractable objective that depends only on samples from $p$ and the learned field $\rvs_\bphi$. \nk{See \Cref{app-sec:sm-trace}.}
 This viewpoint motivates the generalized score matching framework.
 
 \paragraph{Generalized Fisher Divergence.}
@@ -1112,7 +1152,7 @@ Adding Gaussian noise with a single fixed variance to the data distribution smoo
 \end{figure}
 
 
-To address these challenges, \citet{song2019generative} propose injecting Gaussian noise at multiple levels into the data distribution and jointly training a noise-conditional score network (NCSN) to estimate score functions across a range of noise scales. During generation, Langevin dynamics is applied in a noise-annealed fashion: beginning with high-noise levels to enable coarse exploration, and gradually refining toward low-noise levels to recover fine details. 
+To address these challenges, \citet{song2019generative} propose \nkh{injecting Gaussian noise at multiple levels} into the data distribution and jointly training a noise-conditional score network (NCSN) to estimate score functions across a range of noise scales. During generation, Langevin dynamics is applied in a noise-annealed fashion: beginning with \nkh{high-noise} levels to enable \nkh{coarse exploration}, and gradually refining toward \nkh{low-noise} levels to recover \nkh{fine details}. 
 
 
 
@@ -1148,7 +1188,7 @@ at each noise level $\sigma$. It presents the Gaussian smoothed data distributio
 
 \paragraph{Training Objective of NCSN.}
 
-The goal is to train a noise-conditional score network $\rvs_{\bm{\phi}}(\rvx, \sigma)$ to estimate the score function $\nabla_{\rvx} \log p_\sigma(\rvx)$ for all $\sigma \in \{\sigma_i\}_{i=1}^L$. This is achieved by minimizing the DSM objective across all noise levels:
+The goal is to train a noise-conditional score network $\rvs_{\bm{\phi}}(\rvx, \sigma)$ to estimate the score function $\nabla_{\rvx} \log p_\sigma(\rvx)$ for all $\sigma \in \{\sigma_i\}_{i=1}^L$. This is achieved by \nkh{minimizing} the DSM objective \nkh{across all noise levels}:
 \begin{align}\label{eq:nscn}
 \mathcal{L}_{\text{NCSN}}(\bm{\phi}) := \sum_{i=1}^{L} \lambda(\sigma_i)   \mathcal{L}_{\text{DSM}}(\bm{\phi}; \sigma_i),
 \end{align}
@@ -1252,8 +1292,8 @@ $\rvx\sim p_{\mathrm{init}}$, it first applies Langevin dynamics at the largest
 noise level $\sigma_L$, whose score
 $\rvs_{\bm{\phi}^\times}(\cdot,\sigma_L)$ guides the samples toward the
 corresponding smoothed distribution $p_{\sigma_L}$.
-The resulting samples are then used to initialize Langevin dynamics at the next
-smaller noise level. Repeating this procedure progressively refines the samples
+\nkh{The resulting samples are then used to initialize Langevin dynamics at the next
+smaller noise level}. Repeating this procedure progressively refines the samples
 until the smallest noise level $\sigma_1$ is reached.
 
 At each noise level $\sigma_\ell$, Langevin dynamics performs the update
@@ -1271,7 +1311,7 @@ At each noise level $\sigma_\ell$, Langevin dynamics performs the update
 \]
 where the output from the previous noise level provides the initialization
 $\tilde{\rvx}_0$.
-A common choice is to scale the step size with the noise level as
+A common choice is to \nkh{scale the step size with the noise level} as
 \[
 \eta_\ell
 =
@@ -1291,7 +1331,7 @@ of the data distribution.
 
 \paragraph{Slow Sampling Speed of NCSN.}
 NCSN generates samples using annealed MCMC (commonly Langevin dynamics) across noise scales $\{\sigma_i\}_{i=1}^L$.  
-For each scale $\sigma_i$, it performs $K$ iterative updates of the form ``update $\tilde{\mathbf{x}}_n$ using the score $\rvs_{\bm{\phi}^\times}(\tilde{\mathbf{x}}_n,\sigma_i)$ plus a small random perturbation'', each requiring a forward pass through the score network. Two factors necessitate large $L \times K$:  
+\nkh{For each scale $\sigma_i$}, it performs \nkh{$K$ iterative updates} of the form ``update $\tilde{\mathbf{x}}_n$ using the score $\rvs_{\bm{\phi}^\times}(\tilde{\mathbf{x}}_n,\sigma_i)$ plus a small random perturbation'', each requiring a forward pass through the score network. Two factors necessitate large \nkh{$L \times K$}:  
 \begin{enumerate}
     \item[(i)] \textbfs{Local Accuracy and Stability:} the learned score is reliable only for small perturbations, requiring small step sizes and many iterations per noise level to avoid bias or instability;
     \item[(ii)] \textbfs{Slow Mixing in High Dimensions:} local MCMC moves explore multimodal, high-dimensional targets inefficiently, demanding many iterations to reach typical data regions.

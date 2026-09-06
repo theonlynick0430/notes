@@ -15,14 +15,21 @@ Be concise in every report: tables and one-liners, no narration.
 - Two phases: **report first, edit only after go-ahead.**
 - Port highlights too, not just handwritten notes. Don't highlight Nikhil's own notes.
 - Lightly fix slips in his notes (variable names, swapped labels) and mention each fix in one line.
-- **Default style: expand equalities in place.** When a note justifies a step in an existing derivation, insert the intermediate equalities directly into the original display (blue lines/members inside the authors' align), NOT as a separate "Why?"/note block afterwards. Standalone blocks only for self-contained lemmas/proofs the text doesn't already contain. Keep every step from his handwritten chain — don't compress.
-- Done: Ch.2 (Variational: VAEs→DDPMs), Appendix B, Appendix C, D.1/D.2.1 (earlier session), D.2.3, D.2.4, D.2.5. Pattern for the rest is identical.
+
+## Style rules for ported notes (in priority order)
+1. **Expand equalities in place.** When a note justifies a step in an existing derivation, insert the intermediate equalities directly into the original display (blue lines/members inside the authors' align) — never a separate "Why? ..." block after it.
+2. **No parentheses around notes.** Write inline notes as regular sentences, not "(...)" asides, unless a parenthetical is genuinely the natural form (e.g., a one-word gloss).
+3. **Formal explanations get a \textit{Proof.} block**, ending with $\blacksquare$ — never a "Why?" label. Standalone blocks are only for self-contained lemmas/proofs the text doesn't already contain.
+4. **Minimize words in derivations.** Prefer chains of math; add prose only where a step is genuinely confusing. A trailing half-sentence naming the facts used beats interleaved narration.
+5. **Never abridge his derivations.** Every step from the handwritten chain goes in, in his order (only slips corrected, each mentioned in one line of the report).
+
+- Done: Ch.2 (Variational: VAEs→DDPMs), Ch.3 (Score-Based: EBMs→NCSN), Appendix B, Appendix C, D.1/D.2.1 (earlier session), D.2.3, D.2.4, D.2.5. Pattern for the rest is identical.
 - Pitfall: curly quotes/apostrophes (’) inside `\nkh{...}` break soul under inputenc — use ASCII ' inside highlights. Deterministic-analog / divergence-theorem notes now live in Appendix E — skip them when they appear in the margins.
 
 ## Macros (defined in `math_commands.tex`)
 | Macro | Use | Pitfall |
 |---|---|---|
-| `\nk{...}` | inline blue note | no leading space inside (`\color` eats it): write `word \nk{(...)}` |
+| `\nk{...}` | inline blue note (full sentences, per style rule 2) | no leading space inside (`\color` eats it): write `word \nk{Note ...}` |
 | `\begin{nknote}...\end{nknote}` | blue block: paragraphs, displays, tikz | fine inside `\exm{}{}` bodies; **not** directly after a run-in `\paragraph{...}` (its `\par` pushes the heading into the margin) — use `\begingroup\color{notesblue} ... \endgroup` there |
 | `\nkh{...}` | yellow text highlight (`soul \hl`, breaks across lines) | no `\Cref`/footnotes inside; `$...$` is fine |
 | `\nkhm{...}` | yellow box around a piece of display math | math mode only |

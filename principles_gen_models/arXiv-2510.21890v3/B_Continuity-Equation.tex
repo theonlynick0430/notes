@@ -207,7 +207,7 @@ p_{\rvy}(\rvy)
 \end{align*}
 
 \begin{nknote}
-\noindent\textit{Why does the last equality hold?} It rests on two facts.
+\noindent\textit{Proof.} We use two facts.
 
 \smallskip\noindent
 \textbf{(A)} Infinitesimal volumes transform as $\diff\rvy = \big|\det(\partial_\rvx\bm{\Psi})\big|\,\diff\rvx$, as shown above.
@@ -215,22 +215,22 @@ p_{\rvy}(\rvy)
 \smallskip\noindent
 \textbf{(B) Lemma.} Let $y = f(x)$ be smooth and invertible. Then
 \[
-\frac{\diff}{\diff y} f^{-1}(y) = \frac{1}{\frac{\diff}{\diff x} f(x)}.
+\frac{\diff}{\diff y} f^{-1}(y)
+= \frac{\diff}{\diff y} f^{-1}(f(x))
+= \frac{\diff x}{\diff y}
+= \frac{1}{\diff y/\diff x}
+= \frac{1}{\frac{\diff}{\diff x} f(x)}.
 \]
-\textit{Proof.}
-$\dfrac{\diff}{\diff y} f^{-1}(y) = \dfrac{\diff}{\diff y} f^{-1}(f(x)) = \dfrac{\diff x}{\diff y} = \dfrac{1}{\diff y/\diff x} = \dfrac{1}{\frac{\diff}{\diff x} f(x)}$. \hfill$\checkmark$
-
-\noindent
 In several dimensions the same statement reads $\partial_\rvy\bm{\Psi}^{-1}(\rvy) = \big(\partial_\rvx\bm{\Psi}(\rvx)\big)^{-1}$ at $\rvx = \bm{\Psi}^{-1}(\rvy)$, so that $\big|\det \partial_\rvy\bm{\Psi}^{-1}\big| = \big|\det \partial_\rvx\bm{\Psi}\big|^{-1}$.
 
 \smallskip\noindent
-\textbf{Corollary.} Change the integration variable from $\rvx$ to $\rvy' = \bm{\Psi}(\rvx)$, using (A) for the volume element and (B) to rewrite the inverse Jacobian determinant:
+Substituting $\rvy' = \bm{\Psi}(\rvx)$, with (A) for the volume element and (B) for the inverse Jacobian determinant,
 \begin{align*}
 p_{\rvy}(\rvy)
 &= \int \delta(\rvy - \bm{\Psi}(\rvx))\, p_{\rvx}(\rvx)\,\diff\rvx
 \overset{\text{(A)}}{=} \int \delta(\rvy - \rvy')\, p_{\rvx}\big(\bm{\Psi}^{-1}(\rvy')\big)\,\big|\det \partial_\rvx\bm{\Psi}\big|^{-1}\,\diff\rvy' \\
 &\overset{\text{(B)}}{=} \int \delta(\rvy - \rvy')\, p_{\rvx}\big(\bm{\Psi}^{-1}(\rvy')\big)\,\Big|\det \frac{\partial \bm{\Psi}^{-1}}{\partial \rvy'}\Big|\,\diff\rvy' \\
-&= p_{\rvx}\big(\bm{\Psi}^{-1}(\rvy)\big)\,\Big|\det \frac{\partial \bm{\Psi}^{-1}}{\partial \rvy}\Big|. \qquad\blacksquare
+&= p_{\rvx}\big(\bm{\Psi}^{-1}(\rvy)\big)\,\Big|\det \frac{\partial \bm{\Psi}^{-1}}{\partial \rvy}\Big|. \hspace{2em}\blacksquare
 \end{align*}
 \end{nknote}
 
